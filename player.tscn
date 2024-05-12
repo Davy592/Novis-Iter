@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://b6bp4gvfpoue1" path="res://Assets/Sprites/Pixelarium - Playable Character/Side animations/spr_player_right_walk.png" id="7_m2pck"]
 [ext_resource type="Texture2D" uid="uid://b5b7j34dvswj2" path="res://Assets/Sprites/Pixelarium - Playable Character/Side animations/spr_player_right_idle.png" id="8_3vjxa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_784lo"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_21lgb"]
 atlas = ExtResource("2_4ha35")
 region = Rect2(0, 0, 64, 64)
@@ -341,7 +339,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_idle",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -405,7 +403,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front_idle",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -469,7 +467,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -492,7 +490,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_walk",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -533,7 +531,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -559,15 +557,27 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnn8s"]
+radius = 15.0
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_t28kr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2, 2.6)
-shape = SubResource("CapsuleShape2D_784lo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_n2bhd")
-animation = &"left_walk"
+animation = &"right_walk"
 autoplay = "front_idle"
+frame_progress = 0.124204
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
+shape = SubResource("CircleShape2D_dnn8s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
