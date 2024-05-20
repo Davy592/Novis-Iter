@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://fjpantflg84d"]
+[gd_scene load_steps=85 format=3 uid="uid://fjpantflg84d"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_t28kr"]
 [ext_resource type="Texture2D" uid="uid://cqta6h74bafhx" path="res://Assets/Sprites/Pixelarium - Playable Character/Back animations/spr_player_back_idle.png" id="2_4ha35"]
@@ -560,7 +560,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnn8s"]
 radius = 15.0
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2l63"]
+size = Vector2(60, 55)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t28kr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -571,6 +574,7 @@ autoplay = "front_idle"
 frame_progress = 0.124204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 28)
 shape = SubResource("CircleShape2D_dnn8s")
 
@@ -581,3 +585,14 @@ limit_right = 1920
 limit_bottom = 1080
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+position = Vector2(0, 16)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(0, 21.5)
+shape = SubResource("RectangleShape2D_h2l63")

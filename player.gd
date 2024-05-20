@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+enum {
+	MOVE,
+	DIALOGUE,
+	MAP,
+	MENU
+}
+
 var MAX_SPEED = 600
 var ACCELERATION = 150
 var DECELERATION = 0.2
@@ -7,12 +14,47 @@ var TRESHOLD = 1
 var direction = "front"
 var move = "idle"
 
+var state = MOVE
+@onready var actionable_finder = $Direction/ActionableFinder
+
 func _physics_process(delta):
-	var axis = get_input_axis()
-	apply_movement(axis)
-	move_and_slide()
-	play_animation()
-	#print(velocity)
+	match state:
+		MOVE:
+			move_state()
+		MENU:
+			menu_state()
+		DIALOGUE:
+			dialogue_state()
+			pass
+		MAP:
+			map_state()
+			pass
+
+func map_state():
+	# gestite l'editor della manipolazione della mappa
+	pass
+
+func dialogue_state():
+	# gestite i controlli del dialogo
+	pass
+
+func menu_state():
+	if Input.is_action_just_pressed("menu"):
+		state = MOVE
+	# mostrate la GUI di Pausa o del menu iniziale
+
+func move_state():
+	if Input.is_action_just_pressed("menu"):
+		state = MENU
+	elif Input.is_action_just_pressed("interact"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+	else:
+		var axis = get_input_axis()
+		apply_movement(axis)
+		move_and_slide()
+		play_animation()
 
 func apply_movement(axis):
 	apply_acceleration(axis)
@@ -26,12 +68,16 @@ func get_input_axis():
 	move = "walk"
 	if axis.y > 0:
 		direction = "front"
+		$Direction.rotation_degrees = 0
 	elif axis.y < 0:
 		direction = "back"
+		$Direction.rotation_degrees = 180
 	elif axis.x > 0:
 		direction = "right"
+		$Direction.rotation_degrees = -90
 	elif axis.x < 0:
 		direction = "left"
+		$Direction.rotation_degrees = 90
 	else:
 		move = "idle"
 	return axis
@@ -50,3 +96,15 @@ func apply_friction(axis):
 func play_animation():
 	var anim = $AnimatedSprite2D
 	anim.play(direction + "_" + move)
+
+
+func _ready():
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	Dialogic.timeline_started.connect(_on_timeline_started)
+
+func _on_timeline_started():
+	state = DIALOGUE
+
+func _on_timeline_ended():
+	state = MOVE
+
