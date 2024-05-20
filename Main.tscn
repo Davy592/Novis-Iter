@@ -198,5 +198,3 @@ position = Vector2(412, 229)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("RectangleShape2D_dj8ak")
-
-[connection signal="action_is_ended" from="Actionable" to="Player" method="_on_actionable_action_is_ended"]
