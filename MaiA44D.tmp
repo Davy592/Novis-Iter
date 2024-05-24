@@ -204,9 +204,5 @@ scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_fscno")
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("6_jtxk2")]
+[node name="InGameMenu" parent="." instance=ExtResource("6_jtxk2")]
 visible = false
-
-[connection signal="menu_requested" from="Player" to="CanvasLayer/InGameMenu" method="_on_player_menu_requested"]

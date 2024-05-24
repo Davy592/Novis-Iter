@@ -1,5 +1,10 @@
-Ciao, questo è un dialogo di prova. Come Stai?
+pippo: Ciao, questo è un dialogo di prova. Come Stai? {scelta}
 - Male
+	set {scelta} = false
 - Bene
-Byee
-[signal]
+	set {scelta} = true
+if {scelta}:
+	pippo: Mi dispiace ma purtroppo non sono un dottore. Suca. {scelta}
+else:
+	pippo: Spero che tu muoia. Suca. {scelta}
+pippo: Byee

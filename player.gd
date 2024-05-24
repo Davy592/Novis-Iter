@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+signal menu_requested
+
 enum {
 	MOVE,
-	DIALOGUE,
+	INTERACTING,
 	MAP,
 	MENU
 }
@@ -21,10 +23,8 @@ func _physics_process(delta):
 	match state:
 		MOVE:
 			move_state()
-		MENU:
-			menu_state()
-		DIALOGUE:
-			dialogue_state()
+		INTERACTING:
+			interacting_state()
 			pass
 		MAP:
 			map_state()
@@ -34,22 +34,21 @@ func map_state():
 	# gestite l'editor della manipolazione della mappa
 	pass
 
-func dialogue_state():
+func interacting_state():
 	# gestite i controlli del dialogo
 	pass
 
 func menu_state():
 	if Input.is_action_just_pressed("menu"):
 		state = MOVE
-	# mostrate la GUI di Pausa o del menu iniziale
 
 func move_state():
-	if Input.is_action_just_pressed("menu"):
-		state = MENU
-	elif Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
+	elif Input.is_action_just_pressed("menu"):
+		emit_signal('menu_requested')
 	else:
 		var axis = get_input_axis()
 		apply_movement(axis)
@@ -97,13 +96,12 @@ func play_animation():
 	var anim = $AnimatedSprite2D
 	anim.play(direction + "_" + move)
 
-
 func _ready():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
 
 func _on_timeline_started():
-	state = DIALOGUE
+	state = INTERACTING
 
 func _on_timeline_ended():
 	state = MOVE
