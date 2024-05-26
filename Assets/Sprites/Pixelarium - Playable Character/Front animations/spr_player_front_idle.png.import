@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c47vy7c37md8m"
-path="res://.godot/imported/spr_player_front_idle.png-e7d35179df2e486524b95b845fddcd49.ctex"
+path="res://.godot/imported/spr_player_front_idle.png-85c7ff2ad48d54e195464e604fea95ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Pixelarium - Playable Character/Front animations/spr_player_front_idle.png"
-dest_files=["res://.godot/imported/spr_player_front_idle.png-e7d35179df2e486524b95b845fddcd49.ctex"]
+source_file="res://assets/sprites/Pixelarium - Playable Character/Front animations/spr_player_front_idle.png"
+dest_files=["res://.godot/imported/spr_player_front_idle.png-85c7ff2ad48d54e195464e604fea95ac.ctex"]
 
 [params]
 

@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dygc6aaoxnv3y"]
+[gd_scene load_steps=8 format=3 uid="uid://dygc6aaoxnv3y"]
 
-[ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://Assets/TileSet/Top-Down Forest/Forest Cliff.png" id="2_empib"]
-[ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://player.tscn" id="3_72tu1"]
-[ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://dialogue_actionable.tscn" id="4_mua8k"]
-[ext_resource type="Resource" path="res://timelines/prova.dtl" id="5_goq8p"]
-[ext_resource type="PackedScene" uid="uid://by2a56uurptn8" path="res://ui/in_game_menu.tscn" id="6_jtxk2"]
+[ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_empib"]
+[ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/player.tscn" id="3_72tu1"]
+[ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/dialogic/dialogue_actionable.tscn" id="4_mua8k"]
+[ext_resource type="PackedScene" uid="uid://by2a56uurptn8" path="res://scenes/ui/in_game_menu.tscn" id="6_jtxk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paap3"]
 texture = ExtResource("2_empib")
@@ -197,7 +196,6 @@ polygon = PackedVector2Array(0, 0, 548, 0, 547, -165, 700, -164, 702, 1, 1920, 0
 
 [node name="DialogueActionable" parent="." instance=ExtResource("4_mua8k")]
 position = Vector2(707, 321)
-dialogue_resource = ExtResource("5_goq8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
 scale = Vector2(4, 4)

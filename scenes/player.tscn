@@ -1,14 +1,14 @@
 [gd_scene load_steps=85 format=3 uid="uid://fjpantflg84d"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_t28kr"]
-[ext_resource type="Texture2D" uid="uid://cqta6h74bafhx" path="res://Assets/Sprites/Pixelarium - Playable Character/Back animations/spr_player_back_idle.png" id="2_4ha35"]
-[ext_resource type="Texture2D" uid="uid://hivj14lif0ni" path="res://Assets/Sprites/Pixelarium - Playable Character/Back animations/spr_player_back_walk.png" id="3_3xpyi"]
-[ext_resource type="Texture2D" uid="uid://c47vy7c37md8m" path="res://Assets/Sprites/Pixelarium - Playable Character/Front animations/spr_player_front_idle.png" id="4_oojrv"]
-[ext_resource type="Texture2D" uid="uid://bvrtq25fdv6q3" path="res://Assets/Sprites/Pixelarium - Playable Character/Front animations/spr_player_front_walk.png" id="5_jisu6"]
-[ext_resource type="Texture2D" uid="uid://du0kb6iptw7gs" path="res://Assets/Sprites/Pixelarium - Playable Character/Side animations/spr_player_left_idle.png" id="6_cp5jw"]
-[ext_resource type="Texture2D" uid="uid://hs5bomqgokpy" path="res://Assets/Sprites/Pixelarium - Playable Character/Side animations/spr_player_left_walk.png" id="7_ksevs"]
-[ext_resource type="Texture2D" uid="uid://b6bp4gvfpoue1" path="res://Assets/Sprites/Pixelarium - Playable Character/Side animations/spr_player_right_walk.png" id="7_m2pck"]
-[ext_resource type="Texture2D" uid="uid://b5b7j34dvswj2" path="res://Assets/Sprites/Pixelarium - Playable Character/Side animations/spr_player_right_idle.png" id="8_3vjxa"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_t28kr"]
+[ext_resource type="Texture2D" uid="uid://cqta6h74bafhx" path="res://assets/sprites/Pixelarium - Playable Character/Back animations/spr_player_back_idle.png" id="2_4ha35"]
+[ext_resource type="Texture2D" uid="uid://hivj14lif0ni" path="res://assets/sprites/Pixelarium - Playable Character/Back animations/spr_player_back_walk.png" id="3_3xpyi"]
+[ext_resource type="Texture2D" uid="uid://c47vy7c37md8m" path="res://assets/sprites/Pixelarium - Playable Character/Front animations/spr_player_front_idle.png" id="4_oojrv"]
+[ext_resource type="Texture2D" uid="uid://bvrtq25fdv6q3" path="res://assets/sprites/Pixelarium - Playable Character/Front animations/spr_player_front_walk.png" id="5_jisu6"]
+[ext_resource type="Texture2D" uid="uid://du0kb6iptw7gs" path="res://assets/sprites/Pixelarium - Playable Character/Side animations/spr_player_left_idle.png" id="6_cp5jw"]
+[ext_resource type="Texture2D" uid="uid://hs5bomqgokpy" path="res://assets/sprites/Pixelarium - Playable Character/Side animations/spr_player_left_walk.png" id="7_ksevs"]
+[ext_resource type="Texture2D" uid="uid://b6bp4gvfpoue1" path="res://assets/sprites/Pixelarium - Playable Character/Side animations/spr_player_right_walk.png" id="7_m2pck"]
+[ext_resource type="Texture2D" uid="uid://b5b7j34dvswj2" path="res://assets/sprites/Pixelarium - Playable Character/Side animations/spr_player_right_idle.png" id="8_3vjxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21lgb"]
 atlas = ExtResource("2_4ha35")

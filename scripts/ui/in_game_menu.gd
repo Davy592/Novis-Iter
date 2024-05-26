@@ -1,4 +1,4 @@
-extends "res://ui/menu.gd"
+extends "res://scripts/ui/menu.gd"
 
 # Non so se lasciarla o meno. Non eliminatela
 #func _process(delta):

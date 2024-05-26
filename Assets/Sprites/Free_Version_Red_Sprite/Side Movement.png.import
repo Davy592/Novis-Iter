@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ho8jbdoscflh"
-path="res://.godot/imported/Side Movement.png-baafde077d4732cf8e5b1c243eeff262.ctex"
+path="res://.godot/imported/Side Movement.png-16e3f4f5104570c369b522a3c0c67c80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Free_Version_Red_Sprite/Side Movement.png"
-dest_files=["res://.godot/imported/Side Movement.png-baafde077d4732cf8e5b1c243eeff262.ctex"]
+source_file="res://assets/sprites/Free_Version_Red_Sprite/Side Movement.png"
+dest_files=["res://.godot/imported/Side Movement.png-16e3f4f5104570c369b522a3c0c67c80.ctex"]
 
 [params]
 

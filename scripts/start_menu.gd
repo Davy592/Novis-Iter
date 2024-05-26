@@ -1,7 +1,7 @@
-extends "res://ui/menu.gd"
+extends "res://scripts/ui/menu.gd"
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file("res://Main.tscn")
+	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 func _on_load_game_pressed():
 	pass # Replace with function body.

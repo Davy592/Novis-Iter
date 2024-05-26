@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btrtw8pvu0ctg"
-path="res://.godot/imported/Forest Cliff.png-b4f808724fe41078095ee0520a32a6ff.ctex"
+uid="uid://dcpk0181dbitm"
+path="res://.godot/imported/Forest Props.png-0393fefe24b449f398eb137724c6491e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileSet/Top-Down Forest/Forest Cliff.png"
-dest_files=["res://.godot/imported/Forest Cliff.png-b4f808724fe41078095ee0520a32a6ff.ctex"]
+source_file="res://assets/tilesets/Top-Down Forest/Forest Props.png"
+dest_files=["res://.godot/imported/Forest Props.png-0393fefe24b449f398eb137724c6491e.ctex"]
 
 [params]
 

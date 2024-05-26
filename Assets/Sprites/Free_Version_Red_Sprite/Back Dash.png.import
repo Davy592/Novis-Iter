@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyc3ftcifm86m"
-path="res://.godot/imported/Back Dash.png-1adb83d96f66db516cb7a5e6fb350bce.ctex"
+path="res://.godot/imported/Back Dash.png-4cc6c538c3f27433463e8e80a8303edb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Free_Version_Red_Sprite/Back Dash.png"
-dest_files=["res://.godot/imported/Back Dash.png-1adb83d96f66db516cb7a5e6fb350bce.ctex"]
+source_file="res://assets/sprites/Free_Version_Red_Sprite/Back Dash.png"
+dest_files=["res://.godot/imported/Back Dash.png-4cc6c538c3f27433463e8e80a8303edb.ctex"]
 
 [params]
 
