@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kasfxadvrrcm"
-path="res://.godot/imported/Back Movement.png-f3559854f98edfeaae8daf96d4c00c44.ctex"
+path="res://.godot/imported/Back Movement.png-0b3d3293a5e60742174dfc75b5eb1640.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Free_Version_Red_Sprite/Back Movement.png"
-dest_files=["res://.godot/imported/Back Movement.png-f3559854f98edfeaae8daf96d4c00c44.ctex"]
+source_file="res://assets/sprites/Free_Version_Red_Sprite/Back Movement.png"
+dest_files=["res://.godot/imported/Back Movement.png-0b3d3293a5e60742174dfc75b5eb1640.ctex"]
 
 [params]
 

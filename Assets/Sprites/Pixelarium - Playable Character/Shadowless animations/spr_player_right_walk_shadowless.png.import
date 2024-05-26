@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b23ggn6bo4604"
-path="res://.godot/imported/spr_player_right_walk_shadowless.png-68bae67c6e27acdc089088ca29db830d.ctex"
+path="res://.godot/imported/spr_player_right_walk_shadowless.png-994bbeecb5ee31037241ac5bc96c800a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Pixelarium - Playable Character/Shadowless animations/spr_player_right_walk_shadowless.png"
-dest_files=["res://.godot/imported/spr_player_right_walk_shadowless.png-68bae67c6e27acdc089088ca29db830d.ctex"]
+source_file="res://assets/sprites/Pixelarium - Playable Character/Shadowless animations/spr_player_right_walk_shadowless.png"
+dest_files=["res://.godot/imported/spr_player_right_walk_shadowless.png-994bbeecb5ee31037241ac5bc96c800a.ctex"]
 
 [params]
 

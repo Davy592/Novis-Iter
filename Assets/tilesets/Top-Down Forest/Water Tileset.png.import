@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcpk0181dbitm"
-path="res://.godot/imported/Forest Props.png-d4fa11d4440c7fab611b48adcc9b4620.ctex"
+uid="uid://1e86ynjufeg8"
+path="res://.godot/imported/Water Tileset.png-ef5ce8ce4ab7b19c4ae0e4fd79199806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileSet/Top-Down Forest/Forest Props.png"
-dest_files=["res://.godot/imported/Forest Props.png-d4fa11d4440c7fab611b48adcc9b4620.ctex"]
+source_file="res://assets/tilesets/Top-Down Forest/Water Tileset.png"
+dest_files=["res://.godot/imported/Water Tileset.png-ef5ce8ce4ab7b19c4ae0e4fd79199806.ctex"]
 
 [params]
 

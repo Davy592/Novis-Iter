@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqtc6072w6ddw"
-path="res://.godot/imported/Front ConsecutiveSlash.png-6ade3a36c76ca35eae0d9cb97a12497f.ctex"
+path="res://.godot/imported/Front ConsecutiveSlash.png-bb852a94cf49c832c3100f6258fbff0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Free_Version_Red_Sprite/Front ConsecutiveSlash.png"
-dest_files=["res://.godot/imported/Front ConsecutiveSlash.png-6ade3a36c76ca35eae0d9cb97a12497f.ctex"]
+source_file="res://assets/sprites/Free_Version_Red_Sprite/Front ConsecutiveSlash.png"
+dest_files=["res://.godot/imported/Front ConsecutiveSlash.png-bb852a94cf49c832c3100f6258fbff0b.ctex"]
 
 [params]
 

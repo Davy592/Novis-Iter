@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqnx3hayvs2io"]
 
-[ext_resource type="Script" path="res://actionable.gd" id="1_dfvbl"]
+[ext_resource type="Script" path="res://scripts/dialogic/actionable.gd" id="1_vqnli"]
 
 [node name="Actionable" type="Area2D"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_dfvbl")
+script = ExtResource("1_vqnli")
