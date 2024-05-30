@@ -8,7 +8,7 @@ func _ready():
 # SIGNALS REACTIONS
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file("res://scenes/tiles/tile_layout.tscn")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _on_load_game_pressed():
 	pass # Replace with function body.

@@ -2,9 +2,9 @@ extends Node
 
 var inventory: Inventory = Inventory.new()
 
-func _ready():
-	connect_current_tile_signals()
-	# debug per vedere se funziona
+# debug per vedere se funziona
+#func _ready():
+	#connect_current_tile_signals()
 	#change_current_tile(load("res://scenes/tiles/tile_5.tscn").instantiate())
 
 func connect_current_tile_signals():
