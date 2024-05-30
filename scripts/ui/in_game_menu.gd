@@ -1,18 +1,28 @@
-extends "res://scripts/ui/menu.gd"
+extends Control
 
-# Non so se lasciarla o meno. Non eliminatela
-#func _process(delta):
-	#super._process(delta)
-	#if Input.is_action_just_pressed("menu"):
-		#_on_play_pressed()
+# OVERRIDES
+
+func _input(event):
+	if event is InputEventKey and not event.echo:
+		if event.is_action_pressed('menu'):
+			get_viewport().set_input_as_handled()
+			_on_play_pressed()
+
+# SIGNALS REACTIONS
 
 func _on_player_menu_requested():
-	get_tree().paused = true
 	visible = true
+	get_tree().paused = true
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 func _on_play_pressed():
-	get_tree().paused = false
 	visible = false
+	get_tree().paused = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+func _on_visibility_changed():
+	if visible:
+		$MarginContainer/VBoxContainer/MenuEntries/Play.grab_focus()
