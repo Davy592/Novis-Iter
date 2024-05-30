@@ -1,12 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dygc6aaoxnv3y"]
+[gd_scene load_steps=8 format=3 uid="uid://dygc6aaoxnv3y"]
 
-[ext_resource type="Script" path="res://scripts/tiles/tile_layout.gd" id="1_lr6er"]
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_0mutm"]
 [ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="2_lyxee"]
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="3_hpcqy"]
-[ext_resource type="PackedScene" uid="uid://i40mlkej224u" path="res://scenes/ui/inventory_ui.tscn" id="4_7uwst"]
-[ext_resource type="PackedScene" uid="uid://by2a56uurptn8" path="res://scenes/ui/in_game_menu.tscn" id="5_8kcga"]
-[ext_resource type="PackedScene" uid="uid://bs4t37weevlbd" path="res://scenes/ui/interact_ui.tscn" id="6_xkfnj"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="7_pg6wh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvopr"]
@@ -185,7 +181,6 @@ sources/0 = SubResource("TileSetAtlasSource_rvopr")
 
 [node name="TileLayout" type="Node"]
 process_mode = 1
-script = ExtResource("1_lr6er")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(3, 3)
@@ -208,19 +203,6 @@ position = Vector2(707, 321)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_fscno")
 metadata/_edit_lock_ = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("4_7uwst")]
-process_mode = 4
-visible = false
-
-[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_8kcga")]
-process_mode = 4
-visible = false
-
-[node name="InteractUI" parent="CanvasLayer" instance=ExtResource("6_xkfnj")]
-visible = false
 
 [node name="ItemActionable" parent="." instance=ExtResource("7_pg6wh")]
 position = Vector2(1052, 451)
