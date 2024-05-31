@@ -55,6 +55,7 @@ metadata/_edit_lock_ = true
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/MenuEntries"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
 theme_override_font_sizes/font_size = 40
 text = "Continua a giocare"
 
@@ -65,8 +66,10 @@ text = "Opzioni"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuEntries"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Play")
 theme_override_font_sizes/font_size = 40
 text = "Esci dal gioco"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuEntries/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuEntries/Exit" to="." method="_on_exit_pressed"]

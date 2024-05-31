@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cprhd4nm0fbak"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_slot.gd" id="1_3yf3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5rq2"]
+
+[node name="InventorySlot" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 160.0
+script = ExtResource("1_3yf3a")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OuterBorder" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.699845, 0.444525, 0.254411, 1)
+
+[node name="Background" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+color = Color(0, 0.772931, 0.583246, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="CenterContainer/Background"]
+position = Vector2(70, 70)
+scale = Vector2(2.5, 2.5)
+
+[node name="ItemQuantity" type="Label" parent="CenterContainer/Background"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+offset_right = 10.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemButton" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d5rq2")
