@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c244xhm7x53ww"]
+[gd_scene load_steps=9 format=3 uid="uid://c244xhm7x53ww"]
 
 [ext_resource type="Texture2D" uid="uid://1e86ynjufeg8" path="res://resources/assets/tilesets/Top-Down Forest/Water Tileset.png" id="1_skoj8"]
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_ml73o"]
 [ext_resource type="Texture2D" uid="uid://dcpk0181dbitm" path="res://resources/assets/tilesets/Top-Down Forest/Forest Props.png" id="3_2a5n4"]
+[ext_resource type="PackedScene" uid="uid://cdk8ml3gf51dy" path="res://scenes/entities/grisby.tscn" id="4_fdtl8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1hvj"]
 texture = ExtResource("1_skoj8")
@@ -904,3 +905,6 @@ layer_0/tile_data = PackedInt32Array(0, 1, 0, 1245184, 1, 1, 1179648, 1, 1, 1114
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-6, 21)
 polygon = PackedVector2Array(1, -32, 1934, -23, 1927, 450, 2192, 481, 2198, 667, 1927, 672, 1928, 993, 903, 993, 930, 1218, 754, 1215, 745, 987, 1, 987, 1, 4, -288, 16, -242, 1049, 81, 1223, 549, 1589, 998, 1684, 1316, 1367, 1939, 1253, 2227, 1139, 2447, 882, 2561, 652, 2492, 460, 2443, 216, 2250, 54, 2314, -174, 2002, -276, 1685, -358, 1190, -358, 548, -327, 33, -311)
+
+[node name="grisby" parent="." instance=ExtResource("4_fdtl8")]
+position = Vector2(1394, 152)
