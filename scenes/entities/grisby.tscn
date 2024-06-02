@@ -116,7 +116,7 @@ size = Vector2(57, 74)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.67969, 4.5)
-scale = Vector2(3.75, 3.475)
+scale = Vector2(2.75, 2.548)
 sprite_frames = SubResource("SpriteFrames_e7xsf")
 animation = &"front_idle"
 
