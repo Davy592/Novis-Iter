@@ -1,0 +1,112 @@
+[gd_scene load_steps=14 format=3 uid="uid://ct13fwdm42ndq"]
+
+[ext_resource type="Texture2D" uid="uid://dwx8jkmvhksl1" path="res://resources/assets/sprites/wife_grisby/sheet_wife_grisby.png" id="1_0maqu"]
+[ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="2_ddka5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr204"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(31, 0, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbs1k"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(0, 0, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxung"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(31, 0, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpl3l"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(62, 0, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok1em"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(31, 30, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65coa"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(0, 30, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vexgb"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(31, 30, 31, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctdv4"]
+atlas = ExtResource("1_0maqu")
+region = Rect2(62, 30, 31, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0r2gy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr204")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbs1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxung")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpl3l")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok1em")
+}],
+"loop": true,
+"name": &"left_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65coa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vexgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctdv4")
+}],
+"loop": true,
+"name": &"left_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8dq2"]
+radius = 24.0
+height = 68.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptwu5"]
+size = Vector2(63, 33)
+
+[node name="wife_grisby" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(2.50202, 2.10417)
+sprite_frames = SubResource("SpriteFrames_0r2gy")
+animation = &"front_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 12)
+shape = SubResource("CapsuleShape2D_x8dq2")
+
+[node name="DialogueActionable" parent="." instance=ExtResource("2_ddka5")]
+position = Vector2(6, 39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
+visible = false
+position = Vector2(-4.5, -6.5)
+shape = SubResource("RectangleShape2D_ptwu5")
+metadata/_edit_lock_ = true

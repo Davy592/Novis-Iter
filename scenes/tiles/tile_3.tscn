@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c244xhm7x53ww"]
+[gd_scene load_steps=23 format=3 uid="uid://c244xhm7x53ww"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
 [ext_resource type="Texture2D" uid="uid://1e86ynjufeg8" path="res://resources/assets/tilesets/Top-Down Forest/Water Tileset.png" id="1_skoj8"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dmppc2kqd6ldx" path="res://resources/assets/tilesets/top-down_country_side_forest/2 - Support.png" id="6_kgnc4"]
 [ext_resource type="Texture2D" uid="uid://nikkscdt1pdh" path="res://resources/assets/tilesets/top-down_country_side_forest/3 - Roof top.png" id="7_2ud1n"]
 [ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="11_xxm7m"]
+[ext_resource type="PackedScene" uid="uid://ct13fwdm42ndq" path="res://scenes/entities/wife_grisby.tscn" id="12_wbw6y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gvcn"]
 texture = ExtResource("3_2a5n4")
@@ -5024,3 +5025,6 @@ position = Vector2(1309, 407)
 [node name="Player" parent="." instance=ExtResource("11_xxm7m")]
 y_sort_enabled = true
 position = Vector2(939, 305)
+
+[node name="wife_grisby" parent="." instance=ExtResource("12_wbw6y")]
+position = Vector2(1265, 412)
