@@ -168,8 +168,8 @@ size = Vector2(63, 33)
 [node name="wife_grisby" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
-scale = Vector2(2.50202, 2.10417)
+position = Vector2(2.49194, 2.08333)
+scale = Vector2(2.81351, 2.48958)
 sprite_frames = SubResource("SpriteFrames_shlys")
 animation = &"front_idle"
 
