@@ -1,0 +1,219 @@
+[gd_scene load_steps=5 format=3 uid="uid://kw7dld2v6x0f"]
+
+[ext_resource type="Script" path="res://scripts/ui/map_editor_ui.gd" id="1_fcxqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l8y7"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_houma"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0e6t"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="MapEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fcxqv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+follow_focus = true
+
+[node name="Map" type="TextureRect" parent="MarginContainer/VBoxContainer/Content/MapContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Footer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.168627, 0.168627, 0.168627, 0.878431)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 32
+text = "(m) Esci del map editor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 32
+text = "(wasd)  Muovi la mappa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 32
+text = "(invio)  Mostra il menu di utilizzo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 32
+text = "(Frecce)  Muovi selezione"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AddMenu" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+visible = false
+layout_mode = 2
+
+[node name="UseButton" type="Button" parent="MarginContainer/CenterContainer/AddMenu"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../CancelButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../CancelButton")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4l8y7")
+text = "Posiziona"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/CenterContainer/AddMenu"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../UseButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../UseButton")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../RemoveMenu/CancelButton")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4l8y7")
+text = "Annulla"
+
+[node name="RemoveMenu" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+visible = false
+layout_mode = 2
+
+[node name="RemoveButton" type="Button" parent="MarginContainer/CenterContainer/RemoveMenu"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../CancelButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../CancelButton")
+focus_next = NodePath(".")
+focus_previous = NodePath("../CancelButton")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_houma")
+text = "Rimuovi"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/CenterContainer/RemoveMenu"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../RemoveButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../RemoveButton")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_houma")
+text = "Annulla"
+
+[node name="Error" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Container" type="MarginContainer" parent="MarginContainer/CenterContainer/Error"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/CenterContainer/Error/Container"]
+layout_mode = 2
+color = Color(0.194349, 0.194349, 0.194349, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/Error/Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/Error/Container/MarginContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Il tile selezionato non può essere rimosso poichè è il ponte di due isole. 
+Selezionare un altro tile!"
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="Ok" type="Button" parent="MarginContainer/CenterContainer/Error"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_s0e6t")
+text = "Ok"
+
+[connection signal="child_entered_tree" from="MarginContainer/VBoxContainer/Content/MapContainer/Map" to="." method="_on_map_child_entered_tree"]
+[connection signal="child_exiting_tree" from="MarginContainer/VBoxContainer/Content/MapContainer/Map" to="." method="_on_map_child_exiting_tree"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/AddMenu/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/AddMenu/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/RemoveMenu/RemoveButton" to="." method="_on_remove_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/RemoveMenu/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/Error/Ok" to="." method="_on_ok_pressed"]

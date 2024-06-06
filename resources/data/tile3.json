@@ -1,0 +1,6 @@
+{
+    "name": "AYOO",
+    "scene": "res://scenes/tiles/tile_layout.tscn",
+    "texture": "res://",
+    "description": "A AYOO tile"
+}
