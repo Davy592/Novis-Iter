@@ -23,9 +23,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"grisby": "res://timelines/grisby.dch",
 "pippo": "res://timelines/pippo.dch"
 }
 directories/dtl_directory={
+"grisby_dialogue": "res://timelines/grisby_dialogue.dtl",
 "prova": "res://timelines/prova.dtl"
 }
 layout/style_list=[]
