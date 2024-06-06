@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://j5fsnlq68jis"]
+[gd_scene load_steps=25 format=3 uid="uid://j5fsnlq68jis"]
 
 [ext_resource type="Texture2D" uid="uid://f6jer5d3d8ee" path="res://resources/assets/sprites/tile3_creature/mushroom.png" id="1_5a2jm"]
-[ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="2_pefsi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uibpk"]
 atlas = ExtResource("1_5a2jm")
@@ -201,9 +200,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrgt0"]
 radius = 8.06226
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lku0"]
-size = Vector2(65, 76)
-
 [node name="tile3_creature" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -214,11 +210,3 @@ sprite_frames = SubResource("SpriteFrames_v3rou")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_lrgt0")
-
-[node name="DialogueActionable" parent="." instance=ExtResource("2_pefsi")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
-visible = false
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_0lku0")
-metadata/_edit_lock_ = true

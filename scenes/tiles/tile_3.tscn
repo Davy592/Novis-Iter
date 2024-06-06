@@ -5028,7 +5028,7 @@ y_sort_enabled = true
 position = Vector2(939, 305)
 
 [node name="wife_grisby" parent="." instance=ExtResource("12_wbw6y")]
-position = Vector2(1267, 420)
+position = Vector2(1251, 422)
 
 [node name="tile3_creature" parent="." instance=ExtResource("13_2a16u")]
 visible = false

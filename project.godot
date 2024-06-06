@@ -24,11 +24,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "grisby": "res://timelines/grisby.dch",
-"pippo": "res://timelines/pippo.dch"
+"pippo": "res://timelines/pippo.dch",
+"wife_grisby": "res://timelines/wife_grisby.dch"
 }
 directories/dtl_directory={
 "grisby_dialogue": "res://timelines/grisby_dialogue.dtl",
-"prova": "res://timelines/prova.dtl"
+"prova": "res://timelines/prova.dtl",
+"wife_grisby_dialogue": "res://timelines/wife_grisby_dialogue.dtl"
 }
 layout/style_list=[]
 layout/default_style=""
@@ -50,6 +52,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"chance": false,
 "scelta": false
 }
 glossary/default_case_sensitive=true

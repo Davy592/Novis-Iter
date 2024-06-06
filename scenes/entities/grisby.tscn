@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdk8ml3gf51dy"]
+[gd_scene load_steps=18 format=3 uid="uid://cdk8ml3gf51dy"]
 
 [ext_resource type="Texture2D" uid="uid://dt5qghsb4vaco" path="res://resources/assets/sprites/grisby/Back1.png" id="1_2n8im"]
 [ext_resource type="Texture2D" uid="uid://b3aa60g4y4v25" path="res://resources/assets/sprites/grisby/Back2.png" id="2_enwjf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cikogv0v0wova" path="res://resources/assets/sprites/grisby/Right2.png" id="11_5h3o5"]
 [ext_resource type="Texture2D" uid="uid://8irsndhthjbx" path="res://resources/assets/sprites/grisby/Right3.png" id="12_lg276"]
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="13_pcoce"]
+[ext_resource type="Resource" path="res://timelines/grisby_dialogue.dtl" id="14_ihi5k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7xsf"]
 animations = [{
@@ -126,9 +127,9 @@ position = Vector2(7, 0)
 shape = SubResource("CapsuleShape2D_4xdov")
 
 [node name="DialogueActionable" parent="." instance=ExtResource("13_pcoce")]
+dialogue_resource = ExtResource("14_ihi5k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
-visible = false
 position = Vector2(9.5, 2)
 shape = SubResource("RectangleShape2D_05oof")
 metadata/_edit_lock_ = true
