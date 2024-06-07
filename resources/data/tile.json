@@ -2,5 +2,10 @@
     "name": "Asgard",
     "scene": "res://scenes/tiles/tile_layout.tscn",
     "texture": "res://",
-    "description": "A tile layout"
+    "description": "A tile layout",
+    "default_entry_point": [800, 400],
+    "top_entry_point": null,
+    "right_entry_point": null,
+    "bottom_entry_point": null,
+    "left_entry_point": [1760, 460]
 }

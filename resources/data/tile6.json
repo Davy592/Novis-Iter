@@ -1,0 +1,11 @@
+{
+    "name": "House",
+    "scene": "res://scenes/tiles/tile6.tscn",
+    "texture": "res://",
+    "description": "La casa di una strana creatura.",
+    "default_entry_point": [0, 0],
+    "top_entry_point": null,
+    "right_entry_point": [-150, 177],
+    "bottom_entry_point": null,
+    "left_entry_point": null
+}

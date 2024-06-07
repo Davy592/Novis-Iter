@@ -291,6 +291,7 @@ func _on_tile_slot_button_pressed():
 				old_tile_info.free_scene_instance()
 				Global.tiles_inventory.add(old_tile_info)
 				data.set_tile_info(new_tile_info)
+				tile_slot_pressed.update_slot_info()
 			else:
 				increment_all_around(tile_slot_pressed)
 				var slot_name = tile_slot_pressed.get_name()
@@ -328,9 +329,9 @@ func _on_use_button_pressed():
 	mode = ADD_TILE_SLOT
 	init_focus()
 
-func _on_map_graph_current_map_node_updated():
+func _on_current_map_node_updated():
 	current_map_node_tile_slot.get_node('CenterContainer/TileButton').pressed.connect(_on_tile_slot_button_pressed)
-	current_map_node_tile_slot = map.get_node(str(Global.current_tile_map_node_id))
+	current_map_node_tile_slot = map.get_node(get_slot_name_by_id(Global.current_tile_map_node_id))
 	current_map_node_tile_slot.get_node('CenterContainer/TileButton').pressed.disconnect(_on_tile_slot_button_pressed)
 
 func _on_remove_button_pressed():
