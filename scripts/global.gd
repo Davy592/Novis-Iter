@@ -24,6 +24,12 @@ func change_current_tile(tile: TileInfo, side, id):
 	player.position = tile.get_side_entry_point(side)
 	current_tile_map_node_id = id
 	current_map_node_updated.emit()
+	
+	var camera: Camera2D = player.get_node('Camera2D')
+	camera.limit_top = tile.get_cam_top_limit()
+	camera.limit_right = tile.get_cam_right_limit()
+	camera.limit_bottom = tile.get_cam_bottom_limit()
+	camera.limit_left = tile.get_cam_left_limit()
 
 
 #func connect_current_tile_signals():

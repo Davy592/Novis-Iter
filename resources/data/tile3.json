@@ -1,11 +1,15 @@
 {
-    "name": "AYOO",
-    "scene": "res://scenes/tiles/tile_layout.tscn",
-    "texture": "res://",
-    "description": "A AYOO tile",
-    "default_entry_point": [0, 0],
-    "top_entry_point": null,
-    "right_entry_point": null,
-    "bottom_entry_point": null,
-    "left_entry_point": null
+	"name": "AYOO",
+	"scene": "res://scenes/tiles/tile_layout.tscn",
+	"texture": "res://",
+	"description": "A AYOO tile",
+	"default_entry_point": [0, 0],
+	"top_entry_point": null,
+	"right_entry_point": null,
+	"bottom_entry_point": null,
+	"left_entry_point": null,
+	"cam_top_limit": -10000000,
+	"cam_right_limit": -10000000,
+	"cam_bottom_limit": -10000000,
+	"cam_left_limit": -10000000
 }
