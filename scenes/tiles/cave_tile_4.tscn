@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://reiislcm3s4h"]
+[gd_scene load_steps=8 format=3 uid="uid://dmn6lndygjo86"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="1_o5toh"]
 [ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="2_r0ftq"]
