@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://kw7dld2v6x0f"]
+
+[ext_resource type="Script" path="res://scripts/ui/map.gd" id="1_ox32y"]
+[ext_resource type="PackedScene" uid="uid://cprhd4nm0fbak" path="res://scenes/ui/inventory_slot.tscn" id="1_xr5ry"]
+
+[node name="MapEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Map" type="TextureRect" parent="MarginContainer/VBoxContainer/Content/MapContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ox32y")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="InventorySlot" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot2" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot3" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot4" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot5" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot6" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot7" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventorySlot8" parent="MarginContainer/VBoxContainer/Content/ScrollContainer/VBoxContainer" instance=ExtResource("1_xr5ry")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2

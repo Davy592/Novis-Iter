@@ -1,6 +1,6 @@
 class_name Inventory
 
-signal inventory_updated(inventory, index)
+signal inventory_updated(item, index)
 
 var items
 #var INVENTORY_SIZE = 40 # nel caso in cui vogliamo limitare la size

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal map_requested
 signal menu_requested
 signal inventory_requested
 signal interact_ui_requested
@@ -48,6 +49,9 @@ func _input(event):
 			var actionables = actionable_finder.get_overlapping_areas()
 			if actionables.size() > 0:
 				actionables[0].action()
+		elif event.is_action_pressed('map'):
+			get_viewport().set_input_as_handled()
+			emit_signal('map_requested')
 
 # USER DEFINED
 
