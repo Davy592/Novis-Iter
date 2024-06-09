@@ -557,8 +557,9 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dnn8s"]
-radius = 15.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1h4j"]
+radius = 19.0
+height = 68.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2l63"]
 size = Vector2(60, 55)
@@ -574,19 +575,17 @@ autoplay = "front_idle"
 frame_progress = 0.124204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 28)
-shape = SubResource("CircleShape2D_dnn8s")
+position = Vector2(-2, 34)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v1h4j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_right = 1920
-limit_bottom = 1080
+limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Direction" type="Marker2D" parent="."]
+visible = false
 
 [node name="ActionableFinder" type="Area2D" parent="Direction"]
 position = Vector2(0, 16)

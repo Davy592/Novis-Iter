@@ -6,10 +6,7 @@ var tiles
 
 func _init():
 	tiles = [
-		TileInfo.new("res://resources/data/tile.json"),
-		TileInfo.new("res://resources/data/tile1.json"),
-		TileInfo.new("res://resources/data/tile2.json"),
-		TileInfo.new("res://resources/data/tile3.json")
+		TileInfo.new("res://resources/data/tile6.json")
 	]
 
 func add(tile_info):
