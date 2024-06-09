@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cvglxb50cxyma"]
+
+[node name="tile1" type="Node2D"]
+process_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3, 3)
+format = 2
