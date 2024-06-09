@@ -26,10 +26,11 @@ directories/dch_directory={
 "pippo": "res://timelines/pippo.dch"
 }
 directories/dtl_directory={
-"prova": "res://timelines/prova.dtl"
+"prova": "res://timelines/prova.dtl",
+"sign_tile_4": "res://timelines/sign_tile_4.dtl"
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://timelines/styles/New_File.tres", "res://timelines/styles/parallelogram.tres"]
+layout/default_style="res://timelines/styles/New_File.tres"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ncdrwv8o8h4o"]
+[gd_scene load_steps=21 format=3 uid="uid://br30cy60a61ho"]
 
 [ext_resource type="Texture2D" uid="uid://cchshvrn4cdbq" path="res://resources/assets/tilesets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_bgyin"]
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_qg7rn"]
