@@ -209,6 +209,21 @@ json_data_file = "res://resources/data/items/potion.json"
 position = Vector2(859, 687)
 json_data_file = "res://resources/data/items/potion.json"
 
-[node name="TileDoor_di_layout" parent="." instance=ExtResource("5_gberc")]
+[node name="TileDoors" type="Node" parent="."]
+
+[node name="TileDoorTop" parent="TileDoors" instance=ExtResource("5_gberc")]
+position = Vector2(624, 35)
+rotation = 1.5708
+
+[node name="TileDoorRight" parent="TileDoors" instance=ExtResource("5_gberc")]
 position = Vector2(1852, 477)
 side = 1
+
+[node name="TileDoorBottom" parent="TileDoors" instance=ExtResource("5_gberc")]
+position = Vector2(947, 970)
+rotation = 1.5708
+side = 1
+
+[node name="TileDoorLeft" parent="TileDoors" instance=ExtResource("5_gberc")]
+position = Vector2(83, 517)
+side = 3
