@@ -9,7 +9,7 @@
 	"bottom_entry_point": [3410, 728],
 	"left_entry_point": [4290, 2378],
 	"cam_top_limit": 0,
-	"cam_right_limit": 4296,
-	"cam_bottom_limit": 3850,
+	"cam_right_limit": 4615,
+	"cam_bottom_limit": 4168,
 	"cam_left_limit": 0
 }
