@@ -212,3 +212,7 @@ json_data_file = "res://resources/data/items/potion.json"
 [node name="TileDoor_di_layout" parent="." instance=ExtResource("5_gberc")]
 position = Vector2(1852, 477)
 side = 1
+
+[node name="TileDoor_di_layout2" parent="." instance=ExtResource("5_gberc")]
+position = Vector2(75, 527)
+side = 3

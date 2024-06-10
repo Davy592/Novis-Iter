@@ -565,6 +565,7 @@ height = 68.0
 size = Vector2(60, 55)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_t28kr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
