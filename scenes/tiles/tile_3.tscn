@@ -5036,8 +5036,8 @@ visible = false
 position = Vector2(689, 1003)
 
 [node name="TileDoor_1" parent="." instance=ExtResource("14_7cvby")]
-position = Vector2(1949, 576)
+position = Vector2(2113, 580)
 
 [node name="TileDoor_2" parent="." instance=ExtResource("14_7cvby")]
-position = Vector2(821, 1076)
+position = Vector2(817, 1170)
 rotation = 1.5708
