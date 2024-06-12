@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvglxb50cxyma"]
+[gd_scene load_steps=12 format=3 uid="uid://cvglxb50cxyma"]
 
 [ext_resource type="Texture2D" uid="uid://l2clttpbtjl4" path="res://resources/assets/tilesets/tile1/mainlevbuild.png" id="1_g6h6m"]
 [ext_resource type="Texture2D" uid="uid://b24akeymjfrvb" path="res://resources/assets/tilesets/tile1/decorative.png" id="2_0efgf"]
 [ext_resource type="Texture2D" uid="uid://boybou38ij2r0" path="res://resources/assets/tilesets/tile1/topdownpack.png" id="3_jr07w"]
 [ext_resource type="Texture2D" uid="uid://dtjnlr7tawebu" path="res://resources/assets/tilesets/tile1/Skeleton_Dead.png" id="4_x6bls"]
 [ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="5_xbkiy"]
+[ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="6_mhbai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fl3cf"]
 texture = ExtResource("1_g6h6m")
@@ -3755,3 +3756,7 @@ layer_4/tile_data = PackedInt32Array(1507327, 131075, 10, 1441791, 131075, 10, 1
 polygon = PackedVector2Array(0, 2, 857, -5, 851, -101, 962, -100, 958, 2, 1921, -3, 1919, 577, 2004, 577, 2013, 681, 1924, 679, 1921, 1085, 1001, 1081, 1001, 1189, 913, 1192, 907, 1088, -9, 1085, -1, 679, -95, 675, -95, 577, -5, 579, -1, 26, -127, 16, -192, 167, -211, 418, -177, 615, -216, 934, -188, 1064, 231, 1360, 703, 1289, 977, 1311, 1256, 1326, 1571, 1238, 2227, 1313, 2164, 936, 2100, 700, 2083, 477, 2057, 328, 2072, 141, 2077, -3, 2074, -93, 2038, -222, 1764, -203, 1341, -180, 1090, -182, 922, -201, 745, -229, 643, -212, 235, -252, 20, -190, -35, -123, -73, -80)
 
 [node name="Player" parent="." instance=ExtResource("5_xbkiy")]
+
+[node name="ItemActionable" parent="." instance=ExtResource("6_mhbai")]
+position = Vector2(1024, 445)
+json_data_file = "res://resources/data/items/white_flag.json"

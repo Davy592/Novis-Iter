@@ -1,0 +1,7 @@
+{
+	"name": "flag",
+	"type": "common",
+	"effect": "",
+	"description": "Bandiera bianca",
+	"texture": "res://resources/assets/sprites/icon1.png"
+}
