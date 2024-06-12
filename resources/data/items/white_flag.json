@@ -3,5 +3,5 @@
 	"type": "common",
 	"effect": "",
 	"description": "Bandiera bianca",
-	"texture": "res://resources/assets/sprites/icon1.png"
+	"texture": "res://resources/assets/sprites/flag_white.png"
 }
