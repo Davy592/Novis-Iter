@@ -23,10 +23,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"pippo": "res://timelines/pippo.dch"
+"pippo": "res://timelines/pippo.dch",
+"remy": "res://timelines/remy.dch"
 }
 directories/dtl_directory={
-"prova": "res://timelines/prova.dtl"
+"prova": "res://timelines/prova.dtl",
+"remy_dialogue": "res://timelines/remy_dialogue.dtl"
 }
 layout/style_list=[]
 layout/default_style=""
@@ -48,6 +50,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"battle": true,
 "scelta": false
 }
 glossary/default_case_sensitive=true
