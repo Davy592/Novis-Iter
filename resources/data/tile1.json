@@ -1,15 +1,15 @@
 {
-	"name": "Bifrost",
-	"scene": "res://scenes/tiles/tile_layout.tscn",
+	"name": "Battle camp",
+	"scene": "res://scenes/tiles/tile_1.tscn",
 	"texture": "res://",
-	"description": "A Bifrost tile",
+	"description": "Un crudele e sanguinoso campo di battaglia",
 	"default_entry_point": [0, 0],
-	"top_entry_point": null,
-	"right_entry_point": null,
-	"bottom_entry_point": null,
-	"left_entry_point": null,
-	"cam_top_limit": -10000000,
-	"cam_right_limit": -10000000,
-	"cam_bottom_limit": -10000000,
-	"cam_left_limit": -10000000
+	"top_entry_point": [907, -19],
+	"right_entry_point": [1957, 621],
+	"bottom_entry_point": [959, 1112],
+	"left_entry_point": [-36, 620],
+	"cam_top_limit": -90,
+	"cam_right_limit": 2030,
+	"cam_bottom_limit": 1190,
+	"cam_left_limit": -90
 }
