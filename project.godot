@@ -48,14 +48,10 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"accepted": false,
 "scelta": false
 }
 glossary/default_case_sensitive=true
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 
 [dotnet]
 
