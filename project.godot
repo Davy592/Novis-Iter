@@ -53,7 +53,8 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
 "chance": false,
-"scelta": false
+"scelta": false,
+"scelta2": false
 }
 glossary/default_case_sensitive=true
 
