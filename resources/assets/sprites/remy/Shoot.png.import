@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5sorhb0gl0xf"
-path="res://.godot/imported/Shoot.png-c24c25055eb891f35a9a1e5ec3034339.ctex"
+path="res://.godot/imported/Shoot.png-52ffd63cbf21ca1f29d07d6a087e6086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/sprites/remy/Shoot.png"
-dest_files=["res://.godot/imported/Shoot.png-c24c25055eb891f35a9a1e5ec3034339.ctex"]
+source_file="res://resources/assets/sprites/soldier/Shoot.png"
+dest_files=["res://.godot/imported/Shoot.png-52ffd63cbf21ca1f29d07d6a087e6086.ctex"]
 
 [params]
 
