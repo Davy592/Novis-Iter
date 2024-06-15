@@ -10,7 +10,6 @@ var dir : Vector2 = Vector2.RIGHT
 var start_pos : Vector2
 
 # Stati di movimento
-@export var is_fixed : bool = false
 @export var walk_radius : int = 200 
 
 var is_chatting : bool = false
@@ -32,7 +31,7 @@ func _ready():
 ## Acquisisce il movimento dell'NPC (se consentito) e determina
 ## la prossima azione da eseguire in base al suo stato  
 func _process(delta):	
-	if is_fixed:
+	if walk_radius == 0:
 		return
 	
 	get_movement()
