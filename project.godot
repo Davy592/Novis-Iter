@@ -50,6 +50,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"accepted": false,
 "battle": true,
 "scelta": false
 }
