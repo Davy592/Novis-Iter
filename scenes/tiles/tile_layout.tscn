@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dygc6aaoxnv3y"]
+[gd_scene load_steps=7 format=3 uid="uid://dygc6aaoxnv3y"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_0mutm"]
-[ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="3_hpcqy"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="5_gberc"]
+[ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="5_xqsdq"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="7_pg6wh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvopr"]
@@ -177,8 +177,6 @@ texture = ExtResource("2_0mutm")
 [sub_resource type="TileSet" id="TileSet_enkvu"]
 sources/0 = SubResource("TileSetAtlasSource_rvopr")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fscno"]
-
 [node name="TileLayout" type="Node2D"]
 process_mode = 1
 
@@ -193,22 +191,36 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 39, 131072, 0, 1, 65536, 0, 38, 65
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 548, 0, 547, -165, 700, -164, 702, 1, 1920, 0, 1920, 1039, 0, 1039, 0, 1, -42, 16, -162, 319, -151, 783, -141, 1257, 434, 1251, 1214, 1241, 1931, 1214, 2122, 1220, 2169, 702, 2183, 194, 2089, -125, 1527, -283, 1093, -340, 669, -364, 299, -354, 17, -283, -15, -13)
 
-[node name="DialogueActionable" parent="." instance=ExtResource("3_hpcqy")]
-position = Vector2(707, 321)
+[node name="Actionables" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
-scale = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_fscno")
-metadata/_edit_lock_ = true
-
-[node name="ItemActionable" parent="." instance=ExtResource("7_pg6wh")]
-position = Vector2(1052, 451)
+[node name="ItemActionable" parent="Actionables" instance=ExtResource("7_pg6wh")]
+position = Vector2(958, 507)
 json_data_file = "res://resources/data/items/potion.json"
 
-[node name="ItemActionable2" parent="." instance=ExtResource("7_pg6wh")]
+[node name="ItemActionable2" parent="Actionables" instance=ExtResource("7_pg6wh")]
 position = Vector2(859, 687)
 json_data_file = "res://resources/data/items/potion.json"
 
-[node name="TileDoor_di_layout" parent="." instance=ExtResource("5_gberc")]
+[node name="TileDoors" type="Node" parent="."]
+
+[node name="TileDoorTop" parent="TileDoors" instance=ExtResource("5_gberc")]
+position = Vector2(624, 35)
+rotation = 1.5708
+
+[node name="TileDoorRight" parent="TileDoors" instance=ExtResource("5_gberc")]
 position = Vector2(1852, 477)
 side = 1
+
+[node name="TileDoorBottom" parent="TileDoors" instance=ExtResource("5_gberc")]
+position = Vector2(947, 970)
+rotation = 1.5708
+side = 1
+
+[node name="TileDoorLeft" parent="TileDoors" instance=ExtResource("5_gberc")]
+position = Vector2(83, 517)
+side = 3
+
+[node name="NPC" type="Node" parent="."]
+
+[node name="SampleNPC" parent="NPC" instance=ExtResource("5_xqsdq")]
+position = Vector2(784, 461)
