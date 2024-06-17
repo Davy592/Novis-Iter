@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvglxb50cxyma"]
+[gd_scene load_steps=18 format=3 uid="uid://cvglxb50cxyma"]
 
 [ext_resource type="Texture2D" uid="uid://l2clttpbtjl4" path="res://resources/assets/tilesets/tile1/mainlevbuild.png" id="1_g6h6m"]
 [ext_resource type="Texture2D" uid="uid://b24akeymjfrvb" path="res://resources/assets/tilesets/tile1/decorative.png" id="2_0efgf"]
@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="6_mhbai"]
 [ext_resource type="PackedScene" uid="uid://br43hu6unncch" path="res://scenes/entities/remy.tscn" id="7_kjfi8"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="8_uiegj"]
-[ext_resource type="PackedScene" uid="uid://ceiwe37wg4kp8" path="res://scenes/entities/enemy.tscn" id="9_rvbf3"]
+[ext_resource type="PackedScene" uid="uid://ceiwe37wg4kp8" path="res://scenes/entities/enemy_left.tscn" id="9_rvbf3"]
+[ext_resource type="PackedScene" uid="uid://bjt8df78q4ko6" path="res://scenes/entities/enemy_right.tscn" id="10_dpfc7"]
+[ext_resource type="PackedScene" uid="uid://b1qrypgj16b5j" path="res://scenes/entities/enemy_top.tscn" id="11_jvsgj"]
+[ext_resource type="PackedScene" uid="uid://5vawoyu1lh5v" path="res://scenes/entities/enemy_bottom.tscn" id="12_jmjqr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fl3cf"]
 texture = ExtResource("1_g6h6m")
@@ -3802,193 +3805,152 @@ position = Vector2(959, 1112)
 rotation = 1.5708
 side = 2
 
-[node name="enemy_1" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-76, 27)
+[node name="enemy_left1" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-81, 23)
 
-[node name="enemy_2" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-76, 76)
+[node name="enemy_left2" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-83, 72)
 
-[node name="enemy_3" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-76, 173)
+[node name="enemy_left3" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-83, 168)
 
-[node name="enemy_4" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-74, 269)
+[node name="enemy_left4" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-82, 262)
 
-[node name="enemy_5" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-76, 317)
+[node name="enemy_left5" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-81, 311)
 
-[node name="enemy_6" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-72, 411)
+[node name="enemy_left6" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-77, 406)
 
-[node name="enemy_7" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-76, 505)
+[node name="enemy_left7" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-75, 501)
 
-[node name="enemy_8" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-72, 745)
+[node name="enemy_left8" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-81, 742)
 
-[node name="enemy_9" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(-74, 847)
+[node name="enemy_left9" parent="." instance=ExtResource("9_rvbf3")]
+position = Vector2(-78, 842)
 
-[node name="enemy_10" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(27, -72)
-rotation = 1.5708
+[node name="enemy_right1" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1993, 168)
 
-[node name="enemy_11" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(121, -72)
-rotation = 1.5708
+[node name="enemy_right2" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1995, 217)
 
-[node name="enemy_12" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(220, -70)
-rotation = 1.5708
+[node name="enemy_right3" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1993, 311)
 
-[node name="enemy_13" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(319, -76)
-rotation = 1.5708
+[node name="enemy_right4" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1993, 406)
 
-[node name="enemy_14" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(413, -76)
-rotation = 1.5708
+[node name="enemy_right5" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1997, 459)
 
-[node name="enemy_15" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(507, -72)
-rotation = 1.5708
+[node name="enemy_right6" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1997, 749)
 
-[node name="enemy_16" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(606, -70)
-rotation = 1.5708
+[node name="enemy_right7" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1989, 842)
 
-[node name="enemy_17" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(703, -72)
-rotation = 1.5708
+[node name="enemy_right8" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1993, 889)
 
-[node name="enemy_18" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(797, -72)
-rotation = 1.5708
+[node name="enemy_right9" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1993, 989)
 
-[node name="enemy_19" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1039, -76)
-rotation = 1.5708
+[node name="enemy_right10" parent="." instance=ExtResource("10_dpfc7")]
+position = Vector2(1995, 1080)
 
-[node name="enemy_20" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1134, -81)
-rotation = 1.5708
+[node name="enemy_top1" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(30, -72)
 
-[node name="enemy_21" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1226, -85)
-rotation = 1.5708
+[node name="enemy_top2" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(126, -78)
 
-[node name="enemy_22" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1320, -81)
-rotation = 1.5708
+[node name="enemy_top3" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(217, -70)
 
-[node name="enemy_23" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1421, -85)
-rotation = 1.5708
+[node name="enemy_top4" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(313, -74)
 
-[node name="enemy_24" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1520, -85)
-rotation = 1.5708
+[node name="enemy_top5" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(408, -76)
 
-[node name="enemy_25" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1996, 173)
-rotation = 3.14159
+[node name="enemy_top6" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(508, -72)
 
-[node name="enemy_26" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1994, 225)
-rotation = 3.14159
+[node name="enemy_top7" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(602, -70)
 
-[node name="enemy_27" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1998, 314)
-rotation = 3.14159
+[node name="enemy_top8" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(702, -76)
 
-[node name="enemy_28" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2003, 415)
-rotation = 3.14159
+[node name="enemy_top9" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(791, -72)
 
-[node name="enemy_29" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2000, 460)
-rotation = 3.14159
+[node name="enemy_top10" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(1036, -74)
 
-[node name="enemy_30" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2001, 748)
-rotation = 3.14159
+[node name="enemy_top11" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(1131, -74)
 
-[node name="enemy_31" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2009, 846)
-rotation = 3.14159
+[node name="enemy_top12" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(1227, -74)
 
-[node name="enemy_32" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2009, 896)
-rotation = 3.14159
+[node name="enemy_top13" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(1325, -76)
 
-[node name="enemy_33" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2000, 990)
-rotation = 3.14159
+[node name="enemy_top14" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(1417, -74)
 
-[node name="enemy_34" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(2000, 1087)
-rotation = 3.14159
+[node name="enemy_top15" parent="." instance=ExtResource("11_jvsgj")]
+position = Vector2(1518, -74)
 
-[node name="enemy_35" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1899, 1186)
-rotation = 4.62512
+[node name="enemy_bottom1" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(262, 1176)
 
-[node name="enemy_36" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1800, 1184)
-rotation = 4.62512
+[node name="enemy_bottom2" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(362, 1182)
 
-[node name="enemy_37" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1708, 1184)
-rotation = 4.62512
+[node name="enemy_bottom3" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(455, 1176)
 
-[node name="enemy_38" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1609, 1182)
-rotation = 4.62512
+[node name="enemy_bottom4" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(553, 1178)
 
-[node name="enemy_39" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1520, 1182)
-rotation = 4.62512
+[node name="enemy_bottom5" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(643, 1180)
 
-[node name="enemy_40" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1416, 1179)
-rotation = 4.62512
+[node name="enemy_bottom6" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(740, 1182)
 
-[node name="enemy_41" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1320, 1188)
-rotation = 4.62512
+[node name="enemy_bottom7" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(842, 1180)
 
-[node name="enemy_42" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1228, 1182)
-rotation = 4.62512
+[node name="enemy_bottom8" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1130, 1182)
 
-[node name="enemy_43" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(1129, 1184)
-rotation = 4.62512
+[node name="enemy_bottom9" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1225, 1184)
 
-[node name="enemy_44" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(839, 1190)
-rotation = 4.62512
+[node name="enemy_bottom10" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1319, 1180)
 
-[node name="enemy_45" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(743, 1193)
-rotation = 4.62512
+[node name="enemy_bottom11" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1414, 1180)
 
-[node name="enemy_46" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(649, 1182)
-rotation = 4.62512
+[node name="enemy_bottom12" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1510, 1178)
 
-[node name="enemy_47" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(550, 1186)
-rotation = 4.62512
+[node name="enemy_bottom13" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1608, 1180)
 
-[node name="enemy_48" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(451, 1184)
-rotation = 4.62512
+[node name="enemy_bottom14" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1706, 1182)
 
-[node name="enemy_49" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(361, 1188)
-rotation = 4.62512
+[node name="enemy_bottom15" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1802, 1178)
 
-[node name="enemy_50" parent="." instance=ExtResource("9_rvbf3")]
-position = Vector2(256, 1184)
-rotation = 4.62512
+[node name="enemy_bottom16" parent="." instance=ExtResource("12_jmjqr")]
+position = Vector2(1895, 1176)
