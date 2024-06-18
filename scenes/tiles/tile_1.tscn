@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvglxb50cxyma"]
+[gd_scene load_steps=20 format=3 uid="uid://cvglxb50cxyma"]
 
 [ext_resource type="Texture2D" uid="uid://l2clttpbtjl4" path="res://resources/assets/tilesets/tile1/mainlevbuild.png" id="1_g6h6m"]
 [ext_resource type="Texture2D" uid="uid://b24akeymjfrvb" path="res://resources/assets/tilesets/tile1/decorative.png" id="2_0efgf"]
@@ -3752,6 +3752,12 @@ sources/2 = SubResource("TileSetAtlasSource_ni55d")
 sources/3 = SubResource("TileSetAtlasSource_o4qbg")
 sources/4 = SubResource("TileSetAtlasSource_cf3yp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnsgr"]
+size = Vector2(2130.51, 184.98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps0x1"]
+size = Vector2(204, 258)
+
 [node name="tile1" type="Node2D"]
 process_mode = 1
 
@@ -3779,10 +3785,10 @@ visible = false
 polygon = PackedVector2Array(0, 2, 834, 4, 834, -104, 986, -106, 988, 6, 1921, -3, 1914, 544, 2016, 550, 2012, 697, 1923, 705, 1921, 1085, 1035, 1080, 1041, 1192, 880, 1190, 882, 1076, -9, 1085, 0, 700, -96, 704, -90, 546, -2, 544, -1, 26, -127, 16, -192, 167, -211, 418, -177, 615, -216, 934, -188, 1064, 231, 1360, 703, 1289, 977, 1311, 1256, 1326, 1571, 1238, 2227, 1313, 2164, 936, 2100, 700, 2083, 477, 2057, 328, 2072, 141, 2077, -3, 2074, -93, 2038, -222, 1764, -203, 1341, -180, 1090, -182, 922, -201, 745, -229, 643, -212, 235, -252, 20, -190, -35, -123, -73, -80)
 
 [node name="Player" parent="." instance=ExtResource("5_xbkiy")]
-position = Vector2(1734, 331)
+position = Vector2(1456, 899)
 
 [node name="ItemActionable" parent="." instance=ExtResource("6_mhbai")]
-position = Vector2(975, 474)
+position = Vector2(1069, 408)
 json_data_file = "res://resources/data/items/white_flag.json"
 
 [node name="remy" parent="." instance=ExtResource("7_kjfi8")]
@@ -3816,3 +3822,20 @@ position = Vector2(2094, 89)
 
 [node name="enemy_bottom" parent="." instance=ExtResource("12_jmjqr")]
 position = Vector2(1905, 1324)
+
+[node name="Area2D_deads" type="Area2D" parent="."]
+position = Vector2(1024, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_deads"]
+visible = false
+position = Vector2(-38, 24)
+rotation = 2.61799
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wnsgr")
+
+[node name="Area2D_remy" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_remy"]
+visible = false
+position = Vector2(1563, 673)
+shape = SubResource("RectangleShape2D_ps0x1")
