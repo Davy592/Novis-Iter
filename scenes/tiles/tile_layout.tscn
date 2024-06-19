@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dygc6aaoxnv3y"]
+[gd_scene load_steps=8 format=3 uid="uid://dygc6aaoxnv3y"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_0mutm"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="5_gberc"]
+[ext_resource type="Resource" path="res://timelines/quests/sample_quest.dtl" id="5_un6cb"]
 [ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="5_xqsdq"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="7_pg6wh"]
 
@@ -223,4 +224,5 @@ side = 3
 [node name="NPC" type="Node" parent="."]
 
 [node name="SampleNPC" parent="NPC" instance=ExtResource("5_xqsdq")]
-position = Vector2(784, 461)
+position = Vector2(690, 439)
+dialogue_file = ExtResource("5_un6cb")
