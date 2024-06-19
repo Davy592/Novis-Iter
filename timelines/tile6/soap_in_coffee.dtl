@@ -1,0 +1,8 @@
+Sembra che al padrone di casa piaccia il caffè.
+if {Global.inventory.contains('Saponetta')}:
+	- Metti la saponetta nel caffè
+		Di sicuro avrà un sapore terribile!
+		set {tile6_soap_in_coffee} = true
+		[signal arg="soap"]
+	- Annulla
+		Nessuno vorrebbe bersi del sapone liquido!

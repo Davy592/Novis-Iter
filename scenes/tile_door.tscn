@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctgsd55d34bjh"]
 
-[ext_resource type="Script" path="res://scripts/tile_door.gd" id="1_flbsg"]
+[ext_resource type="Script" path="res://scripts/utils/tile_door.gd" id="1_flbsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buwph"]
 size = Vector2(27, 156)

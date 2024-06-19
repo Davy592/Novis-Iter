@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="6_0wd60"]
 [ext_resource type="PackedScene" uid="uid://kw7dld2v6x0f" path="res://scenes/ui/map_editor.tscn" id="6_py1r7"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ultgg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

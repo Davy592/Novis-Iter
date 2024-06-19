@@ -3,13 +3,13 @@
 	"scene": "res://scenes/tiles/tile6.tscn",
 	"texture": "res://",
 	"description": "La casa di una strana creatura.",
-	"default_entry_point": [0, 0],
-	"top_entry_point": null,
-	"right_entry_point": [-150, 177],
-	"bottom_entry_point": null,
-	"left_entry_point": null,
-	"cam_top_limit": -960,
-	"cam_right_limit": 1821,
-	"cam_bottom_limit": 1763,
-	"cam_left_limit": -320
+	"default_entry_point": [1044, 2089],
+	"top_entry_point": [1044, 2089],
+	"right_entry_point": [1044, 2089],
+	"bottom_entry_point": [1044, 2089],
+	"left_entry_point": [1044, 2089],
+	"cam_top_limit": -10000000,
+	"cam_right_limit": 10000000,
+	"cam_bottom_limit": 10000000,
+	"cam_left_limit": -10000000
 }

@@ -23,10 +23,23 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"bird_creature": "res://timelines/tile6/bird_creature.dch",
 "pippo": "res://timelines/pippo.dch"
 }
 directories/dtl_directory={
-"prova": "res://timelines/prova.dtl"
+"bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
+"bird_quest_dialogue": "res://timelines/tile6/bird_quest_dialogue.dtl",
+"bird_see_book": "res://timelines/tile6/bird_see_book.dtl",
+"bird_see_no_fish": "res://timelines/tile6/bird_see_no_fish.dtl",
+"bird_see_player": "res://timelines/tile6/bird_see_player.dtl",
+"change_music": "res://timelines/tile6/change_music.dtl",
+"entry_dialogue": "res://timelines/tile6/entry_dialogue.dtl",
+"exit": "res://timelines/tile6/exit.dtl",
+"final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
+"prova": "res://timelines/prova.dtl",
+"soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
+"throw_fish": "res://timelines/tile6/throw_fish.dtl",
+"write_book": "res://timelines/tile6/write_book.dtl"
 }
 layout/style_list=[]
 layout/default_style=""
@@ -48,7 +61,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
-"scelta": false
+"tile6_book_written": false,
+"tile6_soap_in_coffee": false
 }
 glossary/default_case_sensitive=true
 
