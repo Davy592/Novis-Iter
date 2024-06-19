@@ -3,6 +3,7 @@ extends Control
 @onready var grid = $MarginContainer/VBoxContainer/Content/ScrollContainer/GridContainer
 @onready var inventory_slot_scene = preload("res://scenes/ui/inventory_slot.tscn")
 var selectioned_slot
+signal stop_battle
 
 # OVERRIDES
 
@@ -62,6 +63,10 @@ func _on_inventory_slot_pressed():
 
 func _on_use_button_pressed():
 	print("Item usato")
+	var slot = get_viewport().gui_get_focus_owner().get_parent().get_parent()
+	if slot.item.get_name() == "flag":
+		Dialogic.VAR.battle = false
+		emit_signal("stop_battle")
 
 func _on_cancel_button_pressed():
 	$MarginContainer/CenterContainer.visible = false
