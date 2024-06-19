@@ -62,14 +62,11 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
 "tile6_book_written": false,
-"tile6_soap_in_coffee": false
+"tile6_soap_in_coffee": false,
+"accepted": false,
+"scelta": false
 }
 glossary/default_case_sensitive=true
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 
 [dotnet]
 
