@@ -19,7 +19,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lkj8l")
 }],
 "loop": true,
-"name": &"bullet_explotion",
+"name": &"bullet_explosion",
 "speed": 5.0
 }, {
 "frames": [{
@@ -49,3 +49,4 @@ animation = &"bullet_idle"
 shape = SubResource("CapsuleShape2D_vygmf")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
