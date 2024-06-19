@@ -31,3 +31,6 @@ func fire_bullet():
 	var bullet_b = bullet_bottom_scene.instantiate()
 	bullet_b.position = self.position
 	get_parent().add_child(bullet_b)
+
+func _on_inventory_ui_stop_battle():
+	bullet_bottom_scene.queue_free()
