@@ -19,14 +19,20 @@ func _init():
 
 ## Utile per verificare il completamento di una quest tra quelle presenti
 func update_quests():
+	var current_quest = null
+	
 	for i in range(0, quests_in_progress.size()):
-		quests_in_progress[i].check_completed()
+		current_quest = quests_in_progress[i]
+		current_quest.update()
 		
-		if quests_in_progress[i].stage == 100:
+		if current_quest.stage == 100 and !current_quest.is_completed:
 			complete_quest(i)
 
 func complete_quest(index: int):
 	emit_signal("quest_completed", quests_in_progress[index].title)
+	
+	quests_in_progress[index].is_completed = true
+	Global.inventory.add(quests_in_progress[index].reward_item)
 	
 	completed_quests.append(quests_in_progress[index])
 	quests_in_progress.remove_at(index)
@@ -53,6 +59,10 @@ func get_current_stage(id: int):
 			stage = completed_quests[index].stage
 	
 	Dialogic.VAR.current_stage = stage
+	Dialogic.VAR.scelta = false
+		
+	if stage > 0:
+		Dialogic.VAR.scelta = true
 
 #region: Search
 func get_quest(id: int) -> int:
