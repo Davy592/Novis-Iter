@@ -39,5 +39,5 @@ func init_item(json_item_file: String, quantity: int) -> Item:
 	item_data['texture'] = load(item_data['texture'])
 	return Item.new(item_data)
 
-func update():
+func update(item_name: String):
 	pass

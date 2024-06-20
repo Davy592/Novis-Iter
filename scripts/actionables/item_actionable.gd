@@ -19,6 +19,6 @@ func _ready():
 
 ## Aggiunge l'item all'inventario e aggiorna le quest interessate.
 func action() -> void:
-	Global.inventory.add(item)
-	Global.quest_handler.update_quests()
+	Global.inventory.add(item, 1)
+	Global.quest_handler.update_quests(item.name)
 	self.queue_free()

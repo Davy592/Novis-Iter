@@ -2,7 +2,7 @@ class_name Item
 
 var name : String
 var description : String
-var quantity : int
+var quantity
 var type
 var effect
 var texture: Texture
@@ -29,3 +29,9 @@ func get_quantity():
 
 func increment_quantity(n):
 	quantity += n
+
+func decrement_quantity(n):
+	if n < quantity:
+		quantity -= n
+	else: 
+		quantity = 0

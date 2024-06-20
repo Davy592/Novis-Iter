@@ -196,7 +196,7 @@ polygon = PackedVector2Array(0, 0, 548, 0, 547, -165, 700, -164, 702, 1, 1920, 0
 [node name="Actionables" type="Node" parent="."]
 
 [node name="ItemActionable" parent="Actionables" instance=ExtResource("7_pg6wh")]
-position = Vector2(1348, 779)
+position = Vector2(1277, 816)
 json_data_file = "res://resources/data/items/potion.json"
 
 [node name="ItemActionable2" parent="Actionables" instance=ExtResource("7_pg6wh")]
@@ -204,7 +204,7 @@ position = Vector2(701, 834)
 json_data_file = "res://resources/data/items/potion.json"
 
 [node name="ItemActionable3" parent="Actionables" instance=ExtResource("7_pg6wh")]
-position = Vector2(1370, 189)
+position = Vector2(1435, 245)
 json_data_file = "res://resources/data/items/potion.json"
 
 [node name="TileDoors" type="Node" parent="."]

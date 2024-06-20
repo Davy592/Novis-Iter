@@ -18,12 +18,12 @@ func _init():
 	completed_quests = []
 
 ## Utile per verificare il completamento di una quest tra quelle presenti
-func update_quests():
+func update_quests(item_name: String):
 	var current_quest = null
 	
 	for i in range(0, quests_in_progress.size()):
 		current_quest = quests_in_progress[i]
-		current_quest.update()
+		current_quest.update(item_name)
 		
 		if current_quest.stage == 100 and !current_quest.is_completed:
 			complete_quest(i)
@@ -32,10 +32,19 @@ func complete_quest(index: int):
 	emit_signal("quest_completed", quests_in_progress[index].title)
 	
 	quests_in_progress[index].is_completed = true
-	Global.inventory.add(quests_in_progress[index].reward_item)
-	
 	completed_quests.append(quests_in_progress[index])
 	quests_in_progress.remove_at(index)
+	
+	Global.inventory.add(
+		completed_quests.back().reward_item, 
+		completed_quests.back().reward_item.quantity
+	)
+	
+	if completed_quests.back() is ItemQuest:
+		Global.inventory.remove(
+			completed_quests.back().item_to_collect, 
+			completed_quests.back().item_to_collect.quantity
+		)
 
 func set_current_stage(id: int, amount: int):
 	var index: int = get_quest(id)
@@ -43,7 +52,7 @@ func set_current_stage(id: int, amount: int):
 	if index != NO_ELEMENT_INDEX:
 		Dialogic.VAR.current_stage = amount
 		quests_in_progress[index].stage = amount
-		
+
 		if quests_in_progress[index].stage == 100:
 			complete_quest(index)
 
@@ -60,7 +69,7 @@ func get_current_stage(id: int):
 	
 	Dialogic.VAR.current_stage = stage
 	Dialogic.VAR.scelta = false
-		
+	
 	if stage > 0:
 		Dialogic.VAR.scelta = true
 

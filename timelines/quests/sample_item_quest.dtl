@@ -1,24 +1,24 @@
 [signal arg_type="dict" arg="{"start":"2"}"]
 do Global.get_current_stage(2.0)
 if {scelta} == false:
-	Ciao. Puoi raccogliermi 3 pozioni?
+	Ciao. Mi servirebbero 3 pozioni. Potresti recuperarmele?
 	- Si
-		set {scelta} = true
-	- No
-		set {scelta} = false
-	if {scelta} == true:
 		Fantastico!!
-		[signal arg_type="dict" arg="{"accepted":"2"}"]
+		set {scelta} = true
 		do Global.set_current_stage(2.0, 10.0)
+		[signal arg_type="dict" arg="{"":"","accepted":"2"}"]
+	- No
+		else:
+			Ok. Nessun problema.
 else:
-	Stage\: {current_stage}
-	Allora? Hai portato ció che cercavo?
-	if {current_stage} == 100:
+	Allora? Hai portato le pozioni che ti ho chiesto?
+	if {current_stage} == 90:
 		- Si
-			Meravigliosooo!! Grazie!!
+			Meraviglioso, graziee!!
+			do Global.set_current_stage(2.0, 100.0)
 		- No
-			Okay. Nessun problema.
+			Ok. Nessun problema
 	else:
 		- No
-			Okay. Nessun problema.
+			Ok. Nessun problema
 [signal arg_type="dict" arg="{"end":"2"}"]

@@ -1,21 +1,21 @@
 extends CharacterBody2D
 
 #region: Variables
-const speed : int = 100
+const speed: int = 100
 var current_state = IDLE
 
-var state : String = "idle"
-var direction : String = "front"
-var dir : Vector2 = Vector2.RIGHT
-var start_pos : Vector2
+var state: String = "idle"
+var direction: String = "front"
+var dir: Vector2 = Vector2.RIGHT
+var start_pos: Vector2
 
 # Stati di movimento
-@export var walk_radius : int = 200 
-var is_chatting : bool = false
+@export var walk_radius: int = 200 
+var is_chatting: bool = false
 
 # Quest
 @export_file("*.json") var json_quest_file
-var quest : Quest
+var quest: Quest
 
 # Dialogo (sincronizzato con DialogueActionable)
 @export var dialogue_file: DialogicTimeline:
@@ -145,7 +145,11 @@ func _on_dialogic_signal(argument: Dictionary):
 		if quest.id == id:
 			if key == "start" or key == "end":
 				is_chatting = (key == "start")
-			elif key == "accepted":
+			elif key == "accepted":					
 				Global.quest_handler.add(quest)
+				
+				# Controlla che l'item desiderato sia giá nell'inventario
+				if quest is ItemQuest:
+					quest.init_collected_items()
 #endregion
 

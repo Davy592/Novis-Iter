@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="6_0wd60"]
 [ext_resource type="PackedScene" uid="uid://0tqdlya5hcjx" path="res://scenes/ui/quest_completed.tscn" id="6_nt8um"]
 [ext_resource type="PackedScene" uid="uid://kw7dld2v6x0f" path="res://scenes/ui/map_editor.tscn" id="6_py1r7"]
-[ext_resource type="Script" path="res://scripts/ui/quest_completed_ui.gd" id="7_kd11u"]
+[ext_resource type="PackedScene" uid="uid://ciikokvaol8s0" path="res://scenes/ui/item_obtained.tscn" id="7_s1vlw"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ultgg")
@@ -31,7 +31,9 @@ visible = false
 
 [node name="QuestCompletedUI" parent="CanvasLayer" instance=ExtResource("6_nt8um")]
 visible = false
-script = ExtResource("7_kd11u")
+
+[node name="ItemObtainedUI" parent="CanvasLayer" instance=ExtResource("7_s1vlw")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("6_0wd60")]
 
