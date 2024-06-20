@@ -1,26 +1,24 @@
-[signal arg_type="dict" arg="{"start":"1"}"]
+[signal arg_type="dict" arg="{"":"","start":"1"}"]
 do Global.get_current_stage(1.0)
-if {current_stage} < 100:
-	Ciao, questo é un discorso di prova.
-	Niente paura. Sono qui per verificare le quest siano funzionanti. Sei pronto?
+if {scelta} == false:
+	Ciao. Come stai?
+	Non aver paura. Sono qui per controllare che le quest funzionino correttamente. Sei pronto?
 	- Si
 		set {scelta} = true
+		Ottimo. Quest accettata!!
 		[signal arg_type="dict" arg="{"accepted":"1"}"]
-		Fantastico!!
-	- No
-		set {scelta} = false
-		Nessun problema
-	if {scelta} == true:
-		set {scelta} = false
+		Ora imposteró il tuo stage a 50.
 		do Global.set_current_stage(1.0, 50.0)
-		Allora, ho impostato il tuo stato a {current_stage}, rispondi a questa domanda e arrivi a 100. Sei pronto a finire la quest?
-		- Prontissimo!!
-			set {scelta} = true
-		- Non cosi tanto
-			set {scelta} = false
-		if {scelta} == true:
+	- No
+		Nessun problema. Ti aspetto
+if {scelta} == true:
+	if {current_stage} < 100:
+		Il tuo stage é ora a {current_stage}. Sei pronto a completare la quest?
+		- Si
+			Quest completata. Bravo!!
 			do Global.set_current_stage(1.0, 100.0)
-			Congratulazioni!!! Hai vinto
-else:
-	Discorso con stage = 100. Bravooo!!!
-[signal arg_type="dict" arg="{"end":"1"}"]
+		- No
+			Nessun problema. Ti aspetto.
+	else:
+		Discorso dei 100. Complimenti!!
+[signal arg_type="dict" arg="{"":"","end":"1"}"]

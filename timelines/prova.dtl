@@ -1,4 +1,3 @@
-[signal arg="chat_started"]
 pippo: Ciao, questo è un dialogo di prova. Come Stai? {scelta}
 - Male
 	set {scelta} = false
@@ -9,4 +8,3 @@ if {scelta}:
 else:
 	pippo: Spero che tu muoia. Suca. {scelta}
 pippo: Byee
-[signal arg="chat_ended"]
