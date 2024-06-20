@@ -1,8 +1,8 @@
 class_name Item
 
-var name
-var description
-var quantity
+var name : String
+var description : String
+var quantity : int
 var type
 var effect
 var texture: Texture

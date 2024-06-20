@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dygc6aaoxnv3y"]
+[gd_scene load_steps=9 format=3 uid="uid://dygc6aaoxnv3y"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_0mutm"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="5_gberc"]
 [ext_resource type="Resource" path="res://timelines/quests/sample_quest.dtl" id="5_un6cb"]
 [ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="5_xqsdq"]
+[ext_resource type="Resource" path="res://timelines/quests/sample_item_quest.dtl" id="6_ur738"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="7_pg6wh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvopr"]
@@ -195,11 +196,15 @@ polygon = PackedVector2Array(0, 0, 548, 0, 547, -165, 700, -164, 702, 1, 1920, 0
 [node name="Actionables" type="Node" parent="."]
 
 [node name="ItemActionable" parent="Actionables" instance=ExtResource("7_pg6wh")]
-position = Vector2(958, 507)
+position = Vector2(1348, 779)
 json_data_file = "res://resources/data/items/potion.json"
 
 [node name="ItemActionable2" parent="Actionables" instance=ExtResource("7_pg6wh")]
-position = Vector2(859, 687)
+position = Vector2(701, 834)
+json_data_file = "res://resources/data/items/potion.json"
+
+[node name="ItemActionable3" parent="Actionables" instance=ExtResource("7_pg6wh")]
+position = Vector2(1370, 189)
 json_data_file = "res://resources/data/items/potion.json"
 
 [node name="TileDoors" type="Node" parent="."]
@@ -225,4 +230,10 @@ side = 3
 
 [node name="SampleNPC" parent="NPC" instance=ExtResource("5_xqsdq")]
 position = Vector2(690, 439)
+json_quest_file = "res://resources/data/quests/default_quest_sample.json"
 dialogue_file = ExtResource("5_un6cb")
+
+[node name="SampleItemNPC" parent="NPC" instance=ExtResource("5_xqsdq")]
+position = Vector2(362, 787)
+json_quest_file = "res://resources/data/quests/item_quest_sample.json"
+dialogue_file = ExtResource("6_ur738")

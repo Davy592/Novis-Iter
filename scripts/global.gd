@@ -1,5 +1,6 @@
 extends Node
 
+var quest_handler: QuestHandler = QuestHandler.new()
 var inventory: Inventory = Inventory.new()
 var current_tile_map_node_id: int
 var tiles_inventory: TilesInventory = TilesInventory.new()
@@ -31,6 +32,13 @@ func change_current_tile(tile: TileInfo, side, id):
 	camera.limit_bottom = tile.get_cam_bottom_limit()
 	camera.limit_left = tile.get_cam_left_limit()
 
+# Utilizzato per impostare e recuperare lo stato
+# corrente della quest dell'NPC con cui si sta parlando
+func set_current_stage(id: int, amount: int):
+	quest_handler.set_current_stage(id, amount)
+
+func get_current_stage(id: int):
+	quest_handler.get_current_stage(id)
 
 #func connect_current_tile_signals():
 	#var player_node = get_tree().get_root().get_node('Main/Player') #Main/CurrentTile/

@@ -21,7 +21,7 @@ var reward_item : Item:
 	get: return reward_item
 #endregion
 
-# Called when the node enters the scene tree for the first time.
+## Inizializza la quest e l'item dato come ricompensa
 func _init(data):
 	id = data['id']
 	title = data['title']
@@ -29,15 +29,15 @@ func _init(data):
 	stage = 0
 	is_completed = false
 	
-	init_item(data['reward_item_file'], data['reward_item_quantity'])
+	reward_item = init_item(data['reward_item_file'], data['reward_item_quantity'])
 	
-func init_item(json_item_file: String, quantity: int):
+func init_item(json_item_file: String, quantity: int) -> Item:
 	var json_as_text = FileAccess.get_file_as_string(json_item_file)
 	var item_data = JSON.parse_string(json_as_text)
 	
 	item_data['quantity'] = quantity
 	item_data['texture'] = load(item_data['texture'])
-	reward_item = Item.new(item_data)
+	return Item.new(item_data)
 
-func check_completed() -> bool:
-	return false
+func update():
+	pass

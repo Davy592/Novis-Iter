@@ -18,7 +18,7 @@ func _ready():
 		$Sprite2D.texture = item_data['texture']
 
 ## Aggiunge l'item all'inventario e aggiorna le quest interessate.
-func action():
+func action() -> void:
 	Global.inventory.add(item)
 	Global.quest_handler.update_quests()
 	self.queue_free()
