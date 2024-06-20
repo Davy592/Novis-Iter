@@ -1,0 +1,9 @@
+{
+	"id": 2,
+	"title": "Raccogli le pozioni",
+	"description": "Completa lo script",
+	"collect_item_file": "res://resources/data/items/potion.json",
+	"collect_item_quantity": 3,
+	"reward_item_file": "res://resources/data/items/potion.json",
+	"reward_item_quantity": 6
+}
