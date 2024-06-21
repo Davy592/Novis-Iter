@@ -6,4 +6,4 @@ extends Area2D
 	get: return dialogue_resource
 
 func action() -> void:
-	Dialogic.start(dialogue_resource)
+	Global.dialogue_manager.start_dialogue(dialogue_resource)
