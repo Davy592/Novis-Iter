@@ -7,7 +7,7 @@ func _ready():
 	current_tile.set_name('CurrentTile')
 	add_child(current_tile)
 	$CanvasLayer/MapEditor.render()
-	$Player.z_index = 100
+	#$Player.z_index = 100
 	$Player.position = tile_info.get_default_entry_point()
 	Global.current_map_node_updated.connect($CanvasLayer/MapEditor._on_current_map_node_updated)
 	

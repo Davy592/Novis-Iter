@@ -1,19 +1,32 @@
 class_name Item
 
+<<<<<<< HEAD
 var name : String
 var description : String
 var quantity
 var type
 var effect
+=======
+var id: String
+var name: String
+var description: String
+var quantity: int
+#var type: String
+#var effect: String
+>>>>>>> 477632daca9566ad8fe7a2eef88853d17bd776ad
 var texture: Texture
 
 func _init(dict):
+	name = dict['id']
 	name = dict['name']
 	description = dict['description']
 	quantity = dict['quantity']
-	type = dict['type']
-	effect = dict['effect']
+	#type = dict['type']
+	#effect = dict['effect']
 	texture = dict['texture']
+
+func get_id():
+	return id
 
 func get_name():
 	return name

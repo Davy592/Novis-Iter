@@ -37,8 +37,11 @@ directories/dtl_directory={
 "exit": "res://timelines/tile6/exit.dtl",
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
 "prova": "res://timelines/prova.dtl",
+<<<<<<< HEAD
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
+=======
+>>>>>>> 477632daca9566ad8fe7a2eef88853d17bd776ad
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
 "write_book": "res://timelines/tile6/write_book.dtl"
@@ -63,6 +66,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"tile6_book_written": false,
+"tile6_soap_in_coffee": false,
 "accepted": false,
 "current_stage": 0,
 "scelta": false,

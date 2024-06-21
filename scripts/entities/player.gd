@@ -33,7 +33,7 @@ func _physics_process(delta):
 			var axis = get_input_axis()
 			apply_movement(axis)
 			move_and_slide()
-			play_animation()
+	play_animation()
 
 ## Questa funzione gestisce l'input dell'utente 
 ## durante lo stato di movimento (MOVE)
@@ -107,6 +107,7 @@ func play_animation() -> void:
 #region: Signals reactions
 func _on_timeline_started():
 	state = INTERACTING
+	move = 'idle'
 
 func _on_timeline_ended():
 	state = MOVE
