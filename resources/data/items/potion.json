@@ -1,10 +1,6 @@
 {
 	"id": "ran_1",
-<<<<<<< HEAD
 	"name": "Potion",
-=======
-	"name": "potion",
->>>>>>> 477632daca9566ad8fe7a2eef88853d17bd776ad
 	"type": "magic",
 	"effect": "heal",
 	"description": "Pozione magica figa!",

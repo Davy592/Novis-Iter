@@ -11,19 +11,20 @@ func _ready():
 	timer = $Timer
 	
 func _on_item_obtained(type: int, item_name: String, quantity: int):
-	if type == 0:
-		if visible:
-			label.text += "\n" + item_name + " - " + str(quantity)
+	if quantity != 0:
+		if type == 0:
+			if visible:
+				label.text += "\n" + item_name + " - " + str(quantity)
+			else:
+				label.text = item_name + " - " + str(quantity)
 		else:
-			label.text = item_name + " - " + str(quantity)
-	else:
-		if visible:
-			label.text += "\n" + item_name + " + " + str(quantity)
-		else:	
-			label.text += item_name+ " + " + str(quantity)
+			if visible:
+				label.text += "\n" + item_name + " + " + str(quantity)
+			else:	
+				label.text += item_name+ " + " + str(quantity)
 	
-	visible = true
-	timer.start()
+		visible = true
+		timer.start()
 
 func _on_timer_timeout():
 	visible = false

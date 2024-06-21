@@ -41,15 +41,15 @@ func complete_quest(index: int):
 	)
 	
 	if completed_quests.back() is ItemQuest:
-		Global.inventory.remove(
-			completed_quests.back().item_to_collect, 
+		Global.inventory.remove_by_name(
+			completed_quests.back().item_to_collect.name, 
 			completed_quests.back().item_to_collect.quantity
 		)
 
 func set_current_stage(id: int, amount: int):
 	var index: int = get_quest(id)
-	
-	if index != NO_ELEMENT_INDEX:
+
+	if index != NO_ELEMENT_INDEX and quests_in_progress[index].stage < amount:
 		Dialogic.VAR.current_stage = amount
 		quests_in_progress[index].stage = amount
 

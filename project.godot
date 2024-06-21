@@ -63,8 +63,6 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
-"tile6_book_written": false,
-"tile6_soap_in_coffee": false,
 "accepted": false,
 "current_stage": 0,
 "scelta": false,

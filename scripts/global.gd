@@ -34,7 +34,6 @@ func change_current_tile(tile: TileInfo, side, id):
 	camera.limit_bottom = tile.get_cam_bottom_limit()
 	camera.limit_left = tile.get_cam_left_limit()
 
-<<<<<<< HEAD
 # Utilizzato per impostare e recuperare lo stato
 # corrente della quest dell'NPC con cui si sta parlando
 func set_current_stage(id: int, amount: int):
@@ -43,8 +42,6 @@ func set_current_stage(id: int, amount: int):
 func get_current_stage(id: int):
 	quest_handler.get_current_stage(id)
 
-=======
->>>>>>> 477632daca9566ad8fe7a2eef88853d17bd776ad
 #func add_item_by_json_path(path):
 	#var file = FileAccess.open(path, FileAccess.READ)
 	#var json_as_text = file.get_as_text()

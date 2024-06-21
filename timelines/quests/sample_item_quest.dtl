@@ -5,8 +5,8 @@ if {scelta} == false:
 	- Si
 		Fantastico!!
 		set {scelta} = true
+		[signal arg_type="dict" arg="{"accepted":"2"}"]
 		do Global.set_current_stage(2.0, 10.0)
-		[signal arg_type="dict" arg="{"":"","accepted":"2"}"]
 	- No
 		else:
 			Ok. Nessun problema.
