@@ -1,0 +1,7 @@
+Sembra essere un diario personale con accanto un contenitore con delle penne.
+Vuoi scrivere qualcosa sul diario?
+- Scrivi sopra al diario
+	Hai scarabocchiato sul diario personale. Di sicuro, quest'azione, non verrà presa bene!
+	set {tile6_book_written} = true
+- Non scrivere sopra al diario
+	Mai toccare un diario personale!

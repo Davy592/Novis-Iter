@@ -5,12 +5,14 @@ var inventory: Inventory = Inventory.new()
 var current_tile_map_node_id: int
 var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
+var dialogue_manager: DialogueManager = DialogueManager.new()
 
 signal current_map_node_updated
 
 func _ready():
 	var current_tile_info = TileInfo.new("res://resources/data/tile.json")
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
+	Dialogic.timeline_ended.connect(dialogue_manager._on_timeline_ended)
 
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
@@ -39,6 +41,14 @@ func set_current_stage(id: int, amount: int):
 
 func get_current_stage(id: int):
 	quest_handler.get_current_stage(id)
+
+#func add_item_by_json_path(path):
+	#var file = FileAccess.open(path, FileAccess.READ)
+	#var json_as_text = file.get_as_text()
+	#var item_data = JSON.parse_string(json_as_text)
+	#item_data['quantity'] = 1
+	#item_data['texture'] = load(item_data['texture'])
+	#inventory.add(Item.new(item_data))
 
 #func connect_current_tile_signals():
 	#var player_node = get_tree().get_root().get_node('Main/Player') #Main/CurrentTile/

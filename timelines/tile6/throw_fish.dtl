@@ -1,0 +1,8 @@
+. . .
+Non serve spiegare cosa sia e a cosa serva.
+if {Global.inventory.contains('Pesce Rosso')}:
+	- Butta il pesce nel water
+		Per un attimo ti è sembrato che il pesce rosso ti stesse guardando con occhi tristi.
+		[signal arg="throw_fish"]
+	- Annulla
+		Chiunque piangerebbe per la perdita del proprio pesce rosso!

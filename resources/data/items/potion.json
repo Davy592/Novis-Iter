@@ -1,4 +1,5 @@
 {
+	"id": "ran_1",
 	"name": "Potion",
 	"type": "magic",
 	"effect": "heal",
