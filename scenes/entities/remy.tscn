@@ -1,6 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://br43hu6unncch"]
+[gd_scene load_steps=50 format=3 uid="uid://br43hu6unncch"]
 
 [ext_resource type="Texture2D" uid="uid://b6jpbnb3o87tb" path="res://resources/assets/sprites/remy/Idle.png" id="1_1orgi"]
+[ext_resource type="Script" path="res://scripts/entities/remy.gd" id="1_w4hfi"]
 [ext_resource type="Texture2D" uid="uid://c5sorhb0gl0xf" path="res://resources/assets/sprites/remy/Shoot.png" id="2_teu5h"]
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="2_wl1md"]
 [ext_resource type="Texture2D" uid="uid://blxaeqmrqeuo1" path="res://resources/assets/sprites/remy/Walk.png" id="3_ugu8w"]
@@ -357,6 +358,7 @@ size = Vector2(66.5, 51)
 
 [node name="remy" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_w4hfi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
