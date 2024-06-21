@@ -10,8 +10,7 @@ var item_script
 func _ready():
 	var script_path = "res://scripts/classes/item.gd"
 	var script_resource = load(script_path)
-	item_script = script_resource.new()
-	item_script.connect("stop_battle", Callable(self, "_on_item_stop_battle"))
+	script_resource.connect("stop_battle", Callable(self, "_on_item_stop_battle"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
