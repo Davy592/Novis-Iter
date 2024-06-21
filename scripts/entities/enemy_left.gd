@@ -5,11 +5,13 @@ var bullet_interval = 0.5
 var time_since_last_shot = 0.0
 var speed = 500
 var moving_top = true
+var item_script
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	var script_path = "res://scripts/classes/item.gd"
+	var script_resource = load(script_path)
+	item_script = script_resource.new()
+	item_script.connect("stop_battle", Callable(self, "_on_item_stop_battle"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
