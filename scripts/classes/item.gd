@@ -7,6 +7,8 @@ var type
 var effect
 var texture: Texture
 
+signal stop_battle
+
 func _init(dict):
 	name = dict['name']
 	description = dict['description']
@@ -29,3 +31,9 @@ func get_quantity():
 
 func increment_quantity(n):
 	quantity += n
+
+func use_item(name):
+	match name:
+		"flag":
+			Dialogic.VAR.battle = false
+			emit_signal("stop_battle")
