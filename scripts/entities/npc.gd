@@ -15,7 +15,7 @@ var is_chatting: bool = false
 
 # Quest
 @export_file("*.json") var json_quest_file
-var quest: Quest
+var quest: Quest = null
 
 # Dialogo (sincronizzato con DialogueActionable)
 @export var dialogue_file: DialogicTimeline:
@@ -36,7 +36,9 @@ enum {
 func _ready():
 	randomize()
 	start_pos = position
-	init_quest()
+	
+	if json_quest_file != null:
+		init_quest()
 	
 	# Connessione ai signal
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -62,7 +64,7 @@ func _process(delta):
 		
 	if is_chatting:
 		return
-	
+		
 	update_movement_state(delta)
 	
 ## Imposta la direzione e lo stato attuale dell'NPC
@@ -129,27 +131,28 @@ func _on_timer_timeout():
 func _on_dialogic_signal(argument: Dictionary):
 	var key = ""
 
-	# Determina quale chiave è presente nel dizionario
-	if argument.has("start"):
-		key = "start"
-	elif argument.has("accepted"):
-		key = "accepted"
-	elif argument.has("end"):
-		key = "end"
+	if quest != null:
+		# Determina quale chiave è presente nel dizionario
+		if argument.has("start"):
+			key = "start"
+		elif argument.has("accepted"):
+			key = "accepted"
+		elif argument.has("end"):
+			key = "end"
 
-	# Se una delle chiavi è stata trovata, 
-	# esegui l'azione corrispondente
-	if key != "":
-		var id = int(argument[key])
-		
-		if quest.id == id:
-			if key == "start" or key == "end":
-				is_chatting = (key == "start")
-				
-				if key == "end":
-					check_current_stage()
-			elif key == "accepted":					
-				Global.quest_handler.add(quest)
+		# Se una delle chiavi è stata trovata, 
+		# esegui l'azione corrispondente
+		if key != "":
+			var id = int(argument[key])
+			
+			if quest.id == id:
+				if key == "start" or key == "end":
+					is_chatting = (key == "start")
+					
+					if key == "end":
+						check_current_stage()
+				elif key == "accepted":					
+					Global.quest_handler.add(quest)
 				
 				# Controlla che l'item desiderato sia giá nell'inventario
 				if quest is ItemQuest:

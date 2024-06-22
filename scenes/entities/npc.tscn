@@ -568,7 +568,6 @@ radius = 61.2046
 [node name="NPC" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_rq0uw")
-json_quest_file = "res://resources/data/quests/quest1.json"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.75, 3.75)

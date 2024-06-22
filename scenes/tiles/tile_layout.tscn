@@ -229,7 +229,6 @@ rotation = 1.5708
 position = Vector2(1852, 477)
 side = 1
 
-<<<<<<< HEAD
 [node name="TileDoorBottom" parent="TileDoors" instance=ExtResource("5_gberc")]
 position = Vector2(947, 970)
 rotation = 1.5708
@@ -250,13 +249,3 @@ dialogue_file = ExtResource("5_un6cb")
 position = Vector2(362, 787)
 json_quest_file = "res://resources/data/quests/item_quest_sample.json"
 dialogue_file = ExtResource("6_ur738")
-
-[node name="SampleItemNPC2" parent="NPC" instance=ExtResource("5_xqsdq")]
-position = Vector2(362, 787)
-json_quest_file = "res://resources/data/quests/item_quest_sample.json"
-dialogue_file = ExtResource("6_ur738")
-=======
-[node name="TileDoor_di_layout2" parent="." instance=ExtResource("5_gberc")]
-position = Vector2(75, 527)
-side = 3
->>>>>>> 622ea6e58fa1735521c6f88da5cc27ffe52aba82
