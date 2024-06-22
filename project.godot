@@ -51,7 +51,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
 "accepted": false,
-"battle": false,
+"battle": true,
 "scelta": false
 }
 glossary/default_case_sensitive=true
