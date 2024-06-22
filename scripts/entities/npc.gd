@@ -13,6 +13,15 @@ var start_pos: Vector2
 @export var walk_radius: int = 200 
 var is_chatting: bool = false
 
+# AnimatedSprite
+@export var sprite_frames : SpriteFrames:
+	set(new_sprite_frames): 
+		if new_sprite_frames != null:
+			sprite_frames = new_sprite_frames
+			$AnimatedSprite2D.sprite_frames = new_sprite_frames
+	get: 
+		return $AnimatedSprite2D.sprite_frames
+
 # Quest
 @export_file("*.json") var json_quest_file
 var quest: Quest
@@ -20,8 +29,9 @@ var quest: Quest
 # Dialogo (sincronizzato con DialogueActionable)
 @export var dialogue_file: DialogicTimeline:
 	set(new_dialog):
-		dialogue_file = new_dialog
-		$DialogueActionable.dialogue_resource = new_dialog
+		if new_dialog != null:
+			dialogue_file = new_dialog
+			$DialogueActionable.dialogue_resource = new_dialog
 	get:
 		return $DialogueActionable.dialogue_resource
 
