@@ -249,3 +249,8 @@ dialogue_file = ExtResource("5_un6cb")
 position = Vector2(362, 787)
 json_quest_file = "res://resources/data/quests/item_quest_sample.json"
 dialogue_file = ExtResource("6_ur738")
+
+[node name="SampleItemNPC2" parent="NPC" instance=ExtResource("5_xqsdq")]
+position = Vector2(362, 787)
+json_quest_file = "res://resources/data/quests/item_quest_sample.json"
+dialogue_file = ExtResource("6_ur738")

@@ -145,6 +145,9 @@ func _on_dialogic_signal(argument: Dictionary):
 		if quest.id == id:
 			if key == "start" or key == "end":
 				is_chatting = (key == "start")
+				
+				if key == "end":
+					check_current_stage()
 			elif key == "accepted":					
 				Global.quest_handler.add(quest)
 				
@@ -153,3 +156,7 @@ func _on_dialogic_signal(argument: Dictionary):
 					quest.init_collected_items()
 #endregion
 
+## Metodo di cui fare override nelle classi piú specifiche
+## per modificare il comportamento dell'NPC al cambiare dello stage
+func check_current_stage():
+	pass
