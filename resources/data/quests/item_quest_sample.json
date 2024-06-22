@@ -1,5 +1,5 @@
 {
-	"id": 2,
+	"id": -2,
 	"title": "Raccogli le pozioni",
 	"description": "Completa lo script",
 	"collect_item_file": "res://resources/data/items/potion.json",

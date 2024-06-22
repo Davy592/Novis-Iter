@@ -4,5 +4,5 @@
 	"type": "magic",
 	"effect": "heal",
 	"description": "Pozione magica figa!",
-	"texture": "res://resources/assets/sprites/icon1.png"
+	"texture": "res://resources/assets/sprites/potion.png"
 }

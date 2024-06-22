@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crek33s01c2rk"
-path="res://.godot/imported/hut.png-4c47680a38a7913f484a6f529ea69d0e.ctex"
+uid="uid://4vqj5emln84u"
+path="res://.godot/imported/background.png-338a1dcf213b57413544c08b236e110d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/hut.png"
-dest_files=["res://.godot/imported/hut.png-4c47680a38a7913f484a6f529ea69d0e.ctex"]
+source_file="res://resources/assets/sprites/environment/background.png"
+dest_files=["res://.godot/imported/background.png-338a1dcf213b57413544c08b236e110d.ctex"]
 
 [params]
 
