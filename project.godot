@@ -39,6 +39,8 @@ directories/dtl_directory={
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
 "fisherman": "res://timelines/hub1/timelines/fisherman.dtl",
 "merchant": "res://timelines/hub1/timelines/merchant.dtl",
+"noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
+"noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
 "prova": "res://timelines/prova.dtl",
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
@@ -66,9 +68,12 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"dialogue": {
 "accepted": false,
 "current_stage": 0,
-"scelta": false,
+"dialogue_id": 0,
+"scelta": false
+},
 "tile6_book_written": false,
 "tile6_soap_in_coffee": false
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dygc6aaoxnv3y"]
+[gd_scene load_steps=63 format=3 uid="uid://dygc6aaoxnv3y"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_0mutm"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="5_gberc"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bhdgj3eqm44h2" path="res://resources/assets/sprites/characters/CATSPRITESHEET_Gray.png" id="7_nnfsj"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="7_pg6wh"]
 [ext_resource type="Resource" path="res://timelines/quests/sample_item_quest.dtl" id="7_ve2wd"]
+[ext_resource type="Resource" path="res://timelines/noquest_sample_1.dtl" id="8_l1bim"]
+[ext_resource type="Resource" path="res://timelines/noquest_sample_2.dtl" id="9_8a6gh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvopr"]
 texture = ExtResource("2_0mutm")
@@ -637,3 +639,15 @@ dialogue_file = ExtResource("6_swr7q")
 position = Vector2(362, 787)
 json_quest_file = "res://resources/data/quests/item_quest_sample.json"
 dialogue_file = ExtResource("7_ve2wd")
+
+[node name="NoQuestNPC1" parent="NPC" instance=ExtResource("5_xqsdq")]
+position = Vector2(892, 74)
+walk_radius = 0
+dialogue_limit = 3
+dialogue_file = ExtResource("8_l1bim")
+
+[node name="NoQuestNPC2" parent="NPC" instance=ExtResource("5_xqsdq")]
+position = Vector2(208, 67)
+walk_radius = 0
+dialogue_limit = 4
+dialogue_file = ExtResource("9_8a6gh")

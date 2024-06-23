@@ -1,10 +1,10 @@
 [signal arg_type="dict" arg="{"start":"SampleItemNPC"}"]
 do Global.quest_handler.get_current_stage(200.0)
-if {scelta} == false:
+if {dialogue.scelta} == false:
 	Ciao. Mi servirebbero 3 pozioni. Potresti recuperarmele?
 	- Si
 		Fantastico!!
-		set {scelta} = true
+		set {dialogue.scelta} = true
 		[signal arg_type="dict" arg="{"accepted":"200"}"]
 		do Global.quest_handler.set_current_stage(200.0, 10.0)
 	- No
@@ -12,7 +12,7 @@ if {scelta} == false:
 			Ok. Nessun problema.
 else:
 	Allora? Hai portato le pozioni che ti ho chiesto?
-	if {current_stage} == 90:
+	if {dialogue.current_stage} == 90:
 		- Si
 			Meraviglioso, graziee!!
 			do Global.quest_handler.set_current_stage(200.0, 100.0)

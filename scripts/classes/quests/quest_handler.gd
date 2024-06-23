@@ -50,7 +50,7 @@ func set_current_stage(id: int, amount: int):
 	var index: int = get_quest(id)
 	
 	if index != NO_ELEMENT_INDEX and quests_in_progress[index].stage < amount:
-		Dialogic.VAR.current_stage = amount
+		Dialogic.VAR.dialogue.current_stage = amount
 		quests_in_progress[index].stage = amount
 
 		if quests_in_progress[index].stage == 100:
@@ -67,11 +67,11 @@ func get_current_stage(id: int):
 		if index != NO_ELEMENT_INDEX:
 			stage = completed_quests[index].stage
 	
-	Dialogic.VAR.current_stage = stage
-	Dialogic.VAR.scelta = false
+	Dialogic.VAR.dialogue.current_stage = stage
+	Dialogic.VAR.dialogue.scelta = false
 	
 	if stage > 0:
-		Dialogic.VAR.scelta = true
+		Dialogic.VAR.dialogue.scelta = true
 
 #region: Search
 func get_quest(id: int) -> int:

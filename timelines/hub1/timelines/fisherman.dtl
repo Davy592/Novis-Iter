@@ -1,6 +1,6 @@
 [signal arg_type="dict" arg="{"":"","start":"Fisherman"}"]
 do Global.quest_handler.get_current_stage(0.0)
-if {scelta} == false:
+if {dialogue.scelta} == false:
 	fisherman: Ciao. Sei nuovo da queste parti?
 	- Si, e tu?
 		fisherman: Non piú, sono qui da un paio d'anni e ormai sono un grande conoscitore di questa zona.
@@ -22,17 +22,17 @@ if {scelta} == false:
 	label Choice
 	- Si
 		Perfetto, grazie!!!
-		set {scelta} = true
+		set {dialogue.scelta} = true
 		[signal arg_type="dict" arg="{"accepted":"0"}"]
 		do Global.quest_handler.set_current_stage(0.0, 10.0)
 	- No
 		fisherman: Va bene, nessun problema. Torna quando puoi.
 else:
-	if {current_stage} == 100:
+	if {dialogue.current_stage} == 100:
 		fisherman: Finalmente potró costruire la canna da pesca che ho sempre sognato!!!
 	else:
 		fisherman: Allora? Hai portato i 3 pezzi di legno che ti ho chiesto?
-		if {current_stage} == 90:
+		if {dialogue.current_stage} == 90:
 			- Si
 				fisherman: Grazie mille. Ecco una ricompensa per te.
 				fisherman: Non so cosa sia, ma potrebbe tornarti utile.
