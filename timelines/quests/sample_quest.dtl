@@ -1,5 +1,5 @@
 [signal arg_type="dict" arg="{"":"","start":"1"}"]
-do Global.get_current_stage(1.0)
+do Global.quest_handler.get_current_stage(1.0)
 if {scelta} == false:
 	Ciao. Come stai?
 	Non aver paura. Sono qui per controllare che le quest funzionino correttamente. Sei pronto?
@@ -8,7 +8,7 @@ if {scelta} == false:
 		Ottimo. Quest accettata!!
 		[signal arg_type="dict" arg="{"accepted":"1"}"]
 		Ora imposteró il tuo stage a 50.
-		do Global.set_current_stage(1.0, 50.0)
+		do Global.quest_handler.set_current_stage(1.0, 50.0)
 	- No
 		Nessun problema. Ti aspetto
 if {scelta} == true:
@@ -16,7 +16,7 @@ if {scelta} == true:
 		Il tuo stage é ora a {current_stage}. Sei pronto a completare la quest?
 		- Si
 			Quest completata. Bravo!!
-			do Global.set_current_stage(1.0, 100.0)
+			do Global.quest_handler.set_current_stage(1.0, 100.0)
 		- No
 			Nessun problema. Ti aspetto.
 	else:
