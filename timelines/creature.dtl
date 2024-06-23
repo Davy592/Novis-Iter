@@ -5,14 +5,16 @@ if {creature_action} == true:
 	remy_example: Cosa vuoi che faccia vecchio a questa creatura?
 	grisby: Hai una pistola no? Sparagli...
 	[signal arg="shoot"]
-	- Fa che Remy sapri alla creatura
+	- Fa che Remy spari alla creatura
 		set {shooting} = true
 		[signal arg="death"]
 	- Fa analizzare a Remy un attimo la situazione
 		set {shooting} = false
 		Forse ci dovremmo un attimo calmare tutti e analizzare la situazione, no Remy?
 	if {shooting} == true:
-		grisby: Ben fatto figliolo. Si vede che sei mio figlio, è proprio così che ti ho cresciuto... Oh ma guarda qua quanti bei piccoli funghetti magari possiamo prendere un po' per farci una buona zuppa più tardi... Però, forse meglio lasciar perdere caso mai sono avvelenati
+		grisby: Ben fatto figliolo. Si vede che sei mio figlio, è proprio così che ti ho cresciuto... Oh ma guarda qua quanti bei piccoli funghetti magari possiamo prendere un po' per farci una buona zuppa più tardi... Però, forse meglio lasciar perdere... 
+		[signal arg="stop_shooting"]
+		grisby: Giovanotto grazie per avermi aiutato a ricongiungermi con il mio figliolo. Adesso noi continueremo il nostro viaggio insieme e niente potrebbe redermi più che felice. Buona fortuna per il tuo viaggio, magari ci incentremo lungo il percorso...
 		[signal arg="path_together"]
 	else:
 		remy_example: Forse non è la scelta giusta vecchio
