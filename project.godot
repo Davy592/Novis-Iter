@@ -26,9 +26,11 @@ directories/dch_directory={
 "grisby": "res://timelines/grisby.dch",
 "pippo": "res://timelines/pippo.dch",
 "remy_example": "res://timelines/remy_example.dch",
+"tile3_creature": "res://timelines/tile3_creature.dch",
 "wife_grisby": "res://timelines/wife_grisby.dch"
 }
 directories/dtl_directory={
+"creature": "res://timelines/creature.dtl",
 "grisby_dialogue": "res://timelines/grisby_dialogue.dtl",
 "prova": "res://timelines/prova.dtl",
 "remy_prova": "res://timelines/remy_prova.dtl",
@@ -57,9 +59,11 @@ variables={
 "accepted": false,
 "chance": false,
 "creature": false,
+"creature_action": false,
 "remy": false,
 "scelta": false,
-"scelta2": false
+"scelta2": false,
+"shooting": false
 }
 glossary/default_case_sensitive=true
 
