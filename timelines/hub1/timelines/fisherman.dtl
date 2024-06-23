@@ -1,5 +1,5 @@
-[signal arg_type="dict" arg="{"":"","start":"0"}"]
-do Global.get_current_stage(0.0)
+[signal arg_type="dict" arg="{"":"","start":"Fisherman"}"]
+do Global.quest_handler.get_current_stage(0.0)
 if {scelta} == false:
 	fisherman: Ciao. Sei nuovo da queste parti?
 	- Si, e tu?
@@ -24,7 +24,7 @@ if {scelta} == false:
 		Perfetto, grazie!!!
 		set {scelta} = true
 		[signal arg_type="dict" arg="{"accepted":"0"}"]
-		do Global.set_current_stage(0.0, 10.0)
+		do Global.quest_handler.set_current_stage(0.0, 10.0)
 	- No
 		fisherman: Va bene, nessun problema. Torna quando puoi.
 else:
@@ -36,10 +36,10 @@ else:
 			- Si
 				fisherman: Grazie mille. Ecco una ricompensa per te.
 				fisherman: Non so cosa sia, ma potrebbe tornarti utile.
-				do Global.set_current_stage(0.0, 100.0)
+				do Global.quest_handler.set_current_stage(0.0, 100.0)
 			- No
 				fisherman: Va bene, nessun problema. Torna quando avrai i pezzi di legno di cui ho bisogno
 		else:
 			- No
 				fisherman: Va bene, nessun problema. Torna quando avrai i pezzi di legno di cui ho bisogno
-[signal arg_type="dict" arg="{"end":"0"}"]
+[signal arg_type="dict" arg="{"end":"Fisherman"}"]

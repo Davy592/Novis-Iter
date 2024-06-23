@@ -48,7 +48,7 @@ func complete_quest(index: int):
 
 func set_current_stage(id: int, amount: int):
 	var index: int = get_quest(id)
-
+	
 	if index != NO_ELEMENT_INDEX and quests_in_progress[index].stage < amount:
 		Dialogic.VAR.current_stage = amount
 		quests_in_progress[index].stage = amount

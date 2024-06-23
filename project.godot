@@ -38,6 +38,7 @@ directories/dtl_directory={
 "exit": "res://timelines/tile6/exit.dtl",
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
 "fisherman": "res://timelines/hub1/timelines/fisherman.dtl",
+"merchant": "res://timelines/hub1/timelines/merchant.dtl",
 "prova": "res://timelines/prova.dtl",
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
@@ -72,12 +73,6 @@ variables={
 "tile6_soap_in_coffee": false
 }
 glossary/default_case_sensitive=true
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
 
 [dotnet]
 

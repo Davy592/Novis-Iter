@@ -150,39 +150,25 @@ func _on_dialogic_signal(argument: Dictionary):
 		elif argument.has("end"):
 			key = "end"
 
-<<<<<<< HEAD
 		# Se una delle chiavi è stata trovata, 
 		# esegui l'azione corrispondente
-		if key != "":
+		if key == "accepted":
 			var id = int(argument[key])
 			
-			if quest.id == id:
-				if key == "start" or key == "end":
-					is_chatting = (key == "start")
-					
-					if key == "end":
-						check_current_stage()
-				elif key == "accepted":					
-					Global.quest_handler.add(quest)
-=======
-	# Se una delle chiavi è stata trovata, 
-	# esegui l'azione corrispondente
-	if key != "":
-		var id = int(argument[key])
-		
-		if quest.id == id:
-			if key == "start" or key == "end":
-				is_chatting = (key == "start")
-				
-				if !is_chatting:
-					check_current_stage()
-			elif key == "accepted":					
+			if quest.id == id:			
 				Global.quest_handler.add(quest)
->>>>>>> 14ec420c012a90256b94f27de12bf1277880fe70
 				
 				# Controlla che l'item desiderato sia giá nell'inventario
 				if quest is ItemQuest:
 					quest.init_collected_items()
+		elif key == "start" or key == "end":
+			var npc_name = argument[key]
+			
+			if name == npc_name:
+				is_chatting = (key == "start")
+				
+				if !is_chatting:
+					check_current_stage()
 #endregion
 
 ## Metodo di cui fare override nelle classi piú specifiche
