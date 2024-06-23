@@ -206,7 +206,7 @@ radius = 8.06226
 size = Vector2(116, 57)
 
 [node name="tile3_creature" type="CharacterBody2D"]
-visible = false
+scale = Vector2(0.75, 0.75)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -9)
