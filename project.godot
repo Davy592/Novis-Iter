@@ -52,6 +52,7 @@ text/autopauses={}
 variables={
 "accepted": false,
 "battle": true,
+"remy": false,
 "scelta": false
 }
 glossary/default_case_sensitive=true

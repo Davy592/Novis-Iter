@@ -4,7 +4,7 @@ var ACCELERATION = 150
 @export var target_character: CharacterBody2D
 @onready var navigation_agent = $NavigationAgent2D
 var move = false
-
+var tile3 = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -13,7 +13,7 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _physics_process(delta):
-	if move:
+	if move and not tile3:
 		var distance_to_target = target_character.position.distance_to(position)
 		set_movement_target(target_character.global_position)
 		if navigation_agent.is_navigation_finished() or distance_to_target < 100:
@@ -49,8 +49,15 @@ func _on_dialogic_signal(argument:String):
 		move = true
 		$Timer.start()
 		$CollisionShape2D.disabled = true
+	if argument == "together":
+		move = false
+		tile3 = true
+		$CollisionShape2D.disabled = true
+		$AnimatedSprite2D.play("front_walk")
+		_on_timer_timeout()
 
 
 func _on_timer_timeout():
 	move = false
 	$CollisionShape2D.disabled = false
+	Dialogic.VAR.remy = false
