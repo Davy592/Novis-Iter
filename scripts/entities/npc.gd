@@ -150,6 +150,7 @@ func _on_dialogic_signal(argument: Dictionary):
 		elif argument.has("end"):
 			key = "end"
 
+<<<<<<< HEAD
 		# Se una delle chiavi è stata trovata, 
 		# esegui l'azione corrispondente
 		if key != "":
@@ -163,6 +164,21 @@ func _on_dialogic_signal(argument: Dictionary):
 						check_current_stage()
 				elif key == "accepted":					
 					Global.quest_handler.add(quest)
+=======
+	# Se una delle chiavi è stata trovata, 
+	# esegui l'azione corrispondente
+	if key != "":
+		var id = int(argument[key])
+		
+		if quest.id == id:
+			if key == "start" or key == "end":
+				is_chatting = (key == "start")
+				
+				if !is_chatting:
+					check_current_stage()
+			elif key == "accepted":					
+				Global.quest_handler.add(quest)
+>>>>>>> 14ec420c012a90256b94f27de12bf1277880fe70
 				
 				# Controlla che l'item desiderato sia giá nell'inventario
 				if quest is ItemQuest:

@@ -6,7 +6,7 @@ var item_to_collect: Item:
 	set(new_item): item_to_collect = new_item
 	get: return item_to_collect
 var collected_items: int:
-	set(new_item): collected_items = new_item
+	set(new_collected_items): collected_items = new_collected_items
 	get: return collected_items
 
 ## Inizializza la quest (con super()) e 
