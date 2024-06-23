@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://b32k1fhu1ommg"]
+[gd_scene load_steps=29 format=3 uid="uid://b32k1fhu1ommg"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
+[ext_resource type="Script" path="res://scripts/classes/tile_3.gd" id="1_n78sd"]
 [ext_resource type="Texture2D" uid="uid://1e86ynjufeg8" path="res://resources/assets/tilesets/Top-Down Forest/Water Tileset.png" id="1_skoj8"]
 [ext_resource type="Texture2D" uid="uid://cy6h0esfb74au" path="res://resources/assets/tilesets/top-down_country_side_forest/Tileset.png" id="2_xn5y1"]
 [ext_resource type="Texture2D" uid="uid://dcpk0181dbitm" path="res://resources/assets/tilesets/Top-Down Forest/Forest Props.png" id="3_2a5n4"]
@@ -5002,8 +5003,15 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 2, 1923, -5, 1917, 467, 1917, 480, 2112, 480, 2108, 711, 1912, 711, 1917, 1064, 972, 1050, 969, 1203, 722, 1198, 713, 1057, -7, 1061)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="Curve2D" id="Curve2D_yqws4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1277, 487, 0, 0, 0, 0, 1100, 588, 0, 0, 0, 0, 1061, 689, 0, 0, 0, 0, 1043, 776, -2.24493, -4.48985, 2.24493, 4.48985, 1021, 893, 0, 0, 0, 0, 999, 1003, 0, 0, 0, 0, 734, 1012)
+}
+point_count = 7
+
 [node name="tile3" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_n78sd")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -5032,9 +5040,6 @@ navigation_polygon = SubResource("NavigationPolygon_dlcmq")
 position = Vector2(-6, 21)
 polygon = PackedVector2Array(5, -22, 1929, -22, 1927, 459, 2115, 461, 2117, 693, 1925, 693, 1924, 1040, 969, 1031, 973, 1181, 726, 1176, 718, 1038, 4, 1038, 1, 4, -288, 16, -242, 1049, 81, 1223, 568, 1339, 972, 1400, 1284, 1267, 1939, 1253, 2227, 1139, 2447, 882, 2561, 652, 2492, 460, 2443, 216, 2250, 54, 2314, -174, 2002, -276, 1685, -358, 1190, -358, 548, -327, 33, -311)
 
-[node name="grisby" parent="." instance=ExtResource("4_fdtl8")]
-position = Vector2(1309, 407)
-
 [node name="Player" parent="." instance=ExtResource("11_xxm7m")]
 position = Vector2(939, 305)
 
@@ -5042,12 +5047,7 @@ position = Vector2(939, 305)
 position = Vector2(1251, 422)
 
 [node name="tile3_creature" parent="." instance=ExtResource("13_2a16u")]
-visible = false
-position = Vector2(689, 1003)
-
-[node name="remy_example" parent="." node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
-position = Vector2(1008, 319)
-target_character = NodePath("../Player")
+position = Vector2(725, 1005)
 
 [node name="TileDoor_1" parent="." instance=ExtResource("14_7cvby")]
 position = Vector2(2069, 594)
@@ -5057,3 +5057,21 @@ side = 1
 position = Vector2(817, 1170)
 rotation = 1.5708
 side = 2
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yqws4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1277, 487)
+rotation = 2.62306
+rotates = false
+loop = false
+
+[node name="grisby" parent="Path2D/PathFollow2D" instance=ExtResource("4_fdtl8")]
+position = Vector2(-67.4423, 53.6241)
+rotation = -2.62306
+
+[node name="remy_example" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
+position = Vector2(150.376, 279.235)
+rotation = -2.62306
+target_character = NodePath("../../../Player")
