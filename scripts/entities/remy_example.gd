@@ -49,8 +49,13 @@ func _on_dialogic_signal(argument:String):
 		move = true
 		$Timer.start()
 		$CollisionShape2D.disabled = true
+		Dialogic.VAR.remy = true
+	if argument == "together":
+		move = false
+		_on_timer_timeout()
 
 
 func _on_timer_timeout():
 	move = false
 	$CollisionShape2D.disabled = false
+	Dialogic.VAR.remy = false

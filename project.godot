@@ -56,6 +56,8 @@ text/autopauses={}
 variables={
 "accepted": false,
 "chance": false,
+"creature": false,
+"remy": false,
 "scelta": false,
 "scelta2": false
 }
