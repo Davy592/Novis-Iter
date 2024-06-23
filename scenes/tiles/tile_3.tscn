@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b32k1fhu1ommg"]
+[gd_scene load_steps=28 format=3 uid="uid://b32k1fhu1ommg"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
 [ext_resource type="Script" path="res://scripts/classes/tile_3.gd" id="1_n78sd"]
@@ -5003,12 +5003,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 2, 1923, -5, 1917, 467, 1917, 480, 2112, 480, 2108, 711, 1912, 711, 1917, 1064, 972, 1050, 969, 1203, 722, 1198, 713, 1057, -7, 1061)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[sub_resource type="Curve2D" id="Curve2D_yqws4"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1277, 487, 0, 0, 0, 0, 1100, 588, 0, 0, 0, 0, 1061, 689, 0, 0, 0, 0, 1043, 776, -2.24493, -4.48985, 2.24493, 4.48985, 1021, 893, 0, 0, 0, 0, 999, 1003, 0, 0, 0, 0, 734, 1012)
-}
-point_count = 7
-
 [node name="tile3" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_n78sd")
@@ -5043,10 +5037,19 @@ polygon = PackedVector2Array(5, -22, 1929, -22, 1927, 459, 2115, 461, 2117, 693,
 [node name="Player" parent="." instance=ExtResource("11_xxm7m")]
 position = Vector2(939, 305)
 
+[node name="remy_example" parent="." node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
+position = Vector2(999, 302)
+scale = Vector2(3, 3)
+target_character = NodePath("../Player")
+
+[node name="grisby" parent="." instance=ExtResource("4_fdtl8")]
+position = Vector2(1303, 412)
+
 [node name="wife_grisby" parent="." instance=ExtResource("12_wbw6y")]
 position = Vector2(1251, 422)
 
 [node name="tile3_creature" parent="." instance=ExtResource("13_2a16u")]
+visible = false
 position = Vector2(725, 1005)
 
 [node name="TileDoor_1" parent="." instance=ExtResource("14_7cvby")]
@@ -5058,20 +5061,11 @@ position = Vector2(817, 1170)
 rotation = 1.5708
 side = 2
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_yqws4")
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 3.0
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1277, 487)
-rotation = 2.62306
-rotates = false
-loop = false
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 25.0
 
-[node name="grisby" parent="Path2D/PathFollow2D" instance=ExtResource("4_fdtl8")]
-position = Vector2(-67.4423, 53.6241)
-rotation = -2.62306
-
-[node name="remy_example" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
-position = Vector2(150.376, 279.235)
-rotation = -2.62306
-target_character = NodePath("../../../Player")
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
