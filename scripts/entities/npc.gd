@@ -156,7 +156,7 @@ func _on_dialogic_signal(argument: Dictionary):
 			if key == "start" or key == "end":
 				is_chatting = (key == "start")
 				
-				if key == "end":
+				if !is_chatting:
 					check_current_stage()
 			elif key == "accepted":					
 				Global.quest_handler.add(quest)
