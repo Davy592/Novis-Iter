@@ -1,5 +1,6 @@
 extends Node
 
+var quest_handler: QuestHandler = QuestHandler.new()
 var inventory: Inventory = Inventory.new()
 var current_tile_map_node_id: int
 var tiles_inventory: TilesInventory = TilesInventory.new()

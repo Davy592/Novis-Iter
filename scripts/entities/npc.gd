@@ -1,18 +1,39 @@
 extends CharacterBody2D
 
 #region: Variables
-const speed : int = 100
+const speed: int = 100
 var current_state = IDLE
 
-var state : String = "idle"
-var direction : String = "front"
-var dir : Vector2 = Vector2.RIGHT
-var start_pos : Vector2
+var state: String = "idle"
+var direction: String = "front"
+var dir: Vector2 = Vector2.RIGHT
+var start_pos: Vector2
 
 # Stati di movimento
-@export var walk_radius : int = 200 
+@export var walk_radius: int = 200 
+var is_chatting: bool = false
 
-var is_chatting : bool = false
+# AnimatedSprite
+@export var sprite_frames : SpriteFrames:
+	set(new_sprite_frames): 
+		if new_sprite_frames != null:
+			sprite_frames = new_sprite_frames
+			$AnimatedSprite2D.sprite_frames = new_sprite_frames
+	get: 
+		return $AnimatedSprite2D.sprite_frames
+
+# Quest
+@export_file("*.json") var json_quest_file
+var quest: Quest
+
+# Dialogo (sincronizzato con DialogueActionable)
+@export var dialogue_file: DialogicTimeline:
+	set(new_dialog):
+		if new_dialog != null:
+			dialogue_file = new_dialog
+			$DialogueActionable.dialogue_resource = new_dialog
+	get:
+		return $DialogueActionable.dialogue_resource
 
 ## Possibili stati dell'NPC
 enum {
@@ -25,7 +46,19 @@ enum {
 func _ready():
 	randomize()
 	start_pos = position
+	init_quest()
+	
+	# Connessione ai signal
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+func init_quest():
+	var json_as_text = FileAccess.get_file_as_string(json_quest_file)
+	var quest_data = JSON.parse_string(json_as_text)
+	
+	if quest_data.has('collect_item_file'):
+		quest = ItemQuest.new(quest_data)
+	else:
+		quest = Quest.new(quest_data)
 
 #region: NPC Movement
 ## Acquisisce il movimento dell'NPC (se consentito) e determina
@@ -103,9 +136,37 @@ func _on_timer_timeout():
 	$Timer.wait_time = choose([0.5, 1, 1.5])
 	current_state = choose([IDLE, NEW_DIR, MOVE])	
 
-func _on_dialogic_signal(argument: String):
-	if argument == "chat_started":
-		is_chatting = true
-	if argument == "chat_ended":
-		is_chatting = false
+func _on_dialogic_signal(argument: Dictionary):
+	var key = ""
+
+	# Determina quale chiave è presente nel dizionario
+	if argument.has("start"):
+		key = "start"
+	elif argument.has("accepted"):
+		key = "accepted"
+	elif argument.has("end"):
+		key = "end"
+
+	# Se una delle chiavi è stata trovata, 
+	# esegui l'azione corrispondente
+	if key != "":
+		var id = int(argument[key])
+		
+		if quest.id == id:
+			if key == "start" or key == "end":
+				is_chatting = (key == "start")
+				
+				if !is_chatting:
+					check_current_stage()
+			elif key == "accepted":					
+				Global.quest_handler.add(quest)
+				
+				# Controlla che l'item desiderato sia giá nell'inventario
+				if quest is ItemQuest:
+					quest.init_collected_items()
 #endregion
+
+## Metodo di cui fare override nelle classi piú specifiche
+## per modificare il comportamento dell'NPC al cambiare dello stage
+func check_current_stage():
+	pass

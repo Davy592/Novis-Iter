@@ -1,0 +1,24 @@
+[signal arg_type="dict" arg="{"start":"2"}"]
+do Global.quest_handler.get_current_stage(2.0)
+if {scelta} == false:
+	Ciao. Mi servirebbero 3 pozioni. Potresti recuperarmele?
+	- Si
+		Fantastico!!
+		set {scelta} = true
+		[signal arg_type="dict" arg="{"accepted":"2"}"]
+		do Global.quest_handler.set_current_stage(2.0, 10.0)
+	- No
+		else:
+			Ok. Nessun problema.
+else:
+	Allora? Hai portato le pozioni che ti ho chiesto?
+	if {current_stage} == 90:
+		- Si
+			Meraviglioso, graziee!!
+			do Global.quest_handler.set_current_stage(2.0, 100.0)
+		- No
+			Ok. Nessun problema
+	else:
+		- No
+			Ok. Nessun problema
+[signal arg_type="dict" arg="{"end":"2"}"]
