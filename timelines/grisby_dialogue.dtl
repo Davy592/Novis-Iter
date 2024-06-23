@@ -13,6 +13,4 @@ else:
 		set {chance} = false
 	if {chance} == true:
 		grisby: Oh potresti fare al caso mio allora. Come puoi vedere sono un povero vecchio. Vorrei anch'io continuare il mio viaggio ma sono riuscito a trovare solo la mia dolce mogliettina che si trova acconto a me. Vorrei riuscire a ritrovare anche il mio amato figliolo ma le mie gambe non mi consentono di muovermi per troppo tempo. Forse un giovane come te potrebbe aiutare questo vecchietto a intraprendere il suo viaggio con la propria famiglia
-	else:
-		[end_timeline]
 grisby: Che tu riesca o meno ad aiutarmi, buona fortuna giovanotto

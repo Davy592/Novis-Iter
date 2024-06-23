@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c244xhm7x53ww"]
+[gd_scene load_steps=27 format=3 uid="uid://b32k1fhu1ommg"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
 [ext_resource type="Texture2D" uid="uid://1e86ynjufeg8" path="res://resources/assets/tilesets/Top-Down Forest/Water Tileset.png" id="1_skoj8"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ct13fwdm42ndq" path="res://scenes/entities/wife_grisby.tscn" id="12_wbw6y"]
 [ext_resource type="PackedScene" uid="uid://j5fsnlq68jis" path="res://scenes/entities/tile_3_creature.tscn" id="13_2a16u"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="14_7cvby"]
+[ext_resource type="PackedScene" uid="uid://b0k4cq5o5auki" path="res://scenes/entities/remy_example.tscn" id="15_ulewk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gvcn"]
 texture = ExtResource("3_2a5n4")
@@ -4995,6 +4996,12 @@ sources/15 = SubResource("TileSetAtlasSource_pvbj2")
 sources/16 = SubResource("TileSetAtlasSource_ak0nq")
 sources/19 = SubResource("TileSetAtlasSource_ql4la")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dlcmq"]
+vertices = PackedVector2Array(1902, 701, 1906, 1053, 962, 1040, 1907, 490, 2102, 490, 2098, 701, 3, 1050, 9, 11, 1912, 5, 1907, 467, 722, 1047, 959, 1192, 731, 1188)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 0), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(10, 9, 3, 0, 2), PackedInt32Array(10, 2, 11, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 2, 1923, -5, 1917, 467, 1917, 480, 2112, 480, 2108, 711, 1912, 711, 1917, 1064, 972, 1050, 969, 1203, 722, 1198, 713, 1057, -7, 1061)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="tile3" type="Node2D"]
 y_sort_enabled = true
 
@@ -5015,6 +5022,10 @@ layer_4/name = "ysort"
 layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(851977, 131078, 26, 1048584, 131078, 27, 1114120, 131078, 28, 1179656, 131078, 29, 917513, 196614, 25, 983049, 196614, 26, 1048585, 196614, 27, 1114121, 196614, 28, 1179657, 196614, 29, 1245193, 196614, 30, 851978, 262150, 24, 917514, 262150, 25, 983050, 262150, 26, 1048586, 262150, 27, 1114122, 262150, 28, 1179658, 262150, 29, 1245194, 262150, 30, 786443, 327686, 23, 851979, 327686, 24, 917515, 327686, 25, 983051, 327686, 26, 1048587, 327686, 27, 1114123, 327686, 28, 1179659, 327686, 29, 1245195, 327686, 30, 786444, 393222, 23, 851980, 393222, 24, 917516, 393222, 25, 983052, 393222, 26, 1048588, 393222, 27, 1114124, 393222, 28, 1179660, 393222, 29, 1245196, 393222, 30, 1310732, 393222, 31, 1376268, 393222, 32, 786445, 458758, 23, 851981, 458758, 24, 917517, 458758, 25, 983053, 458758, 26, 1048589, 458758, 27, 1114125, 458758, 28, 1179661, 458758, 29, 1245197, 458758, 30, 1310733, 458758, 31, 1376269, 458758, 32, 786446, 524294, 23, 851982, 524294, 24, 917518, 524294, 25, 983054, 524294, 26, 1048590, 524294, 27, 1114126, 524294, 28, 1179662, 524294, 29, 1245198, 524294, 30, 851983, 589830, 24, 917519, 589830, 25, 983055, 589830, 26, 1048591, 589830, 27, 1114127, 589830, 28, 1179663, 589830, 29, 1245199, 589830, 30, 917520, 655366, 25, 983056, 655366, 26, 1048592, 655366, 27, 1114128, 655366, 28, 1179664, 655366, 29, 1048593, 720902, 27, 1114129, 720902, 28, 1179665, 720902, 29)
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_dlcmq")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -5025,7 +5036,6 @@ polygon = PackedVector2Array(5, -22, 1929, -22, 1927, 459, 2115, 461, 2117, 693,
 position = Vector2(1309, 407)
 
 [node name="Player" parent="." instance=ExtResource("11_xxm7m")]
-y_sort_enabled = true
 position = Vector2(939, 305)
 
 [node name="wife_grisby" parent="." instance=ExtResource("12_wbw6y")]
@@ -5034,6 +5044,10 @@ position = Vector2(1251, 422)
 [node name="tile3_creature" parent="." instance=ExtResource("13_2a16u")]
 visible = false
 position = Vector2(689, 1003)
+
+[node name="remy_example" parent="." node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
+position = Vector2(1008, 319)
+target_character = NodePath("../Player")
 
 [node name="TileDoor_1" parent="." instance=ExtResource("14_7cvby")]
 position = Vector2(2069, 594)

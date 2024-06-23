@@ -25,11 +25,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "grisby": "res://timelines/grisby.dch",
 "pippo": "res://timelines/pippo.dch",
+"remy_example": "res://timelines/remy_example.dch",
 "wife_grisby": "res://timelines/wife_grisby.dch"
 }
 directories/dtl_directory={
 "grisby_dialogue": "res://timelines/grisby_dialogue.dtl",
 "prova": "res://timelines/prova.dtl",
+"remy_prova": "res://timelines/remy_prova.dtl",
 "wife_grisby_dialogue": "res://timelines/wife_grisby_dialogue.dtl"
 }
 layout/style_list=[]
