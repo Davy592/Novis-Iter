@@ -25,7 +25,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
-"pippo": "res://timelines/pippo.dch"
+"pippo": "res://timelines/pippo.dch",
+"wanderer": "res://timelines/hub1/characters/wanderer.dch"
 }
 directories/dtl_directory={
 "bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
@@ -38,7 +39,6 @@ directories/dtl_directory={
 "exit": "res://timelines/tile6/exit.dtl",
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
 "fisherman": "res://timelines/hub1/timelines/fisherman.dtl",
-"merchant": "res://timelines/hub1/timelines/merchant.dtl",
 "noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
 "noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
 "prova": "res://timelines/prova.dtl",
@@ -46,6 +46,7 @@ directories/dtl_directory={
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
+"wanderer": "res://timelines/hub1/timelines/wanderer.dtl",
 "write_book": "res://timelines/tile6/write_book.dtl"
 }
 layout/style_list=[]

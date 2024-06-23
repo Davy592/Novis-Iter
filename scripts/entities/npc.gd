@@ -182,7 +182,7 @@ func handle_start(npc_name: String):
 func handle_end(npc_name: String):
 	if name != npc_name:
 		return
-	
+
 	is_chatting = false
 	
 	if quest != null:

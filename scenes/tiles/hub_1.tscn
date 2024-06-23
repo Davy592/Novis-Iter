@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://wych6103357o"]
+[gd_scene load_steps=31 format=3 uid="uid://wych6103357o"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="1_uk6co"]
 [ext_resource type="Texture2D" uid="uid://dcpk0181dbitm" path="res://resources/assets/tilesets/Top-Down Forest/Forest Props.png" id="2_kotvx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="10_gjrdm"]
 [ext_resource type="Resource" path="res://timelines/hub1/timelines/fisherman.dtl" id="11_i8trm"]
 [ext_resource type="Texture2D" uid="uid://cwg7yg1vubwow" path="res://resources/assets/sprites/characters/merchant/merchant_idle.png" id="11_y61ee"]
+[ext_resource type="Resource" path="res://timelines/hub1/timelines/wanderer.dtl" id="13_0883l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ql6"]
 texture = ExtResource("1_uk6co")
@@ -5048,11 +5049,12 @@ sprite_frames = SubResource("SpriteFrames_s4km5")
 json_quest_file = "res://resources/data/quests/hub 1/fisherman_wood_quest.json"
 dialogue_file = ExtResource("11_i8trm")
 
-[node name="Merchant" parent="NPC" instance=ExtResource("10_2uock")]
+[node name="Wanderer" parent="NPC" instance=ExtResource("10_2uock")]
 position = Vector2(3427, 3271)
 walk_radius = 0
+dialogue_limit = 1
 sprite_frames = SubResource("SpriteFrames_s4km5")
-dialogue_file = ExtResource("11_i8trm")
+dialogue_file = ExtResource("13_0883l")
 
 [node name="TileDoors" type="Node" parent="."]
 
