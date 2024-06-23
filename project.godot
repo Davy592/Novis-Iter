@@ -60,6 +60,8 @@ variables={
 "chance": false,
 "creature": false,
 "creature_action": false,
+"husband": true,
+"quest": false,
 "remy": false,
 "scelta": false,
 "scelta2": false,
