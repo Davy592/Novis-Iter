@@ -1,3 +1,5 @@
+class_name NPC
+
 extends CharacterBody2D
 
 #region: Variables
@@ -184,11 +186,10 @@ func handle_end(npc_name: String):
 		return
 
 	is_chatting = false
+	update_dialogue_id()
 	
 	if quest != null:
 		check_current_stage()
-	else:
-		update_dialogue_id()
 #endregion
 
 ## Metodo di cui fare override nelle classi piú specifiche

@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:resources/assets/tilesets/MagicMarket/Background/Animations/Log.png.import
-uid="uid://dsekpokpr0mfb"
-path="res://.godot/imported/Log.png-423befc304bfb02608fa67dfb7bf4799.ctex"
-========
-uid="uid://dgqxkbbrly52d"
+uid="uid://deohudii7n4d0"
 path="res://.godot/imported/potion.png-060287fce367d1313f9bf53349ac7e0a.ctex"
->>>>>>>> 83533a2b10629f656d81e4de05128273aa58dd98:resources/assets/sprites/potion.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:resources/assets/tilesets/MagicMarket/Background/Animations/Log.png.import
-source_file="res://resources/assets/tilesets/MagicMarket/Background/Animations/Log.png"
-dest_files=["res://.godot/imported/Log.png-423befc304bfb02608fa67dfb7bf4799.ctex"]
-========
 source_file="res://resources/assets/sprites/potion.png"
 dest_files=["res://.godot/imported/potion.png-060287fce367d1313f9bf53349ac7e0a.ctex"]
->>>>>>>> 83533a2b10629f656d81e4de05128273aa58dd98:resources/assets/sprites/potion.png.import
 
 [params]
 

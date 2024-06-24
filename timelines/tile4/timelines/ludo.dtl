@@ -1,0 +1,81 @@
+[signal arg_type="dict" arg="{"start":"41"}"]
+do Global.quest_handler.get_current_stage(41.0)
+if {dialogue.scelta} == false:
+	if {dialogue.dialogue_id} == 0:
+		unknown: Oh, ciao ragazzo. Non ti avevo visto arrivare
+		- Ti vedo impegnato
+			unknown: Si, il mio compito é quello di aiutare piú persone possibili e condurle verso la retta via.
+			unknown: Non é molto, ma é un lavoro onesto!
+			- Perché sei vestito cosí?
+				unknown: Lo smoking, dici? É un abbigliamento tipico della gente come me.
+				unknown: Dobbiamo essere sempre nel migliore delle condizioni
+				- La "gente come te"?
+					unknown: Ma quante domande, non ci conosciamo nemmeno e sei cosí curioso!!
+					jump Presentazioni
+				- Perché...?
+					unknown: Ma come perché? Dobbiamo convincere gli altri a sostenere le nostre idee
+					unknown: É il nos...il mio lavoro dopotutto
+					jump Muso lungo
+				- . . .
+					jump Muso lungo
+		label Muso lungo
+		unknown: . . .
+		unknown: Che c'é? Cos'é quel muso lungo?
+		- Quale muso lungo?
+			unknown: Ahahah. Stavo scherzando!!
+		- Troppo difficile per te da capire
+			unknown: Va bene, sApIeNtOnE...
+			unknown: ...tieniti pure i tuoi segreti, io mi terró i miei \:P
+		label Presentazioni
+		unknown: Oh, a proposito, non ti ho ancora detto il mio nome!
+		ludo: Io mi chiamo Ludo. Piacere, curiosone!
+		ludo: Mhh, si! Ti chiameró proprio cosí d'ora in poi
+		- Va bene...credo...
+			ludo: Ahahah. Sei uno spasso, sempre cosí perplesso!!
+		- Non che lo abbia deciso io
+			ludo: Dai ragazzo, non essere cosí serio!!
+		ludo: Sai? Ora che mi ci fai pensare mi serve proprio una persona come te
+		ludo: Ho bisogno di una mano, potresti aiutarmi?
+		- Per cosa?
+			jump Inizio quest
+		- Non sono interessato, grazie!
+			ludo: Oh, okay...alla prossima allora!
+			[end_timeline]
+	elif {dialogue.dialogue_id} == 1:
+		ludo: Allora? Vuoi sentirmi ora?
+		- Va bene
+			Finalmente. In questo posto nessuno mi aiuta...
+			ludo: Senti qua. Ho una proposta che non puoi rifiutare.
+			jump Inizio quest
+		- No, passo
+			ludo: Oh, okay...ci risentiamo!!
+			[end_timeline]
+		label Inizio quest
+		ludo: In breve, sono stanco di fare affari qui fuori.
+		ludo: Ho aiutato cosí tanta di quella gente a trovare delle case che ho dimenticato di trovarne una io
+		ludo: Ho bisogno di una mano nel trovare una bella dimora per poter fare i miei affari.
+		ludo: Mi aiuteresti a trovare una casa?? Ti ricompenseró a dovere!!
+		- Affare fatto!
+			ludo: Giovinotto, é bello fare affari con lei!!
+			ludo: Allora, prendi tutto il necessario. Si va in scena!!
+			ludo: Io vado a prendere la mia roba da...ehm...qualche parte
+			- Dove?
+				ludo: DA NESSUNA PARTE!!
+				ludo: . . .
+				ludo: Scusami, é stata una giornataccia...
+				ludo: Io vado a prendere ció che mi serve, ma mi devi promettere una sola cosa\:
+				ludo: Non andare MAI nella grotta.
+				ludo: Ho sentito che ci sono cose pericolossime. Ci tengo alla tua salute, ragazzo.
+				ludo: Intesi?
+				- Ehm..okay..
+					ludo: MAI e poi MAI. É meglio per te.
+			[signal arg_type="dict" arg="{"accepted":"41"}"]
+			do Global.quest_handler.set_current_stage(41.0, 10.0)
+			set {dialogue.scelta} = true
+		- Neanche per sogno!!
+			ludo: Brutto pezzo di...
+			ludo: ...uff, ok, sei arrabbiato per conto tuo, lo capisco.
+			ludo: Non appena sarai pronto a fare affari con me, parlamene.
+			[end_timeline]
+else:
+[signal arg_type="dict" arg="{"end":"41"}"]

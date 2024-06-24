@@ -26,7 +26,8 @@ directories/dch_directory={
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
 "creature": "res://timelines/hub1/characters/creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
-"pippo": "res://timelines/pippo.dch",
+"ludo": "res://timelines/tile4/characters/ludo.dch",
+"unknown": "res://timelines/unknown.dch",
 "wanderer": "res://timelines/hub1/characters/wanderer.dch"
 }
 directories/dtl_directory={
@@ -37,21 +38,20 @@ directories/dtl_directory={
 "bird_see_player": "res://timelines/tile6/bird_see_player.dtl",
 "change_music": "res://timelines/tile6/change_music.dtl",
 "creature": "res://timelines/hub1/timelines/creature.dtl",
-"creature2": "res://timelines/hub1/timelines/creature2.dtl",
 "entry_dialogue": "res://timelines/tile6/entry_dialogue.dtl",
 "exit": "res://timelines/tile6/exit.dtl",
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
 "fisherman": "res://timelines/hub1/timelines/fisherman.dtl",
+"ludo": "res://timelines/tile4/timelines/ludo.dtl",
 "noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
 "noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
-"prova": "res://timelines/prova.dtl",
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
-"write_book": "res://timelines/tile6/write_book.dtl",
-"sign_tile_4": "res://timelines/sign_tile_4.dtl",
-"wanderer": "res://timelines/hub1/timelines/wanderer.dtl",
+"wanderer2": "res://timelines/hub1/timelines/wanderer.dtl",
+"wanderer_bkp": "res://timelines/hub1/timelines/wanderer_bkp.dtl",
+"write_book": "res://timelines/tile6/write_book.dtl"
 }
 layout/style_list=["res://timelines/styles/New_File.tres", "res://timelines/styles/parallelogram.tres"]
 layout/default_style="res://timelines/styles/New_File.tres"
