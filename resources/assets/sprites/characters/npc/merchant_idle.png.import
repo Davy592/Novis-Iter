@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bva31j2a8pbn2"
-path="res://.godot/imported/merchant_walk.png-29a75bab652eb7aac5ce0e9519a74e90.ctex"
+uid="uid://cwg7yg1vubwow"
+path="res://.godot/imported/merchant_idle.png-28700dd1f85bf6e66e85b3a786d4de69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/sprites/characters/merchant/merchant_walk.png"
-dest_files=["res://.godot/imported/merchant_walk.png-29a75bab652eb7aac5ce0e9519a74e90.ctex"]
+source_file="res://resources/assets/sprites/characters/npc/merchant_idle.png"
+dest_files=["res://.godot/imported/merchant_idle.png-28700dd1f85bf6e66e85b3a786d4de69.ctex"]
 
 [params]
 

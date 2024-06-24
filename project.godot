@@ -24,6 +24,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
+"creature": "res://timelines/hub1/characters/creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
 "pippo": "res://timelines/pippo.dch",
 "wanderer": "res://timelines/hub1/characters/wanderer.dch"
@@ -35,6 +36,8 @@ directories/dtl_directory={
 "bird_see_no_fish": "res://timelines/tile6/bird_see_no_fish.dtl",
 "bird_see_player": "res://timelines/tile6/bird_see_player.dtl",
 "change_music": "res://timelines/tile6/change_music.dtl",
+"creature": "res://timelines/hub1/timelines/creature.dtl",
+"creature2": "res://timelines/hub1/timelines/creature2.dtl",
 "entry_dialogue": "res://timelines/tile6/entry_dialogue.dtl",
 "exit": "res://timelines/tile6/exit.dtl",
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
@@ -79,6 +82,12 @@ variables={
 "tile6_soap_in_coffee": false
 }
 glossary/default_case_sensitive=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
 
 [dotnet]
 
