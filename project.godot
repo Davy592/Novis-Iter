@@ -42,9 +42,10 @@ directories/dtl_directory={
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
 "write_book": "res://timelines/tile6/write_book.dtl"
+"sign_tile_4": "res://timelines/sign_tile_4.dtl"
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://timelines/styles/New_File.tres", "res://timelines/styles/parallelogram.tres"]
+layout/default_style="res://timelines/styles/New_File.tres"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
