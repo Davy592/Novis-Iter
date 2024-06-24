@@ -1,0 +1,4 @@
+[signal arg_type="dict" arg="{"start":"Creature"}"]
+creature: A volte mi fermo a guardare la vegetazione di questo posto.
+creature: É cosí rilassante...Ti fa momentaneamente dimenticare tutte le preoccupazioni e i dispiaceri del passato... 
+[signal arg_type="dict" arg="{"end":"Creature"}"]

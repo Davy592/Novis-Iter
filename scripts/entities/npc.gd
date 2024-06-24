@@ -13,6 +13,10 @@ var start_pos: Vector2
 @export var walk_radius: int = 200 
 var is_chatting: bool = false
 
+# Dialogo
+@export var dialogue_limit: int
+var dialogue_id: int = 0
+
 # AnimatedSprite
 @export var sprite_frames : SpriteFrames:
 	set(new_sprite_frames): 
@@ -24,7 +28,7 @@ var is_chatting: bool = false
 
 # Quest
 @export_file("*.json") var json_quest_file
-var quest: Quest
+var quest: Quest = null
 
 # Dialogo (sincronizzato con DialogueActionable)
 @export var dialogue_file: DialogicTimeline:
@@ -46,7 +50,9 @@ enum {
 func _ready():
 	randomize()
 	start_pos = position
-	init_quest()
+	
+	if json_quest_file != null:
+		init_quest()
 	
 	# Connessione ai signal
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -72,7 +78,7 @@ func _process(delta):
 		
 	if is_chatting:
 		return
-	
+		
 	update_movement_state(delta)
 	
 ## Imposta la direzione e lo stato attuale dell'NPC
@@ -137,36 +143,60 @@ func _on_timer_timeout():
 	current_state = choose([IDLE, NEW_DIR, MOVE])	
 
 func _on_dialogic_signal(argument: Dictionary):
-	var key = ""
+	var key = get_key_from_argument(argument)
+	if key == "":
+		return
+	
+	match key:
+		"accepted":
+			handle_accepted(argument[key])
+		"start":
+			handle_start(argument[key])
+		"end":
+			handle_end(argument[key])
 
-	# Determina quale chiave è presente nel dizionario
-	if argument.has("start"):
-		key = "start"
-	elif argument.has("accepted"):
-		key = "accepted"
-	elif argument.has("end"):
-		key = "end"
+func get_key_from_argument(argument: Dictionary) -> String:
+	for k in ["start", "accepted", "end"]:
+		if argument.has(k):
+			return k
+	return ""
 
-	# Se una delle chiavi è stata trovata, 
-	# esegui l'azione corrispondente
-	if key != "":
-		var id = int(argument[key])
+func handle_accepted(quest_id: String):
+	if quest == null:
+		return
+	
+	var id = int(quest_id)
+	if quest.id == id:
+		Global.quest_handler.add(quest)
 		
-		if quest.id == id:
-			if key == "start" or key == "end":
-				is_chatting = (key == "start")
-				
-				if !is_chatting:
-					check_current_stage()
-			elif key == "accepted":					
-				Global.quest_handler.add(quest)
-				
-				# Controlla che l'item desiderato sia giá nell'inventario
-				if quest is ItemQuest:
-					quest.init_collected_items()
+		if quest is ItemQuest:
+			quest.init_collected_items()
+
+func handle_start(npc_name: String):
+	if name != npc_name:
+		return
+	
+	is_chatting = true
+	Dialogic.VAR.dialogue.dialogue_id = dialogue_id
+
+func handle_end(npc_name: String):
+	if name != npc_name:
+		return
+
+	is_chatting = false
+	
+	if quest != null:
+		check_current_stage()
+	else:
+		update_dialogue_id()
 #endregion
 
 ## Metodo di cui fare override nelle classi piú specifiche
 ## per modificare il comportamento dell'NPC al cambiare dello stage
 func check_current_stage():
 	pass
+
+func update_dialogue_id():
+	if dialogue_id + 1 <= dialogue_limit:
+		dialogue_id += 1
+		Dialogic.VAR.dialogue.dialogue_id += 1

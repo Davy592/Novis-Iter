@@ -1,0 +1,8 @@
+{
+	"id": "all_1",
+	"name": "Strano materiale",
+	"type": null,
+	"effect": null,
+	"description": "Materiale sconosciuto. C'é a chi puó piacere e a chi no.",
+	"texture": "res://resources/assets/sprites/main_items/raw_material.png"
+}

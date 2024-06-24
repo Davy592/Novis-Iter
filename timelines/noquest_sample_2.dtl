@@ -1,0 +1,13 @@
+[signal arg_type="dict" arg="{"":"","start":"NoQuestNPC2"}"]
+if {dialogue.dialogue_id} == 0:
+	pippo: Ciao. Sto solo verificando che il dialogue ID cambi sempre (con NPC 2)
+	Vediamo se aumenta alla fine di questo dialogo.
+elif {dialogue.dialogue_id} == 1:
+	Dialogo\: {dialogue.dialogue_id}
+elif {dialogue.dialogue_id} == 2:
+	pippo: Con me hai raggiunto {dialogue.dialogue_id}. Wooow
+elif {dialogue.dialogue_id} == 3:
+	pippo: Fine!!! Hai raggiunto il limite ({dialogue.dialogue_id})
+elif {dialogue.dialogue_id} == 4:
+	Beh, con me puoi arrivare a 4. Vedi\: {dialogue.dialogue_id}
+[signal arg_type="dict" arg="{"":"","end":"NoQuestNPC2"}"]

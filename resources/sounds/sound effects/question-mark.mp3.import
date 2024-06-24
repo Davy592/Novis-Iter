@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmwowg8slx860"
+path="res://.godot/imported/question-mark.mp3-d4fa68d3ed2be91c5ff34adedda1fa81.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/sound effects/question-mark.mp3"
+dest_files=["res://.godot/imported/question-mark.mp3-d4fa68d3ed2be91c5ff34adedda1fa81.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
