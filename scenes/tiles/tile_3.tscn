@@ -5039,7 +5039,6 @@ position = Vector2(939, 305)
 
 [node name="remy_example" parent="." node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
 position = Vector2(999, 302)
-scale = Vector2(3, 3)
 target_character = NodePath("../Player")
 
 [node name="grisby" parent="." instance=ExtResource("4_fdtl8")]
