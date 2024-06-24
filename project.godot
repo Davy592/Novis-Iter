@@ -41,7 +41,7 @@ directories/dtl_directory={
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
-"write_book": "res://timelines/tile6/write_book.dtl"
+"write_book": "res://timelines/tile6/write_book.dtl",
 "sign_tile_4": "res://timelines/sign_tile_4.dtl"
 }
 layout/style_list=["res://timelines/styles/New_File.tres", "res://timelines/styles/parallelogram.tres"]
