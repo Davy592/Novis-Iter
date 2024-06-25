@@ -30,10 +30,10 @@ directories/dch_directory={
 "wife_grisby": "res://timelines/wife_grisby.dch"
 }
 directories/dtl_directory={
-"creature": "res://timelines/creature.dtl",
 "grisby_dialogue": "res://timelines/grisby_dialogue.dtl",
 "prova": "res://timelines/prova.dtl",
 "remy_prova": "res://timelines/remy_prova.dtl",
+"tile_3_creature_dialogue": "res://timelines/tile_3_creature_dialogue.dtl",
 "wife_grisby_dialogue": "res://timelines/wife_grisby_dialogue.dtl"
 }
 layout/style_list=[]

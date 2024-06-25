@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://f6jer5d3d8ee" path="res://resources/assets/sprites/tile3_creature/mushroom.png" id="1_5a2jm"]
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="3_odgk8"]
-[ext_resource type="Resource" path="res://timelines/creature.dtl" id="4_f10xe"]
+[ext_resource type="Resource" path="res://timelines/tile_3_creature_dialogue.dtl" id="4_f10xe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uibpk"]
 atlas = ExtResource("1_5a2jm")

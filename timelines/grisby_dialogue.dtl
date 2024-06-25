@@ -17,9 +17,9 @@ if {quest} == false:
 				grisby: Oh potresti fare al caso mio allora. Come puoi vedere sono un povero vecchio. Vorrei anch'io continuare il mio viaggio ma sono riuscito a trovare solo la mia dolce mogliettina che si trova acconto a me. Vorrei riuscire a ritrovare anche il mio amato figliolo ma le mie gambe non mi consentono di muovermi per troppo tempo. Forse un giovane come te potrebbe aiutare questo vecchietto a intraprendere il suo viaggio con la propria famiglia
 	if {remy} == true:
 		grisby: Oh ma questo giovanotto che hai portato con te... Non può essere...Robert sei tu...
-		remy_example: Ehm... in verità mi chiamo Remy, vecchio...
+		remy_example: Ehm... in verità mi chiamo Remy, signore.
 		grisby: Oh cielo, non so proprio come ringraziarti per essere riuscito a trovare e a riportarmi sano e salvo il mio ragazzo... Robert sono così felice di averti ritrovato, ora possiamo concludere il percorso insieme al tuo vecchio, che ne dici?
-		remy_example: Per i miei gusti blateri troppo vecchio... Ma in fondo non mi dispiace accompagnarti... In fondo andare in compagnia è più sicuro e meno noioso. Va bene vecchio, vengo con te
+		remy_example: Sissignore.
 		set {creature} = true
 		[signal arg="together"]
 	if {remy} == false:
