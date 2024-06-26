@@ -3,7 +3,7 @@ extends Node2D
 var bullet_top_scene = preload("res://scenes/entities/bullet_top.tscn")
 var bullet_interval = 0.5
 var time_since_last_shot = 0.0
-var speed = 500
+var speed = 800
 var moving_right = true
 var item_script
 
