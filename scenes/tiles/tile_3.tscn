@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b32k1fhu1ommg"]
+[gd_scene load_steps=27 format=3 uid="uid://b32k1fhu1ommg"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
 [ext_resource type="Script" path="res://scripts/classes/tile_3.gd" id="1_n78sd"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://87bh2s6btp1h" path="res://resources/assets/tilesets/top-down_country_side_forest/1-Base.png" id="5_sdotm"]
 [ext_resource type="Texture2D" uid="uid://dmppc2kqd6ldx" path="res://resources/assets/tilesets/top-down_country_side_forest/2 - Support.png" id="6_kgnc4"]
 [ext_resource type="Texture2D" uid="uid://nikkscdt1pdh" path="res://resources/assets/tilesets/top-down_country_side_forest/3 - Roof top.png" id="7_2ud1n"]
-[ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="11_xxm7m"]
 [ext_resource type="PackedScene" uid="uid://ct13fwdm42ndq" path="res://scenes/entities/wife_grisby.tscn" id="12_wbw6y"]
 [ext_resource type="PackedScene" uid="uid://j5fsnlq68jis" path="res://scenes/entities/tile_3_creature.tscn" id="13_2a16u"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="14_7cvby"]
@@ -5034,12 +5033,10 @@ navigation_polygon = SubResource("NavigationPolygon_dlcmq")
 position = Vector2(-6, 21)
 polygon = PackedVector2Array(5, -22, 1929, -22, 1927, 459, 2115, 461, 2117, 693, 1925, 693, 1924, 1040, 969, 1031, 973, 1181, 726, 1176, 718, 1038, 4, 1038, 1, 4, -288, 16, -242, 1049, 81, 1223, 568, 1339, 972, 1400, 1284, 1267, 1939, 1253, 2227, 1139, 2447, 882, 2561, 652, 2492, 460, 2443, 216, 2250, 54, 2314, -174, 2002, -276, 1685, -358, 1190, -358, 548, -327, 33, -311)
 
-[node name="Player" parent="." instance=ExtResource("11_xxm7m")]
-position = Vector2(939, 305)
-
 [node name="remy_example" parent="." node_paths=PackedStringArray("target_character") instance=ExtResource("15_ulewk")]
-position = Vector2(999, 302)
-target_character = NodePath("../Player")
+visible = false
+position = Vector2(227, 53)
+target_character = NodePath("")
 
 [node name="grisby" parent="." instance=ExtResource("4_fdtl8")]
 position = Vector2(1303, 412)
