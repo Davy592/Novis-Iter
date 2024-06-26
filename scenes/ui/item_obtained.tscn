@@ -14,23 +14,24 @@ script = ExtResource("1_unipt")
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1149.0
-offset_top = -576.0
-offset_right = -1009.0
-offset_bottom = -519.0
+anchors_preset = -1
+anchor_left = 0.438
+anchor_top = 0.452
+anchor_right = 0.438
+anchor_bottom = 0.452
+offset_left = -837.96
+offset_top = -356.0
+offset_right = -617.96
+offset_bottom = -262.0
 grow_horizontal = 0
 grow_vertical = 0
 color = Color(0.213885, 0.221, 0.224039, 1)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_right = 140.0
-offset_bottom = 60.0
+offset_right = 219.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

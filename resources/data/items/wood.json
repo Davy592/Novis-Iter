@@ -1,0 +1,8 @@
+{
+	"id": "h1_1",
+	"name": "Legno",
+	"type": null,
+	"effect": null,
+	"description": "Del semplice legno. Utile per le costruzioni.",
+	"texture": "res://resources/assets/sprites/hub1_items/wood.png"
+}
