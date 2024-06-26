@@ -32,7 +32,7 @@ color = Color(0, 0.772931, 0.583246, 1)
 
 [node name="ItemIcon" type="Sprite2D" parent="CenterContainer/Background"]
 position = Vector2(70, 70)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3.75, 3.75)
 
 [node name="ItemQuantity" type="Label" parent="CenterContainer/Background"]
 custom_minimum_size = Vector2(40, 40)

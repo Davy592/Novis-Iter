@@ -1,0 +1,64 @@
+[signal arg_type="dict" arg="{"start":"Wanderer"}"]
+if {dialogue.dialogue_id} == 0:
+	wanderer: L'atmosfera non è delle migliori...
+	- Salve!
+		wanderer: Ciao piccoletto, cosa ti porta qui?
+		wanderer: ...no, lascia stare. Starai viaggiando. Come tutti.
+		jump La Meta
+	- Giornataccia?
+		wanderer: Gli affari vanno a rilento... quindi no, tutto normale.
+		- Perchè è normale?
+			wanderer: Alla gente non piace ciò che offro.
+			jump Cosa offri?
+		- Allora che succede?
+			jump Che succede?
+	- Cosa ci fai qui?
+		wanderer: Non si usa dire neanche un "ciao" dalle tue parti?
+		- Ciao...
+			wanderer: Ahahah
+			wanderer: Stavo scherzando, tranquillo.
+			wanderer: Però guardati le spalle. Con me sei tranquillo, ma non posso dire lo stesso per gli altri.
+			wanderer: Vuoi barattare qualcosa?
+			jump Cosa offri?
+		- Non ho tempo.
+			wanderer: Capito. Sei come gli altri. Andate tutti di fretta.
+			jump Cosa offri?
+label Cosa offri?
+- Cosa offri?
+	wanderer: "Cimeli". Sono strani oggetti con strane storie.
+	- Mi piacciono le cose strane!
+		wanderer: Allora andremo d'accordo.
+		wanderer: Quando trovi qualcosa di strano, barattalo con me. Ti racconterò anche qualcosa.
+	- Perchè vendi roba simile...?
+		wanderer: Aiutano... a capire questo mondo.
+		wanderer: Quando trovi qualcosa di strano, barattalo con me. Ti racconterò anche qualcosa.
+- - vai via -
+jump END
+label Che succede?
+wanderer: Non lo so, ma la gente è guardinga. Non mi piace.
+- Cosa ne pensi
+	wanderer: Stanno parlando di "sparizioni". Niente di buono.
+	wanderer: Se me lo chiedi, io non so niente. Chi sparisce... non torna.
+- - non dire niente -
+jump END
+label La Meta
+- Cosa vuoi dire?
+	wanderer: Prima o poi ci si sposta, è naturale.
+	wanderer: Persino il Re prima o poi lascerà il suo castello.
+	- Dove vanno tutti?
+		wanderer: Nessuno lo sa. O nessuno è mai tornato indietro per raccontarlo.
+		- Sembra pericoloso
+			wanderer: Per questo io resto qui... finchè posso.
+			wanderer: Voglio studiare.
+		- - non dire niente -
+jump END
+elif {dialogue.dialogue_id} == 1:
+	wanderer: Vuoi barattare qualcosa?
+	- Si
+	- No
+	- Sta succedendo qualcosa?
+		jump Che succede?
+label END
+[wait_input hide_text="false"]
+[end_timeline]
+[signal arg_type="dict" arg="{"end":"Wanderer"}"]

@@ -1,0 +1,8 @@
+{
+	"id": "t6_3",
+	"name": "Pen Holder",
+	"type": null,
+	"effect": null,
+	"description": "Un porta penne pieno di penne e matite. Se vorrai scrivere qualcosa da qualche parte non ti mancheranno di certo gli strumenti!",
+	"texture": "res://resources/assets/sprites/tile6_items/pen_holder.png"
+}

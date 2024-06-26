@@ -1,0 +1,4 @@
+Vuoi uscire dalla casa?
+- Si
+	[signal arg="exit"]
+- No

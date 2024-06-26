@@ -1,0 +1,8 @@
+Sembra essere un gira dischi.
+Vuoi provare ad inserire uno dei dischi dalla scatola a sinistra?
+- Inserisci un disco
+	bird_creature: CHI HA MESSO LA MUSICA?!?!
+	bird_creature: CHIUNQUE TU SIA SE, TI BECCHERO'.
+	[signal arg="music"]
+- Non inserire un disco
+	Meglio essere prudenti!

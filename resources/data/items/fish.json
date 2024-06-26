@@ -1,0 +1,8 @@
+{
+	"id": "t6_2",
+	"name": "Pesce Rosso",
+	"type": null,
+	"effect": null,
+	"description": "Una vaschetta con un carinissimo pesce rosso. Ci si affeziona facilmente a pesci rossi!",
+	"texture": "res://resources/assets/sprites/tile6_items/fish.png"
+}
