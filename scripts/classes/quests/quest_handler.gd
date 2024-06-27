@@ -60,7 +60,7 @@ func set_current_stage(id: int, amount: int):
 		if quests_in_progress[index].stage == 100:
 			complete_quest(index)
 
-func get_current_stage(id: int):
+func get_current_stage(id: int) -> int:
 	var stage: int = 0
 	var index: int = get_quest(id)
 	
@@ -76,6 +76,8 @@ func get_current_stage(id: int):
 	
 	if stage > 0:
 		Dialogic.VAR.dialogue.scelta = true
+	
+	return stage
 
 #region: Search
 func get_quest(id: int) -> int:

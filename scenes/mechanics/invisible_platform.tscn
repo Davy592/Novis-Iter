@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwtcewbfycia5"]
+[gd_scene load_steps=8 format=3 uid="uid://bwtcewbfycia5"]
 
 [ext_resource type="Texture2D" uid="uid://x7yflt2i3tlt" path="res://resources/assets/tilesets/Platform.png" id="1_52285"]
 [ext_resource type="Script" path="res://scripts/mechanics/invisible_platform.gd" id="1_o6blc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhf30"]
+radius = 2.98023e-08
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siny7"]
 size = Vector2(245, 251)
@@ -47,6 +50,12 @@ _data = {
 [node name="InvisiblePlatform" type="StaticBody2D"]
 z_index = -1
 script = ExtResource("1_o6blc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 524288
+visibility_layer = 524288
+position = Vector2(2.98023e-08, 0)
+shape = SubResource("CircleShape2D_jhf30")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

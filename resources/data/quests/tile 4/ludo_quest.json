@@ -2,8 +2,8 @@
 	"id": 41,
 	"title": "Questione d'affari",
 	"description": "",
-	"collect_item_file": "res://resources/data/items/wood.json",
-	"collect_item_quantity": 3,
+	"collect_item_file": "res://resources/data/items/book.json",
+	"collect_item_quantity": 1,
 	"reward_item_file": "res://resources/data/items/raw_material.json",
 	"reward_item_quantity": 10
 }

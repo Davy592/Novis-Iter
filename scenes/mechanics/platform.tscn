@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvryj672kl5b1"]
+
+[ext_resource type="Texture2D" uid="uid://x7yflt2i3tlt" path="res://resources/assets/tilesets/Platform.png" id="2_jrybh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siny7"]
+size = Vector2(245, 251)
+
+[node name="Platform" type="StaticBody2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.499996, 0.5)
+scale = Vector2(3.26563, 3.29688)
+texture = ExtResource("2_jrybh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_siny7")

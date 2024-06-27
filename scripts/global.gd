@@ -24,7 +24,7 @@ func change_current_tile(tile: TileInfo, side, id):
 	tile_instance.set_name('CurrentTile')
 	main_node.add_child(tile_instance)
 	#connect_current_tile_signals()
-	print(tile.tile_name)
+
 	player.position = tile.get_side_entry_point(side)
 	current_tile_map_node_id = id
 	current_map_node_updated.emit()
@@ -49,8 +49,6 @@ func set_camera_limits(
 	camera.limit_bottom = bottom_limit
 	camera.limit_left = left_limit
 	
-	print(camera.limit_top, " ", camera.limit_right, " ", camera.limit_bottom, " ", camera.limit_left)
-
 #func add_item_by_json_path(path):
 	#var file = FileAccess.open(path, FileAccess.READ)
 	#var json_as_text = file.get_as_text()

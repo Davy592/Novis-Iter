@@ -1,4 +1,4 @@
-[signal arg_type="dict" arg="{"start":"41"}"]
+[signal arg_type="dict" arg="{"start":"Ludo"}"]
 do Global.quest_handler.get_current_stage(41.0)
 if {dialogue.scelta} == false:
 	if {dialogue.dialogue_id} == 0:
@@ -19,7 +19,7 @@ if {dialogue.scelta} == false:
 				- . . .
 					jump Muso lungo
 				- - esci -
-					[end_timeline]
+					jump End Timeline
 		label Muso lungo
 		unknown: . . .
 		unknown: Che c'é? Cos'é quel muso lungo?
@@ -42,7 +42,7 @@ if {dialogue.scelta} == false:
 			jump Inizio quest
 		- Non sono interessato, grazie!
 			ludo: Oh, okay...alla prossima allora!
-			[end_timeline]
+			jump End Timeline
 	elif {dialogue.dialogue_id} == 1:
 		ludo: Allora? Vuoi sentirmi ora?
 		- Va bene
@@ -54,9 +54,11 @@ if {dialogue.scelta} == false:
 			[end_timeline]
 		label Inizio quest
 		ludo: In breve, sono stanco di fare affari qui fuori.
-		ludo: Ho aiutato cosí tanta di quella gente a trovare delle case che ho dimenticato di trovarne una io
-		ludo: Ho bisogno di una mano nel trovare una bella dimora per poter fare i miei affari.
-		ludo: Mi aiuteresti a trovare una casa?? Ti ricompenseró a dovere!!
+		ludo: Ho aiutato cosí tanta di quella gente a trovare delle case che ho dimenticato di pensare alla mia.
+		ludo: Ho bisogno di una mano nel riprendermi la mia bella dimora per poter continuare con i miei affari.
+		ludo: Non troppo lontano da qui c'é una creatura spaventosissima.
+		ludo: Un giorno ero fuori per aiutare la gente e la creatura, approfittando della situazione, si é intrufolata a casa mia, non facendomi piú entrare!!
+		ludo: Mi aiuteresti a riprendermela?? Ti ricompenseró a dovere.
 		- Affare fatto!
 			ludo: Giovinotto, é bello fare affari con lei!!
 			ludo: Allora, prendi tutto il necessario. Si va in scena!!
@@ -78,6 +80,19 @@ if {dialogue.scelta} == false:
 			ludo: Brutto pezzo di...
 			ludo: ...uff, ok, sei arrabbiato per conto tuo, lo capisco.
 			ludo: Non appena sarai pronto a fare affari con me, parlamene.
-			[end_timeline]
+			jump End Timeline
 else:
-[signal arg_type="dict" arg="{"end":"41"}"]
+	ludo: Allora? Come sta andando?
+	if {dialogue.current_stage} == 50:
+		label Positive outcome
+		- Ci sto ancora lavorando
+			ludo: Ottimo! Fammi sapere al piú presto, amico mio!
+			jump End Timeline
+	elif {dialogue.current_stage} == 20:
+		label Not so good outcome
+		- E perché dovrei aiutarti?
+		- Ci sto ancora lavorando
+			ludo: Ottimo! Fammi sapere al piú presto, amico mio!
+			jump End Timeline
+label End Timeline
+[signal arg_type="dict" arg="{"end":"Ludo"}"]
