@@ -1,6 +1,7 @@
 {
 	"name": "Village",
 	"scene": "res://scenes/tiles/tile_4.tscn",
+	"condition_script": null,
 	"texture": "res://",
 	"description": "Un semplice villaggio",
 	"default_entry_point": [0, 0],
