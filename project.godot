@@ -26,9 +26,12 @@ directories/dch_directory={
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
 "creature": "res://timelines/hub1/characters/creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
+"grisby": "res://timelines/grisby.dch",
 "ludo": "res://timelines/tile4/characters/ludo.dch",
+"tile3_creature": "res://timelines/tile3_creature.dch",
 "unknown": "res://timelines/unknown.dch",
-"wanderer": "res://timelines/hub1/characters/wanderer.dch"
+"wanderer": "res://timelines/hub1/characters/wanderer.dch",
+"wife_grisby": "res://timelines/wife_grisby.dch"
 }
 directories/dtl_directory={
 "bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
@@ -48,6 +51,7 @@ directories/dtl_directory={
 "finish": "res://timelines/tile4/timelines/ludo/finish.dtl",
 "first_inv_tile": "res://timelines/tile4/timelines/ludo/first_inv_tile.dtl",
 "fisherman": "res://timelines/hub1/timelines/fisherman.dtl",
+"grisby_dialogue": "res://timelines/grisby_dialogue.dtl",
 "hooded_figure": "res://timelines/tile4/timelines/hooded_figure.dtl",
 "intro": "res://timelines/hub1/timelines/intro.dtl",
 "inv_tile_down": "res://timelines/tile4/timelines/ludo/inv_tile_down.dtl",
@@ -72,8 +76,11 @@ directories/dtl_directory={
 "sign behind": "res://timelines/tile4/timelines/sign behind.dtl",
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
+"tile_3_creature_dialogue": "res://timelines/tile_3_creature_dialogue.dtl",
+"wanderer": "res://timelines/hub1/timelines/wanderer.dtl",
 "wanderer2": "res://timelines/hub1/timelines/wanderer.dtl",
 "wanderer_bkp": "res://timelines/hub1/timelines/wanderer_bkp.dtl",
+"wife_grisby_dialogue": "res://timelines/wife_grisby_dialogue.dtl",
 "write_book": "res://timelines/tile6/write_book.dtl"
 }
 layout/style_list=["res://timelines/styles/New_File.tres", "res://timelines/styles/parallelogram.tres"]
@@ -96,12 +103,20 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"chance": false,
+"creature": false,
+"creature_action": false,
 "dialogue": {
 "accepted": false,
 "current_stage": 0,
 "dialogue_id": 0,
 "scelta": false
 },
+"husband": true,
+"quest": false,
+"remy": false,
+"scelta2": false,
+"shooting": false,
 "tile6_book_written": false,
 "tile6_soap_in_coffee": false
 }
