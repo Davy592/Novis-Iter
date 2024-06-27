@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://by6ijg78qkv1q"]
+[gd_scene load_steps=104 format=3 uid="uid://by6ijg78qkv1q"]
 
 [ext_resource type="Script" path="res://scripts/tiles/tile4.gd" id="1_qqvkv"]
 [ext_resource type="Texture2D" uid="uid://dcovt0gtrvhos" path="res://resources/assets/tilesets/The Fan-tasy Tileset (Free)/Water and Sand/Tileset_Water.png" id="1_ub3qx"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="15_msc7s"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/sign.dtl" id="16_5fno8"]
 [ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="16_def8c"]
+[ext_resource type="Texture2D" uid="uid://cx75x63b7fxb4" path="res://resources/assets/sprites/characters/npc/ludo.png" id="17_fonua"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/sign behind.dtl" id="17_v4e3s"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/ludo/ludo.dtl" id="18_j7o55"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/little sign.dtl" id="18_mxiix"]
@@ -31,6 +32,7 @@
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/dino_npc.dtl" id="21_p8f07"]
 [ext_resource type="Texture2D" uid="uid://cdr4jxkqq3fyn" path="res://resources/assets/sprites/characters/npc/eyeball_monster.png" id="22_8srb2"]
 [ext_resource type="Texture2D" uid="uid://c2yp7g6y6ugts" path="res://resources/assets/sprites/characters/npc/cat.png" id="22_k1a73"]
+[ext_resource type="Resource" path="res://timelines/tile4/timelines/eyeball_creature.dtl" id="23_4herk"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/miao.dtl" id="23_nub1x"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/ludo/enter_cave.dtl" id="26_smc2i"]
 [ext_resource type="PackedScene" uid="uid://bwtcewbfycia5" path="res://scenes/mechanics/invisible_platform.tscn" id="26_xmxj4"]
@@ -6081,6 +6083,42 @@ sources/10 = SubResource("TileSetAtlasSource_w0cag")
 sources/5 = SubResource("TileSetAtlasSource_fmikd")
 sources/6 = SubResource("TileSetAtlasSource_ujlex")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmk73"]
+atlas = ExtResource("17_fonua")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwv8d"]
+atlas = ExtResource("17_fonua")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_530x8"]
+atlas = ExtResource("17_fonua")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g42t3"]
+atlas = ExtResource("17_fonua")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qntb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmk73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwv8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_530x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g42t3")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ts853"]
 atlas = ExtResource("18_v30te")
 region = Rect2(0, 0, 32, 32)
@@ -6317,12 +6355,11 @@ polygon = PackedVector2Array(7912, 2724, 7916, 2478, 8423, 2474, 8421, 2219, 868
 [node name="NPC" type="Node" parent="."]
 
 [node name="Ludo" parent="NPC" instance=ExtResource("16_def8c")]
-position = Vector2(1287, 797)
+position = Vector2(1280, 750)
 walk_radius = 0
+sprite_frames = SubResource("SpriteFrames_8qntb")
 json_quest_file = "res://resources/data/quests/tile 4/ludo_quest.json"
 dialogue_file = ExtResource("18_j7o55")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="NPC/Ludo"]
 
 [node name="Hooded NPC" parent="NPC" instance=ExtResource("16_def8c")]
 position = Vector2(761, 494)
@@ -6342,6 +6379,7 @@ position = Vector2(687, 2042)
 scale = Vector2(1.25, 1.25)
 walk_radius = 0
 sprite_frames = SubResource("SpriteFrames_tt0jt")
+dialogue_file = ExtResource("23_4herk")
 
 [node name="Cat" parent="NPC" instance=ExtResource("16_def8c")]
 position = Vector2(532, 1936)

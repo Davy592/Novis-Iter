@@ -30,3 +30,7 @@ func check_ludo_stage():
 			var ludo = get_node('NPC/Ludo')
 			ludo.quest.reward_item = ludo.quest.init_item("res://resources/data/items/song_in_a_glass.json", 1)
 			Global.quest_handler.set_current_stage(41.0, 100.0)
+		100:
+			if has_node('NPC/Ludo'):
+				var npc_node = get_node('NPC')
+				npc_node.remove_child(get_node('NPC/Ludo'))
