@@ -4,5 +4,5 @@
 	"type": null,
 	"effect": null,
 	"description": "Un sacco pieno di monete. Guarda come scintillano!",
-	"texture": "res://resources/assets/sprites/tile4_items/bag_of_money.png"
+	"texture": "res://resources/assets/sprites/tile4_items/stack_of_money.png"
 }
