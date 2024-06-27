@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #region: Variables
-const speed: int = 100
+@export var speed: int = 100
 var current_state = IDLE
 
 var state: String = "idle"
@@ -137,9 +137,10 @@ func choose(array):
 	array.shuffle()
 	return array.front()
 
+@export var possible_timer=[0.5, 1, 1.5]
 #region: Signals
 func _on_timer_timeout():
-	$Timer.wait_time = choose([0.5, 1, 1.5])
+	$Timer.wait_time = choose(possible_timer)
 	current_state = choose([IDLE, NEW_DIR, MOVE])	
 
 func _on_dialogic_signal(argument: Dictionary):
