@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 #region: Variables
 @export var speed: int = 100
-var current_state = IDLE
+@export var corsa=false
+var current_state = IDLE * int(!corsa) + NEW_DIR * int(corsa)
 
 var state: String = "idle"
 var direction: String = "front"
@@ -109,6 +110,7 @@ func play_animation():
 func update_movement_state(delta):
 	match current_state:
 		IDLE:
+			print("rcamado")
 			pass
 		NEW_DIR:
 			dir = choose([
@@ -127,9 +129,23 @@ func update_movement_state(delta):
 func move(delta):
 	var updated_pos = position + dir * speed * delta
 	if start_pos.distance_to(updated_pos) >= walk_radius:
-		current_state = IDLE
+		if not corsa:
+			current_state = IDLE
+		else:
+			current_state = NEW_DIR
 	else:
-		position += dir * speed * delta
+		#position += dir * speed * delta
+		#velocity = dir * speed
+		#move_and_slide()
+		var collision = move_and_collide(dir * speed * delta)
+		if collision != null:
+			dir = choose([
+				Vector2.RIGHT, 
+				Vector2.UP, 
+				Vector2.LEFT, 
+				Vector2.DOWN
+			])
+
 #endregion
 
 ## Consente la selezione casuale in un array di valori
@@ -137,11 +153,19 @@ func choose(array):
 	array.shuffle()
 	return array.front()
 
-@export var possible_timer=[0.5, 1, 1.5]
 #region: Signals
 func _on_timer_timeout():
-	$Timer.wait_time = choose(possible_timer)
-	current_state = choose([IDLE, NEW_DIR, MOVE])	
+	if not corsa:
+		$Timer.wait_time = choose([0.5, 1, 1.5])
+		current_state = choose([IDLE, NEW_DIR, MOVE])
+	else:
+		if current_state == NEW_DIR:
+			$Timer.wait_time = choose([0.01])
+			current_state = MOVE
+		else:
+			$Timer.wait_time = choose([1, 2, 3])
+			current_state = NEW_DIR
+
 
 func _on_dialogic_signal(argument: Dictionary):
 	var key = get_key_from_argument(argument)
@@ -178,6 +202,12 @@ func handle_start(npc_name: String):
 		return
 	
 	is_chatting = true
+	if corsa:
+		speed = 0
+		current_state = IDLE
+		dir = Vector2.DOWN
+		state = "idle"
+		direction = "front"
 	Dialogic.VAR.dialogue.dialogue_id = dialogue_id
 
 func handle_end(npc_name: String):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://dwavtpiry7e1"]
+[gd_scene load_steps=144 format=3 uid="uid://dwavtpiry7e1"]
 
 [ext_resource type="Texture2D" uid="uid://cy2xqyokwb5dl" path="res://resources/assets/tilesets/cozy farm/cozy farm.png" id="1_i703w"]
 [ext_resource type="Texture2D" uid="uid://c2ujxtwsyx7ip" path="res://resources/assets/tilesets/Free Park Zone Tileset/3 Objects/Other/Ramp1.png" id="2_8ssg8"]
@@ -20,15 +20,20 @@
 [ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="18_4a7sb"]
 [ext_resource type="Texture2D" uid="uid://b0lqywck821q1" path="res://resources/assets/sprites/characters/bimbi/Cane e Rana.png" id="19_01wke"]
 [ext_resource type="Texture2D" uid="uid://cchcryfajpgpv" path="res://resources/assets/sprites/characters/bimbi/spritesheets/7 idle.png" id="20_al7v3"]
+[ext_resource type="Resource" path="res://timelines/tile2/timelines/Bimbo cane.dtl" id="20_l6mco"]
+[ext_resource type="Resource" path="res://timelines/tile2/timelines/Bimbo rana.dtl" id="21_j4ugp"]
 [ext_resource type="Texture2D" uid="uid://ddm4gpdslifmc" path="res://resources/assets/sprites/characters/bimbi/spritesheets/7 walk.png" id="21_qunxs"]
 [ext_resource type="Texture2D" uid="uid://cmlflb4cx2wft" path="res://resources/assets/sprites/characters/bimbi/spritesheets/7 idle rev.png" id="22_mjrfn"]
 [ext_resource type="Texture2D" uid="uid://brl6h2n6lamqi" path="res://resources/assets/sprites/characters/bimbi/spritesheets/7 walk rev.png" id="23_mmvvs"]
 [ext_resource type="Texture2D" uid="uid://beb0lhmy7b747" path="res://resources/assets/sprites/characters/bimbi/spritesheets/8 idle.png" id="24_ptg7k"]
 [ext_resource type="Texture2D" uid="uid://ct8n55kysn7df" path="res://resources/assets/sprites/characters/bimbi/spritesheets/8 walk.png" id="25_mj674"]
 [ext_resource type="Texture2D" uid="uid://c5l5fjy0u2wcg" path="res://resources/assets/sprites/characters/bimbi/spritesheets/8 idle rev.png" id="26_pnvx4"]
+[ext_resource type="Resource" path="res://timelines/tile2/timelines/Bimbo gatto bianco.dtl" id="26_vew7a"]
 [ext_resource type="Texture2D" uid="uid://c4fysruvtbpru" path="res://resources/assets/sprites/characters/bimbi/spritesheets/8 walk rev.png" id="27_xbcit"]
 [ext_resource type="Texture2D" uid="uid://26m4vhb872b3" path="res://resources/assets/sprites/characters/bimbi/spritesheets/3 idle.png" id="28_wqgs2"]
 [ext_resource type="Texture2D" uid="uid://dtfjg5ebuctto" path="res://resources/assets/sprites/characters/bimbi/spritesheets/3 idle rev.png" id="29_e3lff"]
+[ext_resource type="Resource" path="res://timelines/tile2/timelines/Bimbo nero.dtl" id="31_gbrfa"]
+[ext_resource type="Resource" path="res://timelines/tile2/timelines/Osservatore.dtl" id="34_ip7nx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xj24"]
 texture = ExtResource("1_i703w")
@@ -4023,7 +4028,7 @@ texture = ExtResource("7_3478w")
 4:0/0/y_sort_origin = 18
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.9375, 38.125, 5.0625, 38.1875, 4.75, 14.75, -5.5, 15.5)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.9375, 38.125, 5.0625, 38.1875, 5.1875, 8, -6.1875, 8)
 4:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_1/angular_velocity = 0.0
 4:7/size_in_atlas = Vector2i(4, 6)
@@ -4961,7 +4966,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Player" parent="." instance=ExtResource("8_wr2e2")]
-position = Vector2(1562, 1082)
+position = Vector2(2692, 1088)
 scale = Vector2(1.25, 1.25)
 
 [node name="TileDoor_R" parent="." instance=ExtResource("11_c7v4m")]
@@ -4997,31 +5002,35 @@ polygon = PackedVector2Array(1336, 2157, 1330, 2331, 2270, 2331, 2266, 2159, 193
 
 [node name="Bimbo cane" parent="." instance=ExtResource("18_4a7sb")]
 position = Vector2(1561, 352)
-speed = 200
-walk_radius = 800
+speed = 500
+corsa = true
+walk_radius = 99999999999
 sprite_frames = SubResource("SpriteFrames_ssnvb")
-possible_timer = [0.0]
+dialogue_file = ExtResource("20_l6mco")
 
 [node name="Bimbo rana" parent="." instance=ExtResource("18_4a7sb")]
 position = Vector2(604, 533)
-speed = 200
-walk_radius = 800
+speed = 500
+corsa = true
+walk_radius = 99999999999
 sprite_frames = SubResource("SpriteFrames_pbupp")
-possible_timer = [0.0]
+dialogue_file = ExtResource("21_j4ugp")
 
 [node name="Bimbo gatto bianco" parent="." instance=ExtResource("18_4a7sb")]
 position = Vector2(364, 1672)
-speed = 200
-walk_radius = 800
+speed = 500
+corsa = true
+walk_radius = 99999999999
 sprite_frames = SubResource("SpriteFrames_5k4rf")
-possible_timer = [0.0]
+dialogue_file = ExtResource("26_vew7a")
 
 [node name="Bimbo nero" parent="." instance=ExtResource("18_4a7sb")]
 position = Vector2(1381, 1312)
-speed = 200
-walk_radius = 800
+speed = 600
+corsa = true
+walk_radius = 99999999999
 sprite_frames = SubResource("SpriteFrames_ed2dv")
-possible_timer = [0.0]
+dialogue_file = ExtResource("31_gbrfa")
 
 [node name="Osservatore" parent="." instance=ExtResource("18_4a7sb")]
 z_index = 1
@@ -5030,3 +5039,4 @@ collision_layer = 4
 collision_mask = 4
 walk_radius = 0
 sprite_frames = SubResource("SpriteFrames_dgqwi")
+dialogue_file = ExtResource("34_ip7nx")

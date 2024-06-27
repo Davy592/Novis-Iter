@@ -1,6 +1,7 @@
 {
 	"name": "Playground",
-	"scene": "res://scenes/tiles/tile2.tscn"
+	"condition_script": null,
+	"scene": "res://scenes/tiles/tile2.tscn",
 	"texture": "res://",
 	"description": "A playground",
 	"default_entry_point": [0, 0], 
