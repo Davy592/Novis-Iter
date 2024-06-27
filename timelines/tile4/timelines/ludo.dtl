@@ -18,6 +18,8 @@ if {dialogue.scelta} == false:
 					jump Muso lungo
 				- . . .
 					jump Muso lungo
+				- - esci -
+					[end_timeline]
 		label Muso lungo
 		unknown: . . .
 		unknown: Che c'é? Cos'é quel muso lungo?
