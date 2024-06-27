@@ -1,0 +1,26 @@
+if {creature_action} == true:
+	tile3_creature: ARRRRR ARRRRR...
+	[signal arg="hurt"]
+	grisby: AHHH! Questa infida creatura mi ha colpito con quella sua stupida testa funginea. Imperdonabile! Imperdonabile! Figliolo fa qualcosa...
+	remy_example: Cosa vuole che faccia signore?
+	grisby: Hai una pistola no? Sparagli...
+	[signal arg="shoot"]
+	- Fa che Remy spari alla creatura
+		set {shooting} = true
+		[signal arg="death"]
+	- Fa analizzare a Remy un attimo la situazione
+		set {shooting} = false
+		Forse ci dovremmo un attimo calmare tutti e analizzare la situazione, no Remy?
+	if {shooting} == true:
+		grisby: Ben fatto figliolo. Si vede che sei mio figlio, è proprio così che ti ho cresciuto... Oh ma guarda qua quanti bei piccoli funghetti magari possiamo prendere un po' per farci una buona zuppa più tardi... Però, forse meglio lasciar perdere...
+		[signal arg="stop_shooting"]
+		grisby: Giovanotto grazie per avermi aiutato a ricongiungermi con il mio figliolo. Adesso noi continueremo il nostro viaggio insieme e niente potrebbe redermi più che felice. Buona fortuna per il tuo viaggio, magari ci incentremo lungo il percorso...
+		[signal arg="path_together"]
+	else:
+		remy_example: Forse non è la scelta giusta, signore
+		grisby: Eh che vorresti dire ragazzino? Il tuo vecchio si è fatto male per colpa di questa orrenda creatura, il minimo che tu possa pensare è quello di ucciderla...
+		remy_example: Penso sia una scelta un po' esagerata con tutto il rispetto, signore. Non disobedirei mai a un ordine. è vero che le ha fatto male ma non così tanto e poi credo che questa creatura stia cercando di proteggere il suo territorio... Guardi ci sono un sacco di funghetti che stanno crescendo...
+		grisby: Quante bagianate stai blaterando adesso. La violenza è sempre la risposta in queste situazioni. Non è importante cosa o chi sta proteggendo, quello che conta è che io mi sono fatto male e che il responsabile va punito
+		remy_example: Non sono d'accordo, signore. Non voglio far del male una creatura che cercava solo di difendersi e di difendere il suo territorio dalla nostra non curanza... Sono stato troppo tempo sul campo di battaglia. *nome giocatore* mi ha fatto riflettere. Bisogna sapere quando prendere le armi e quando no, in più mi sono stancato di eseguire ordini senza avere voce in capitolo come una marionetta. NON VOGLIO UCCIDERE QUESTA CREATURA, NON VOGLIO PIù IMPUGNARE UN'ARMA PER FAR SEMPLICEMENTE DEL MALE E QUESTO è QUANTO...
+		grisby: Sono stato troppo accecato, non mi ricordavo di averti cresciuto come un'inutile idiota... Se è questo quello che pensi allora meglio se non ti fai più vedere da me. Troverò da solo per andare avanti, non mi serve un debole moralista...Vedi di non farti più vedere, Robert!
+		[signal arg="path_different"]
