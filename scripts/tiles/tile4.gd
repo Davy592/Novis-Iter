@@ -26,3 +26,7 @@ func check_ludo_stage():
 					
 					sprite.modulate = Color(1, 1, 1, 1)
 					platform.stop_animation = true
+		96:
+			var ludo = get_node('NPC/Ludo')
+			ludo.quest.reward_item = ludo.quest.init_item("res://resources/data/items/song_in_a_glass.json", 1)
+			Global.quest_handler.set_current_stage(41.0, 100.0)

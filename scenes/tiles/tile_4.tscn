@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://by6ijg78qkv1q"]
+[gd_scene load_steps=97 format=3 uid="uid://by6ijg78qkv1q"]
 
 [ext_resource type="Script" path="res://scripts/tiles/tile4.gd" id="1_qqvkv"]
 [ext_resource type="Texture2D" uid="uid://dcovt0gtrvhos" path="res://resources/assets/tilesets/The Fan-tasy Tileset (Free)/Water and Sand/Tileset_Water.png" id="1_ub3qx"]
@@ -20,12 +20,18 @@
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="15_msc7s"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/sign.dtl" id="16_5fno8"]
 [ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="16_def8c"]
-[ext_resource type="Script" path="res://scripts/entities/ludo.gd" id="17_fow1q"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/sign behind.dtl" id="17_v4e3s"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/ludo/ludo.dtl" id="18_j7o55"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/little sign.dtl" id="18_mxiix"]
+[ext_resource type="Texture2D" uid="uid://bovck7cwj6ljv" path="res://resources/assets/sprites/characters/npc/hooded_figure.png" id="18_v30te"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/little sign behind.dtl" id="19_e5jgq"]
+[ext_resource type="Resource" path="res://timelines/tile4/timelines/hooded_figure.dtl" id="19_wm2c7"]
+[ext_resource type="Texture2D" uid="uid://w7dkydm7hvkh" path="res://resources/assets/sprites/characters/npc/dino_creature.png" id="20_0rlx3"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="20_0yshn"]
+[ext_resource type="Resource" path="res://timelines/tile4/timelines/dino_npc.dtl" id="21_p8f07"]
+[ext_resource type="Texture2D" uid="uid://cdr4jxkqq3fyn" path="res://resources/assets/sprites/characters/npc/eyeball_monster.png" id="22_8srb2"]
+[ext_resource type="Texture2D" uid="uid://c2yp7g6y6ugts" path="res://resources/assets/sprites/characters/npc/cat.png" id="22_k1a73"]
+[ext_resource type="Resource" path="res://timelines/tile4/timelines/miao.dtl" id="23_nub1x"]
 [ext_resource type="Resource" path="res://timelines/tile4/timelines/ludo/enter_cave.dtl" id="26_smc2i"]
 [ext_resource type="PackedScene" uid="uid://bwtcewbfycia5" path="res://scenes/mechanics/invisible_platform.tscn" id="26_xmxj4"]
 [ext_resource type="PackedScene" uid="uid://ifj2i8vk2eml" path="res://scenes/utils/trigger_on_enter.tscn" id="27_vciu1"]
@@ -3330,7 +3336,7 @@ texture = ExtResource("3_yha6r")
 0:0/0/y_sort_origin = 18
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41, 18, 40, 17, 42, 48, -43, 44)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41, 18, 40, 17, 42, 52.5, -41.5, 53)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc766"]
 texture = ExtResource("4_y4nou")
@@ -3339,7 +3345,7 @@ texture = ExtResource("4_y4nou")
 0:0/0/y_sort_origin = 19
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-63, 8, 63, 8, 61, 63, -54, 59)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-63, 8, 63, 8, 63, 69.5, 3, 68.5, 2.5, 62.5, -53, 61.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkke5"]
 texture = ExtResource("5_sdapv")
@@ -5442,9 +5448,10 @@ texture = ExtResource("10_mfk5f")
 texture = ExtResource("13_u15fv")
 0:0/size_in_atlas = Vector2i(10, 7)
 0:0/0 = 0
-0:0/0/y_sort_origin = -24
+0:0/0/y_sort_origin = -28
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(78.4889, -35.3553, 70.0036, 62.9325, -4.94975, 62.9325, -7.77818, 31.1127, -74.2462, 31.1127, -75.6604, -33.9411)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujlex"]
 texture = ExtResource("8_es2fx")
@@ -6074,6 +6081,185 @@ sources/10 = SubResource("TileSetAtlasSource_w0cag")
 sources/5 = SubResource("TileSetAtlasSource_fmikd")
 sources/6 = SubResource("TileSetAtlasSource_ujlex")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts853"]
+atlas = ExtResource("18_v30te")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc2pr"]
+atlas = ExtResource("18_v30te")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw0jt"]
+atlas = ExtResource("18_v30te")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4st8h"]
+atlas = ExtResource("18_v30te")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mspr5"]
+animations = [{
+"frames": [{
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_ts853")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_lc2pr")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_iw0jt")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_4st8h")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxajo"]
+atlas = ExtResource("20_0rlx3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l72h"]
+atlas = ExtResource("20_0rlx3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq6t7"]
+atlas = ExtResource("20_0rlx3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpuy6"]
+animations = [{
+"frames": [{
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_lxajo")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_2l72h")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_mq6t7")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy8kd"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khies"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 48, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byy6n"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 96, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfayv"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 144, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqvcy"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 192, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd374"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 240, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrs7w"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 288, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyjjr"]
+atlas = ExtResource("22_8srb2")
+region = Rect2(0, 336, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt0jt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy8kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khies")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byy6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfayv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqvcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd374")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrs7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyjjr")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cope5"]
+atlas = ExtResource("22_k1a73")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3teoi"]
+atlas = ExtResource("22_k1a73")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chq3k"]
+atlas = ExtResource("22_k1a73")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vosnv"]
+atlas = ExtResource("22_k1a73")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny8k3"]
+atlas = ExtResource("22_k1a73")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk7we"]
+atlas = ExtResource("22_k1a73")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jslmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cope5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3teoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chq3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vosnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny8k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk7we")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mkk3"]
 size = Vector2(204, 55.5)
 
@@ -6131,17 +6317,37 @@ polygon = PackedVector2Array(7912, 2724, 7916, 2478, 8423, 2474, 8421, 2219, 868
 [node name="NPC" type="Node" parent="."]
 
 [node name="Ludo" parent="NPC" instance=ExtResource("16_def8c")]
-position = Vector2(3617, 992)
-script = ExtResource("17_fow1q")
-dialogue_limit = 1
-sprite_frames = null
+position = Vector2(1287, 797)
+walk_radius = 0
 json_quest_file = "res://resources/data/quests/tile 4/ludo_quest.json"
 dialogue_file = ExtResource("18_j7o55")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="NPC/Ludo"]
-visible = false
-position = Vector2(-0.500057, 11.375)
-scale = Vector2(6.15, 6.2625)
+
+[node name="Hooded NPC" parent="NPC" instance=ExtResource("16_def8c")]
+position = Vector2(761, 494)
+walk_radius = 0
+sprite_frames = SubResource("SpriteFrames_mspr5")
+dialogue_file = ExtResource("19_wm2c7")
+
+[node name="Dino NPC" parent="NPC" instance=ExtResource("16_def8c")]
+position = Vector2(2016, 964)
+scale = Vector2(1.25, 1.25)
+walk_radius = 0
+sprite_frames = SubResource("SpriteFrames_dpuy6")
+dialogue_file = ExtResource("21_p8f07")
+
+[node name="Eyeball NPC" parent="NPC" instance=ExtResource("16_def8c")]
+position = Vector2(687, 2042)
+scale = Vector2(1.25, 1.25)
+walk_radius = 0
+sprite_frames = SubResource("SpriteFrames_tt0jt")
+
+[node name="Cat" parent="NPC" instance=ExtResource("16_def8c")]
+position = Vector2(532, 1936)
+walk_radius = 0
+sprite_frames = SubResource("SpriteFrames_jslmt")
+dialogue_file = ExtResource("23_nub1x")
 
 [node name="Actionables" type="Node" parent="."]
 
@@ -6177,11 +6383,12 @@ dialogue_resource = ExtResource("19_e5jgq")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_w53jp")
 
-[node name="Book" parent="Actionables" instance=ExtResource("20_0yshn")]
+[node name="Title deed" parent="Actionables" instance=ExtResource("20_0yshn")]
 position = Vector2(7786, 236)
-json_data_file = "res://resources/data/items/book.json"
+scale = Vector2(2, 2)
+json_data_file = "res://resources/data/items/title_deed.json"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Book"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Title deed"]
 shape = SubResource("CircleShape2D_dupej")
 
 [node name="Triggers" type="Node" parent="."]
@@ -6209,7 +6416,7 @@ shape = SubResource("RectangleShape2D_fwfsl")
 [node name="WrongTeleport" parent="Teleports" instance=ExtResource("15_mfdnf")]
 position = Vector2(7289, 2067)
 destination = Vector2(7715, 2900)
-destination_camera_limits = Vector4(0, 9080, 3215, 6200)
+destination_camera_limits = Vector4(0, 9080, 3215, 6100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/WrongTeleport"]
 position = Vector2(-7, -1)
@@ -6619,5 +6826,3 @@ rotation = 1.5708
 [node name="TileDoorRight" parent="TileDoors" instance=ExtResource("15_2afsq")]
 position = Vector2(3823, 1234)
 side = 1
-
-[connection signal="screen_exited" from="NPC/Ludo/VisibleOnScreenNotifier2D" to="NPC/Ludo" method="_on_visible_on_screen_notifier_2d_screen_exited"]

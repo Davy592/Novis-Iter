@@ -5182,6 +5182,7 @@ layer_3/tile_data = PackedInt32Array(458763, 262144, 2, 458764, 262144, 2, 45876
 
 [node name="Wood" parent="Actionables" instance=ExtResource("9_ec456")]
 position = Vector2(1939, 1304)
+scale = Vector2(2, 2)
 json_data_file = "res://resources/data/items/wood.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Wood"]
@@ -5189,6 +5190,7 @@ shape = SubResource("CircleShape2D_pqkmg")
 
 [node name="Wood2" parent="Actionables" instance=ExtResource("9_ec456")]
 position = Vector2(478, 2993)
+scale = Vector2(2, 2)
 json_data_file = "res://resources/data/items/wood.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Wood2"]
@@ -5196,6 +5198,7 @@ shape = SubResource("CircleShape2D_pqkmg")
 
 [node name="Wood3" parent="Actionables" instance=ExtResource("9_ec456")]
 position = Vector2(4155, 3279)
+scale = Vector2(2, 2)
 json_data_file = "res://resources/data/items/wood.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Wood3"]
