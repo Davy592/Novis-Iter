@@ -1,0 +1,137 @@
+[gd_scene load_steps=19 format=3 uid="uid://cdk8ml3gf51dy"]
+
+[ext_resource type="Texture2D" uid="uid://dt5qghsb4vaco" path="res://resources/assets/sprites/grisby/Back1.png" id="1_2n8im"]
+[ext_resource type="Script" path="res://scripts/entities/grisby.gd" id="1_gknrs"]
+[ext_resource type="Texture2D" uid="uid://b3aa60g4y4v25" path="res://resources/assets/sprites/grisby/Back2.png" id="2_enwjf"]
+[ext_resource type="Texture2D" uid="uid://cyog6mgfcvkdf" path="res://resources/assets/sprites/grisby/Back3.png" id="3_vum11"]
+[ext_resource type="Texture2D" uid="uid://cxm6hsks4j7w5" path="res://resources/assets/sprites/grisby/Forward1.png" id="4_x8a7t"]
+[ext_resource type="Texture2D" uid="uid://b3hc672h1kb2v" path="res://resources/assets/sprites/grisby/Forward2.png" id="5_tslo5"]
+[ext_resource type="Texture2D" uid="uid://red4pywnfgoh" path="res://resources/assets/sprites/grisby/Forward3.png" id="6_en8au"]
+[ext_resource type="Texture2D" uid="uid://tj6fy0nbe1ww" path="res://resources/assets/sprites/grisby/Left1.png" id="7_lpqn1"]
+[ext_resource type="Texture2D" uid="uid://dwmliwr8qck7f" path="res://resources/assets/sprites/grisby/Left2.png" id="8_toun4"]
+[ext_resource type="Texture2D" uid="uid://sxmy50qg2rde" path="res://resources/assets/sprites/grisby/Left3.png" id="9_dt86v"]
+[ext_resource type="Texture2D" uid="uid://ip6p0mth2el8" path="res://resources/assets/sprites/grisby/Right1.png" id="10_yud48"]
+[ext_resource type="Texture2D" uid="uid://cikogv0v0wova" path="res://resources/assets/sprites/grisby/Right2.png" id="11_5h3o5"]
+[ext_resource type="Texture2D" uid="uid://8irsndhthjbx" path="res://resources/assets/sprites/grisby/Right3.png" id="12_lg276"]
+[ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="13_pcoce"]
+[ext_resource type="Resource" path="res://timelines/grisby_dialogue.dtl" id="14_ihi5k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7xsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2n8im")
+}],
+"loop": true,
+"name": &"back_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2n8im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_enwjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vum11")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x8a7t")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x8a7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tslo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_en8au")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lpqn1")
+}],
+"loop": true,
+"name": &"left_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lpqn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_toun4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dt86v")
+}],
+"loop": true,
+"name": &"left_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yud48")
+}],
+"loop": true,
+"name": &"right_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yud48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5h3o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lg276")
+}],
+"loop": true,
+"name": &"right_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4xdov"]
+radius = 22.0
+height = 72.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05oof"]
+size = Vector2(57, 74)
+
+[node name="grisby" type="CharacterBody2D"]
+script = ExtResource("1_gknrs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.67969, 4.5)
+scale = Vector2(2.75, 2.548)
+sprite_frames = SubResource("SpriteFrames_e7xsf")
+animation = &"front_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(7, 0)
+shape = SubResource("CapsuleShape2D_4xdov")
+
+[node name="DialogueActionable" parent="." instance=ExtResource("13_pcoce")]
+dialogue_resource = ExtResource("14_ihi5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
+position = Vector2(9.5, 2)
+shape = SubResource("RectangleShape2D_05oof")
+metadata/_edit_lock_ = true
