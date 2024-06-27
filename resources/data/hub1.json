@@ -1,5 +1,6 @@
 {
 	"name": "Hub 1",
+	"condition_script": "res://scripts/tiles/hub2_condition.gd",
 	"scene": "res://scenes/tiles/hub_1.tscn",
 	"texture": "res://",
 	"description": "A peaceful place.",

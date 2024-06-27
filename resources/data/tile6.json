@@ -1,5 +1,6 @@
 {
 	"name": "House",
+	"condition_script": null,
 	"scene": "res://scenes/tiles/tile6.tscn",
 	"texture": "res://",
 	"description": "La casa di una strana creatura.",

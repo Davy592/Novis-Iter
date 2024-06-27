@@ -1,6 +1,7 @@
 {
 	"name": "COUNTRY SIDE",
 	"scene": "res://scenes/tiles/tile_3.tscn",
+	"condition_script": null,
 	"texture": "res://",
 	"description": "una tranquilla campagna.",
 	"default_entry_point": [0, 0],
