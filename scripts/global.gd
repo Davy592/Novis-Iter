@@ -10,6 +10,7 @@ var hubs_clues = {}
 var caso: String
 
 signal current_map_node_updated
+signal stop_battle
 
 func _ready():
 	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
@@ -56,6 +57,14 @@ func set_camera_limits(
 	camera.limit_right = right_limit
 	camera.limit_bottom = bottom_limit
 	camera.limit_left = left_limit
+	
+func use_item(name: String):
+	match name:
+		"Bandiera":
+			print("bandiera")
+			Dialogic.VAR.battle = false
+			emit_signal("stop_battle")
+	
 	
 #func add_item_by_json_path(path):
 	#var file = FileAccess.open(path, FileAccess.READ)

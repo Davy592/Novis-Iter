@@ -1,7 +1,8 @@
 {
-	"name": "flag",
-	"type": "common",
-	"effect": "",
-	"description": "Bandiera bianca",
+	"id": "t1_1",
+	"name": "Bandiera",
+	"type": null,
+	"effect": null,
+	"description": "Una bandiera bianca...su un campo di battaglia...",
 	"texture": "res://resources/assets/sprites/flag_white.png"
 }

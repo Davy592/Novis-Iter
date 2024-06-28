@@ -23,8 +23,6 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"pippo": "res://timelines/pippo.dch",
-"remy": "res://timelines/remy.dch",
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
 "creature": "res://timelines/hub1/characters/creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
@@ -33,6 +31,8 @@ directories/dch_directory={
 "heran": "res://timelines/hubs/heran.dch",
 "leeve": "res://timelines/hubs/leeve.dch",
 "ludo": "res://timelines/tile4/characters/ludo.dch",
+"pippo": "res://timelines/pippo.dch",
+"remy": "res://timelines/remy.dch",
 "remy_example": "res://timelines/remy_example.dch",
 "shyy": "res://timelines/hubs/shyy.dch",
 "tengu": "res://timelines/hubs/tengu.dch",
@@ -44,8 +44,6 @@ directories/dch_directory={
 "zach": "res://timelines/hubs/zach.dch"
 }
 directories/dtl_directory={
-"prova": "res://timelines/prova.dtl",
-"remy_dialogue": "res://timelines/remy_dialogue.dtl",
 "bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
 "bird_quest_dialogue": "res://timelines/tile6/bird_quest_dialogue.dtl",
 "bird_see_book": "res://timelines/tile6/bird_see_book.dtl",
@@ -94,6 +92,8 @@ directories/dtl_directory={
 "noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
 "noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
 "ops": "res://timelines/tile4/timelines/ludo/ops.dtl",
+"prova": "res://timelines/prova.dtl",
+"remy_dialogue": "res://timelines/remy_dialogue.dtl",
 "remy_prova": "res://timelines/remy_prova.dtl",
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
@@ -133,6 +133,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"battle": true,
 "chance": false,
 "creature": false,
 "creature_action": false,
@@ -142,10 +143,9 @@ variables={
 "dialogue_id": 0,
 "scelta": false
 },
-"battle": true,
-"remy": false,
 "husband": true,
 "quest": false,
+"remy": false,
 "scelta2": false,
 "shooting": false,
 "tile6_book_written": false,

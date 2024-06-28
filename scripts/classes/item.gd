@@ -8,7 +8,6 @@ var quantity: int
 #var effect: String
 var texture: Texture
 
-signal stop_battle
 
 func _init(dict):
 	name = dict['id']
@@ -36,13 +35,6 @@ func get_quantity():
 
 func increment_quantity(n):
 	quantity += n
-
-
-func use_item(name):
-	match name:
-		"flag":
-			Dialogic.VAR.battle = false
-			emit_signal("stop_battle")
 
 func decrement_quantity(n):
 	if n < quantity:

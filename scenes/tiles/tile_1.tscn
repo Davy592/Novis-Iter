@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvglxb50cxyma"]
+[gd_scene load_steps=21 format=3 uid="uid://cvglxb50cxyma"]
 
 [ext_resource type="Texture2D" uid="uid://l2clttpbtjl4" path="res://resources/assets/tilesets/tile1/mainlevbuild.png" id="1_g6h6m"]
 [ext_resource type="Texture2D" uid="uid://b24akeymjfrvb" path="res://resources/assets/tilesets/tile1/decorative.png" id="2_0efgf"]
@@ -3757,6 +3757,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, -5, 854, -5, 857, -103, 968, -105, 975, -12, 1915, -7, 1920, 570, 2006, 562, 2016, 691, 1930, 693, 1923, 1084, 1021, 1084, 1023, 1177, 910, 1177, 895, 1082, -13, 1076, 3, 661, -88, 663, -93, 573, -2, 567)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qe5u"]
+radius = 56.921
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnsgr"]
 size = Vector2(2130.51, 184.98)
 
@@ -3794,13 +3797,16 @@ navigation_polygon = SubResource("NavigationPolygon_b7yx8")
 visible = false
 polygon = PackedVector2Array(0, 2, 834, 4, 834, -104, 986, -106, 988, 6, 1921, -3, 1914, 544, 2016, 550, 2012, 697, 1923, 705, 1921, 1085, 1035, 1080, 1041, 1192, 880, 1190, 882, 1076, -9, 1085, 0, 700, -96, 704, -90, 546, -2, 544, -1, 26, -127, 16, -192, 167, -211, 418, -177, 615, -216, 934, -188, 1064, 231, 1360, 703, 1289, 977, 1311, 1256, 1326, 1571, 1238, 2227, 1313, 2164, 936, 2100, 700, 2083, 477, 2057, 328, 2072, 141, 2077, -3, 2074, -93, 2038, -222, 1764, -203, 1341, -180, 1090, -182, 922, -201, 745, -229, 643, -212, 235, -252, 20, -190, -35, -123, -73, -80)
 
-[node name="ItemActionable" parent="." instance=ExtResource("6_mhbai")]
+[node name="Flag" parent="." instance=ExtResource("6_mhbai")]
 position = Vector2(1069, 408)
+scale = Vector2(0.75, 0.75)
 json_data_file = "res://resources/data/items/white_flag.json"
 
-[node name="remy" parent="." node_paths=PackedStringArray("target_character") instance=ExtResource("7_kjfi8")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
+shape = SubResource("CircleShape2D_3qe5u")
+
+[node name="remy" parent="." instance=ExtResource("7_kjfi8")]
 position = Vector2(1524, 689)
-target_character = NodePath("")
 
 [node name="TileDoor_1" parent="." instance=ExtResource("8_uiegj")]
 position = Vector2(-36, 620)
