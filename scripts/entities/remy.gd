@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 
 var ACCELERATION = 150
-@export var target_character: CharacterBody2D
+var player = Global.player
+@onready var target_character = player
 @onready var navigation_agent = $NavigationAgent2D
 var move = false
 var tile3 = false

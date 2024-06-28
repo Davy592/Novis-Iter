@@ -22,11 +22,13 @@ func set_clue(key, value):
 
 func get_clue(key):
 	return hubs_clues.get(key, false)
-
+	
+var player
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
-	var player = main_node.get_node('Player')
+	
+	player = main_node.get_node('Player')
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa
 	#disconnect_current_tile_signals()
 	main_node.remove_child(main_node.get_node('CurrentTile'))
