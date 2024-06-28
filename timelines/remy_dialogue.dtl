@@ -4,6 +4,7 @@ if {battle} == false:
 		remy: Stare qua è forse più utile che stare su quei noisissimi libri di scuola. E poi se non ci fossi stato io chi avrebbe tenuto occupati quei soldati...
 		[end_timeline]
 	- Mmmm... forse potresti seguirmi invece di continuare a stare in questa terra di morti
+		remy: Non mi dispiace, vengo con te allora!
 		[signal arg="follower"]
 else:
 	remy: Non vedi che siamo nel bel mezzo della battaglia. Non mi sembra il momento di perdere tempo a fare quattro chiacchere.
