@@ -86,6 +86,7 @@ directories/dtl_directory={
 "ludo": "res://timelines/tile4/timelines/ludo/ludo.dtl",
 "miao": "res://timelines/tile4/timelines/miao.dtl",
 "mrX_dialogue": "res://timelines/hubs/mrX_dialogue.dtl",
+"new_house_entry": "res://timelines/tile6/new_house_entry.dtl",
 "noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
 "noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
 "ops": "res://timelines/tile4/timelines/ludo/ops.dtl",

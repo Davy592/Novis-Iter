@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://du314eu7mp68h"]
+[gd_scene load_steps=97 format=3 uid="uid://du314eu7mp68h"]
 
 [ext_resource type="Texture2D" uid="uid://cbrt72vnb6y1a" path="res://resources/assets/tilesets/Hubs/castello 1.png" id="1_oedy3"]
 [ext_resource type="Texture2D" uid="uid://eqs6cec4gbp" path="res://resources/assets/tilesets/Hubs/castello 2.png" id="2_dlop3"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bsgsl207wruhu" path="res://resources/assets/tilesets/Hubs/terreno 1.png" id="18_37dy1"]
 [ext_resource type="Texture2D" uid="uid://p0cvammjl38e" path="res://resources/assets/tilesets/Hubs/decorazioni.png" id="19_t8wuq"]
 [ext_resource type="Texture2D" uid="uid://c7wl5efgsayjp" path="res://resources/assets/tilesets/Top-Down Forest/Trees.png" id="20_wr4fg"]
-[ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="21_qokfl"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="21_uuc8y"]
 [ext_resource type="PackedScene" uid="uid://dgiorju7wh7ou" path="res://scenes/entities/npc.tscn" id="22_da5kf"]
 [ext_resource type="Texture2D" uid="uid://4laa5pc8cphg" path="res://resources/assets/sprites/characters/hubs/leeve.png" id="23_bl70d"]
@@ -17987,7 +17986,7 @@ layer_5/tile_data = PackedInt32Array(917534, 1048588, 1, 720928, 1048588, 1, 104
 [node name="TileDoors" type="Node" parent="TileMap"]
 
 [node name="LeftDoor" parent="TileMap/TileDoors" instance=ExtResource("21_uuc8y")]
-position = Vector2(-192, 1838)
+position = Vector2(-80, 1640)
 side = 3
 
 [node name="RightDoor2" parent="TileMap/TileDoors" instance=ExtResource("21_uuc8y")]
@@ -18054,7 +18053,6 @@ sprite_frames = SubResource("SpriteFrames_3643n")
 dialogue_file = ExtResource("36_j52ob")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
-visible = false
 position = Vector2(-57.4545, -142.545)
 
 [node name="top" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
@@ -18078,11 +18076,6 @@ polygon = PackedVector2Array(478.182, 691.636, 476.727, 729.454, 493.091, 729.45
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
 polygon = PackedVector2Array(1045.82, 412, 1045.82, 436.363, 1105.45, 436.363, 1105.45, 412)
-
-[node name="Player" type="Node" parent="."]
-
-[node name="Player" parent="Player" instance=ExtResource("21_qokfl")]
-position = Vector2(2270, 878)
 
 [node name="Klayton" parent="." instance=ExtResource("33_22i8m")]
 position = Vector2(1640, 469)

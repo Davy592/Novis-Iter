@@ -5,7 +5,7 @@ extends Area2D
 func _on_body_entered(body):
 	var neighbor_id = Global.map_graph.get_neighbor(Global.current_tile_map_node_id, side)	
 	
-	if neighbor_id != -1:
+	if neighbor_id != -1 and body.get_name() == 'Player':
 		var tile_info = Global.map_graph.get_node_data(neighbor_id).get_tile_info()
 		if tile_info.get_side_entry_point(side) != null:
 			if tile_info.is_condition_satisfied():
