@@ -88,7 +88,12 @@ func bad_ending():
 	# notifica ad owen l'ending
 	print('bad_ending')
 	
-	pass
+	var json_as_text = FileAccess.get_file_as_string("res://resources/data/items/rewards/sale.json")
+	var item_data = JSON.parse_string(json_as_text)
+	item_data['quantity'] = 1
+	item_data['texture'] = load(item_data['texture'])
+	var item = Item.new(item_data)
+	Global.inventory.add(item, 1)
 
 func remove_minigame():
 	remove_child(get_node('Path2D'))
