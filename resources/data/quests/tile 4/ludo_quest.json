@@ -1,0 +1,9 @@
+{
+	"id": 41,
+	"title": "Questione d'affari",
+	"description": "",
+	"collect_item_file": "res://resources/data/items/title_deed.json",
+	"collect_item_quantity": 1,
+	"reward_item_file": "res://resources/data/items/stack_of_money.json",
+	"reward_item_quantity": 10
+}

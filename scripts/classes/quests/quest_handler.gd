@@ -1,5 +1,6 @@
 class_name QuestHandler
 
+signal quest_started(quest_title)
 signal quest_completed(quest_title)
 
 #region: Variables/Constants
@@ -50,13 +51,16 @@ func set_current_stage(id: int, amount: int):
 	var index: int = get_quest(id)
 	
 	if index != NO_ELEMENT_INDEX and quests_in_progress[index].stage < amount:
+		if quests_in_progress[index].stage == 0:
+			emit_signal("quest_started", quests_in_progress[index].title)
+		
 		Dialogic.VAR.dialogue.current_stage = amount
 		quests_in_progress[index].stage = amount
 
 		if quests_in_progress[index].stage == 100:
 			complete_quest(index)
 
-func get_current_stage(id: int):
+func get_current_stage(id: int) -> int:
 	var stage: int = 0
 	var index: int = get_quest(id)
 	
@@ -72,6 +76,8 @@ func get_current_stage(id: int):
 	
 	if stage > 0:
 		Dialogic.VAR.dialogue.scelta = true
+	
+	return stage
 
 #region: Search
 func get_quest(id: int) -> int:

@@ -1,3 +1,5 @@
+class_name NPC
+
 extends CharacterBody2D
 
 #region: Variables
@@ -28,7 +30,9 @@ var dialogue_id: int = 0
 
 # Quest
 @export_file("*.json") var json_quest_file
-var quest: Quest = null
+var quest: Quest = null:
+	set(new_quest): quest = new_quest
+	get: return quest
 
 # Dialogo (sincronizzato con DialogueActionable)
 @export var dialogue_file: DialogicTimeline:
@@ -184,11 +188,10 @@ func handle_end(npc_name: String):
 		return
 
 	is_chatting = false
+	update_dialogue_id()
 	
 	if quest != null:
 		check_current_stage()
-	else:
-		update_dialogue_id()
 #endregion
 
 ## Metodo di cui fare override nelle classi piú specifiche
