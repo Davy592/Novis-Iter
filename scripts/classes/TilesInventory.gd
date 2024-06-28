@@ -9,6 +9,8 @@ func _init():
 		TileInfo.new("res://resources/data/tile4.json"),
 		TileInfo.new("res://resources/data/tile6.json"),
 		TileInfo.new("res://resources/data/tile3.json"),
+		TileInfo.new("res://resources/data/hub2.json"),
+		TileInfo.new("res://resources/data/hub3.json"),
 		TileInfo.new("res://resources/data/tile.json")
 	]
 

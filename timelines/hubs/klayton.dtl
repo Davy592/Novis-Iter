@@ -1,0 +1,18 @@
+Vai via
+- Hai sentito dell'assassinio del re? [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
+	Era uno di noi. Ci abbandonato per "fama" e "potere".
+	Quella roba è inutile. Serve solo a voi. Noi... siamo così tranquilli.
+	Sono certo sia opera vostra.
+	do Global.set_clue("human_guilty", true)
+	- Sai chi è stato?
+		No, non lo sa nessuno di noi.
+		Non sappiamo neanche il perchè.
+		- Per odio?
+			L'odio ce lo avete insegnato voi. Noi non siamo così esperti.
+		- Per il potere?
+			A noi non interessa il potere.
+	- - vai via -
+- Ciao...
+	Non hai sentito? Ho detto di andare via.
+	Qui sta succedendo qualcosa di losco... prima qui c'era più gente.
+- - ascolti il consiglio -

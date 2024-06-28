@@ -1,0 +1,24 @@
+zach: Ciao amico, ti piace disegnare?
+- Hai sentito dell'assassinio del Re? [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
+	zach: Brutta storia. Si sarà arrabbiato molto.
+	label clues
+	- C'era fin troppo sangue a terra... [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
+		zach: forse gli piaceva disegnare, a me piace disegnare.
+		jump clues
+	- Il corpo era... lacerato [if {Global.get_clue("king_body")}][else="hide" alt_text="-"]
+		zach: I mie artigli e i miei denti servono solo per grattarmi e pulirmi
+		jump clues
+	- Pare sia stato qualcuno di minuto [if {Global.get_clue("small_build")}][else="hide" alt_text="-"]
+		zach: Amico. Io puzzo. Avrei lasciato tracce.
+		jump clues
+	- Forse è stato uno straniero [if {Global.get_clue("human_guilty")}][else="hide" alt_text="-"]
+		zach: Dici qualcuno che non è di qui? Non guardare me...
+		zach: Ok, lo ammetto, non sono di qui. Ma non sono stato io.
+		zach: Ora vai via.
+		jump clues
+	- Nessuno conosce chi è stato [if {Global.get_clue("look_diff")}][else="hide" alt_text="-"]
+		zach: Si sarà camuffato certo. Io riesco a cambiare colore, magari lui anche forma. Sarebbe divertente
+		do Global.set_clue("shapeshifter", true)
+		jump clues
+	- - vai via -
+- - vai via -

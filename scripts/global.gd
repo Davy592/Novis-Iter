@@ -6,6 +6,8 @@ var current_tile_map_node_id: int
 var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
+var hubs_clues = {}
+var caso: String
 
 signal current_map_node_updated
 
@@ -13,6 +15,12 @@ func _ready():
 	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	Dialogic.timeline_ended.connect(dialogue_manager._on_timeline_ended)
+	
+func set_clue(key, value):
+	hubs_clues[key] = value
+
+func get_clue(key):
+	return hubs_clues.get(key, false)
 
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
