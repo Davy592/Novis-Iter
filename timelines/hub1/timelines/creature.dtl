@@ -1,4 +1,7 @@
-[signal arg_type="dict" arg="{"start":"Creature"}"]
-creature: A volte mi fermo a guardare la vegetazione di questo posto.
-creature: É cosí rilassante...Ti fa momentaneamente dimenticare tutte le preoccupazioni e i dispiaceri del passato... 
-[signal arg_type="dict" arg="{"end":"Creature"}"]
+[signal arg_type="dict" arg="{"end":"Creature2"}"]
+creature: A volte Kyle mi chiede di aiutarlo in qualche lavoretto.
+creature: Nulla di complicato, in realtá, ma é comunque davvero stancante.
+creature: Il lato positivo é che alla fine posso rilassarmi e pescare insieme a lui.
+[sound path="res://resources/sounds/sound effects/question-mark.mp3" volume="0.0"]
+creature: Cosa? Non sai chi é Kyle? É il proprietario della casa a nord da qui.
+[signal arg_type="dict" arg="{"start":"Creature2"}"]

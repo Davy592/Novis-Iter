@@ -1,0 +1,26 @@
+[signal arg_type="dict" arg="{"start":"Wanderer"}"]
+if {dialogue.dialogue_id} == 0:
+	wanderer: L'acqua é proprio bella. Ti fa sentire come a casa...
+	- Chi sei?
+		wanderer: Io? Sono un semplice vagabondo.
+		jump Get to know
+	- Che zaino grande che hai!
+		wanderer: Oh, ciao. Non ti avevo visto arrivare
+		- Chi sei?
+			wanderer: Io? Sono un semplice vagabondo.
+		jump Get to know
+	label Get to know
+	- Che ci fai qui?
+		wanderer: Vado di cittá in cittá a scambiare materiali e conoscere gente.
+	label Exchange materials
+	- "Scambiare materiali" hai detto?
+		wanderer: Certo! Scambiare materiali é la mia piú grande passione!!
+		wanderer: Man mano che incontro nuova gente, c'é sempre qualche nuovo materiale che ho modo di analizzare.  
+		- Sembra davvero interessante!
+			wanderer: Hai proprio ragione!
+			wanderer: Sai che c'é? Adesso devo prepararmi per il mio prossimo viaggio, ma se ci ritroveremo ancora saró felice di farti vedere i materiali che ho raccolto durante le mie spedizioni. D'accordo?
+elif {dialogue.dialogue_id} == 1:
+	wanderer: Cosa? No, purtroppo non ho materiali insoliti con me.
+	wanderer: Questa terra non pulula di gente, quindi non ho raccolto niente di speciale.
+	wanderer: Ma non appena ci rincontreremo, saró felice di condividere con te tutto ció che di insolito si puó trovare in queste terre
+[signal arg_type="dict" arg="{"end":"Wanderer"}"]

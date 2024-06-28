@@ -1,64 +1,41 @@
 [signal arg_type="dict" arg="{"start":"Wanderer"}"]
 if {dialogue.dialogue_id} == 0:
-	wanderer: L'atmosfera non è delle migliori...
-	- Salve!
-		wanderer: Ciao piccoletto, cosa ti porta qui?
-		wanderer: ...no, lascia stare. Starai viaggiando. Come tutti.
-		jump La Meta
-	- Giornataccia?
-		wanderer: Gli affari vanno a rilento... quindi no, tutto normale.
-		- Perchè è normale?
-			wanderer: Alla gente non piace ciò che offro.
-			jump Cosa offri?
-		- Allora che succede?
-			jump Che succede?
-	- Cosa ci fai qui?
-		wanderer: Non si usa dire neanche un "ciao" dalle tue parti?
-		- Ciao...
-			wanderer: Ahahah
-			wanderer: Stavo scherzando, tranquillo.
-			wanderer: Però guardati le spalle. Con me sei tranquillo, ma non posso dire lo stesso per gli altri.
-			wanderer: Vuoi barattare qualcosa?
-			jump Cosa offri?
-		- Non ho tempo.
-			wanderer: Capito. Sei come gli altri. Andate tutti di fretta.
-			jump Cosa offri?
-label Cosa offri?
-- Cosa offri?
-	wanderer: "Cimeli". Sono strani oggetti con strane storie.
-	- Mi piacciono le cose strane!
-		wanderer: Allora andremo d'accordo.
-		wanderer: Quando trovi qualcosa di strano, barattalo con me. Ti racconterò anche qualcosa.
-	- Perchè vendi roba simile...?
-		wanderer: Aiutano... a capire questo mondo.
-		wanderer: Quando trovi qualcosa di strano, barattalo con me. Ti racconterò anche qualcosa.
-- - vai via -
-jump END
-label Che succede?
-wanderer: Non lo so, ma la gente è guardinga. Non mi piace.
-- Cosa ne pensi
-	wanderer: Stanno parlando di "sparizioni". Niente di buono.
-	wanderer: Se me lo chiedi, io non so niente. Chi sparisce... non torna.
-- - non dire niente -
-jump END
-label La Meta
-- Cosa vuoi dire?
-	wanderer: Prima o poi ci si sposta, è naturale.
-	wanderer: Persino il Re prima o poi lascerà il suo castello.
-	- Dove vanno tutti?
-		wanderer: Nessuno lo sa. O nessuno è mai tornato indietro per raccontarlo.
-		- Sembra pericoloso
-			wanderer: Per questo io resto qui... finchè posso.
-			wanderer: Voglio studiare.
-		- - non dire niente -
-jump END
+	wanderer: Ciao, viaggiatore!!
+	- Viaggiatore?
+		wanderer: Si, hai chiaramente l'aspetto di un viaggiatore alle prime armi. L'aspetto non inganna mai!
+	- Ehm...ciao...
+		wanderer: Non essere preoccupato, non ti faró del male.
+	label Intro
+	wanderer: Il mio obiettivo é fornirti tutte le informazioni che potrebbero rivelarsi utili per la tua avventura.
+	wanderer: Posso spiegarti tutto ció che é in mio sapere\: chiedimi ogni curiositá sulle caratteristiche di questo mondo, sulla barra della salute e altro
+	label What do you want to know?
+	wanderer: Allora, cosa vuoi sapere?
+	- Dove siamo?
+		wanderer: Questo posto, dici? Non lo so ancora per certo, so solo che il mondo in cui ci troviamo é...strano.
+		wanderer: Creature a dir poco singolari popolano questo luogo.
+		wanderer: Non so come siano arrivate qui. So solo che alcune sono in questo mondo da mooolto tempo.
+		jump What do you want to know?
+	- Come esco di qui?
+		wanderer: Leggenda narra che alcuni eletti siano in grado di manipolare questo mondo a proprio piacimento.
+		wanderer: Con questo potere, possono muovere terre e collegarle tra loro, avendone il pieno controllo.
+		wanderer: Come lo so? Mi é capitato piú volte di passare e trovarmi in posti sempre diversi l'uno dall'altro.
+		wanderer: Magico, vero?
+		jump What do you want to know?
+	- Barra della salute?
+		wanderer: Ah, te l'ho fatta. Nessuna barra della salute. Il che non introduce nessun rischio di morire.
+		wanderer: Il lato positivo é che puoi esplorare questo mondo in completa tranquillitá.
+		wanderer: Non aver paura\: affronta le sfide che ti si pareranno dinanzi alla strada con logica e ragionamento per quanto tempo vuoi...
+		wanderer: ...gli unici rischi sono le conseguenze delle tue decisioni.
+		jump What do you want to know?
+	- - esci -
+		wanderer: Ci vediamo!!
+		[end_timeline]
 elif {dialogue.dialogue_id} == 1:
-	wanderer: Vuoi barattare qualcosa?
+	wanderer: Vuoi che ti spieghi qualcosa?
 	- Si
+		wanderer: Bene! Ricapitoliamo...
+		jump Intro
 	- No
-	- Sta succedendo qualcosa?
-		jump Che succede?
-label END
-[wait_input hide_text="false"]
-[end_timeline]
+		wanderer: Perfetto! Sono qui per ogni tua curiositá!!
+		[end_timeline]
 [signal arg_type="dict" arg="{"end":"Wanderer"}"]

@@ -1,0 +1,13 @@
+wife_grisby: Arr Auu Arr!!
+if {husband} == true:
+	- ** meglio ignorarla (sussurro)**
+		set {scelta2} = true
+	- è sicuro che questa sia sua moglie?
+		set {scelta2} = false
+else:
+	- **meglio ignorarla (sussurro)**
+		set {scelta2} = true
+if {scelta2} == false:
+	grisby: Giovanotto non ti hanno insegnato che non è educato insultare le donne. è vero che non siamo nello splendore dei nostri anni ma la mia moglie resta comunque la donna più bella di tutte, vero cara?
+	wife_grisby: Arr auu arr!
+	grisby: Assolutamente vero cara! Guarda tu i giovani di oggi!

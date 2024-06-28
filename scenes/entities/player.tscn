@@ -558,13 +558,13 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nyd4u"]
-radius = 16.0
-height = 48.0
+radius = 24.0
+height = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2l63"]
 size = Vector2(38, 49)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 script = ExtResource("1_t28kr")
 
@@ -596,6 +596,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
 position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_h2l63")
+
+[node name="Camera Target" type="Marker2D" parent="."]
 
 [connection signal="area_entered" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
 [connection signal="area_exited" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_exited"]

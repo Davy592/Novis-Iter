@@ -1,8 +1,8 @@
 {
 	"id": "all_1",
-	"name": "Strano materiale",
+	"name": "Strano fossile",
 	"type": null,
 	"effect": null,
-	"description": "Materiale sconosciuto. C'é a chi puó piacere e a chi no.",
-	"texture": "res://resources/assets/sprites/main_items/raw_material.png"
+	"description": "Fossile di un animale sconosciuto. Ha la forma di uno zoccolo.",
+	"texture": "res://resources/assets/sprites/main_items/fossil.png"
 }
