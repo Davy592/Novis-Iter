@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://by6ijg78qkv1q"]
+[gd_scene load_steps=104 format=3 uid="uid://clfh5d78bi1g8"]
 
 [ext_resource type="Script" path="res://scripts/tiles/tile4.gd" id="1_qqvkv"]
 [ext_resource type="Texture2D" uid="uid://dcovt0gtrvhos" path="res://resources/assets/tilesets/The Fan-tasy Tileset (Free)/Water and Sand/Tileset_Water.png" id="1_ub3qx"]

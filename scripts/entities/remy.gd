@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 var ACCELERATION = 150
-@export var target_character: CharacterBody2D
 @onready var navigation_agent = $NavigationAgent2D
 var move = false
 var tile3 = false
@@ -22,8 +21,8 @@ func _ready():
 
 func _physics_process(delta):
 	if move and not tile3:
-		var distance_to_target = target_character.position.distance_to(position)
-		set_movement_target(target_character.global_position)
+		var distance_to_target = Global.target_character.position.distance_to(position)
+		set_movement_target(Global.target_character.global_position)
 		if navigation_agent.is_navigation_finished() or distance_to_target < 100:
 			return
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
@@ -82,10 +81,12 @@ func set_movement_target(movement_target: Vector2):
 func _on_dialogic_signal(argument:String):
 	if argument == "follower":
 		move = true
+		Global.remy_follow = true
 		$Timer.start()
 		$CollisionShape2D.disabled = true
 		Dialogic.VAR.remy = true
 	if argument == "together":
+		Global.remy_follow = false
 		move = false
 		tile3 = true
 		dialogue_player = false
@@ -106,6 +107,7 @@ func _on_dialogic_signal(argument:String):
 
 
 func _on_timer_timeout():
+	Global.remy_follow = false
 	move = false
 	$CollisionShape2D.disabled = false
 	Dialogic.VAR.remy = false

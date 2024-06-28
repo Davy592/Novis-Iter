@@ -1,5 +1,7 @@
 extends Area2D
 
+var remy: Node2D
+
 @export var destination: Vector2 = Vector2(0, 0):
 	set(new_destination): destination = new_destination
 	get: return destination
@@ -18,6 +20,8 @@ func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		var main_node = get_tree().get_root().get_node('Main')
 		var player = main_node.get_node('Player')
+		if Global.remy_follow:
+			remy = main_node.get_node('remy')
 		
 		Global.set_camera_limits(
 			player,
@@ -27,3 +31,5 @@ func _on_body_entered(body: Node2D):
 			destination_camera_limits.w
 		)
 		body.position = destination
+		if Global.remy_follow:
+			remy.position = body.position

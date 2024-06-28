@@ -8,12 +8,17 @@ var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
 var hubs_clues = {}
 var caso: String
+var remy_follow = false
+var remy: Node2D
+var target_character: CharacterBody2D
 
 signal current_map_node_updated
 signal stop_battle
 
 func _ready():
 	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
+	var main_node = get_tree().get_root().get_node('Main')
+	target_character = main_node.get_node('Player')
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	Dialogic.timeline_ended.connect(dialogue_manager._on_timeline_ended)
 	
@@ -27,6 +32,8 @@ func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
 	var player = main_node.get_node('Player')
+	if remy_follow:
+		remy = main_node.get_node('remy')
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa
 	#disconnect_current_tile_signals()
 	main_node.remove_child(main_node.get_node('CurrentTile'))
@@ -35,6 +42,8 @@ func change_current_tile(tile: TileInfo, side, id):
 	#connect_current_tile_signals()
 
 	player.position = tile.get_side_entry_point(side)
+	if remy_follow:
+		remy.position = player.position
 	current_tile_map_node_id = id
 	current_map_node_updated.emit()
 	
