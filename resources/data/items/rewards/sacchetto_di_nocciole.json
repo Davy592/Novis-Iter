@@ -1,0 +1,8 @@
+{
+	"id": "2X",
+	"name": "Sacchetto di nocciole",
+	"type": null,
+	"effect": null,
+	"description": "Un sacchetto di materiale vegetale, contenente strane nocciole, dalla dubbia provenienza. Sembrano piacere molto a tutti",
+	"texture": "res://resources/assets/sprites/rewards/sacchetto_di_nocciole.png"
+}

@@ -1,0 +1,75 @@
+heran: Salve straniero. Tira una brutta aria non è così?
+- Hai sentito dell'assassinio del Re? [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
+	heran: Si... sapevo fosse successo qualcosa.
+	heran: Immagino che tutti noi avremo un motivo in più per andarcene da qui.
+	label clues
+	- C'era fin troppo sangue a terra...
+		heran: Molto strano. Forse l'assassino non voleva uccidere, ma mandare un messaggio.
+		- Cosa intendi?
+			heran: Chi lascerebbe un'intera stanza riversa nel sangue?
+			heran: Stava chiaramente escogitando altro...
+			heran: Forse un esperimento.
+			do Global.set_clue("x_blood", true)
+		jump clues
+	- Il corpo era... lacerato [if {Global.get_clue("king_body")}][else="hide" alt_text="-"]
+		heran: Non porto armi con me. Questo è un bastone, mi serve per sostituire il mio braccio sinistro.
+		jump clues
+	- Pare sia stato qualcuno di minuto [if {Global.get_clue("small_build")}][else="hide" alt_text="-"]
+		heran: Sono troppo vecchio per certe cose. E poi non darmi del piccolo, so farmi grande quando voglio.
+		do Global.set_clue("x_shape", true)
+		jump clues
+	- Forse è stato uno straniero [if {Global.get_clue("human_guilty")}][else="hide" alt_text="-"]
+		heran: Tu ne saresti capace?
+		- Si
+			heran: Allora chi mi dice che non sia stato tu...
+			heran: In ogni caso, forse abbiamo qualcosa da condividere
+			heran: Ma tempo al tempo
+		- No
+			heran: Chi mi dice che tu non stia mentendo
+			heran: Mi dispiace, ma dovrai fare di meglio
+		jump clues
+	- Nessuno conosce chi è stato
+		heran: E tu vorresti conoscerlo?
+		- Si
+			heran: Mh... stai esplorando un territorio pericolso. Tutti lo sanno qui.
+			heran: Che prove avresti?
+			- Sapevi che la stanza fosse tutta sporca di sangue [if {Global.get_clue("x_blood")}][else="hide" alt_text="-"]
+				heran: L'ho intuito, hai detto che c'è n'era molto in fondo.
+				- Hai detto "quando voglio so farmi grande" [if {Global.get_clue("x_shape")}][else="hide" alt_text="-"]
+					heran: E questo cosa vorrebbe dire? Pensi davvero che basti?
+					heran: Gira a largo.
+					- Dicono che qualcuno potrebbe cambiare forma [if {Global.get_clue("shapeshifter")}][else="hide" alt_text="-"]
+						heran: E cosa ti dice che io ne sono capace?
+						label finale
+						- Nascondi il tuo aspetto
+							heran: Credi basti?
+							jump finale
+						- Quello non è un bastone
+							heran: Non vuoi sapere cos'è credimi
+							jump finale
+						- Sembri capire l'assassino
+							heran: ...
+							heran: Immaginio non mi libererò di te facilmente.
+							heran: D'accordo ragazzo. Hai vinto.
+							heran: Ora o sei con me, o contro di me.
+							- Con te
+								heran: Lo dovrai provare... ma buono a sapersi.
+								heran: Torna dal Re. Ti farà passare. Ci vediamo oltre il castello.
+							- Contro
+								heran: La guardia non mi prenderà. Ha troppa paura.
+								heran: Ci rivedremo. Forse per allora ti spiegherò cosa volevo fare.
+								heran: Torna dal re. Capirai in parte cosa intendo.
+							do Global.set_clue("end_case", true)
+		- Al momento nessuna
+			heran: Vuol dire che il nostro uomo è abile.
+			heran: proverei ad insistere su qualcuno dei nostri amici qui presenti...
+	- No
+		heran: Meglio così... credimi.
+	- - vai via -
+- Straniero?
+	heran: Come me, o il tizio con lo zaino addosso.
+	heran: Mh... forse salto a conlcusioni affrettate.
+- Che succede?
+	heran: La guardia dice che ci sta sorvegliando. Non mi stupisce.
+	Queste terre non sono sicure, anche se non sembra.
+- - vai via -

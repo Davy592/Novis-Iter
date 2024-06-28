@@ -1,0 +1,16 @@
+{
+	"name": "Hub 2",
+	"condition_script": "res://scripts/tiles/hub2_condition.gd",
+	"scene": "res://scenes/tiles/hub2.tscn",
+	"texture": "res://",
+	"description": "hub 2",
+	"default_entry_point": [1521, 2519],
+	"top_entry_point": [1521, 2519],
+	"right_entry_point": [-26, 1712],
+	"bottom_entry_point": null,
+	"left_entry_point": [3269, 1082],
+	"cam_top_limit": -129,
+	"cam_right_limit": 3455,
+	"cam_bottom_limit": 2975,
+	"cam_left_limit": -147
+}
