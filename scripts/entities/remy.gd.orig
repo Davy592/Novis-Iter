@@ -2,8 +2,11 @@ extends CharacterBody2D
 
 
 var ACCELERATION = 150
+<<<<<<< HEAD
 var player = Global.player
 @onready var target_character = player
+=======
+>>>>>>> 7de9777acf321379731afb94e06d19c6a3f0e976
 @onready var navigation_agent = $NavigationAgent2D
 var move = false
 var tile3 = false
@@ -23,8 +26,8 @@ func _ready():
 
 func _physics_process(delta):
 	if move and not tile3:
-		var distance_to_target = target_character.position.distance_to(position)
-		set_movement_target(target_character.global_position)
+		var distance_to_target = Global.target_character.position.distance_to(position)
+		set_movement_target(Global.target_character.global_position)
 		if navigation_agent.is_navigation_finished() or distance_to_target < 100:
 			return
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
