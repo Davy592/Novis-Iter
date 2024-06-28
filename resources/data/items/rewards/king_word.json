@@ -1,0 +1,8 @@
+{
+	"id": "L1",
+	"name": "King word",
+	"type": null,
+	"effect": null,
+	"description": "Il mandato del Re. Anche se le sue leggi sono inventate di sana pianta, vige una strana riverenza nei suoi confronti. Le creature di questo mondo sarebbero disposto ad ascoltarla pur di non avere problemi.",
+	"texture": "res://resources/assets/sprites/rewards/king_word.png"
+}

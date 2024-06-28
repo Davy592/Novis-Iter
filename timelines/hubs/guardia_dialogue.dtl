@@ -1,0 +1,23 @@
+if {Global.get_clue("end_case")} == false:
+	guardia: Sta attento, questa è... o diventerà... o è stata una scena del crimine
+	- Non sembri molto... sicuro
+		guardia: è successo qualcosa, stanne certo.
+		guardia: Devo solo capire se si ripeterà, o se è già successa un'altra volta.
+		- Di cosa stai parlando?
+			guardia: Segreto professionale. Il re mi reso "guardia", e la guardia devo fare.
+			guardia: è il mio nome e il mio ruolo, anche se non mi piace.
+			guardia: Quindi ora, torno a fare la guardia.
+		- - vai via -
+	- Hai sentito dell'assassinio del Re? [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
+		guardia: Si, e non posso parlarne. Ogni aiuto sarà bene accetto ma...
+		guardia: Si insomma, sta' sull'attenti
+		gulp* - deglutisce con preoccupazione -
+	- Perchè sei qui e non al castello? [if {Global.get_clue("spooked_guard")}][else="hide" alt_text="-"]
+		guardia: I... io... Sono fuggi... coff* Sono uscito dal castello per indagare.
+		guardia: Per favore... aiutami. Interroga tutti e scopri chi è stato... sempre che il colpevole sia tra noi.
+		guardia: Io ho troppa p- p- perseveranza!
+		guardia: Devo sorvegliare tutti, così che non accada niente a nessuno!
+	- - ascolti il consiglio -
+elif {Global.get_clue("end_case")} == true:
+	guardia: Grazie davvero davvero davvero davvero davvero davvero davvero davvero
+	guardia: davvero per il tuo aiuto. La prossima volta sapremo ricompensarti degnamente, stanne certo. Se ne occuperà il re stesso!

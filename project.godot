@@ -26,8 +26,15 @@ directories/dch_directory={
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
 "creature": "res://timelines/hub1/characters/creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
+"guardia": "res://timelines/hubs/guardia.dch",
+"heran": "res://timelines/hubs/heran.dch",
+"leeve": "res://timelines/hubs/leeve.dch",
 "pippo": "res://timelines/pippo.dch",
-"wanderer": "res://timelines/hub1/characters/wanderer.dch"
+"shyy": "res://timelines/hubs/shyy.dch",
+"tengu": "res://timelines/hubs/tengu.dch",
+"wanderer": "res://timelines/hub1/characters/wanderer.dch",
+"xenma": "res://timelines/hubs/xenma.dch",
+"zach": "res://timelines/hubs/zach.dch"
 }
 directories/dtl_directory={
 "bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
@@ -37,20 +44,35 @@ directories/dtl_directory={
 "bird_see_player": "res://timelines/tile6/bird_see_player.dtl",
 "change_music": "res://timelines/tile6/change_music.dtl",
 "creature": "res://timelines/hub1/timelines/creature.dtl",
+"creature1": "res://timelines/hubs/creature1.dtl",
 "creature2": "res://timelines/hub1/timelines/creature2.dtl",
+"creature3": "res://timelines/hubs/creature3.dtl",
 "entry_dialogue": "res://timelines/tile6/entry_dialogue.dtl",
 "exit": "res://timelines/tile6/exit.dtl",
 "final_dialogue": "res://timelines/tile6/final_dialogue.dtl",
 "fisherman": "res://timelines/hub1/timelines/fisherman.dtl",
+"guardia_dialogue": "res://timelines/hubs/guardia_dialogue.dtl",
+"hubs/creature2": "res://timelines/hubs/creature2.dtl",
+"king_blood": "res://timelines/hubs/clues/king_blood.dtl",
+"king_body": "res://timelines/hubs/clues/king_body.dtl",
+"king_guard1": "res://timelines/hubs/clues/king_guard1.dtl",
+"king_guard2": "res://timelines/hubs/clues/king_guard2.dtl",
+"klayton": "res://timelines/hubs/klayton.dtl",
+"leeve_dialogue": "res://timelines/hubs/leeve_dialogue.dtl",
+"mrX_dialogue": "res://timelines/hubs/mrX_dialogue.dtl",
 "noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
 "noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
 "prova": "res://timelines/prova.dtl",
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
+"shy_dialogue": "res://timelines/hubs/shy_dialogue.dtl",
 "soap_in_coffee": "res://timelines/tile6/soap_in_coffee.dtl",
+"tengu_dialogue": "res://timelines/hubs/tengu_dialogue.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
 "wanderer": "res://timelines/hub1/timelines/wanderer.dtl",
-"write_book": "res://timelines/tile6/write_book.dtl"
+"write_book": "res://timelines/tile6/write_book.dtl",
+"xenma_dialogue": "res://timelines/hubs/xenma_dialogue.dtl",
+"zach_dialogue": "res://timelines/hubs/zach_dialogue.dtl"
 }
 layout/style_list=[]
 layout/default_style=""

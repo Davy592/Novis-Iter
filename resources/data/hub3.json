@@ -1,0 +1,15 @@
+{
+	"name": "Hub 3",
+	"scene": "res://scenes/tiles/Hub3.tscn",
+	"texture": "res://",
+	"description": "hub 3",
+	"default_entry_point": [2208, 3261],
+	"top_entry_point": [2208, 3261],
+	"right_entry_point": null,
+	"bottom_entry_point": null,
+	"left_entry_point": null,
+	"cam_top_limit": 723,
+	"cam_right_limit": 3556,
+	"cam_bottom_limit": 3481,
+	"cam_left_limit": 854
+}

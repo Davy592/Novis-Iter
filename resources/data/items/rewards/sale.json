@@ -1,0 +1,8 @@
+{
+	"id": "6N",
+	"name": "Sale",
+	"type": null,
+	"effect": null,
+	"description": "Strana sostanza biancastra. Sembra impedire alle piante di crescere.",
+	"texture": "res://resources/assets/sprites/rewards/sale.png"
+}
