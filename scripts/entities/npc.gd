@@ -110,7 +110,6 @@ func play_animation():
 func update_movement_state(delta):
 	match current_state:
 		IDLE:
-			print("rcamado")
 			pass
 		NEW_DIR:
 			dir = choose([

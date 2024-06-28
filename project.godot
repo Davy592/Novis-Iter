@@ -44,6 +44,7 @@ directories/dtl_directory={
 "Bimbo nero": "res://timelines/tile2/timelines/Bimbo nero.dtl",
 "Bimbo rana": "res://timelines/tile2/timelines/Bimbo rana.dtl",
 "Osservatore": "res://timelines/tile2/timelines/Osservatore.dtl",
+"QuestAlert": "res://timelines/tile2/timelines/QuestAlert.dtl",
 "bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
 "bird_quest_dialogue": "res://timelines/tile6/bird_quest_dialogue.dtl",
 "bird_see_book": "res://timelines/tile6/bird_see_book.dtl",

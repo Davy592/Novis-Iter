@@ -564,7 +564,7 @@ height = 48.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2l63"]
 size = Vector2(38, 49)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 script = ExtResource("1_t28kr")
 

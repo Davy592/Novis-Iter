@@ -28,6 +28,9 @@ func _ready():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 
 func _physics_process(delta):
+	print("z: " + str(z_index))
+	print("coll: " + str(collision_layer))
+	print("mask: " + str(collision_mask))
 	match state:
 		MOVE:
 			var axis = get_input_axis()

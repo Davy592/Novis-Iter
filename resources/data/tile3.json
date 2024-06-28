@@ -1,5 +1,5 @@
 {
-	"name": "COUNTRY SIDE",
+	"name": "Land",
 	"scene": "res://scenes/tiles/tile_3.tscn",
 	"condition_script": null,
 	"texture": "res://",
