@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgmg0kimf6owp"
-path="res://.godot/imported/Cat_Sprite_Sheet.png-da63da0ab58a4157d7a7779859d2adc7.ctex"
+uid="uid://bqdd611mcti3n"
+path="res://.godot/imported/pillole.png-8e044713b50f28b9b6861b443f4b689c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/sprites/tile3_creature/Cat_Sprite_Sheet.png"
-dest_files=["res://.godot/imported/Cat_Sprite_Sheet.png-da63da0ab58a4157d7a7779859d2adc7.ctex"]
+source_file="res://resources/assets/sprites/rewards/pillole.png"
+dest_files=["res://.godot/imported/pillole.png-8e044713b50f28b9b6861b443f4b689c.ctex"]
 
 [params]
 

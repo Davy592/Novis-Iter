@@ -1,5 +1,6 @@
 {
 	"name": "Hub 3",
+	"condition_script": null,
 	"scene": "res://scenes/tiles/Hub3.tscn",
 	"texture": "res://",
 	"description": "hub 3",

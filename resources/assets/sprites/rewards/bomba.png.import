@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgmg0kimf6owp"
-path="res://.godot/imported/Cat_Sprite_Sheet.png-da63da0ab58a4157d7a7779859d2adc7.ctex"
+uid="uid://ds3akoscwow22"
+path="res://.godot/imported/bomba.png-cda6f2dcde56ff48fbb130222cc6930e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/sprites/tile3_creature/Cat_Sprite_Sheet.png"
-dest_files=["res://.godot/imported/Cat_Sprite_Sheet.png-da63da0ab58a4157d7a7779859d2adc7.ctex"]
+source_file="res://resources/assets/sprites/rewards/bomba.png"
+dest_files=["res://.godot/imported/bomba.png-cda6f2dcde56ff48fbb130222cc6930e.ctex"]
 
 [params]
 
