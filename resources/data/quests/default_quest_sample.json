@@ -1,0 +1,7 @@
+{
+	"id": 100,
+	"title": "La prima avventura",
+	"description": "Completa lo script",
+	"reward_item_file": "res://resources/data/items/potion.json",
+	"reward_item_quantity": 2
+}

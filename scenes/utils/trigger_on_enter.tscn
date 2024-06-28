@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ifj2i8vk2eml"]
+
+[ext_resource type="Script" path="res://scripts/utils/trigger_on_enter.gd" id="1_njrrk"]
+
+[node name="TriggerOnEnter" type="Area2D"]
+script = ExtResource("1_njrrk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

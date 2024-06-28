@@ -1,0 +1,8 @@
+{
+	"id": "t4_3",
+	"name": "Sacco di monete",
+	"type": null,
+	"effect": null,
+	"description": "Un sacco pieno di monete. Guarda come scintillano!",
+	"texture": "res://resources/assets/sprites/tile4_items/stack_of_money.png"
+}

@@ -1,5 +1,6 @@
 {
 	"name": "Bifrost",
+	"condition_script": null,
 	"scene": "res://scenes/tiles/tile_layout.tscn",
 	"texture": "res://",
 	"description": "A Bifrost tile",
@@ -8,6 +9,7 @@
 	"right_entry_point": null,
 	"bottom_entry_point": null,
 	"left_entry_point": null,
+	"key_exits": [false, true, false, false],
 	"cam_top_limit": -10000000,
 	"cam_right_limit": 10000000,
 	"cam_bottom_limit": 10000000,

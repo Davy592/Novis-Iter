@@ -6,7 +6,10 @@ var tiles : Array[TileInfo]
 
 func _init():
 	tiles = [
-		TileInfo.new("res://resources/data/tile6.json")
+		TileInfo.new("res://resources/data/tile4.json"),
+		TileInfo.new("res://resources/data/tile6.json"),
+		TileInfo.new("res://resources/data/tile3.json"),
+		TileInfo.new("res://resources/data/tile.json")
 	]
 
 #region: Add e Remove 

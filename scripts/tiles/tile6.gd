@@ -47,9 +47,9 @@ func _on_dialogic_signal(argument:String):
 		increment_negative_actions()
 		remove_child(get_node('MusicAction'))
 	elif argument == 'throw_fish':
-		Global.inventory.remove_by_name('Pesce Rosso')
+		Global.inventory.remove_by_name('Pesce Rosso', 1)
 	elif argument == 'soap':
-		Global.inventory.remove_by_name('Saponetta')
+		Global.inventory.remove_by_name('Saponetta', 1)
 	elif argument == 'minigame':
 		minigame_is_active = true
 		get_parent().get_node("Player").position = Vector2(1024, 1522)

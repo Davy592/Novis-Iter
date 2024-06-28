@@ -1,0 +1,17 @@
+{
+	"name": "Hub 1",
+	"condition_script": "res://scripts/tiles/hub2_condition.gd",
+	"scene": "res://scenes/tiles/hub_1.tscn",
+	"texture": "res://",
+	"description": "A peaceful place.",
+	"default_entry_point": [250, 1950],
+	"top_entry_point": [2392, 3772],
+	"right_entry_point": [250, 1950],
+	"bottom_entry_point": [3410, 728],
+	"left_entry_point": [4100, 2360],
+	"key_exits": [false, false, false, true],
+	"cam_top_limit": 0,
+	"cam_right_limit": 4615,
+	"cam_bottom_limit": 4168,
+	"cam_left_limit": 0
+}
