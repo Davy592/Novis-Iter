@@ -1,8 +1,10 @@
 bird_creature: E tu chi saresti?!
 bird_creature: Nah, non importa. Quale buon vento ti porta nella mia dimora?
-if {Global.inventory.contains_by_id('Sacchetto Nocciole')} == false and {Global.inventory.contains_by_id('King Word')} == false:
+if {Global.inventory.contains_by_id('2X')} == true and {Global.inventory.contains_by_id('L1')} == true:
 	- Dai sacchetto di nocciole
+		[signal arg="good_ending"]
 	- Dai la King Word
+		[signal arg="bad_ending"]
 	- Perchè rovini il campo di nocciole di Owen?
 		bird_creature: Perchè il suo campo di nocciole è un labirinto!
 		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
@@ -19,8 +21,9 @@ if {Global.inventory.contains_by_id('Sacchetto Nocciole')} == false and {Global.
 		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
 	- Non dire nulla
 		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
-elif {Global.inventory.contains_by_id('Sacchetto Nocciole')} == true:
+elif {Global.inventory.contains_by_id('2X')} == true:
 	- Dai sacchetto di nocciole
+		[signal arg="good_ending"]
 	- Perchè rovini il campo di nocciole di Owen?
 		bird_creature: Perchè il suo campo di nocciole è un labirinto!
 		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
@@ -37,8 +40,9 @@ elif {Global.inventory.contains_by_id('Sacchetto Nocciole')} == true:
 		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
 	- Non dire nulla
 		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
-elif {Global.inventory.contains_by_id('King Word')} == true:
+elif {Global.inventory.contains_by_id('L1')} == true:
 	- Dai la King Word
+		[signal arg="bad_ending"]
 	- Perchè rovini il campo di nocciole di Owen?
 		bird_creature: Perchè il suo campo di nocciole è un labirinto!
 		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
@@ -72,6 +76,5 @@ else:
 		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
 	- Non dire nulla
 		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
-
 
 [signal arg="exit"]

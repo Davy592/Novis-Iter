@@ -146,18 +146,19 @@ func _on_timer_timeout():
 	$Timer.wait_time = choose([0.5, 1, 1.5])
 	current_state = choose([IDLE, NEW_DIR, MOVE])	
 
-func _on_dialogic_signal(argument: Dictionary):
-	var key = get_key_from_argument(argument)
-	if key == "":
-		return
-	
-	match key:
-		"accepted":
-			handle_accepted(argument[key])
-		"start":
-			handle_start(argument[key])
-		"end":
-			handle_end(argument[key])
+func _on_dialogic_signal(argument):
+	if typeof(argument) == TYPE_DICTIONARY:
+		var key = get_key_from_argument(argument)
+		if key == "":
+			return
+		
+		match key:
+			"accepted":
+				handle_accepted(argument[key])
+			"start":
+				handle_start(argument[key])
+			"end":
+				handle_end(argument[key])
 
 func get_key_from_argument(argument: Dictionary) -> String:
 	for k in ["start", "accepted", "end"]:

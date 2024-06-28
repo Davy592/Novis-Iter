@@ -41,6 +41,7 @@ func increment_negative_actions():
 	#print(negative_actions)
 	if negative_actions == max_neg_actions:
 		Global.dialogue_manager.start_dialogue('res://timelines/tile6/final_dialogue.dtl')
+		bad_ending()
 
 func _on_dialogic_signal(argument:String):
 	if argument == "music":
@@ -69,6 +70,25 @@ func _on_dialogic_signal(argument:String):
 		bird.position = Vector2(1024, 1490)
 		get_parent().get_node("Player").position = Vector2(1024, 1522)
 		Global.dialogue_manager.start_dialogue('res://timelines/tile6/bird_quest_dialogue.dtl')
+	elif argument == 'entry':
+		get_parent().get_node("Player").position = Vector2(1024, 1522)
+	elif argument == 'good_ending':
+		good_ending()
+		remove_minigame()
+	elif argument == 'bad_ending':
+		bad_ending()
+		remove_minigame()
+
+func good_ending():
+	# notifica ad owen l'ending
+	print('good_ending')
+	pass
+
+func bad_ending():
+	# notifica ad owen l'ending
+	print('bad_ending')
+	
+	pass
 
 func remove_minigame():
 	remove_child(get_node('Path2D'))
@@ -80,8 +100,19 @@ func remove_minigame():
 	remove_child(get_node('ShowRoomArea2'))
 	remove_child(get_node('ShowRoomArea3'))
 	remove_child(get_node('ShowRoomArea4'))
-	#if has_node('Fish'):
-		#remove_child(get_node('Fish'))
+	if has_node('Fish'):
+		remove_child(get_node('Fish'))
+	if has_node('Soap'):
+		remove_child(get_node('Soap'))
+	if has_node('MusicAction'):
+		remove_child(get_node('MusicAction'))
+	if has_node('WaterFish'):
+		remove_child(get_node('WaterFish'))
+	if has_node('CoffeeSoap'):
+		remove_child(get_node('CoffeeSoap'))
+	if has_node('WriteBook'):
+		remove_child(get_node('WriteBook'))
+	get_node('Entry').dialogue_resource = load("res://timelines/tile6/new_house_entry.dtl")
 	Global.dialogue_manager.all_dialogues_ended.disconnect(_on_all_dialogues_ended)
 
 func _on_area_2d_body_entered(body):
