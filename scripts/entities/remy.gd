@@ -71,7 +71,6 @@ func handle_animation(velocity: Vector2):
 				if $AnimatedSprite2D.animation != "back_walk":
 					$AnimatedSprite2D.play("back_walk")
 	else:
-		print("Stopping animation")  # Debug print
 		if $AnimatedSprite2D.is_playing():
 			$AnimatedSprite2D.stop()
 		if $AnimatedSprite2D.animation != "front_idle":

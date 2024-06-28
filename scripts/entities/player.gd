@@ -34,7 +34,7 @@ func _physics_process(delta):
 			apply_movement(axis)
 			move_and_slide()
 	play_animation()
-	print(position)
+	#print(position)
 
 ## Questa funzione gestisce l'input dell'utente 
 ## durante lo stato di movimento (MOVE)
