@@ -7,6 +7,7 @@ var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
 var hubs_clues = {}
+var caso: String
 
 signal current_map_node_updated
 
