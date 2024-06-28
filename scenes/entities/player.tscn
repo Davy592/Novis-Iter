@@ -566,6 +566,7 @@ size = Vector2(38, 49)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
+position = Vector2(0, -1)
 script = ExtResource("1_t28kr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

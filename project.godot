@@ -99,6 +99,7 @@ directories/dtl_directory={
 "tengu_dialogue": "res://timelines/hubs/tengu_dialogue.dtl",
 "throw_fish": "res://timelines/tile6/throw_fish.dtl",
 "tile_3_creature_dialogue": "res://timelines/tile_3_creature_dialogue.dtl",
+"tile_condition": "res://timelines/tile_condition.dtl",
 "wanderer": "res://timelines/hub1/timelines/wanderer.dtl",
 "wanderer2": "res://timelines/hub1/timelines/wanderer.dtl",
 "wanderer_bkp": "res://timelines/hub1/timelines/wanderer_bkp.dtl",

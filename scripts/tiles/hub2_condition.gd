@@ -15,6 +15,8 @@ func find_tile1_id():
 
 func is_condition_satisfied():
 	var tile1_id = find_tile1_id()
+	if tile1_id == null:
+		return false
 	var right_id = Global.map_graph.get_neighbor(
 		tile1_id, 
 		Graph.MapNode.LINK_SIDE.RIGHT)
