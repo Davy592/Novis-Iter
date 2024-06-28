@@ -1,0 +1,24 @@
+[signal arg_type="dict" arg="{"":"","start":"SampleNPC"}"]
+do Global.quest_handler.get_current_stage(100.0)
+if {dialogue.scelta} == false:
+	Ciao. Come stai?
+	Non aver paura. Sono qui per controllare che le quest funzionino correttamente. Sei pronto?
+	- Si
+		set {dialogue.scelta} = true
+		Ottimo. Quest accettata!!
+		[signal arg_type="dict" arg="{"accepted":"100"}"]
+		Ora imposteró il tuo stage a 50.
+		do Global.quest_handler.set_current_stage(100.0, 50.0)
+	- No
+		Nessun problema. Ti aspetto
+if {dialogue.scelta} == true:
+	if {dialogue.current_stage} < 100:
+		Il tuo stage é ora a {dialogue.current_stage}. Sei pronto a completare la quest?
+		- Si
+			Quest completata. Bravo!!
+			do Global.quest_handler.set_current_stage(100.0, 100.0)
+		- No
+			Nessun problema. Ti aspetto.
+	else:
+		Discorso dei 100. Complimenti!!
+[signal arg_type="dict" arg="{"":"","end":"SampleNPC"}"]

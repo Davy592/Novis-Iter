@@ -1,0 +1,8 @@
+{
+	"id": "t6_1",
+	"name": "Saponetta",
+	"type": null,
+	"effect": null,
+	"description": "Il perchè ci sia una saponetta per terra è un mistero. Mai abbassarsi a prenderla!",
+	"texture": "res://resources/assets/sprites/tile6_items/bar_of_soap.png"
+}

@@ -1,7 +1,8 @@
 {
-    "name": "potion",
-    "type": "magic",
-    "effect": "heal",
-    "description": "Pozione magica figa!",
-    "texture": "res://resources/assets/sprites/icon1.png"
+	"id": "ran_1",
+	"name": "Potion",
+	"type": "magic",
+	"effect": "heal",
+	"description": "Pozione magica figa!",
+	"texture": "res://resources/assets/sprites/potion.png"
 }

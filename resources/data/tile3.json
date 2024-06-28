@@ -1,15 +1,17 @@
 {
-	"name": "AYOO",
-	"scene": "res://scenes/tiles/tile_layout.tscn",
+	"name": "COUNTRY SIDE",
+	"scene": "res://scenes/tiles/tile_3.tscn",
+	"condition_script": null,
 	"texture": "res://",
-	"description": "A AYOO tile",
+	"description": "una tranquilla campagna.",
 	"default_entry_point": [0, 0],
-	"top_entry_point": null,
+	"top_entry_point": [817, 1050],
 	"right_entry_point": null,
 	"bottom_entry_point": null,
-	"left_entry_point": null,
-	"cam_top_limit": -10000000,
-	"cam_right_limit": -10000000,
-	"cam_bottom_limit": -10000000,
-	"cam_left_limit": -10000000
+	"key_exits": [false, false, false, false],
+	"left_entry_point": [1900, 594],
+	"cam_top_limit": 0,
+	"cam_right_limit": 2160,
+	"cam_bottom_limit": 1200,
+	"cam_left_limit": 0
 }

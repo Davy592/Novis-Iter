@@ -1,5 +1,6 @@
 {
 	"name": "Thor",
+	"condition_script": null,
 	"scene": "res://scenes/tiles/tile_layout.tscn",
 	"texture": "res://",
 	"description": "A Thor tile",
@@ -8,8 +9,9 @@
 	"right_entry_point": null,
 	"bottom_entry_point": null,
 	"left_entry_point": null,
+	"key_exits": [false, false, false, false],
 	"cam_top_limit": -10000000,
-	"cam_right_limit": -10000000,
-	"cam_bottom_limit": -10000000,
+	"cam_right_limit": 10000000,
+	"cam_bottom_limit": 10000000,
 	"cam_left_limit": -10000000
 }

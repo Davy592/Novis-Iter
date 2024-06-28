@@ -13,6 +13,8 @@ var cam_top_limit
 var cam_right_limit
 var cam_left_limit
 var cam_bottom_limit
+var condition
+var key_exits
 
 func _init(json_path):
 	var json_as_text = FileAccess.get_file_as_string(json_path)
@@ -33,6 +35,17 @@ func _init(json_path):
 			self.entry_points[Graph.MapNode.LINK_SIDE.get(side)] = Vector2(point[0], point[1])
 	point = tile_data['default_entry_point']
 	self.default_entry_point = Vector2(point[0], point[1])
+	self.condition = tile_data['condition_script']
+	if self.condition != null:
+		self.condition = ResourceLoader.load(self.condition).new()
+		assert(self.condition.has_method("is_condition_satisfied"), "TileInfo: condition has no method named is_condition_satisfied()")
+	self.key_exits = tile_data['key_exits']
+
+func get_key_exit(side: Graph.MapNode.LINK_SIDE):
+	return self.key_exits[side]
+
+func is_condition_satisfied():
+	return self.condition == null or self.condition.is_condition_satisfied()
 
 func get_default_entry_point():
 	return self.default_entry_point

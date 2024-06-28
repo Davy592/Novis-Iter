@@ -1,0 +1,4 @@
+- Bussa alla porta
+	[signal arg="talk_to_bird"]
+- Entra senza bussare
+	[signal arg="minigame"]

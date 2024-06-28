@@ -1,0 +1,8 @@
+{
+	"id": "L2",
+	"name": "Fungo_esca",
+	"type": null,
+	"effect": null,
+	"description": "Sembra essere popolare tra le creature dei boschi",
+	"texture": "res://resources/assets/sprites/rewards/fungo_esca.png"
+}

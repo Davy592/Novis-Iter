@@ -1,6 +1,7 @@
 {
 	"name": "Battle camp",
 	"scene": "res://scenes/tiles/tile_1.tscn",
+	"condition_script": null,
 	"texture": "res://",
 	"description": "Un crudele e sanguinoso campo di battaglia",
 	"default_entry_point": [0, 0],
@@ -8,6 +9,7 @@
 	"right_entry_point": [10, 620],
 	"bottom_entry_point": [907, 10],
 	"left_entry_point": [1850, 621],
+	"key_exits": [false, true, false, false],
 	"cam_top_limit": 0,
 	"cam_right_limit": 1920,
 	"cam_bottom_limit": 1080,

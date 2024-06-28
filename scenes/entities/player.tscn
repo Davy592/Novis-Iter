@@ -557,27 +557,28 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1h4j"]
-radius = 19.0
-height = 68.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nyd4u"]
+radius = 24.0
+height = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2l63"]
-size = Vector2(60, 55)
+size = Vector2(38, 49)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
+position = Vector2(0, -1)
 script = ExtResource("1_t28kr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_n2bhd")
 animation = &"back_idle"
 autoplay = "front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 34)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_v1h4j")
+position = Vector2(-1, 18)
+shape = SubResource("CapsuleShape2D_nyd4u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true
@@ -585,7 +586,8 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Direction" type="Marker2D" parent="."]
-visible = false
+z_index = 100
+position = Vector2(0, 18)
 
 [node name="ActionableFinder" type="Area2D" parent="Direction"]
 position = Vector2(0, 16)
@@ -593,8 +595,10 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
-position = Vector2(0, 21.5)
+position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_h2l63")
+
+[node name="Camera Target" type="Marker2D" parent="."]
 
 [connection signal="area_entered" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
 [connection signal="area_exited" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_exited"]

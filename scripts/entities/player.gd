@@ -13,17 +13,16 @@ enum {
 	#MENU # inutili se in questo stato il gioco è in pausa, altrimenti utili
 }
 
-var MAX_SPEED = 600
-var ACCELERATION = 150
-var DECELERATION = 0.2
-var TRESHOLD = 1
-var direction = "front"
-var move = "idle"
+var MAX_SPEED: int = 600
+var ACCELERATION: int = 150
+var DECELERATION: float = 0.2
+var TRESHOLD: int = 1
+var direction: String = "front"
+var move: String = "idle"
 var state = MOVE
-@onready var actionable_finder = $Direction/ActionableFinder
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
-# OVERRIDES
-
+#region: Overrides
 func _ready():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
@@ -34,9 +33,14 @@ func _physics_process(delta):
 			var axis = get_input_axis()
 			apply_movement(axis)
 			move_and_slide()
-			play_animation()
+	play_animation()
+	print(position)
 
+## Questa funzione gestisce l'input dell'utente 
+## durante lo stato di movimento (MOVE)
 func _input(event):
+	# Si assicura che solo il primo evento di pressione del tasto venga considerato
+	# ignorando eventuali eventi di eco generati se l'utente tiene premuto il tasto
 	if event is InputEventKey and not event.echo and state == MOVE:
 		if event.is_action_pressed('ui_inventory'):
 			get_viewport().set_input_as_handled()
@@ -45,6 +49,8 @@ func _input(event):
 			get_viewport().set_input_as_handled()
 			emit_signal('menu_requested')
 		elif event.is_action_pressed("interact"):
+			# Utile per evitare che l'input venga elaborato più volte 
+			# o propagato ad altri nodi o al sistema di input globale
 			get_viewport().set_input_as_handled()
 			var actionables = actionable_finder.get_overlapping_areas()
 			if actionables.size() > 0:
@@ -52,19 +58,21 @@ func _input(event):
 		elif event.is_action_pressed('map'):
 			get_viewport().set_input_as_handled()
 			emit_signal('map_requested')
+#endregion
 
-# USER DEFINED
-
-func apply_movement(axis):
+#region: User defined
+func apply_movement(axis) -> void:
 	apply_acceleration(axis)
 	apply_friction(axis)
 
-func get_input_axis():
+func get_input_axis() -> Vector2:
 	var axis = Vector2.ZERO
+	
 	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	axis.y = int(Input.is_action_pressed("move_front")) - int(Input.is_action_pressed("move_back"))
 	axis = axis.normalized()
 	move = "walk"
+	
 	if axis.y > 0:
 		direction = "front"
 		$Direction.rotation_degrees = 0
@@ -81,25 +89,26 @@ func get_input_axis():
 		move = "idle"
 	return axis
 
-func apply_acceleration(axis):
+func apply_acceleration(axis) -> void:
 	velocity += axis * ACCELERATION
 	var vel_len = velocity.length()
 	velocity += int(vel_len > MAX_SPEED) * velocity.normalized() * (MAX_SPEED - vel_len)
 
-func apply_friction(axis):
+func apply_friction(axis) -> void:
 	velocity.x -= int(axis.x == 0) * velocity.x * DECELERATION
 	velocity.x = int(abs(velocity.x) - TRESHOLD >= 0) * velocity.x
 	velocity.y -= int(axis.y == 0) * velocity.y * DECELERATION
 	velocity.y = int(abs(velocity.y) - TRESHOLD >= 0) * velocity.y
 
-func play_animation():
+func play_animation() -> void:
 	var anim = $AnimatedSprite2D
 	anim.play(direction + "_" + move)
+#endregion
 
-# SIGNALS REACTIONS
-
+#region: Signals reactions
 func _on_timeline_started():
 	state = INTERACTING
+	move = 'idle'
 
 func _on_timeline_ended():
 	state = MOVE
@@ -109,3 +118,4 @@ func _on_actionable_finder_area_entered(area):
 
 func _on_actionable_finder_area_exited(area):
 	emit_signal("interact_ui_revoked")
+#endregion
