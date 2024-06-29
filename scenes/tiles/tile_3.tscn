@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://chjosx4bf40my"]
+[gd_scene load_steps=25 format=3 uid="uid://chjosx4bf40my"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
 [ext_resource type="Script" path="res://scripts/tiles/tile_3.gd" id="1_hxclf"]
@@ -13,8 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://nikkscdt1pdh" path="res://resources/assets/tilesets/top-down_country_side_forest/3 - Roof top.png" id="7_2ud1n"]
 [ext_resource type="PackedScene" uid="uid://ct13fwdm42ndq" path="res://scenes/entities/wife_grisby.tscn" id="12_wbw6y"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="14_7cvby"]
-[ext_resource type="PackedScene" uid="uid://ifj2i8vk2eml" path="res://scenes/utils/trigger_on_enter.tscn" id="14_jnbdl"]
-[ext_resource type="Resource" path="res://timelines/hubs/unlock_tiles.dtl" id="15_xuyp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gvcn"]
 texture = ExtResource("3_2a5n4")
@@ -5002,9 +5000,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 2, 1923, -5, 1917, 467, 1917, 480, 2112, 480, 2108, 711, 1912, 711, 1917, 1064, 972, 1050, 969, 1203, 722, 1198, 713, 1057, -7, 1061)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhmqb"]
-size = Vector2(1950, 1111)
-
 [node name="tile3" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_hxclf")
@@ -5057,14 +5052,6 @@ wait_time = 3.0
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 25.0
-
-[node name="TriggerOnEnter" parent="." instance=ExtResource("14_jnbdl")]
-position = Vector2(203, 1978)
-dialogue_resource = ExtResource("15_xuyp5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerOnEnter"]
-position = Vector2(758, -1437.5)
-shape = SubResource("RectangleShape2D_nhmqb")
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

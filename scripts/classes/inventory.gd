@@ -9,6 +9,18 @@ var items : Array[Item]
 func _init():
 	items = []
 
+func create(argument: String):
+	var item: Item
+	var item_quantity = 1
+	var json_data_file = "res://resources/data/items/rewards/" + argument + ".json"
+	var json_as_text = FileAccess.get_file_as_string(json_data_file)
+	var item_data = JSON.parse_string(json_as_text)
+	item_data['quantity'] = item_quantity
+	item_data['texture'] = load(item_data['texture'])
+	item = Item.new(item_data)
+	Global.inventory.add(item, 1)
+	Global.quest_handler.update_quests(item.name)
+
 func add(item: Item, quantity: int):
 	var index = -1
 	for i in range(items.size()):
