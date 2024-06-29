@@ -8,6 +8,7 @@ var quantity: int
 #var effect: String
 var texture: Texture
 
+
 func _init(dict):
 	name = dict['id']
 	name = dict['name']
@@ -40,3 +41,4 @@ func decrement_quantity(n):
 		quantity -= n
 	else: 
 		quantity = 0
+

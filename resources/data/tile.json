@@ -7,7 +7,7 @@
 	"default_entry_point": [800, 400],
 	"top_entry_point": [0, 0],
 	"right_entry_point": [0, 0],
-	"bottom_entry_point": null,
+	"bottom_entry_point": [800, 400],
 	"left_entry_point": [1760, 460],
 	"key_exits": [false, true, false, false],
 	"cam_top_limit": -10000000,

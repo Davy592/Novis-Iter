@@ -31,7 +31,7 @@ directories/dch_directory={
 "heran": "res://timelines/hubs/heran.dch",
 "leeve": "res://timelines/hubs/leeve.dch",
 "ludo": "res://timelines/tile4/characters/ludo.dch",
-"remy_example": "res://timelines/remy_example.dch",
+"remy": "res://timelines/remy.dch",
 "shyy": "res://timelines/hubs/shyy.dch",
 "tengu": "res://timelines/hubs/tengu.dch",
 "tile3_creature": "res://timelines/tile3_creature.dch",
@@ -90,7 +90,7 @@ directories/dtl_directory={
 "noquest_sample_1": "res://timelines/noquest_sample_1.dtl",
 "noquest_sample_2": "res://timelines/noquest_sample_2.dtl",
 "ops": "res://timelines/tile4/timelines/ludo/ops.dtl",
-"remy_prova": "res://timelines/remy_prova.dtl",
+"remy_dialogue": "res://timelines/remy_dialogue.dtl",
 "sample_item_quest": "res://timelines/quests/sample_item_quest.dtl",
 "sample_quest": "res://timelines/quests/sample_quest.dtl",
 "shy_dialogue": "res://timelines/hubs/shy_dialogue.dtl",
@@ -129,6 +129,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"battle": true,
 "chance": false,
 "creature": false,
 "creature_action": false,

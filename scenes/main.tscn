@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crwup6onrgogl"]
+[gd_scene load_steps=10 format=3 uid="uid://crwup6onrgogl"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ultgg"]
 [ext_resource type="PackedScene" uid="uid://i40mlkej224u" path="res://scenes/ui/inventory_ui.tscn" id="1_wffrd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0tqdlya5hcjx" path="res://scenes/ui/quest_updated.tscn" id="6_nt8um"]
 [ext_resource type="PackedScene" uid="uid://kw7dld2v6x0f" path="res://scenes/ui/map_editor.tscn" id="6_py1r7"]
 [ext_resource type="PackedScene" uid="uid://ciikokvaol8s0" path="res://scenes/ui/item_obtained.tscn" id="7_s1vlw"]
+[ext_resource type="PackedScene" uid="uid://br43hu6unncch" path="res://scenes/entities/remy.tscn" id="9_1eug2"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -37,6 +38,10 @@ visible = false
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("6_0wd60")]
+
+[node name="remy" parent="." instance=ExtResource("9_1eug2")]
+visible = false
+position = Vector2(1524, 689)
 
 [connection signal="interact_ui_requested" from="Player" to="CanvasLayer/InteractUI" method="_on_player_interact_ui_requested"]
 [connection signal="interact_ui_revoked" from="Player" to="CanvasLayer/InteractUI" method="_on_player_interact_ui_revoked"]

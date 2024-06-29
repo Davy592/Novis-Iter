@@ -7,13 +7,20 @@ var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
 var hubs_clues = {}
-var caso: String
+var remy_follow = false
+var remy_tile = "tile1"
+var battle_on = true
+var tile_name = "hub1"
 
 signal current_map_node_updated
+signal stop_battle
 
 func _ready():
-	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
+	var current_tile_info = TileInfo.new("res://resources/data/" + tile_name + ".json")
+	var main_node = get_tree().get_root().get_node('Main')
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
+	#tile_name = current_tile_info.get_scene_instance().get_name()
+	#print(tile_name)
 	Dialogic.timeline_ended.connect(dialogue_manager._on_timeline_ended)
 	
 func set_clue(key, value):
@@ -21,19 +28,34 @@ func set_clue(key, value):
 
 func get_clue(key):
 	return hubs_clues.get(key, false)
-
+	
+var player
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
-	var player = main_node.get_node('Player')
+	tile_name = tile_instance.get_name()
+	player = main_node.get_node('Player')
+	var remy = main_node.get_node('remy')
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa
 	#disconnect_current_tile_signals()
 	main_node.remove_child(main_node.get_node('CurrentTile'))
+	player.position = tile.get_side_entry_point(side)
+	if remy_follow:
+		remy_tile = tile_name
+		remy.position = player.position
+	else:
+		if tile_name != remy_tile:
+			remy.visible = false
+			remy.get_node("DialogueActionable").set_collision_layer(8)
+			remy.get_node("DialogueActionable").set_collision_layer(8)
+		else:
+			remy.visible = true
+			remy.get_node("DialogueActionable").set_collision_layer(2)
+			remy.get_node("DialogueActionable").set_collision_layer(2)
 	tile_instance.set_name('CurrentTile')
 	main_node.add_child(tile_instance)
 	#connect_current_tile_signals()
 
-	player.position = tile.get_side_entry_point(side)
 	current_tile_map_node_id = id
 	current_map_node_updated.emit()
 	
@@ -56,6 +78,14 @@ func set_camera_limits(
 	camera.limit_right = right_limit
 	camera.limit_bottom = bottom_limit
 	camera.limit_left = left_limit
+	
+func use_item(name: String):
+	match name:
+		"Bandiera":
+			Dialogic.VAR.battle = false
+			emit_signal("stop_battle")
+			battle_on = false
+	
 	
 #func add_item_by_json_path(path):
 	#var file = FileAccess.open(path, FileAccess.READ)

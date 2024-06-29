@@ -1,3 +1,0 @@
-if {remy} == false:
-	remy_example: Dialogo di prova!
-	[signal arg="follower"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://j5fsnlq68jis"]
+[gd_scene load_steps=28 format=3 uid="uid://c8mm08qu64s1"]
 
 [ext_resource type="Texture2D" uid="uid://f6jer5d3d8ee" path="res://resources/assets/sprites/tile3_creature/mushroom.png" id="1_5a2jm"]
 [ext_resource type="PackedScene" uid="uid://c6h4y25364ppn" path="res://scenes/actionables/dialogue_actionable.tscn" id="3_odgk8"]
