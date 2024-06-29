@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://clfh5d78bi1g8"]
+[gd_scene load_steps=106 format=3 uid="uid://clfh5d78bi1g8"]
 
 [ext_resource type="Script" path="res://scripts/tiles/tile4.gd" id="1_qqvkv"]
 [ext_resource type="Texture2D" uid="uid://dcovt0gtrvhos" path="res://resources/assets/tilesets/The Fan-tasy Tileset (Free)/Water and Sand/Tileset_Water.png" id="1_ub3qx"]
@@ -6089,6 +6089,12 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(3, 34, 2743, 18, 2738, 414, 2663, 408, 2659, 498, 2571, 490, 2579, 696, 2659, 705, 2662, 785, 2746, 781, 2744, 863, 2822, 863, 2823, 1026, 2902, 1027, 2903, 1210, 2662, 1211, 2664, 1582, 2746, 1586, 2744, 1662, 2823, 1664, 2824, 1752, 2902, 1753, 2903, 1903, 2981, 1904, 2985, 2012, 2902, 2008, 2902, 2091, 2716, 2088, 2714, 2006, 2476, 2008, 2471, 1927, 2260, 1927, 2262, 2011, 2101, 2007, 2106, 2617, -1, 2603)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ruure"]
+vertices = PackedVector2Array(3828, 870, 3826, 1522, 3693, 1519, 3688, 1447, 3521, 950, 3527, 858, 3613, 1441, 3599, 1367, 3532, 1359, 3526, 1282, 3378, 961, 3376, 1280)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 3, 6, 7), PackedInt32Array(4, 7, 8, 9), PackedInt32Array(10, 4, 9, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(3839, 861, 3518, 848, 3512, 941, 3369, 952, 3366, 1290, 3517, 1292, 3523, 1369, 3591, 1376, 3605, 1451, 3679, 1456, 3684, 1529, 3836, 1533)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmk73"]
 atlas = ExtResource("17_fonua")
 region = Rect2(0, 0, 48, 48)
@@ -6347,10 +6353,14 @@ layer_3/y_sort_enabled = true
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(720911, 851990, 0, 786447, 851990, 1, 720916, 851990, 0, 786452, 851990, 1, 589841, 983062, 1, 589842, 983062, 1, 917521, 983062, 1, 917522, 983062, 1, 1245211, 983062, 1, 1245214, 327707, 8, 1572867, 196635, 4, 1572871, 196635, 3, 1114137, 65563, 11, 393231, 262166, 3, 65565, 262166, 268435459, 1376271, 262166, 3, 458756, 22, 3, 655402, 458774, 6, 720938, 458774, 7, 655403, 524310, 6, 720939, 524310, 7, 327692, 655382, 5, 1507339, 131094, 0, 1572876, 22, 0, 1572874, 655382, 0, 851965, 1048585, 7, 65535, 262153, 0, 1114111, 262153, 0, 1441789, 262153, 0, 2097153, 262153, 0, 2031646, 262153, 0, 1900584, 786441, 0, 1572910, 1310729, 0, 1245225, 1310729, 0, 1310763, 524297, 7, 1703984, 524297, 7, 2097194, 524297, 7, 1507327, 524297, 0, 131073, 524297, 0, 196610, 1048586, 16, 131067, 786441, 23, 1245184, 786441, 7, 1441836, 262153, 7, 2162714, 262153, 7, 2293782, 131081, 13, 917503, 9, 0, 1703934, 786441, 13, 1835009, 1310729, 7, 393216, 524297, 7, 720896, 786441, 7, 655359, 524297, 0, -65534, 262153, 0, -196590, 131081, 23, 65553, 851978, 17, 65555, 1179658, 16, -131059, 786441, 7, -262133, 262153, 0, -393202, 262153, 0, -458741, 524297, 0, -65532, 524297, 7, -262141, 786441, 7, -131066, 262153, 0, -131064, 1310729, 0, -196599, 524297, 7, -458746, 786441, 13, -65525, 262153, 7, 2031616, 524297, 7, 2097170, 262153, 7, 2162700, 262153, 7, 2031622, 262153, 7, 2162692, 1310729, 7, 1966096, 1310729, 0, 2031630, 786441, 0, 2031625, 262153, 0, 2162695, 786441, 0, 1966083, 524297, 0, 1900580, 262153, 0, 1179683, 786442, 16, 1114148, 1179658, 16, 1179684, 917514, 17, 1048611, 1245194, 18, 1638442, 131081, 13, 1376296, 262153, 7, 1966123, 262153, 7, 1835054, 786441, 7, 2031662, 262153, 0, 2031654, 1048585, 0, 2162720, 786441, 7, 2097187, 524297, 7, 1966117, 1310729, 7, 2031656, 1310729, 7, 2031648, 1048585, 7, 1835041, 1245194, 18, 36, 524297, 0, -131035, 786441, 0, -65510, 262153, 0, 24, 262153, 7, -65513, 524297, 0, -131041, 786441, 23, -65516, 786441, 0)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+[node name="NavigationRegion2D_left" type="NavigationRegion2D" parent="."]
 visible = false
 position = Vector2(-5, 8)
 navigation_polygon = SubResource("NavigationPolygon_601ck")
+
+[node name="NavigationRegion2D_right" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_ruure")
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 visible = false
@@ -6543,7 +6553,6 @@ shape = SubResource("RectangleShape2D_xq6tu")
 position = Vector2(8047, 2328)
 
 [node name="TriggerOnEnter" parent="Platforms/InvisiblePlatform6" instance=ExtResource("27_vciu1")]
-visible = false
 dialogue_resource = ExtResource("34_rfgee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/InvisiblePlatform6/TriggerOnEnter"]
@@ -6555,7 +6564,6 @@ shape = SubResource("RectangleShape2D_xq6tu")
 position = Vector2(8300, 2328)
 
 [node name="TriggerOnEnter" parent="Platforms/InvisiblePlatform7" instance=ExtResource("27_vciu1")]
-visible = false
 dialogue_resource = ExtResource("35_1pbfa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/InvisiblePlatform7/TriggerOnEnter"]
