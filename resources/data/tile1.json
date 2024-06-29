@@ -1,5 +1,5 @@
 {
-	"name": "Battle camp",
+	"name": "Battle\ncamp",
 	"scene": "res://scenes/tiles/tile_1.tscn",
 	"condition_script": null,
 	"texture": "res://",

@@ -7,18 +7,20 @@ var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
 var hubs_clues = {}
-var caso: String
 var remy_follow = false
 var remy_tile = "tile1"
 var battle_on = true
+var tile_name = "hub1"
 
 signal current_map_node_updated
 signal stop_battle
 
 func _ready():
-	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
+	var current_tile_info = TileInfo.new("res://resources/data/" + tile_name + ".json")
 	var main_node = get_tree().get_root().get_node('Main')
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
+	#tile_name = current_tile_info.get_scene_instance().get_name()
+	#print(tile_name)
 	Dialogic.timeline_ended.connect(dialogue_manager._on_timeline_ended)
 	
 func set_clue(key, value):
@@ -28,7 +30,6 @@ func get_clue(key):
 	return hubs_clues.get(key, false)
 	
 var player
-var tile_name
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
@@ -38,22 +39,17 @@ func change_current_tile(tile: TileInfo, side, id):
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa
 	#disconnect_current_tile_signals()
 	main_node.remove_child(main_node.get_node('CurrentTile'))
-	print(tile_name)
 	player.position = tile.get_side_entry_point(side)
-	print("Qui lo trovo a " + str(remy_follow))
 	if remy_follow:
 		remy_tile = tile_name
 		remy.position = player.position
-		print("1")
 	else:
 		if tile_name != remy_tile:
 			remy.visible = false
-			print("2")
 			remy.get_node("DialogueActionable").set_collision_layer(8)
 			remy.get_node("DialogueActionable").set_collision_layer(8)
 		else:
 			remy.visible = true
-			print("3")
 			remy.get_node("DialogueActionable").set_collision_layer(2)
 			remy.get_node("DialogueActionable").set_collision_layer(2)
 	tile_instance.set_name('CurrentTile')
@@ -86,7 +82,6 @@ func set_camera_limits(
 func use_item(name: String):
 	match name:
 		"Bandiera":
-			print("bandiera")
 			Dialogic.VAR.battle = false
 			emit_signal("stop_battle")
 			battle_on = false

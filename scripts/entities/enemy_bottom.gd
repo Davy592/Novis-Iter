@@ -39,4 +39,3 @@ func fire_bullet():
 func _on_stop_battle():
 	bullet_b.free()
 	battle_on = false 
-	print("segnale")

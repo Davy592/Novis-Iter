@@ -17,9 +17,7 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _physics_process(delta):
-	#print("process")
 	if move:
-		print("Entro in move")
 		var target_character = Global.player
 		var distance_to_target = target_character.position.distance_to(position)
 		set_movement_target(target_character.global_position)
@@ -51,32 +49,25 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("front_idle")
 	if start_quest:
 		if global_position.y < 600:
-			#print("dritto")
 			$AnimatedSprite2D.play("front_walk")
 			global_position.y += 1
 		elif global_position.y >= 600 and global_position.x > 925:
-			#print("left")
 			$AnimatedSprite2D.play("left_walk")
 			global_position.x -= 1
 		elif global_position.x <= 925 and global_position.y < 965:
-			#print("dritto")
 			$AnimatedSprite2D.play("front_walk")
 			global_position.y += 1
 		elif global_position.y >= 965 and global_position.x > 805:
-			#print("left")
 			$AnimatedSprite2D.play("left_walk")
 			global_position.x -= 1
 		elif global_position.x <= 805:
-			#print("idle")
 			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("front_idle")
 			start_quest = false
 		
 
 func handle_animation(velocity: Vector2):
-	print("animo")
 	if velocity.length_squared() > 0:
-		print("Moving with velocity: ", velocity)  # Debug print
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
 				if $AnimatedSprite2D.animation != "right_walk":
@@ -104,7 +95,6 @@ func _on_dialogic_signal(argument:String):
 	if argument == "follower":
 		move = true
 		Global.remy_follow = true
-		print("Messo a true")
 		$Timer.start()
 		#$CollisionShape2D.disabled = false #true
 		set_collision_layer(0)
@@ -114,7 +104,6 @@ func _on_dialogic_signal(argument:String):
 	if argument == "together":
 		Global.remy_follow = false
 		start_quest = true
-		print("Falso per togeter")
 		move = false
 		dialogue_player = false
 		#$CollisionShape2D.disabled = false
@@ -139,7 +128,6 @@ func _on_dialogic_signal(argument:String):
 func _on_timer_timeout():
 	if Global.tile_name != "tile3":
 		Global.remy_follow = false
-		print("Falso per timeout")
 		move = false
 		#$CollisionShape2D.disabled = false
 		set_collision_layer(1)
