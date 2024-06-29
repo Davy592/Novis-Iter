@@ -7,7 +7,7 @@ var is_triggered = false
 	get: return dialogue_resource
 
 func _on_body_entered(body):
-	print("segnale dentro")
+	#print("segnale dentro")
 	if body.get_name() == 'Player' and !is_triggered:
 		is_triggered = true
 		Global.remy._on_timer_timeout()

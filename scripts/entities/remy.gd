@@ -135,11 +135,11 @@ func _on_timer_timeout():
 		Global.remy_follow = false
 		move = false
 		#$CollisionShape2D.disabled = false
-		print("arrivo")
+		#print("arrivo")
 		set_collision_layer(Global.player.get_collision_layer())
 		$DialogueActionable.set_collision_layer(2)
 		$DialogueActionable.set_collision_layer(2)
-		print("fatto")
+		#print("fatto")
 		Dialogic.VAR.remy = false
 		if not dialogue_player:
 			Dialogic.VAR.remy = true

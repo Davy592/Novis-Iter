@@ -60,8 +60,8 @@ func _on_inventory_slot_pressed():
 	$MarginContainer/CenterContainer.visible = true
 	$MarginContainer/CenterContainer/UsageContainer/UseButton.grab_focus()	
 
-func _on_use_button_pressed():
-	print("Item usato")
+func _on_use_button_pressed(): #TODO: ATTUALMENTE TUTTI GLI ITEM USATI SINGOLI SONO CONSUMABILI
+	#print("Item usato")
 	var item: Item
 	item = selectioned_slot.get_item_in_slot()
 	var name = item.get_name()

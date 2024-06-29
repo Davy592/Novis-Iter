@@ -55,7 +55,7 @@ func _physics_process(delta):
 
 func handle_animation(velocity: Vector2):
 	if velocity.length_squared() > 0:
-		print("Moving with velocity: ", velocity)  # Debug print
+		#print("Moving with velocity: ", velocity)
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
 				if $AnimatedSprite2D.animation != "right_walk":
@@ -71,7 +71,7 @@ func handle_animation(velocity: Vector2):
 				if $AnimatedSprite2D.animation != "back_walk":
 					$AnimatedSprite2D.play("back_walk")
 	else:
-		print("Stopping animation")  # Debug print
+		#print("Stopping animation")
 		if $AnimatedSprite2D.is_playing():
 			$AnimatedSprite2D.stop()
 		if $AnimatedSprite2D.animation != "front_idle":
