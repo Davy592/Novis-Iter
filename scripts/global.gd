@@ -11,6 +11,7 @@ var remy_follow = false
 var remy_tile = "res://scenes/tiles/tile_1.tscn"
 var battle_on = true
 var tile_name = "res://scenes/tiles/hub_1.tscn"
+var grotta = false
 
 signal current_map_node_updated
 signal stop_battle

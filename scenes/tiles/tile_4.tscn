@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://clfh5d78bi1g8"]
+[gd_scene load_steps=107 format=3 uid="uid://clfh5d78bi1g8"]
 
 [ext_resource type="Script" path="res://scripts/tiles/tile4.gd" id="1_qqvkv"]
 [ext_resource type="Texture2D" uid="uid://dcovt0gtrvhos" path="res://resources/assets/tilesets/The Fan-tasy Tileset (Free)/Water and Sand/Tileset_Water.png" id="1_ub3qx"]
@@ -6095,6 +6095,12 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(3839, 861, 3518, 848, 3512, 941, 3369, 952, 3366, 1290, 3517, 1292, 3523, 1369, 3591, 1376, 3605, 1451, 3679, 1456, 3684, 1529, 3836, 1533)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_w5y3j"]
+vertices = PackedVector2Array(9101, 103, 9116, 3308, 6252, 3304, 6099, 1925, 6114, 695, 6334, 380, 6334, 93)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 0, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(9127, 3319, 6244, 3314, 6089, 1926, 6105, 692, 6324, 377, 6324, 83, 9111, 94)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmk73"]
 atlas = ExtResource("17_fonua")
 region = Rect2(0, 0, 48, 48)
@@ -6361,6 +6367,9 @@ navigation_polygon = SubResource("NavigationPolygon_601ck")
 [node name="NavigationRegion2D_right" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_ruure")
+
+[node name="NavigationRegion2D_cave" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_w5y3j")
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 visible = false
@@ -6683,7 +6692,6 @@ shape = SubResource("RectangleShape2D_xq6tu")
 position = Vector2(7529, 1563)
 
 [node name="TriggerOnEnter" parent="Platforms/InvisiblePlatform17" instance=ExtResource("27_vciu1")]
-visible = false
 dialogue_resource = ExtResource("36_admmt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/InvisiblePlatform17/TriggerOnEnter"]
