@@ -54,7 +54,7 @@ func remove_by_name(item_name: String, quantity: int):
 		
 		emit_signal("inventory_updated", removed_item, index)
 
-func remove_by_id(id: String):
+func remove_by_id(id: String): #TODO: ATTENZIONE - ROTTO ROTTISSIMO
 	var index = -1
 	for i in range(items.size()):
 		if items[i].get_id() == id:
