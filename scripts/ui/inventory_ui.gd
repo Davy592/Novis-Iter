@@ -10,14 +10,17 @@ func _ready():
 	Global.inventory.inventory_updated.connect(_on_inventory_updated)
 	for i in range(0, Global.inventory.get_size()):
 		add_slot(Global.inventory.get_item(i))
+		
+func close_inventory():
+	get_viewport().set_input_as_handled()
+	visible = false
+	get_tree().paused = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _input(event):
 	if event is InputEventKey and not event.echo:
 		if event.is_action_pressed('ui_inventory'):
-			get_viewport().set_input_as_handled()
-			visible = false
-			get_tree().paused = false
-			process_mode = Node.PROCESS_MODE_DISABLED
+			close_inventory()
 
 # SIGNALS REACTIONS
 
@@ -60,15 +63,19 @@ func _on_inventory_slot_pressed():
 	$MarginContainer/CenterContainer.visible = true
 	$MarginContainer/CenterContainer/UsageContainer/UseButton.grab_focus()	
 
-func _on_use_button_pressed(): #TODO: ATTUALMENTE TUTTI GLI ITEM USATI SINGOLI SONO CONSUMABILI
+func _on_use_button_pressed():
 	#print("Item usato")
 	var item: Item
 	item = selectioned_slot.get_item_in_slot()
 	var name = item.get_name()
 	if name != "Bandiera" or Global.tile_name == "res://scenes/tiles/tile_1.tscn":
-		Global.inventory.remove_by_name(name, 1)
 		Global.use_item(name)
-		_on_cancel_button_pressed()
+		if name == "Bandiera":
+			Global.inventory.remove_by_name(name, 1)
+		#close_inventory()
+		$MarginContainer/CenterContainer.visible = false
+		if grid.get_child_count() > 0:
+			grid.get_child(0).get_node('CenterContainer/ItemButton').grab_focus()
 
 func _on_cancel_button_pressed():
 	$MarginContainer/CenterContainer.visible = false
