@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://chjosx4bf40my"]
+[gd_scene load_steps=28 format=3 uid="uid://chjosx4bf40my"]
 
 [ext_resource type="Texture2D" uid="uid://b0hfc6afae50i" path="res://resources/assets/tilesets/top-down_country_side_forest/4 - Details.png" id="1_66eqn"]
 [ext_resource type="Script" path="res://scripts/tiles/tile_3.gd" id="1_hxclf"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://nikkscdt1pdh" path="res://resources/assets/tilesets/top-down_country_side_forest/3 - Roof top.png" id="7_2ud1n"]
 [ext_resource type="PackedScene" uid="uid://ct13fwdm42ndq" path="res://scenes/entities/wife_grisby.tscn" id="12_wbw6y"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="14_7cvby"]
+[ext_resource type="PackedScene" uid="uid://ifj2i8vk2eml" path="res://scenes/utils/trigger_on_enter.tscn" id="14_jnbdl"]
+[ext_resource type="Resource" path="res://timelines/hubs/unlock_tiles.dtl" id="15_xuyp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gvcn"]
 texture = ExtResource("3_2a5n4")
@@ -5000,6 +5002,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 2, 1923, -5, 1917, 467, 1917, 480, 2112, 480, 2108, 711, 1912, 711, 1917, 1064, 972, 1050, 969, 1203, 722, 1198, 713, 1057, -7, 1061)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhmqb"]
+size = Vector2(1950, 1111)
+
 [node name="tile3" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_hxclf")
@@ -5019,6 +5024,7 @@ layer_3/name = "decorations"
 layer_3/tile_data = PackedInt32Array(655396, 1245196, 8, 852005, 1245196, 8, 917541, 1245196, 8, 983077, 1245196, 8, 983076, 1245196, 8, 1048612, 1245196, 8, 1114148, 1245196, 8, 1114147, 1245196, 8, 1114146, 1310732, 7, 1179681, 1245196, 8, 1179680, 1245196, 8, 1179679, 1245196, 8, 1179678, 1245196, 8, 1114142, 1245196, 8, 1114141, 1245196, 8, 1114140, 1245196, 8, 1114139, 1245196, 8, 1048603, 1245196, 8, 983067, 1245196, 8, 983068, 1310732, 7, 983069, 1310732, 7, 1048606, 1310732, 7, 1048607, 1310732, 7, 1048608, 1310732, 7, 1114143, 1310732, 7, 1114144, 1310732, 7, 1114145, 1310732, 7, 1048610, 1310732, 7, 983074, 1310732, 7, 917538, 1310732, 7, 852004, 1310732, 5, 852003, 1310732, 5, 786465, 1310732, 5, 589858, 1310732, 5, 458758, 655372, 0, 524294, 655372, 1, 458759, 720908, 0, 524295, 720908, 1, 1048611, 786444, 1, 720931, 786444, 1, 983073, 786444, 1, 1048604, 786444, 1, 1310730, 851980, 17, 131074, 917516, 0, 131073, 917516, 0, 393244, 589840, 0, 458780, 589840, 1, 393245, 655376, 0, 458781, 655376, 1, 393246, 720912, 0, 458782, 720912, 1, 131103, 589840, 2, 196639, 589840, 3, 131104, 655376, 2, 196640, 655376, 3, 131105, 720912, 2, 196641, 720912, 3, 131106, 393232, 2, 196642, 393232, 3, 131107, 458768, 2, 196643, 458768, 3, 131108, 524304, 2, 196644, 524304, 3, 1048577, 1048588, 0, 1179649, 1048588, 0, 1310728, 1048588, 0, 1245190, 1048588, 0, 1376260, 1048588, 0, 1310721, 1048588, 0, 1310724, 1048588, 0, 1310723, 1048588, 0, 1376258, 1048588, 0, 1376262, 1048588, 0, 1179650, 1048588, 0, 1114112, 1048588, 0, 1376264, 983052, 1, 1310734, 917516, 2, 1376270, 983052, 2)
 layer_4/name = "ysort"
 layer_4/y_sort_enabled = true
+layer_4/z_index = -1
 layer_4/tile_data = PackedInt32Array(851977, 131078, 26, 1048584, 131078, 27, 1114120, 131078, 28, 1179656, 131078, 29, 917513, 196614, 25, 983049, 196614, 26, 1048585, 196614, 27, 1114121, 196614, 28, 1179657, 196614, 29, 1245193, 196614, 30, 851978, 262150, 24, 917514, 262150, 25, 983050, 262150, 26, 1048586, 262150, 27, 1114122, 262150, 28, 1179658, 262150, 29, 1245194, 262150, 30, 786443, 327686, 23, 851979, 327686, 24, 917515, 327686, 25, 983051, 327686, 26, 1048587, 327686, 27, 1114123, 327686, 28, 1179659, 327686, 29, 1245195, 327686, 30, 786444, 393222, 23, 851980, 393222, 24, 917516, 393222, 25, 983052, 393222, 26, 1048588, 393222, 27, 1114124, 393222, 28, 1179660, 393222, 29, 1245196, 393222, 30, 1310732, 393222, 31, 1376268, 393222, 32, 786445, 458758, 23, 851981, 458758, 24, 917517, 458758, 25, 983053, 458758, 26, 1048589, 458758, 27, 1114125, 458758, 28, 1179661, 458758, 29, 1245197, 458758, 30, 1310733, 458758, 31, 1376269, 458758, 32, 786446, 524294, 23, 851982, 524294, 24, 917518, 524294, 25, 983054, 524294, 26, 1048590, 524294, 27, 1114126, 524294, 28, 1179662, 524294, 29, 1245198, 524294, 30, 851983, 589830, 24, 917519, 589830, 25, 983055, 589830, 26, 1048591, 589830, 27, 1114127, 589830, 28, 1179663, 589830, 29, 1245199, 589830, 30, 917520, 655366, 25, 983056, 655366, 26, 1048592, 655366, 27, 1114128, 655366, 28, 1179664, 655366, 29, 1048593, 720902, 27, 1114129, 720902, 28, 1179665, 720902, 29)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
@@ -5051,6 +5057,14 @@ wait_time = 3.0
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 25.0
+
+[node name="TriggerOnEnter" parent="." instance=ExtResource("14_jnbdl")]
+position = Vector2(203, 1978)
+dialogue_resource = ExtResource("15_xuyp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerOnEnter"]
+position = Vector2(758, -1437.5)
+shape = SubResource("RectangleShape2D_nhmqb")
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

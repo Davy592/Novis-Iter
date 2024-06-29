@@ -91,38 +91,39 @@ func handle_animation(velocity: Vector2):
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)
 
-func _on_dialogic_signal(argument:String):
-	if argument == "follower":
-		move = true
-		Global.remy_follow = true
-		$Timer.start()
-		#$CollisionShape2D.disabled = false #true
-		set_collision_layer(0)
-		Dialogic.VAR.remy = true
-		$DialogueActionable.set_collision_layer(8)
-		$DialogueActionable.set_collision_layer(8)
-	if argument == "together":
-		Global.remy_follow = false
-		start_quest = true
-		move = false
-		dialogue_player = false
-		#$CollisionShape2D.disabled = false
-		set_collision_layer(0)
-		$DialogueActionable.set_collision_layer(8)
-		$DialogueActionable.set_collision_layer(8)
-		_on_timer_timeout()
-	if argument == "shoot":
-		$AnimatedSprite2D.play("left_shoot_idle")
-	if argument == "death":
-		$AnimatedSprite2D.play("left_shoot")
-	if argument == "path_together":
-		path_together = true
-		$AnimatedSprite2D.play("front_walk")
-	if argument == "stop_shooting":
-		$AnimatedSprite2D.play("front_idle")
-	if argument == "path_different":
-		$AnimatedSprite2D.play("front_walk")
-		path_different = true
+func _on_dialogic_signal(argument: Variant):
+	if argument is String:
+		if argument == "follower":
+			move = true
+			Global.remy_follow = true
+			$Timer.start()
+			#$CollisionShape2D.disabled = false #true
+			set_collision_layer(0)
+			Dialogic.VAR.remy = true
+			$DialogueActionable.set_collision_layer(8)
+			$DialogueActionable.set_collision_layer(8)
+		if argument == "together":
+			Global.remy_follow = false
+			start_quest = true
+			move = false
+			dialogue_player = false
+			#$CollisionShape2D.disabled = false
+			set_collision_layer(0)
+			$DialogueActionable.set_collision_layer(8)
+			$DialogueActionable.set_collision_layer(8)
+			_on_timer_timeout()
+		if argument == "shoot":
+			$AnimatedSprite2D.play("left_shoot_idle")
+		if argument == "death":
+			$AnimatedSprite2D.play("left_shoot")
+		if argument == "path_together":
+			path_together = true
+			$AnimatedSprite2D.play("front_walk")
+		if argument == "stop_shooting":
+			$AnimatedSprite2D.play("front_idle")
+		if argument == "path_different":
+			$AnimatedSprite2D.play("front_walk")
+			path_different = true
 
 
 func _on_timer_timeout():

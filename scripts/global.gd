@@ -17,7 +17,7 @@ signal stop_battle
 
 func _ready():
 	var current_tile_info = TileInfo.new("res://resources/data/" + tile_name + ".json")
-	var main_node = get_tree().get_root().get_node('Main')
+	#var main_node = get_tree().get_root().get_node('Main')
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	#tile_name = current_tile_info.get_scene_instance().get_name()
 	#print(tile_name)
