@@ -43,6 +43,12 @@ func change_current_tile(tile: TileInfo, side, id):
 	if remy_follow:
 		remy_tile = tile_name
 		remy.position = player.position
+		if tile_name == "Tile2" and (side == 0 or side ==2):
+			remy.z_index = 1
+			remy.set_collision_mask(4)
+		else:
+			remy.z_index = 0
+			remy.set_collision_mask(1)
 	else:
 		if tile_name != remy_tile:
 			remy.visible = false
@@ -52,6 +58,14 @@ func change_current_tile(tile: TileInfo, side, id):
 			remy.visible = true
 			remy.get_node("DialogueActionable").set_collision_layer(2)
 			remy.get_node("DialogueActionable").set_collision_layer(2)
+	if tile_name == "Tile2" and (side == 0 or side ==2):
+		player.z_index = 1
+		player.set_collision_layer(4)
+		player.set_collision_mask(4)
+	else:
+		player.z_index = 0
+		player.set_collision_layer(1)
+		player.set_collision_mask(1)
 	tile_instance.set_name('CurrentTile')
 	main_node.add_child(tile_instance)
 	#connect_current_tile_signals()
