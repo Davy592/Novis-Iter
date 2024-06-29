@@ -97,17 +97,22 @@ func get_completed_quest(id: int) -> int:
 func add(quest: Quest): 
 	if get_quest(quest.id) == NO_ELEMENT_INDEX:
 		quests_in_progress.append(quest)
+
 func add_completed(quest: Quest): 
 	if get_completed_quest(quest.id) == NO_ELEMENT_INDEX:
 		completed_quests.append(quest)
-	
+
+
 func remove(index: int):
 	quests_in_progress.remove_at(index)
+
 func remove_completed(index: int):
 	completed_quests.remove_at(index)
 
+
 func get_size():
 	return quests_in_progress.size()
+
 func get_size_completed():
 	return completed_quests.size()
 #endregion

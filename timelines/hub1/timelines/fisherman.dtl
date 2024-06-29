@@ -37,7 +37,7 @@ else:
 			- Si
 				fisherman: Grazie mille. Ecco una ricompensa per te.
 				fisherman: Non so cosa sia, ma potrebbe tornarti utile.
-				do Global.inventory.create("white_flag")
+				do Global.quest_handler.set_current_stage(0.0, 100.0)
 			- No
 				fisherman: Va bene, nessun problema. Torna quando avrai i pezzi di legno di cui ho bisogno
 		else:

@@ -54,7 +54,7 @@ func remove_by_name(item_name: String, quantity: int):
 		
 		emit_signal("inventory_updated", removed_item, index)
 
-func remove_by_id(id: String):
+func remove_by_id(id: String): #TODO: ATTENZIONE - ROTTO ROTTISSIMO
 	var index = -1
 	for i in range(items.size()):
 		if items[i].get_id() == id:
@@ -68,20 +68,19 @@ func remove(id: String):
 	remove_by_id(id)
 	#remove_by_name(id)
 
-func contains(item_name: String) -> bool:
-	return contains_by_name(item_name)
-
-func contains_by_id(item_id: String) -> bool:
+func count_by_id(item_id: String) -> int:
+	var cnt = 0
 	for item in items:
 		if item.get_id() == item_id:
-			return true
-	return false
+			cnt+=1
+	return cnt
 
-func contains_by_name(item_name: String) -> bool:
+func count_by_name(item_name: String) -> int:
+	var cnt = 0
 	for item in items:
 		if item.get_name() == item_name:
-			return true
-	return false
+			cnt+=1
+	return cnt
 
 func get_size():
 	return items.size()

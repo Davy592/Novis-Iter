@@ -8,15 +8,16 @@ var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
 var hubs_clues = {}
 var remy_follow = false
-var remy_tile = "tile1"
+var remy_tile = "res://scenes/tiles/tile_1.tscn"
 var battle_on = true
-var tile_name = "hub1"
+var tile_name = "res://scenes/tiles/hub_1.tscn"
+var grotta = false
 
 signal current_map_node_updated
 signal stop_battle
 
 func _ready():
-	var current_tile_info = TileInfo.new("res://resources/data/" + tile_name + ".json")
+	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	#tile_name = current_tile_info.get_scene_instance().get_name()
 	#print(tile_name)
@@ -33,7 +34,7 @@ var remy
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
-	tile_name = tile_instance.get_name()
+	tile_name = tile.get_scene().resource_path
 	player = main_node.get_node('Player')
 	remy = main_node.get_node('remy')
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa

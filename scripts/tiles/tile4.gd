@@ -8,12 +8,13 @@ func _process(delta):
 func check_ludo_stage():
 	var stage: int = Global.quest_handler.get_current_stage(41.0)
 	
-	if stage == 10:
+	if stage == 10 or Global.grotta:
+		Global.grotta = true
 		if mountain_teleport == null:
 			mountain_teleport = get_node('Teleports/WrongTeleport').duplicate()
 			mountain_teleport.name = 'MountainTeleport'
 			mountain_teleport.position = Vector2(3647.0, 833.0)
-			mountain_teleport.destination = Vector2(7052.0, 294.0)
+			mountain_teleport.destination = Vector2(7790, 2950)
 			
 			get_node('Teleports').add_child(mountain_teleport)
 	elif stage == 90:
@@ -28,7 +29,7 @@ func check_ludo_stage():
 		
 		Global.quest_handler.set_current_stage(41.0, 92.0)
 	elif stage == 92:
-		if Global.inventory.contains_by_id("1N") or Global.inventory.contains_by_id("2X") or Global.inventory.contains_by_id("3P"):
+		if Global.inventory.count_by_id("1N")>0 or Global.inventory.count_by_id("2X")>0 or Global.inventory.count_by_id("3P")>0:
 			Global.quest_handler.set_current_stage(41.0, 95.0)
 	elif stage == 96:
 		var ludo = get_node('NPC/Ludo')

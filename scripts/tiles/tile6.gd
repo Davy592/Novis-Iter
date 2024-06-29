@@ -81,12 +81,12 @@ func _on_dialogic_signal(argument:String):
 
 func good_ending():
 	# notifica ad owen l'ending
-	print('good_ending')
+	#print('good_ending')
 	pass
 
 func bad_ending():
 	# notifica ad owen l'ending
-	print('bad_ending')
+	#print('bad_ending')
 	
 	var json_as_text = FileAccess.get_file_as_string("res://resources/data/items/rewards/sale.json")
 	var item_data = JSON.parse_string(json_as_text)

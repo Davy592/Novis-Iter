@@ -68,6 +68,7 @@ func _on_use_button_pressed():
 	var item: Item
 	item = selectioned_slot.get_item_in_slot()
 	var name = item.get_name()
+<<<<<<< HEAD
 	if name != "Bandiera" or Global.tile_name == "res://scenes/tiles/tile_1.tscn":
 		Global.use_item(name)
 		if name == "Bandiera":
@@ -76,6 +77,12 @@ func _on_use_button_pressed():
 		$MarginContainer/CenterContainer.visible = false
 		if grid.get_child_count() > 0:
 			grid.get_child(0).get_node('CenterContainer/ItemButton').grab_focus()
+=======
+	if name == "Bandiera":
+		Global.inventory.remove_by_name(name, 1)
+		Global.use_item(name)
+		_on_cancel_button_pressed()
+>>>>>>> d60436da618b115c8620272ad2059a71f88fa2c4
 
 func _on_cancel_button_pressed():
 	$MarginContainer/CenterContainer.visible = false

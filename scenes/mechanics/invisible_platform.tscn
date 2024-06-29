@@ -56,6 +56,7 @@ light_mask = 524288
 visibility_layer = 524288
 position = Vector2(2.98023e-08, 0)
 shape = SubResource("CircleShape2D_jhf30")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
