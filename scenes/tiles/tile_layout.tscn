@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://b3340a7s0ln7b"]
+[gd_scene load_steps=64 format=3 uid="uid://b3340a7s0ln7b"]
 
 [ext_resource type="Texture2D" uid="uid://btrtw8pvu0ctg" path="res://resources/assets/tilesets/Top-Down Forest/Forest Cliff.png" id="2_0mutm"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="5_gberc"]
@@ -571,6 +571,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_l2pg7"]
+vertices = PackedVector2Array(1907, 1012, 14, 1012, 11, 11, 1909, 11)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1, 1, 1919, 1, 1917, 1022, 4, 1022)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="TileLayout" type="Node2D"]
 process_mode = 1
 
@@ -651,3 +657,6 @@ position = Vector2(208, 67)
 walk_radius = 0
 dialogue_limit = 4
 dialogue_file = ExtResource("9_8a6gh")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_l2pg7")

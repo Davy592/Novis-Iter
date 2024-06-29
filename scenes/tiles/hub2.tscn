@@ -39,8 +39,12 @@
 [ext_resource type="Resource" path="res://timelines/hubs/klayton.dtl" id="34_516dg"]
 [ext_resource type="Resource" path="res://timelines/hubs/mrX_dialogue.dtl" id="35_jf3bm"]
 [ext_resource type="Resource" path="res://timelines/hubs/guardia_dialogue.dtl" id="36_j52ob"]
-[ext_resource type="PackedScene" uid="uid://ifj2i8vk2eml" path="res://scenes/utils/trigger_on_enter.tscn" id="40_x4xbv"]
-[ext_resource type="Resource" path="res://timelines/hubs/unlock_tiles.dtl" id="41_cykj0"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o4jik"]
+vertices = PackedVector2Array(0, 900, 322, 910, 321, 910, 3270, 1145, 3271, 1145, 3168, 1149, 3129, 509, 3136, 412, 3151, 433, 3151, 528, 949, 990, 1123, 882, 1123, 883, 1594, 2850, 1600, 2870, 1453, 2866, 1420, 2429, 3081, 616, 3139, 782, 2995, 810, 3143, 936, 2800, 902, 3340, 987, 3363, 984, 3366, 1133, 3219, 2160, 3233, 2227, 1706, 2395, 3160, 1890, 2368, 348, 2490, 335, 2499, 594, 3235, 1890, 3153, 991, 3339, 987, 1620, 2426, -9, 1482, 508, 932, 700, 958, 49, 1719, -126, 1707, -116, 1486, 2123, 271, 2360, 271, 2054, 344, 70, 2264, 3151, 1697, 3147, 1191, 2703, 920, 1856, 500, 1565, 532, 1596, 507, 1533, 651, 1363, 744)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 6, 9, 18, 19), PackedInt32Array(19, 18, 20, 21), PackedInt32Array(22, 23, 24, 3), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(29, 30, 31), PackedInt32Array(28, 32, 25), PackedInt32Array(33, 34, 22, 3, 5), PackedInt32Array(35, 13, 16, 10), PackedInt32Array(36, 0, 2, 37, 38, 39), PackedInt32Array(39, 40, 41, 36), PackedInt32Array(42, 43, 29, 44), PackedInt32Array(10, 16, 45, 39, 38), PackedInt32Array(46, 28, 27), PackedInt32Array(21, 20, 33, 5, 47, 27, 48), PackedInt32Array(47, 46, 27), PackedInt32Array(44, 31, 48, 27, 49), PackedInt32Array(44, 29, 31), PackedInt32Array(50, 51, 49, 27, 52), PackedInt32Array(10, 12, 53, 52, 27, 35)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1593, 498, 1852, 490, 2047, 337, 2119, 261, 2369, 261, 2377, 337, 2500, 324, 2509, 591, 2708, 909, 2797, 892, 2987, 803, 3072, 612, 3119, 507, 3127, 401, 3140, 401, 3161, 430, 3161, 528, 3149, 782, 3153, 935, 3161, 981, 3339, 977, 3373, 973, 3377, 1142, 3271, 1155, 3174, 1159, 3157, 1193, 3161, 1697, 3170, 1880, 3246, 1880, 3229, 2159, 3246, 2236, 1708, 2405, 1630, 2433, 1604, 2849, 1614, 2881, 1444, 2876, 1411, 2438, 61, 2273, 39, 1728, -137, 1717, -126, 1477, -19, 1472, -9, 890, 322, 900, 509, 922, 701, 948, 947, 980, 1118, 874, 1358, 735, 1524, 644, 1556, 527)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxrim"]
 texture = ExtResource("1_oedy3")
@@ -17951,6 +17955,12 @@ size = Vector2(120.75, 110.5)
 size = Vector2(3448, 2739)
 
 [node name="Hub2" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1, 1)
+navigation_polygon = SubResource("NavigationPolygon_o4jik")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

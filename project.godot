@@ -23,6 +23,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Bimbo cane": "res://timelines/tile2/characters/Bimbo cane.dch",
+"Bimbo gatto bianco": "res://timelines/tile2/characters/Bimbo gatto bianco.dch",
+"Bimbo nero": "res://timelines/tile2/characters/Bimbo nero.dch",
+"Bimbo rana": "res://timelines/tile2/characters/Bimbo rana.dch",
+"Osservatore": "res://timelines/tile2/characters/Osservatore.dch",
 "bird_creature": "res://timelines/tile6/bird_creature.dch",
 "creature": "res://timelines/hub1/characters/creature.dch",
 "fisherman": "res://timelines/hub1/characters/fisherman.dch",
@@ -42,6 +47,13 @@ directories/dch_directory={
 "zach": "res://timelines/hubs/zach.dch"
 }
 directories/dtl_directory={
+"Bimbo cane": "res://timelines/tile2/timelines/Bimbo cane.dtl",
+"Bimbo gatto bianco": "res://timelines/tile2/timelines/Bimbo gatto bianco.dtl",
+"Bimbo nero": "res://timelines/tile2/timelines/Bimbo nero.dtl",
+"Bimbo rana": "res://timelines/tile2/timelines/Bimbo rana.dtl",
+"Osservatore": "res://timelines/tile2/timelines/Osservatore.dtl",
+"QuestAlert": "res://timelines/tile2/timelines/QuestAlert.dtl",
+"StopRemy": "res://timelines/tile6/StopRemy.dtl",
 "bird_drink_coffee_with_soap": "res://timelines/tile6/bird_drink_coffee_with_soap.dtl",
 "bird_quest_dialogue": "res://timelines/tile6/bird_quest_dialogue.dtl",
 "bird_see_book": "res://timelines/tile6/bird_see_book.dtl",
