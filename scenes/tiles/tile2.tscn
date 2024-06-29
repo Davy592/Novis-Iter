@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://dwavtpiry7e1"]
+[gd_scene load_steps=152 format=3 uid="uid://dwavtpiry7e1"]
 
 [ext_resource type="Texture2D" uid="uid://cy2xqyokwb5dl" path="res://resources/assets/tilesets/cozy farm/cozy farm.png" id="1_i703w"]
 [ext_resource type="Texture2D" uid="uid://c2ujxtwsyx7ip" path="res://resources/assets/tilesets/Free Park Zone Tileset/3 Objects/Other/Ramp1.png" id="2_8ssg8"]
@@ -4130,6 +4130,15 @@ sources/14 = SubResource("TileSetAtlasSource_o57nu")
 sources/15 = SubResource("TileSetAtlasSource_1s3to")
 sources/16 = SubResource("TileSetAtlasSource_qexgi")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_g8peu"]
+vertices = PackedVector2Array(2785, 2782, 2556, 2783, 2557, 2690, 2785, 2690, 2555, 190, 2556, -42, 2786, -39, 2788, 191, 3039, 191, 3049, 2690, 130, 2690, 131, 190)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6, 7, 3), PackedInt32Array(8, 9, 3, 7), PackedInt32Array(2, 10, 11, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(121, 180, 120, 2700, 2547, 2700, 2546, 2794, 2795, 2792, 2795, 2700, 3060, 2701, 3049, 181, 2798, 181, 2796, -49, 2547, -53, 2545, 180)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp130"]
+size = Vector2(221, 40)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tcbv"]
 atlas = ExtResource("19_01wke")
 region = Rect2(64, 48, 16, 16)
@@ -4977,6 +4986,32 @@ layer_4/tile_data = PackedInt32Array(2359338, 262149, 3, 2424874, 262149, 3, 249
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+z_index = 1
+navigation_polygon = SubResource("NavigationPolygon_g8peu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1332, 1867, 2271, 1870, 2266, 2047, 2100, 1968, 1942, 2048, 1921, 1979, 1680, 1979, 1664, 2047, 1506, 1964, 1338, 2048)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1336, 2157, 1330, 2331, 2270, 2331, 2266, 2159, 1934, 2159, 1921, 2219, 1680, 2221, 1665, 2160)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+z_index = 1
+position = Vector2(2671, -9)
+shape = SubResource("RectangleShape2D_dp130")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+z_index = 1
+position = Vector2(2672, 2745)
+shape = SubResource("RectangleShape2D_dp130")
+
 [node name="TileDoor_R" parent="." instance=ExtResource("11_c7v4m")]
 z_index = 1
 position = Vector2(2930, 1275)
@@ -4992,25 +5027,17 @@ z_index = 2
 position = Vector2(2673, 8)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 5
+collision_mask = 5
 
 [node name="TileDoor_B" parent="." instance=ExtResource("11_c7v4m")]
 z_index = 2
-position = Vector2(2670, 2575)
+position = Vector2(2669, 2726)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 5
+collision_mask = 5
 side = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(1332, 1867, 2271, 1870, 2266, 2047, 2100, 1968, 1942, 2048, 1921, 1979, 1680, 1979, 1664, 2047, 1506, 1964, 1338, 2048)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(1336, 2157, 1330, 2331, 2270, 2331, 2266, 2159, 1934, 2159, 1921, 2219, 1680, 2221, 1665, 2160)
 
 [node name="Bimbo cane" parent="." instance=ExtResource("18_4a7sb")]
 position = Vector2(1561, 352)
@@ -5072,8 +5099,6 @@ shape = SubResource("RectangleShape2D_wkkx3")
 
 [node name="PontiZone" type="Area2D" parent="."]
 z_index = 1
-collision_layer = 4
-collision_mask = 4
 script = ExtResource("36_feijh")
 
 [node name="Top" type="CollisionShape2D" parent="PontiZone"]
@@ -5086,22 +5111,30 @@ position = Vector2(2670, 2463.83)
 scale = Vector2(3.75, 3.75)
 shape = SubResource("RectangleShape2D_5w23i")
 
-[node name="PontiExit" type="Area2D" parent="."]
+[node name="PontiExitTop" type="Area2D" parent="."]
 z_index = 1
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("37_iqti4")
 
-[node name="Top" type="CollisionShape2D" parent="PontiExit"]
+[node name="Top" type="CollisionShape2D" parent="PontiExitTop"]
 position = Vector2(2670, 31)
 scale = Vector2(3.75, 3.75)
 shape = SubResource("RectangleShape2D_4ngc1")
 
-[node name="Bottom" type="CollisionShape2D" parent="PontiExit"]
-position = Vector2(2670, 2552.44)
+[node name="PontiExitBottom" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("37_iqti4")
+side = 2
+
+[node name="Bottom" type="CollisionShape2D" parent="PontiExitBottom"]
+position = Vector2(2669, 2703)
 scale = Vector2(3.75, 3.75)
 shape = SubResource("RectangleShape2D_4ngc1")
 
 [connection signal="body_exited" from="QuestAlert" to="QuestAlert" method="_on_body_exited"]
 [connection signal="body_exited" from="PontiZone" to="PontiZone" method="_on_body_exited"]
-[connection signal="body_entered" from="PontiExit" to="PontiExit" method="_on_body_entered"]
+[connection signal="body_entered" from="PontiExitTop" to="PontiExitTop" method="_on_body_entered"]
+[connection signal="body_entered" from="PontiExitBottom" to="PontiExitBottom" method="_on_body_entered"]

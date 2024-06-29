@@ -17,6 +17,10 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _physics_process(delta):
+	print("z: " + str(z_index))
+	print("coll: " + str(collision_layer))
+	print("mask: " + str(collision_mask))
+	print("visi: " + str(visible))
 	if move:
 		var target_character = Global.player
 		var distance_to_target = target_character.position.distance_to(position)
@@ -130,9 +134,11 @@ func _on_timer_timeout():
 		Global.remy_follow = false
 		move = false
 		#$CollisionShape2D.disabled = false
-		set_collision_layer(1)
+		print("arrivo")
+		set_collision_layer(Global.player.get_collision_layer())
 		$DialogueActionable.set_collision_layer(2)
 		$DialogueActionable.set_collision_layer(2)
+		print("fatto")
 		Dialogic.VAR.remy = false
 		if not dialogue_player:
 			Dialogic.VAR.remy = true

@@ -17,7 +17,6 @@ signal stop_battle
 
 func _ready():
 	var current_tile_info = TileInfo.new("res://resources/data/" + tile_name + ".json")
-	var main_node = get_tree().get_root().get_node('Main')
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	#tile_name = current_tile_info.get_scene_instance().get_name()
 	#print(tile_name)
@@ -30,12 +29,13 @@ func get_clue(key):
 	return hubs_clues.get(key, false)
 	
 var player
+var remy
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
 	tile_name = tile_instance.get_name()
 	player = main_node.get_node('Player')
-	var remy = main_node.get_node('remy')
+	remy = main_node.get_node('remy')
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa
 	#disconnect_current_tile_signals()
 	main_node.remove_child(main_node.get_node('CurrentTile'))
@@ -46,10 +46,12 @@ func change_current_tile(tile: TileInfo, side, id):
 	else:
 		if tile_name != remy_tile:
 			remy.visible = false
+			remy.set_collision_layer(0)
 			remy.get_node("DialogueActionable").set_collision_layer(8)
 			remy.get_node("DialogueActionable").set_collision_layer(8)
 		else:
 			remy.visible = true
+			remy.set_collision_layer(1)
 			remy.get_node("DialogueActionable").set_collision_layer(2)
 			remy.get_node("DialogueActionable").set_collision_layer(2)
 	tile_instance.set_name('CurrentTile')

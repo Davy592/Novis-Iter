@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://boybou38ij2r0" path="res://resources/assets/tilesets/tile1/topdownpack.png" id="3_jr07w"]
 [ext_resource type="Texture2D" uid="uid://dtjnlr7tawebu" path="res://resources/assets/tilesets/tile1/Skeleton_Dead.png" id="4_x6bls"]
 [ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="6_mhbai"]
-[ext_resource type="PackedScene" uid="uid://br43hu6unncch" path="res://scenes/entities/remy.tscn" id="7_kjfi8"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="8_uiegj"]
 [ext_resource type="PackedScene" uid="uid://ceiwe37wg4kp8" path="res://scenes/entities/enemy_left.tscn" id="9_rvbf3"]
 [ext_resource type="PackedScene" uid="uid://bjt8df78q4ko6" path="res://scenes/entities/enemy_right.tscn" id="10_dpfc7"]
@@ -3804,9 +3803,6 @@ json_data_file = "res://resources/data/items/white_flag.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
 shape = SubResource("CircleShape2D_3qe5u")
-
-[node name="remy" parent="." instance=ExtResource("7_kjfi8")]
-position = Vector2(1524, 689)
 
 [node name="TileDoor_1" parent="." instance=ExtResource("8_uiegj")]
 position = Vector2(-36, 620)
