@@ -131,7 +131,7 @@ func _on_dialogic_signal(argument: Variant):
 
 
 func _on_timer_timeout():
-	if Global.tile_name != "tile3":
+	if Global.tile_name != "res://scenes/tiles/tile_3.tscn":
 		Global.remy_follow = false
 		move = false
 		#$CollisionShape2D.disabled = false
