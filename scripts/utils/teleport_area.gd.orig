@@ -1,7 +1,10 @@
 extends Area2D
 
+<<<<<<< HEAD
+=======
 var remy: Node2D
 
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 @export var destination: Vector2 = Vector2(0, 0):
 	set(new_destination): destination = new_destination
 	get: return destination
@@ -20,8 +23,11 @@ func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		var main_node = get_tree().get_root().get_node('Main')
 		var player = main_node.get_node('Player')
+<<<<<<< HEAD
+=======
 		if Global.remy_follow:
 			remy = main_node.get_node('remy')
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		
 		Global.set_camera_limits(
 			player,
@@ -31,5 +37,8 @@ func _on_body_entered(body: Node2D):
 			destination_camera_limits.w
 		)
 		body.position = destination
+<<<<<<< HEAD
+=======
 		if Global.remy_follow:
 			remy.position = body.position
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce

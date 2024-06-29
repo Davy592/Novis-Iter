@@ -6,7 +6,6 @@ var tiles : Array[TileInfo]
 
 func _init():
 	tiles = [
-		TileInfo.new("res://resources/data/hub1.json"),
 		TileInfo.new("res://resources/data/hub2.json"),
 		TileInfo.new("res://resources/data/hub3.json"),
 		TileInfo.new("res://resources/data/tile1.json"),

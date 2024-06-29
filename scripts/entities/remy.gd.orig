@@ -1,6 +1,16 @@
 extends CharacterBody2D
 
 
+<<<<<<< HEAD
+var ACCELERATION = 150
+@export var target_character: CharacterBody2D
+@onready var navigation_agent = $NavigationAgent2D
+var move = false
+var tile3 = false
+var path_together = false
+var path_different = false
+var dialogue_player = true
+=======
 var ACCELERATION = 260
 @onready var navigation_agent = $NavigationAgent2D
 var move = false
@@ -8,6 +18,7 @@ var path_together = false
 var path_different = false
 var dialogue_player = true
 var start_quest = false
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -15,10 +26,19 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+<<<<<<< HEAD
+	if tile3:
+		global_position.x = 1365
+		global_position.y = 410
+
+func _physics_process(delta):
+	if move and not tile3:
+=======
 
 func _physics_process(delta):
 	if move:
 		var target_character = Global.player
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		var distance_to_target = target_character.position.distance_to(position)
 		set_movement_target(target_character.global_position)
 		if navigation_agent.is_navigation_finished() or distance_to_target < 100:
@@ -26,16 +46,39 @@ func _physics_process(delta):
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 		var current_agent_position: Vector2 = global_position
 		var new_velocity: Vector2 = (next_path_position - current_agent_position).normalized() * ACCELERATION * 2
+<<<<<<< HEAD
+		velocity = new_velocity  
+		move_and_slide() 
+		handle_animation(velocity)
+	if path_together or path_different:
+		global_position.y += 1
+	if tile3:
+=======
 		velocity = new_velocity
 		move_and_slide()
 		handle_animation(velocity)
 	if path_together or path_different:
 		var target_character = null
 		global_position.y += 1
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		if global_position.y < 600:
 			$AnimatedSprite2D.play("front_walk")
 			global_position.y += 1
 		elif global_position.y >= 600 and global_position.x > 925:
+<<<<<<< HEAD
+				$AnimatedSprite2D.play("left_walk")
+				global_position.x -= 1
+		elif global_position.x <= 925 and global_position.y < 965:
+				$AnimatedSprite2D.play("front_walk")
+				global_position.y += 1
+		elif global_position.y >= 965 and global_position.x > 805:
+				$AnimatedSprite2D.play("left_walk")
+				global_position.x -= 1
+		elif global_position.x <= 805:
+				$AnimatedSprite2D.stop()
+				$AnimatedSprite2D.play("front_idle")
+				tile3 = false
+=======
 			$AnimatedSprite2D.play("left_walk")
 			global_position.x -= 1
 		elif global_position.x <= 925 and global_position.y < 965:
@@ -64,10 +107,15 @@ func _physics_process(delta):
 			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("front_idle")
 			start_quest = false
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		
 
 func handle_animation(velocity: Vector2):
 	if velocity.length_squared() > 0:
+<<<<<<< HEAD
+		print("Moving with velocity: ", velocity)  # Debug print
+=======
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
 				if $AnimatedSprite2D.animation != "right_walk":
@@ -94,6 +142,16 @@ func set_movement_target(movement_target: Vector2):
 func _on_dialogic_signal(argument:String):
 	if argument == "follower":
 		move = true
+<<<<<<< HEAD
+		$Timer.start()
+		$CollisionShape2D.disabled = true
+		Dialogic.VAR.remy = true
+	if argument == "together":
+		move = false
+		tile3 = true
+		dialogue_player = false
+		$CollisionShape2D.disabled = true
+=======
 		Global.remy_follow = true
 		$Timer.start()
 		#$CollisionShape2D.disabled = false #true
@@ -110,6 +168,7 @@ func _on_dialogic_signal(argument:String):
 		set_collision_layer(0)
 		$DialogueActionable.set_collision_layer(8)
 		$DialogueActionable.set_collision_layer(8)
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		_on_timer_timeout()
 	if argument == "shoot":
 		$AnimatedSprite2D.play("left_shoot_idle")
@@ -126,6 +185,13 @@ func _on_dialogic_signal(argument:String):
 
 
 func _on_timer_timeout():
+<<<<<<< HEAD
+	move = false
+	$CollisionShape2D.disabled = false
+	Dialogic.VAR.remy = false
+	if not dialogue_player:
+		Dialogic.VAR.remy = true
+=======
 	if Global.tile_name != "tile3":
 		Global.remy_follow = false
 		move = false
@@ -138,3 +204,4 @@ func _on_timer_timeout():
 			Dialogic.VAR.remy = true
 	else:
 		$Timer.start()
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce

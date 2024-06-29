@@ -7,17 +7,25 @@ var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
 var hubs_clues = {}
+<<<<<<< HEAD
+var caso: String
+=======
 var remy_follow = false
 var remy_tile = "tile1"
 var battle_on = true
 var tile_name = "hub1"
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 
 signal current_map_node_updated
 signal stop_battle
 
 func _ready():
+<<<<<<< HEAD
+	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
+=======
 	var current_tile_info = TileInfo.new("res://resources/data/" + tile_name + ".json")
 	var main_node = get_tree().get_root().get_node('Main')
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	#tile_name = current_tile_info.get_scene_instance().get_name()
 	#print(tile_name)
@@ -25,6 +33,12 @@ func _ready():
 	
 func set_clue(key, value):
 	hubs_clues[key] = value
+<<<<<<< HEAD
+
+func get_clue(key):
+	return hubs_clues.get(key, false)
+=======
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 
 func get_clue(key):
 	return hubs_clues.get(key, false)
@@ -55,6 +69,11 @@ func change_current_tile(tile: TileInfo, side, id):
 	tile_instance.set_name('CurrentTile')
 	main_node.add_child(tile_instance)
 	#connect_current_tile_signals()
+
+<<<<<<< HEAD
+	player.position = tile.get_side_entry_point(side)
+=======
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 	current_tile_map_node_id = id
 	current_map_node_updated.emit()
 	
@@ -81,9 +100,15 @@ func set_camera_limits(
 func use_item(name: String):
 	match name:
 		"Bandiera":
+<<<<<<< HEAD
+			print("bandiera")
+			Dialogic.VAR.battle = false
+			emit_signal("stop_battle")
+=======
 			Dialogic.VAR.battle = false
 			emit_signal("stop_battle")
 			battle_on = false
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 	
 	
 #func add_item_by_json_path(path):

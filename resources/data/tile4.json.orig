@@ -4,7 +4,11 @@
 	"condition_script": null,
 	"texture": "res://",
 	"description": "Un semplice villaggio",
+<<<<<<< HEAD
+	"default_entry_point": [0, 0],
+=======
 	"default_entry_point": [193, 772],
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 	"top_entry_point": null,
 	"right_entry_point": [193, 772],
 	"bottom_entry_point": [2234, 157],

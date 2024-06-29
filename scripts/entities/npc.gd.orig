@@ -169,6 +169,10 @@ func _on_timer_timeout():
 			$Timer.wait_time = choose([1, 2, 3])
 			current_state = NEW_DIR
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 func _on_dialogic_signal(argument):
 	if typeof(argument) == TYPE_DICTIONARY:
 		var key = get_key_from_argument(argument)

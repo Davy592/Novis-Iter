@@ -367,10 +367,17 @@ sprite_frames = SubResource("SpriteFrames_65gef")
 animation = &"front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+<<<<<<< HEAD
+visible = false
+shape = SubResource("CapsuleShape2D_h33he")
+
+[node name="DialogueActionable" parent="." instance=ExtResource("2_wl1md")]
+=======
 shape = SubResource("CapsuleShape2D_h33he")
 
 [node name="DialogueActionable" parent="." instance=ExtResource("2_wl1md")]
 collision_layer = 8
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 dialogue_resource = ExtResource("5_8poq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueActionable"]
