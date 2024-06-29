@@ -380,7 +380,7 @@ shape = SubResource("RectangleShape2D_xeuc4")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 100000.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

@@ -20,6 +20,12 @@ if {dialogue.dialogue_id} == 0:
 		wanderer: Con questo potere, possono muovere terre e collegarle tra loro, avendone il pieno controllo.
 		wanderer: Come lo so? Mi é capitato piú volte di passare e trovarmi in posti sempre diversi l'uno dall'altro.
 		wanderer: Magico, vero?
+		- Come funziona?
+			wanderer: Usa [M] per aprire la mappa.
+			wanderer: Poi usa [frecce_direzionali] per spostarti tra i pezzi mappa.
+			wanderer: Usa [barra_spaziatrice] per usare i pezzi di mappa: puoi rimuoverli o posizionarli.
+			wanderer: Attenzione! Gli Hub sono difficili luoghi da raggiungere: dovrai usare la giusta concatenazione di pezzi per potervi accedere.
+			wanderer: Buona fortuna!
 		jump What do you want to know?
 	- Barra della salute?
 		wanderer: Ah, te l'ho fatta. Nessuna barra della salute. Il che non introduce nessun rischio di morire.

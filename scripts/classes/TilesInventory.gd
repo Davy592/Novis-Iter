@@ -8,8 +8,7 @@ func _init():
 	tiles = [
 		TileInfo.new("res://resources/data/hub2.json"),
 		TileInfo.new("res://resources/data/tile1.json"),
-		TileInfo.new("res://resources/data/tile2.json"),
-		TileInfo.new("res://resources/data/tile3.json")
+		TileInfo.new("res://resources/data/tile2.json")
 	]
 
 func unlock():
@@ -20,6 +19,9 @@ func unlock():
 	]
 	for tile_info in arguments:
 		add(tile_info)
+
+func unlock_3():
+	add(TileInfo.new("res://resources/data/tile3.json"))
 
 #region: Add e Remove 
 func add(tile_info):

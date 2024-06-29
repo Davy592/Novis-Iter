@@ -1,0 +1,8 @@
+{
+	"id": "t1_1",
+	"name": "Bandiera",
+	"type": null,
+	"effect": null,
+	"description": "Una bandiera bianca. Sembra fatta con delle lenzuola. Un giocatolo per alcuni, un simbolo per altri...\n(Usala in un campo di battaglia. Esci e rientra da esso per farla funzionare)",
+	"texture": "res://resources/assets/sprites/flag_white.png"
+}

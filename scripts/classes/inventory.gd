@@ -36,14 +36,12 @@ func add(item: Item, quantity: int):
 	emit_signal("item_obtained", 1, items[index].name, quantity)
 
 func remove_by_name(item_name: String, quantity: int):
-	print("provo rimuovere")
 	var index = -1
 	var removed_item = null
 	
 	for i in range(items.size()):
-		if items[i].get_name() == item_name:
+		if items[i].name == item_name:
 			index = i
-			print("trovato")
 	
 	if index != -1:
 		items[index].decrement_quantity(quantity)
@@ -51,7 +49,9 @@ func remove_by_name(item_name: String, quantity: int):
 		if items[index].quantity != 0:
 			removed_item = items[index]
 			emit_signal("item_obtained", 0, removed_item.name, quantity)
-	
+		else:
+			items.remove_at(index)
+		
 		emit_signal("inventory_updated", removed_item, index)
 
 func remove_by_id(id: String):

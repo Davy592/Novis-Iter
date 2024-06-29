@@ -5,6 +5,9 @@ if {battle} == false:
 		[end_timeline]
 	- Mmmm... forse potresti seguirmi invece di continuare a stare in questa terra di morti
 		remy: Non mi dispiace, vengo con te allora!
+		remy: Adesso che ci penso, conosco un posto in particolare.
+		remy: Controlla la mappa di gioco!
+		do Global.tiles_inventory.unlock_3()
 		[signal arg="follower"]
 else:
 	remy: Non vedi che siamo nel bel mezzo della battaglia. Non mi sembra il momento di perdere tempo a fare quattro chiacchere.

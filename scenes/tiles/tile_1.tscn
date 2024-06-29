@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvglxb50cxyma"]
+[gd_scene load_steps=18 format=3 uid="uid://cvglxb50cxyma"]
 
 [ext_resource type="Texture2D" uid="uid://l2clttpbtjl4" path="res://resources/assets/tilesets/tile1/mainlevbuild.png" id="1_g6h6m"]
 [ext_resource type="Texture2D" uid="uid://b24akeymjfrvb" path="res://resources/assets/tilesets/tile1/decorative.png" id="2_0efgf"]
 [ext_resource type="Texture2D" uid="uid://boybou38ij2r0" path="res://resources/assets/tilesets/tile1/topdownpack.png" id="3_jr07w"]
 [ext_resource type="Texture2D" uid="uid://dtjnlr7tawebu" path="res://resources/assets/tilesets/tile1/Skeleton_Dead.png" id="4_x6bls"]
-[ext_resource type="PackedScene" uid="uid://dddt0jl2jc64g" path="res://scenes/actionables/item_actionable.tscn" id="6_mhbai"]
 [ext_resource type="PackedScene" uid="uid://ctgsd55d34bjh" path="res://scenes/tile_door.tscn" id="8_uiegj"]
 [ext_resource type="PackedScene" uid="uid://ceiwe37wg4kp8" path="res://scenes/entities/enemy_left.tscn" id="9_rvbf3"]
 [ext_resource type="PackedScene" uid="uid://bjt8df78q4ko6" path="res://scenes/entities/enemy_right.tscn" id="10_dpfc7"]
@@ -3756,9 +3755,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, -5, 854, -5, 857, -103, 968, -105, 975, -12, 1915, -7, 1920, 570, 2006, 562, 2016, 691, 1930, 693, 1923, 1084, 1021, 1084, 1023, 1177, 910, 1177, 895, 1082, -13, 1076, 3, 661, -88, 663, -93, 573, -2, 567)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3qe5u"]
-radius = 56.921
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnsgr"]
 size = Vector2(2130.51, 184.98)
 
@@ -3795,14 +3791,6 @@ navigation_polygon = SubResource("NavigationPolygon_b7yx8")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(0, 2, 834, 4, 834, -104, 986, -106, 988, 6, 1921, -3, 1914, 544, 2016, 550, 2012, 697, 1923, 705, 1921, 1085, 1035, 1080, 1041, 1192, 880, 1190, 882, 1076, -9, 1085, 0, 700, -96, 704, -90, 546, -2, 544, -1, 26, -127, 16, -192, 167, -211, 418, -177, 615, -216, 934, -188, 1064, 231, 1360, 703, 1289, 977, 1311, 1256, 1326, 1571, 1238, 2227, 1313, 2164, 936, 2100, 700, 2083, 477, 2057, 328, 2072, 141, 2077, -3, 2074, -93, 2038, -222, 1764, -203, 1341, -180, 1090, -182, 922, -201, 745, -229, 643, -212, 235, -252, 20, -190, -35, -123, -73, -80)
-
-[node name="Flag" parent="." instance=ExtResource("6_mhbai")]
-position = Vector2(1069, 408)
-scale = Vector2(0.75, 0.75)
-json_data_file = "res://resources/data/items/white_flag.json"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
-shape = SubResource("CircleShape2D_3qe5u")
 
 [node name="TileDoor_1" parent="." instance=ExtResource("8_uiegj")]
 position = Vector2(-36, 620)

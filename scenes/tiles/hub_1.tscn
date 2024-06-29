@@ -5199,7 +5199,7 @@ json_data_file = "res://resources/data/items/wood.json"
 shape = SubResource("CircleShape2D_pqkmg")
 
 [node name="Wood2" parent="Actionables" instance=ExtResource("9_ec456")]
-position = Vector2(478, 2993)
+position = Vector2(2086, 977)
 scale = Vector2(2, 2)
 json_data_file = "res://resources/data/items/wood.json"
 
@@ -5207,7 +5207,7 @@ json_data_file = "res://resources/data/items/wood.json"
 shape = SubResource("CircleShape2D_pqkmg")
 
 [node name="Wood3" parent="Actionables" instance=ExtResource("9_ec456")]
-position = Vector2(4155, 3279)
+position = Vector2(1895, 763)
 scale = Vector2(2, 2)
 json_data_file = "res://resources/data/items/wood.json"
 

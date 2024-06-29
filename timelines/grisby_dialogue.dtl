@@ -21,7 +21,6 @@ if {quest} == false:
 		grisby: Oh cielo, non so proprio come ringraziarti per essere riuscito a trovare e a riportarmi sano e salvo il mio ragazzo... Robert sono così felice di averti ritrovato, ora possiamo concludere il percorso insieme al tuo vecchio, che ne dici?
 		remy: Sissignore.
 		set {creature} = true
-		do Global.inventory.create("bomba")
 		[signal arg="together"]
 	if {remy} == false:
 		if {chance} == true:

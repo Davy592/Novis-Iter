@@ -22,6 +22,7 @@ if {dialogue.scelta} == false:
 	label Choice
 	- Si
 		Perfetto, grazie!!!
+		Usa [barra_spaziatrice] per raccogliere gli oggetti!
 		set {dialogue.scelta} = true
 		[signal arg_type="dict" arg="{"accepted":"0"}"]
 		do Global.quest_handler.set_current_stage(0.0, 10.0)
@@ -36,7 +37,7 @@ else:
 			- Si
 				fisherman: Grazie mille. Ecco una ricompensa per te.
 				fisherman: Non so cosa sia, ma potrebbe tornarti utile.
-				do Global.quest_handler.set_current_stage(0.0, 100.0)
+				do Global.inventory.create("white_flag")
 			- No
 				fisherman: Va bene, nessun problema. Torna quando avrai i pezzi di legno di cui ho bisogno
 		else:
