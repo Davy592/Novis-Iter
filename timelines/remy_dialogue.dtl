@@ -1,4 +1,4 @@
-if {battle} == false:
+if {battle} == false and {!Global.get_clue("not_remy")} == true:
 	remy: Ti sei finalmente reso utile. Ora potrò ascoltare qualsiasi cosa tu abbia da dire
 	- I bambini non dovrebbero stare a scuola invece che su un campo di battaglia
 		remy: Stare qua è forse più utile che stare su quei noisissimi libri di scuola. E poi se non ci fossi stato io chi avrebbe tenuto occupati quei soldati...

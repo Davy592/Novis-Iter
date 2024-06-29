@@ -1,4 +1,4 @@
-if {quest} == false:
+if {quest} == false and {!Global.get_clue("not_remy")} == true:
 	if {remy} == false:
 		grisby: Oh giovanotto, cosa ci fai nella mia proprietà?
 		- Sono solo di passaggio
@@ -20,6 +20,7 @@ if {quest} == false:
 		remy: Ehm... in verità mi chiamo Remy, signore.
 		grisby: Oh cielo, non so proprio come ringraziarti per essere riuscito a trovare e a riportarmi sano e salvo il mio ragazzo... Robert sono così felice di averti ritrovato, ora possiamo concludere il percorso insieme al tuo vecchio, che ne dici?
 		remy: Sissignore.
+		do Global.set_clue("not_remy", true)
 		set {creature} = true
 		[signal arg="together"]
 	if {remy} == false:
