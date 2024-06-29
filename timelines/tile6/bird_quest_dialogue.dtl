@@ -2,8 +2,14 @@ bird_creature: E tu chi saresti?!
 bird_creature: Nah, non importa. Quale buon vento ti porta nella mia dimora?
 if {Global.inventory.contains_by_id('2X')} == true and {Global.inventory.contains_by_id('L1')} == true:
 	- Dai sacchetto di nocciole
+		bird_creature: quindi... quel contandino sa fare anche del bene... D'accordo.
+		do Global.quest_handler.set_current_stage(41.0,95.0)
 		[signal arg="good_ending"]
 	- Dai la King Word
+		bird_creature: Ei ei ei, d'accordo, va bene. Non c'è bisogno di arrivare a questo.
+		\- è visibilmente impaurita. Sei riuscito a scacciarla -
+		do Global.quest_handler.set_current_stage(41.0,95.0)
+		do Global.inventory.create("sale")
 		[signal arg="bad_ending"]
 	- Perchè rovini il campo di nocciole di Owen?
 		bird_creature: Perchè il suo campo di nocciole è un labirinto!
@@ -23,6 +29,8 @@ if {Global.inventory.contains_by_id('2X')} == true and {Global.inventory.contain
 		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
 elif {Global.inventory.contains_by_id('2X')} == true:
 	- Dai sacchetto di nocciole
+		bird_creature: quindi... quel contandino sa fare anche del bene... D'accordo.
+		do Global.quest_handler.set_current_stage(41.0,95.0)
 		[signal arg="good_ending"]
 	- Perchè rovini il campo di nocciole di Owen?
 		bird_creature: Perchè il suo campo di nocciole è un labirinto!
@@ -40,8 +48,12 @@ elif {Global.inventory.contains_by_id('2X')} == true:
 		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
 	- Non dire nulla
 		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
-elif {Global.inventory.contains_by_id('L1')} == true:
+elif {Global.inventory.contains_by_id('L1')} == true or {Global.inventory.contains_by_id('3P')}:
 	- Dai la King Word
+		bird_creature: Ei ei ei, d'accordo, va bene. Non c'è bisogno di arrivare a questo.
+		\- è visibilmente impaurita. Sei riuscito a scacciarla -
+		do Global.inventory.create("sale")
+		do Global.quest_handler.set_current_stage(41.0,95.0)
 		[signal arg="bad_ending"]
 	- Perchè rovini il campo di nocciole di Owen?
 		bird_creature: Perchè il suo campo di nocciole è un labirinto!

@@ -6,22 +6,24 @@ var tiles : Array[TileInfo]
 
 func _init():
 	tiles = [
+		TileInfo.new("res://resources/data/hub2.json"),
+		TileInfo.new("res://resources/data/tile1.json"),
 <<<<<<< HEAD
-		TileInfo.new("res://resources/data/hub1.json"),
-		TileInfo.new("res://resources/data/hub2.json"),
-		TileInfo.new("res://resources/data/hub3.json"),
-		TileInfo.new("res://resources/data/tile1.json"),
 		TileInfo.new("res://resources/data/tile2.json"),
-=======
-		TileInfo.new("res://resources/data/hub2.json"),
-		TileInfo.new("res://resources/data/hub3.json"),
-		TileInfo.new("res://resources/data/tile1.json"),
->>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 		TileInfo.new("res://resources/data/tile3.json"),
+=======
+		TileInfo.new("res://resources/data/tile3.json")
+	]
+
+func unlock():
+	var arguments = [
+>>>>>>> 674ab9cd7dfd221ec66fb7332397d0363a07484c
 		TileInfo.new("res://resources/data/tile4.json"),
 		TileInfo.new("res://resources/data/tile6.json"),
-		TileInfo.new("res://resources/data/tile.json")
+		TileInfo.new("res://resources/data/hub3.json")
 	]
+	for tile_info in arguments:
+		add(tile_info)
 
 #region: Add e Remove 
 func add(tile_info):

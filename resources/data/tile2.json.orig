@@ -1,23 +1,18 @@
 {
-	"name": "Park",
+<<<<<<< HEAD
+	"name": "Play-\nground",
+=======
+	"name": "Lv 2",
+>>>>>>> 674ab9cd7dfd221ec66fb7332397d0363a07484c
 	"condition_script": null,
 	"scene": "res://scenes/tiles/tile2.tscn",
 	"texture": "res://",
-<<<<<<< HEAD
 	"description": "A playground",
 	"default_entry_point": [0, 0], 
 	"top_entry_point": [2670, 2420],
 	"right_entry_point": [330, 1250],
 	"bottom_entry_point": [2670, 150],
 	"left_entry_point": [2850, 1250],
-=======
-	"description": "A Thor tile",
-	"default_entry_point": [0, 0],
-	"top_entry_point": null,
-	"right_entry_point": null,
-	"bottom_entry_point": null,
-	"left_entry_point": null,
->>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
 	"key_exits": [false, false, false, false],
 	"cam_top_limit": -10000000,
 	"cam_right_limit": 10000000,

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=98 format=3 uid="uid://du314eu7mp68h"]
+=======
 [gd_scene load_steps=100 format=3 uid="uid://du314eu7mp68h"]
+>>>>>>> 674ab9cd7dfd221ec66fb7332397d0363a07484c
 
 [ext_resource type="Texture2D" uid="uid://cbrt72vnb6y1a" path="res://resources/assets/tilesets/Hubs/castello 1.png" id="1_oedy3"]
 [ext_resource type="Texture2D" uid="uid://eqs6cec4gbp" path="res://resources/assets/tilesets/Hubs/castello 2.png" id="2_dlop3"]
@@ -39,6 +43,8 @@
 [ext_resource type="Resource" path="res://timelines/hubs/klayton.dtl" id="34_516dg"]
 [ext_resource type="Resource" path="res://timelines/hubs/mrX_dialogue.dtl" id="35_jf3bm"]
 [ext_resource type="Resource" path="res://timelines/hubs/guardia_dialogue.dtl" id="36_j52ob"]
+[ext_resource type="PackedScene" uid="uid://ifj2i8vk2eml" path="res://scenes/utils/trigger_on_enter.tscn" id="40_x4xbv"]
+[ext_resource type="Resource" path="res://timelines/hubs/unlock_tiles.dtl" id="41_cykj0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o4jik"]
 vertices = PackedVector2Array(0, 900, 322, 910, 321, 910, 3270, 1145, 3271, 1145, 3168, 1149, 3129, 509, 3136, 412, 3151, 433, 3151, 528, 949, 990, 1123, 882, 1123, 883, 1594, 2850, 1600, 2870, 1453, 2866, 1420, 2429, 3081, 616, 3139, 782, 2995, 810, 3143, 936, 2800, 902, 3340, 987, 3363, 984, 3366, 1133, 3219, 2160, 3233, 2227, 1706, 2395, 3160, 1890, 2368, 348, 2490, 335, 2499, 594, 3235, 1890, 3153, 991, 3339, 987, 1620, 2426, -9, 1482, 508, 932, 700, 958, 49, 1719, -126, 1707, -116, 1486, 2123, 271, 2360, 271, 2054, 344, 70, 2264, 3151, 1697, 3147, 1191, 2703, 920, 1856, 500, 1565, 532, 1596, 507, 1533, 651, 1363, 744)
