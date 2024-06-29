@@ -28,7 +28,7 @@ func check_ludo_stage():
 		
 		Global.quest_handler.set_current_stage(41.0, 92.0)
 	elif stage == 92:
-		if Global.inventory.contains_by_id("1N") or Global.inventory.contains_by_id("2X") or Global.inventory.contains_by_id("3P"):
+		if Global.inventory.count_by_id("1N")>0 or Global.inventory.count_by_id("2X")>0 or Global.inventory.count_by_id("3P")>0:
 			Global.quest_handler.set_current_stage(41.0, 95.0)
 	elif stage == 96:
 		var ludo = get_node('NPC/Ludo')

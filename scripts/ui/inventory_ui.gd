@@ -65,9 +65,10 @@ func _on_use_button_pressed(): #TODO: ATTUALMENTE TUTTI GLI ITEM USATI SINGOLI S
 	var item: Item
 	item = selectioned_slot.get_item_in_slot()
 	var name = item.get_name()
-	Global.inventory.remove_by_name(name, 1)
-	Global.use_item(name)
-	_on_cancel_button_pressed()
+	if name != "Bandiera" or Global.tile_name == "res://scenes/tiles/tile_1.tscn":
+		Global.inventory.remove_by_name(name, 1)
+		Global.use_item(name)
+		_on_cancel_button_pressed()
 
 func _on_cancel_button_pressed():
 	$MarginContainer/CenterContainer.visible = false

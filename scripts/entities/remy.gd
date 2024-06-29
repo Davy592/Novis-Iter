@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var ACCELERATION = 260
+var ACCELERATION = 290
 @onready var navigation_agent = $NavigationAgent2D
 var move = false
 var path_together = false

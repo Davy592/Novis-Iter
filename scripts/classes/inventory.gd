@@ -68,20 +68,19 @@ func remove(id: String):
 	remove_by_id(id)
 	#remove_by_name(id)
 
-func contains(item_name: String) -> bool:
-	return contains_by_name(item_name)
-
-func contains_by_id(item_id: String) -> bool:
+func count_by_id(item_id: String) -> int:
+	var cnt = 0
 	for item in items:
 		if item.get_id() == item_id:
-			return true
-	return false
+			cnt+=1
+	return cnt
 
-func contains_by_name(item_name: String) -> bool:
+func count_by_name(item_name: String) -> int:
+	var cnt = 0
 	for item in items:
 		if item.get_name() == item_name:
-			return true
-	return false
+			cnt+=1
+	return cnt
 
 func get_size():
 	return items.size()

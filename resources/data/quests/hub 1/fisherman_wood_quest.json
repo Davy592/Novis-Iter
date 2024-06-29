@@ -4,6 +4,6 @@
 	"description": "Raccogli 3 pezzi di legno per il pescatore.",
 	"collect_item_file": "res://resources/data/items/wood.json",
 	"collect_item_quantity": 3,
-	"reward_item_file": "res://resources/data/items/raw_material.json",
-	"reward_item_quantity": 5
+	"reward_item_file": "res://resources/data/items/rewards/white_flag.json",
+	"reward_item_quantity": 1
 }
