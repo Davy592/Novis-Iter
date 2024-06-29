@@ -6,12 +6,12 @@
 	"description": "A playground",
 	"default_entry_point": [0, 0], 
 	"top_entry_point": [2670, 2420],
-	"right_entry_point": [330, 1250],
+	"right_entry_point": [225, 1410],
 	"bottom_entry_point": [2670, 150],
-	"left_entry_point": [2850, 1250],
+	"left_entry_point": [2975, 1410],
 	"key_exits": [false, false, false, false],
-	"cam_top_limit": -10000000,
-	"cam_right_limit": 10000000,
-	"cam_bottom_limit": 10000000,
-	"cam_left_limit": -10000000
+	"cam_top_limit": -240,
+	"cam_right_limit": 3600,
+	"cam_bottom_limit": 2820,
+	"cam_left_limit": -420
 }
