@@ -1,6 +1,6 @@
 
-var tile1_path = "res://scenes/tiles/tile_layout.tscn"
-var tile2_path = "res://scenes/tiles/tile6.tscn"
+var tile1_path = "res://scenes/tiles/tile_1.tscn"
+var tile2_path = "res://scenes/tiles/tile2.tscn"
 var hub1_scene = "res://scenes/tiles/hub2.tscn"
 
 func find_tile1_id():

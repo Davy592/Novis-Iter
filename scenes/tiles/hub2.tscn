@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://du314eu7mp68h"]
+[gd_scene load_steps=98 format=3 uid="uid://du314eu7mp68h"]
 
 [ext_resource type="Texture2D" uid="uid://cbrt72vnb6y1a" path="res://resources/assets/tilesets/Hubs/castello 1.png" id="1_oedy3"]
 [ext_resource type="Texture2D" uid="uid://eqs6cec4gbp" path="res://resources/assets/tilesets/Hubs/castello 2.png" id="2_dlop3"]
@@ -17951,15 +17951,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0y17"]
 size = Vector2(120.75, 110.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5kyf"]
-size = Vector2(3448, 2739)
-
 [node name="Hub2" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 position = Vector2(0, -2.38419e-07)
-scale = Vector2(1, 1)
 navigation_polygon = SubResource("NavigationPolygon_o4jik")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -18099,11 +18095,3 @@ dialogue_resource = ExtResource("34_516dg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Klayton"]
 position = Vector2(-11.375, -17.25)
 shape = SubResource("RectangleShape2D_i0y17")
-
-[node name="TriggerOnEnter" parent="." instance=ExtResource("40_x4xbv")]
-position = Vector2(203, 1978)
-dialogue_resource = ExtResource("41_cykj0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerOnEnter"]
-position = Vector2(1446, -556)
-shape = SubResource("RectangleShape2D_a5kyf")

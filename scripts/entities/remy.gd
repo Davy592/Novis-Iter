@@ -17,10 +17,10 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _physics_process(delta):
-	print("z: " + str(z_index))
-	print("coll: " + str(collision_layer))
-	print("mask: " + str(collision_mask))
-	print("visi: " + str(visible))
+	#print("z: " + str(z_index))
+	#print("coll: " + str(collision_layer))
+	#print("mask: " + str(collision_mask))
+	#print("visi: " + str(visible))
 	if move:
 		var target_character = Global.player
 		var distance_to_target = target_character.position.distance_to(position)
