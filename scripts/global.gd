@@ -34,6 +34,7 @@ func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
 	var tile_instance = tile.get_scene_instance()
 	tile_name = tile_instance.get_name()
+	print("Entro in " + str(tile_name) + " da " + str(side))
 	player = main_node.get_node('Player')
 	var remy = main_node.get_node('remy')
 	#player.position = Vector2(0, 0) # se non lo fai quando ci ritorna si ritrova nella porta e richiama il cambio mappa
@@ -54,10 +55,14 @@ func change_current_tile(tile: TileInfo, side, id):
 			remy.visible = false
 			remy.get_node("DialogueActionable").set_collision_layer(8)
 			remy.get_node("DialogueActionable").set_collision_layer(8)
+			if remy.get_collision_layer() != 4:
+				remy.set_collision_layer(0)
 		else:
 			remy.visible = true
 			remy.get_node("DialogueActionable").set_collision_layer(2)
 			remy.get_node("DialogueActionable").set_collision_layer(2)
+			if remy.get_collision_layer() != 4:
+				remy.set_collision_layer(1)
 	if tile_name == "Tile2" and (side == 0 or side ==2):
 		player.z_index = 1
 		player.set_collision_layer(4)

@@ -130,7 +130,10 @@ func _on_timer_timeout():
 		Global.remy_follow = false
 		move = false
 		#$CollisionShape2D.disabled = false
-		set_collision_layer(1)
+		if Global.tile_name == "Tile2" and Global.player.z_index == 1:
+			set_collision_layer(4)
+		else:
+			set_collision_layer(1)
 		$DialogueActionable.set_collision_layer(2)
 		$DialogueActionable.set_collision_layer(2)
 		Dialogic.VAR.remy = false
