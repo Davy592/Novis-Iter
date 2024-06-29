@@ -24,12 +24,14 @@ func add(item: Item, quantity: int):
 	emit_signal("item_obtained", 1, items[index].name, quantity)
 
 func remove_by_name(item_name: String, quantity: int):
+	print("provo rimuovere")
 	var index = -1
 	var removed_item = null
 	
 	for i in range(items.size()):
 		if items[i].get_name() == item_name:
 			index = i
+			print("trovato")
 	
 	if index != -1:
 		items[index].decrement_quantity(quantity)
@@ -55,6 +57,15 @@ func remove(id: String):
 	#remove_by_name(id)
 
 func contains(item_name: String) -> bool:
+	return contains_by_name(item_name)
+
+func contains_by_id(item_id: String) -> bool:
+	for item in items:
+		if item.get_id() == item_id:
+			return true
+	return false
+
+func contains_by_name(item_name: String) -> bool:
 	for item in items:
 		if item.get_name() == item_name:
 			return true

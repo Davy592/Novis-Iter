@@ -1,7 +1,7 @@
 
 var tile1_path = "res://scenes/tiles/tile_layout.tscn"
 var tile2_path = "res://scenes/tiles/tile6.tscn"
-var hub1_scene = "res://scenes/tiles/hub_1.tscn"
+var hub1_scene = "res://scenes/tiles/hub2.tscn"
 
 func find_tile1_id():
 	var it = Global.map_graph.get_bfs_iterator(Global.current_tile_map_node_id)
@@ -15,6 +15,8 @@ func find_tile1_id():
 
 func is_condition_satisfied():
 	var tile1_id = find_tile1_id()
+	if tile1_id == null:
+		return false
 	var right_id = Global.map_graph.get_neighbor(
 		tile1_id, 
 		Graph.MapNode.LINK_SIDE.RIGHT)

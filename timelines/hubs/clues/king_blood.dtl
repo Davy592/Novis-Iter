@@ -1,0 +1,3 @@
+\- c'è davvero molto sangue -
+\- le dinamiche dell'aggressione non sono affatto chiare -
+do Global.set_clue("king_blood", true)

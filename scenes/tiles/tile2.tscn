@@ -33,10 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://dtfjg5ebuctto" path="res://resources/assets/sprites/characters/bimbi/spritesheets/3 idle rev.png" id="29_e3lff"]
 [ext_resource type="Resource" path="res://timelines/tile2/timelines/Bimbo nero.dtl" id="31_gbrfa"]
 [ext_resource type="Resource" path="res://timelines/tile2/timelines/Osservatore.dtl" id="34_ip7nx"]
-[ext_resource type="Script" path="res://scenes/tiles/QuestAlert.gd" id="35_77qfk"]
+[ext_resource type="Script" path="res://scripts/tiles/tile2/QuestAlert.gd" id="35_77qfk"]
 [ext_resource type="Resource" path="res://timelines/tile2/timelines/QuestAlert.dtl" id="36_blgcx"]
-[ext_resource type="Script" path="res://scenes/tiles/PontiZone.gd" id="36_feijh"]
-[ext_resource type="Script" path="res://scenes/tiles/PontiExit.gd" id="37_iqti4"]
+[ext_resource type="Script" path="res://scripts/tiles/tile2/PontiZone.gd" id="36_feijh"]
+[ext_resource type="Script" path="res://scripts/tiles/tile2/PontiExit.gd" id="37_iqti4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xj24"]
 texture = ExtResource("1_i703w")
@@ -4992,16 +4992,16 @@ z_index = 2
 position = Vector2(2673, 8)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 4
 
 [node name="TileDoor_B" parent="." instance=ExtResource("11_c7v4m")]
 z_index = 2
 position = Vector2(2670, 2575)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 4
 side = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -5072,8 +5072,8 @@ shape = SubResource("RectangleShape2D_wkkx3")
 
 [node name="PontiZone" type="Area2D" parent="."]
 z_index = 1
-collision_layer = 5
-collision_mask = 5
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("36_feijh")
 
 [node name="Top" type="CollisionShape2D" parent="PontiZone"]

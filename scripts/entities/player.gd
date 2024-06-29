@@ -28,15 +28,16 @@ func _ready():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 
 func _physics_process(delta):
-	print("z: " + str(z_index))
-	print("coll: " + str(collision_layer))
-	print("mask: " + str(collision_mask))
+	#print("z: " + str(z_index))
+	#print("coll: " + str(collision_layer))
+	#print("mask: " + str(collision_mask))
 	match state:
 		MOVE:
 			var axis = get_input_axis()
 			apply_movement(axis)
 			move_and_slide()
 	play_animation()
+	#print(position)
 
 ## Questa funzione gestisce l'input dell'utente 
 ## durante lo stato di movimento (MOVE)

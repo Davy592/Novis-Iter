@@ -1,3 +1,5 @@
+class_name NPC
+
 extends CharacterBody2D
 
 #region: Variables
@@ -29,7 +31,9 @@ var dialogue_id: int = 0
 
 # Quest
 @export_file("*.json") var json_quest_file
-var quest: Quest = null
+var quest: Quest = null:
+	set(new_quest): quest = new_quest
+	get: return quest
 
 # Dialogo (sincronizzato con DialogueActionable)
 @export var dialogue_file: DialogicTimeline:
@@ -166,18 +170,19 @@ func _on_timer_timeout():
 			current_state = NEW_DIR
 
 
-func _on_dialogic_signal(argument: Dictionary):
-	var key = get_key_from_argument(argument)
-	if key == "":
-		return
-	
-	match key:
-		"accepted":
-			handle_accepted(argument[key])
-		"start":
-			handle_start(argument[key])
-		"end":
-			handle_end(argument[key])
+func _on_dialogic_signal(argument):
+	if typeof(argument) == TYPE_DICTIONARY:
+		var key = get_key_from_argument(argument)
+		if key == "":
+			return
+		
+		match key:
+			"accepted":
+				handle_accepted(argument[key])
+			"start":
+				handle_start(argument[key])
+			"end":
+				handle_end(argument[key])
 
 func get_key_from_argument(argument: Dictionary) -> String:
 	for k in ["start", "accepted", "end"]:
@@ -214,11 +219,10 @@ func handle_end(npc_name: String):
 		return
 
 	is_chatting = false
+	update_dialogue_id()
 	
 	if quest != null:
 		check_current_stage()
-	else:
-		update_dialogue_id()
 #endregion
 
 ## Metodo di cui fare override nelle classi piú specifiche

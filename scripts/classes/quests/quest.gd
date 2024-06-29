@@ -30,7 +30,7 @@ func _init(data):
 	is_completed = false
 	
 	reward_item = init_item(data['reward_item_file'], data['reward_item_quantity'])
-	
+
 func init_item(json_item_file: String, quantity: int) -> Item:
 	var json_as_text = FileAccess.get_file_as_string(json_item_file)
 	var item_data = JSON.parse_string(json_as_text)

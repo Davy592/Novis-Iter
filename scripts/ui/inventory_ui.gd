@@ -62,6 +62,12 @@ func _on_inventory_slot_pressed():
 
 func _on_use_button_pressed():
 	print("Item usato")
+	var item: Item
+	item = selectioned_slot.get_item_in_slot()
+	var name = item.get_name()
+	Global.inventory.remove_by_name(name, 1)
+	Global.use_item(name)
+	_on_cancel_button_pressed()
 
 func _on_cancel_button_pressed():
 	$MarginContainer/CenterContainer.visible = false

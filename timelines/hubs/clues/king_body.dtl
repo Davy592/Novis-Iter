@@ -1,0 +1,8 @@
+\- il corpo pulsa, come se ci fosse ancora vita -
+\- non c'è battito nè respiro -
+\- è stato aggredito violentemente da un'arma da taglio -
+do Global.set_clue("king_blood", true)
+if {Global.get_clue("end_case")} == true:
+	Lasciami qui ancora un po'... e grazie per l'aiuto.
+	Ti aprirò il passaggio per tempo.
+	z z z...

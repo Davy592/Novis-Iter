@@ -6,13 +6,22 @@ var current_tile_map_node_id: int
 var tiles_inventory: TilesInventory = TilesInventory.new()
 var map_graph: Graph = Graph.new()
 var dialogue_manager: DialogueManager = DialogueManager.new()
+var hubs_clues = {}
+var caso: String
 
 signal current_map_node_updated
+signal stop_battle
 
 func _ready():
-	var current_tile_info = TileInfo.new("res://resources/data/tile.json")
+	var current_tile_info = TileInfo.new("res://resources/data/hub1.json")
 	current_tile_map_node_id = map_graph.add_node(Graph.MapNodeData.new(current_tile_info, 0, 0))
 	Dialogic.timeline_ended.connect(dialogue_manager._on_timeline_ended)
+	
+func set_clue(key, value):
+	hubs_clues[key] = value
+
+func get_clue(key):
+	return hubs_clues.get(key, false)
 
 func change_current_tile(tile: TileInfo, side, id):
 	var main_node = get_tree().get_root().get_node('Main')
@@ -24,16 +33,39 @@ func change_current_tile(tile: TileInfo, side, id):
 	tile_instance.set_name('CurrentTile')
 	main_node.add_child(tile_instance)
 	#connect_current_tile_signals()
+
 	player.position = tile.get_side_entry_point(side)
 	current_tile_map_node_id = id
 	current_map_node_updated.emit()
 	
-	var camera: Camera2D = player.get_node('Camera2D')
-	camera.limit_top = tile.get_cam_top_limit()
-	camera.limit_right = tile.get_cam_right_limit()
-	camera.limit_bottom = tile.get_cam_bottom_limit()
-	camera.limit_left = tile.get_cam_left_limit()
+	set_camera_limits(
+		player, 
+		tile.get_cam_top_limit(), 
+		tile.get_cam_right_limit(), 
+		tile.get_cam_bottom_limit(), 
+		tile.get_cam_left_limit()
+	)
 
+func set_camera_limits(
+	player: CharacterBody2D, 
+	top_limit: int, right_limit: int, 
+	bottom_limit: int, left_limit: int
+):
+	var camera: Camera2D = player.get_node('Camera2D')
+	
+	camera.limit_top = top_limit
+	camera.limit_right = right_limit
+	camera.limit_bottom = bottom_limit
+	camera.limit_left = left_limit
+	
+func use_item(name: String):
+	match name:
+		"Bandiera":
+			print("bandiera")
+			Dialogic.VAR.battle = false
+			emit_signal("stop_battle")
+	
+	
 #func add_item_by_json_path(path):
 	#var file = FileAccess.open(path, FileAccess.READ)
 	#var json_as_text = file.get_as_text()
