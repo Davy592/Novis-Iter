@@ -1,5 +1,14 @@
+Osservatore: Quanto vorrei qualcosa di prezioso...
 Osservatore: Tu sai a cosa servono quelle scale che vanno sottoterra?
 Osservatore: Io ipotizzo che portino a dei cunicoli sotterranei che i bambini usano per giocare,
 Osservatore:  ma in realtà da quando sto qui a fissarli non sono mai scesi e non hanno fatto altro che correre.
-Osservatore: Ah i bambini di oggi, già si allenano per scappare dalla polizia.
 Osservatore: Il bambino grigio sembra essere il loro capo e anche quello più veloce fra loro, forse riuscendo a catturarlo ci potresti guadagnare qualcosa.
+Osservatore: Quanto vorrei qualcosa di prezioso... da indossare
+- Cosa mangi? 
+	Osservatore: Nocciole. Le nocciole sono buone, le fa un contandino un po' lontano da qui.
+	Osservatore: A noi creature piacciono molto.
+	Osservatore: Ma meglio qualcosa di prezioso...
+	Osservatore: Meglio qualcosa di prezioso... da insossare
+- Ho una... collana [if {Global.inventory.get_item_from_name("Collana")}][else="hide" alt_text="-"]
+	Osservatore: ohhh, quella si che è preziosa... mh, prendi queste.
+	do Global.inventory.create("sacchetto_di_nocciole")
