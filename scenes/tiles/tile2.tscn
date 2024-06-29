@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://dwavtpiry7e1"]
+[gd_scene load_steps=146 format=3 uid="uid://dwavtpiry7e1"]
 
 [ext_resource type="Texture2D" uid="uid://cy2xqyokwb5dl" path="res://resources/assets/tilesets/cozy farm/cozy farm.png" id="1_i703w"]
 [ext_resource type="Texture2D" uid="uid://c2ujxtwsyx7ip" path="res://resources/assets/tilesets/Free Park Zone Tileset/3 Objects/Other/Ramp1.png" id="2_8ssg8"]
@@ -35,8 +35,6 @@
 [ext_resource type="Resource" path="res://timelines/tile2/timelines/Osservatore.dtl" id="34_ip7nx"]
 [ext_resource type="Script" path="res://scripts/tiles/tile2/QuestAlert.gd" id="35_77qfk"]
 [ext_resource type="Resource" path="res://timelines/tile2/timelines/QuestAlert.dtl" id="36_blgcx"]
-[ext_resource type="Script" path="res://scripts/tiles/tile2/PontiZone.gd" id="36_feijh"]
-[ext_resource type="Script" path="res://scripts/tiles/tile2/PontiExit.gd" id="37_iqti4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xj24"]
 texture = ExtResource("1_i703w")
@@ -4944,12 +4942,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkkx3"]
 size = Vector2(2.13334, 53.3333)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w23i"]
-size = Vector2(57.8668, 1.50827)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngc1"]
-size = Vector2(58.1333, 1.29997)
-
 [node name="Tile2" type="Node2D"]
 y_sort_enabled = true
 
@@ -5070,38 +5062,4 @@ position = Vector2(2865, 1277)
 scale = Vector2(3.75, 3.75)
 shape = SubResource("RectangleShape2D_wkkx3")
 
-[node name="PontiZone" type="Area2D" parent="."]
-z_index = 1
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("36_feijh")
-
-[node name="Top" type="CollisionShape2D" parent="PontiZone"]
-position = Vector2(2670.5, 194)
-scale = Vector2(3.75, 3.75)
-shape = SubResource("RectangleShape2D_5w23i")
-
-[node name="Bottom" type="CollisionShape2D" parent="PontiZone"]
-position = Vector2(2670, 2463.83)
-scale = Vector2(3.75, 3.75)
-shape = SubResource("RectangleShape2D_5w23i")
-
-[node name="PontiExit" type="Area2D" parent="."]
-z_index = 1
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("37_iqti4")
-
-[node name="Top" type="CollisionShape2D" parent="PontiExit"]
-position = Vector2(2670, 31)
-scale = Vector2(3.75, 3.75)
-shape = SubResource("RectangleShape2D_4ngc1")
-
-[node name="Bottom" type="CollisionShape2D" parent="PontiExit"]
-position = Vector2(2670, 2552.44)
-scale = Vector2(3.75, 3.75)
-shape = SubResource("RectangleShape2D_4ngc1")
-
 [connection signal="body_exited" from="QuestAlert" to="QuestAlert" method="_on_body_exited"]
-[connection signal="body_exited" from="PontiZone" to="PontiZone" method="_on_body_exited"]
-[connection signal="body_entered" from="PontiExit" to="PontiExit" method="_on_body_entered"]
