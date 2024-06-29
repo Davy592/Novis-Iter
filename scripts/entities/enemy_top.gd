@@ -6,7 +6,7 @@ var time_since_last_shot = 0.0
 var speed = 800
 var moving_right = true
 var bullet_t : Node2D
-var battle_on = true
+var battle_on = Global.battle_on
 
 func _ready():
 	Global.connect("stop_battle", Callable(self, "_on_stop_battle"))

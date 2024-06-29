@@ -6,10 +6,13 @@ var time_since_last_shot = 0.0
 var speed = 800
 var moving_right = true
 var bullet_b: Node2D
-var battle_on = true
+var battle_on = Global.battle_on
 
 func _ready():
 	Global.connect("stop_battle", Callable(self, "_on_stop_battle"))
+	if not battle_on:
+		get_parent().get_node("Flag").visible = false
+		get_parent().get_node("Flag").set_collision_layer(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

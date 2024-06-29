@@ -10,8 +10,8 @@
 	"bottom_entry_point": [907, 10],
 	"left_entry_point": [1850, 621],
 	"key_exits": [false, true, false, false],
-	"cam_top_limit": 0,
-	"cam_right_limit": 1920,
-	"cam_bottom_limit": 1080,
-	"cam_left_limit": 0
+	"cam_top_limit": -96,
+	"cam_right_limit": 2016,
+	"cam_bottom_limit": 1200,
+	"cam_left_limit": -96
 }

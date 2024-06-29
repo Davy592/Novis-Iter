@@ -9,10 +9,6 @@ func _ready():
 	$CanvasLayer/MapEditor.render()
 	#$Player.z_index = 100
 	$Player.position = tile_info.get_default_entry_point()
-	if Global.remy_follow:
-		$remy.position.x = 10
-		$remy.position.y = 10
-		$remy.visible = true
 	Global.current_map_node_updated.connect($CanvasLayer/MapEditor._on_current_map_node_updated)
 	
 	Global.set_camera_limits(

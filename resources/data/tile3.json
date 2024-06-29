@@ -5,13 +5,13 @@
 	"texture": "res://",
 	"description": "una tranquilla campagna.",
 	"default_entry_point": [0, 0],
-	"top_entry_point": [817, 1050],
+	"top_entry_point": [815, 1000],
 	"right_entry_point": null,
 	"bottom_entry_point": null,
 	"key_exits": [false, false, false, false],
-	"left_entry_point": [1900, 594],
+	"left_entry_point": [1840, 595],
 	"cam_top_limit": 0,
-	"cam_right_limit": 2160,
-	"cam_bottom_limit": 1200,
+	"cam_right_limit": 1920,
+	"cam_bottom_limit": 1056,
 	"cam_left_limit": 0
 }

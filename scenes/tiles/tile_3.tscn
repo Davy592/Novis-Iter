@@ -5038,11 +5038,11 @@ position = Vector2(1303, 412)
 position = Vector2(1248, 426)
 
 [node name="TileDoor_1" parent="." instance=ExtResource("14_7cvby")]
-position = Vector2(2069, 594)
+position = Vector2(1901, 593)
 side = 1
 
 [node name="TileDoor_2" parent="." instance=ExtResource("14_7cvby")]
-position = Vector2(817, 1170)
+position = Vector2(823, 1062)
 rotation = 1.5708
 side = 2
 
