@@ -1,0 +1,47 @@
+[signal arg_type="dict" arg="{"start":"Wanderer"}"]
+if {dialogue.dialogue_id} == 0:
+	wanderer: Ciao, viaggiatore!!
+	- Viaggiatore?
+		wanderer: Si, hai chiaramente l'aspetto di un viaggiatore alle prime armi. L'aspetto non inganna mai!
+	- Ehm...ciao...
+		wanderer: Non essere preoccupato, non ti faró del male.
+	label Intro
+	wanderer: Il mio obiettivo é fornirti tutte le informazioni che potrebbero rivelarsi utili per la tua avventura.
+	wanderer: Posso spiegarti tutto ció che é in mio sapere\: chiedimi ogni curiositá sulle caratteristiche di questo mondo, sulla barra della salute e altro
+	label What do you want to know?
+	wanderer: Allora, cosa vuoi sapere?
+	- Dove siamo?
+		wanderer: Questo posto, dici? Non lo so ancora per certo, so solo che il mondo in cui ci troviamo é...strano.
+		wanderer: Creature a dir poco singolari popolano questo luogo.
+		wanderer: Non so come siano arrivate qui. So solo che alcune sono in questo mondo da mooolto tempo.
+		jump What do you want to know?
+	- Come esco di qui?
+		wanderer: Leggenda narra che alcuni eletti siano in grado di manipolare questo mondo a proprio piacimento.
+		wanderer: Con questo potere, possono muovere terre e collegarle tra loro, avendone il pieno controllo.
+		wanderer: Come lo so? Mi é capitato piú volte di passare e trovarmi in posti sempre diversi l'uno dall'altro.
+		wanderer: Magico, vero?
+		- Come funziona?
+			wanderer: Usa [M] per aprire la mappa.
+			wanderer: Poi usa [frecce_direzionali] per spostarti tra i pezzi mappa.
+			wanderer: Usa [barra_spaziatrice] per usare i pezzi di mappa: puoi rimuoverli o posizionarli.
+			wanderer: Attenzione! Gli Hub sono difficili luoghi da raggiungere: dovrai usare la giusta concatenazione di pezzi per potervi accedere.
+			wanderer: Buona fortuna!
+		jump What do you want to know?
+	- Barra della salute?
+		wanderer: Ah, te l'ho fatta. Nessuna barra della salute. Il che non introduce nessun rischio di morire.
+		wanderer: Il lato positivo é che puoi esplorare questo mondo in completa tranquillitá.
+		wanderer: Non aver paura\: affronta le sfide che ti si pareranno dinanzi alla strada con logica e ragionamento per quanto tempo vuoi...
+		wanderer: ...gli unici rischi sono le conseguenze delle tue decisioni.
+		jump What do you want to know?
+	- - esci -
+		wanderer: Ci vediamo!!
+		[end_timeline]
+elif {dialogue.dialogue_id} == 1:
+	wanderer: Vuoi che ti spieghi qualcosa?
+	- Si
+		wanderer: Bene! Ricapitoliamo...
+		jump Intro
+	- No
+		wanderer: Perfetto! Sono qui per ogni tua curiositá!!
+		[end_timeline]
+[signal arg_type="dict" arg="{"end":"Wanderer"}"]

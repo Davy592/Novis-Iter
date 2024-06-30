@@ -1,0 +1,105 @@
+[signal arg_type="dict" arg="{"start":"Leeve"}"]
+if {dialogue.dialogue_id} == 0:
+	leeve: L'atmosfera non è delle migliori...
+	- Salve!
+		leeve: Ciao piccoletto, cosa ti porta qui?
+		leeve: ...no, lascia stare. Starai viaggiando. Come tutti.
+		jump La Meta
+	- Giornataccia?
+		leeve: Gli affari vanno a rilento... quindi no, tutto normale.
+		- Perchè è normale?
+			leeve: Alla gente non piace ciò che offro.
+			jump Cosa offri?
+		- Allora che succede?
+			jump Che succede?
+	- Cosa ci fai qui?
+		leeve: Non si usa dire neanche un "ciao" dalle tue parti?
+		- Ciao...
+			leeve: Ahahah   Stavo scherzando, tranquillo.
+			leeve: Però guardati le spalle. Con me sei tranquillo, ma non posso dire lo stesso per gli altri.
+			leeve: Vuoi barattare qualcosa?
+			jump Cosa offri?
+		- Non ho tempo.
+			leeve: Capito. Sei come gli altri. Andate tutti di fretta.
+			jump Cosa offri?
+	label Cosa offri?
+	- Cosa offri?
+		leeve: "Cimeli". Sono strani oggetti con strane storie.
+		- Mi piacciono le cose strane!
+			leeve: Allora andremo d'accordo.
+			leeve: Quando trovi qualcosa di strano, barattalo con me. Ti racconterò anche qualcosa.
+		- Perchè vendi roba simile...?
+			leeve: Aiutano... a capire questo mondo.
+			leeve: Quando trovi qualcosa di strano, barattalo con me. Ti racconterò anche qualcosa.
+	- - vai via -
+		leeve: Maleducato >\:(
+	jump END
+	label Che succede?
+	leeve: Non lo so, ma la gente è guardinga. Non mi piace.
+	- Cosa ne pensi
+		leeve: Stanno parlando di "sparizioni". Niente di buono.
+		leeve: Se me lo chiedi, io non so niente. Chi sparisce... non torna.
+	- - non dire niente -
+	jump END
+	label La Meta
+	- Cosa vuoi dire?
+		leeve: Prima o poi ci si sposta, è naturale.
+		leeve: Persino il Re prima o poi lascerà il suo castello.
+		- Dove vanno tutti?
+			leeve: Nessuno lo sa. O nessuno è mai tornato indietro per raccontarlo.
+			- Sembra pericoloso
+				leeve: Per questo io resto qui... finchè posso.
+				leeve: Voglio studiare.
+			- Allora ci riuscirò io
+				leeve: Me lo auguro campione. Non dimenticarti di me per allora ;)
+			- - non dire niente -
+		- Il Re?
+			leeve: Vive lontano da qui, è un presuntuoso. Per qualche ragione ha detto a tutti quanto è importante e bla bla bla
+			Nessuno sa cosa volesse. Parlava di "potere" e "ricchezze". Roba che non interessa a nessuno.
+		- - non dire niente -
+	- Dove vado non sono affari tuoi
+		leeve: Hai ragione. Sono qui solo per barattare ;)
+		jump Cosa offri?
+	label END
+	[wait_input hide_text="false"]
+elif {dialogue.dialogue_id} >= 1:
+	label again
+	leeve: Vuoi barattare qualcosa?
+	- Si
+		leeve: ecco cosa offre la casa
+		- Collana [if {Global.inventory.contains_by_id('4P')} == true][else="hide" alt_text="-"]
+			leeve: Sembra un ritratto... tascabile. Vi è sopra un numero. Forse è la serie di un artista.
+			leeve: Dalle mie ricerche potrei ipotizzare fosse un tipo di valuta... chissà perchè ne avessero bisogno.
+			leeve: Qui si scannano tra autoctoni e stranieri come me. Stramberie del genere sono proprio il tipo di cose che rende difficile la convivenza, ci scommetto.
+			leeve: Davvero un bel cimelio. Tieni questa allora, è l'unica fornitura che ho al momento, mi dispiace.
+			do Global.inventory.create("collana")
+			leeve: Ma torna da me se hai qualcosa da mostrare!
+		- Mostra il Canto in bottiglia [if {Global.inventory.contains_by_id('4N')} == true][else="hide" alt_text="-"]
+			leeve: Interessante... sembra provenire da qualcuno di molto triste...
+			leeve: Oppure è una tragedia. Se mi dici che l'hai ricevuto da un venditore scommetto che l'ha usata per scambiare con lui
+			leeve: Avrei accettato anch'io, sembra un oggetto di prima classe! Tu lo stappi e... romantico, davvero romantico.
+			leeve: Non mi sorprende affatto che la gente di qui sappia fare qualcosa di simile. Pensaci, le creature che ci circondano praticano teatro! Questo ci dice molto!
+		- Mostra il pupazzo [if {Global.inventory.contains_by_id('3N')} == true][else="hide" alt_text="-"]
+			leeve: Un pupazzo di pezza... sembra ricordare le sembianze di qualcuno.
+			leeve: Un po' triste o assai inquietante, non saprei decidermi.
+			leeve: Scommetto che è un cimelio! Guarda attentamente, sembra che la mano destra un tempo impugnasse qualcosa.
+			leeve: La gente di qui non usa utensili quindi... chissà, forse era per giocare. Spero niente di violento.
+		- - vai via -
+	- No
+		leeve: D'accordo d'accordo, torna quando vuoi ascoltare qualche storia allora.
+	- Sta succedendo qualcosa?
+		jump Che succede?
+	- Sai dirmi altro?
+		leeve: Sei curioso anche tu eh? Vuoi sapere che hanno tutti scommetto.
+		jump La Meta
+	- Hai sentito dell'assassinio del Re? [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
+		leeve: Si... speravo non ci arrivassi.
+		leeve: A quanto pare è tra noi. Ecco perchè c'è la guardia a sinistra dell'idolo.
+		leeve: Credo... che abbia un po' di paura però.
+		do Global.set_clue("spooked_guard", true)
+		- C'era tantissimo sangue...
+			leeve: Mh... molto strano. Sarà stata una persona curiosa allora, come me. Magari stava provando qualcosa.
+			- Hai qualche indizio?
+				leeve: Nessuno. Ma suppongo sia stato qualcuno di abile e minuto a questo punto.
+				do Global.set_clue("small_build", true)
+[signal arg_type="dict" arg="{"end":"Leeve"}"]

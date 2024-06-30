@@ -1,0 +1,177 @@
+[gd_scene load_steps=3 format=3 uid="uid://i40mlkej224u"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_ui.gd" id="1_7ifnd"]
+
+[sub_resource type="GDScript" id="GDScript_tbeph"]
+script/source = "extends VBoxContainer
+
+var current_index = 0
+@onready var child_count = get_child_count()
+
+#func _on_visibility_changed():
+	#if visible:
+		#select_button(0)
+
+#func _unhandled_input(event):
+	#pass
+
+#func _input(event):
+	#if event is InputEventKey and not event.echo:
+		#if event.is_action_pressed('ui_down'):
+			#get_viewport().set_input_as_handled()
+			#move_selection(1)
+		#if event.is_action_pressed('ui_up'):
+			#get_viewport().set_input_as_handled()
+			#move_selection(-1)
+
+func select_entry(index):
+	var entry_to_select = get_child(index)
+	entry_to_select.grab_focus()
+	# rendi visibile il contorno della entry
+	current_index = index
+
+func move_selection(direction):
+	var new_index = current_index + direction
+	new_index += int(new_index < 0) * child_count
+	new_index %= child_count
+	select_entry(new_index)
+"
+
+[node name="InventoryUI" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ifnd")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.184314, 0.184314, 0.184314, 0.882353)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 48
+text = "Inventario"
+horizontal_alignment = 1
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/Content/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 5
+
+[node name="ItemSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Container" type="CenterContainer" parent="MarginContainer/VBoxContainer/Content/ItemSection"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemSprite" type="TextureRect" parent="MarginContainer/VBoxContainer/Content/ItemSection/Container"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Content/ItemSection"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ItemDescription" type="Label" parent="MarginContainer/VBoxContainer/Content/ItemSection/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Testo di esempio aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+autowrap_mode = 3
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="Use" type="Label" parent="MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "(invio) usa oggetto selezionato"
+vertical_alignment = 1
+
+[node name="Exit" type="Label" parent="MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "(E) esci dall'inventario"
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="UsageContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+script = SubResource("GDScript_tbeph")
+
+[node name="UseButton" type="Button" parent="MarginContainer/CenterContainer/UsageContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../CancelButton")
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 32
+text = "Usa Oggetto"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/CenterContainer/UsageContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../UseButton")
+theme_override_font_sizes/font_size = 32
+text = "Annulla"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="MarginContainer/CenterContainer/UsageContainer" to="MarginContainer/CenterContainer/UsageContainer" method="_on_visibility_changed"]
+[connection signal="mouse_exited" from="MarginContainer/CenterContainer/UsageContainer/UseButton" to="." method="_on_use_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/UsageContainer/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/UsageContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

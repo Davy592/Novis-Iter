@@ -1,0 +1,13 @@
+if {battle} == false and {!Global.get_clue("not_remy")} == true:
+	remy: Ti sei finalmente reso utile. Ora potrò ascoltare qualsiasi cosa tu abbia da dire
+	- I bambini non dovrebbero stare a scuola invece che su un campo di battaglia
+		remy: Stare qua è forse più utile che stare su quei noisissimi libri di scuola. E poi se non ci fossi stato io chi avrebbe tenuto occupati quei soldati...
+		[end_timeline]
+	- Mmmm... forse potresti seguirmi invece di continuare a stare in questa terra di morti
+		remy: Non mi dispiace, vengo con te allora!
+		remy: Adesso che ci penso, conosco un posto in particolare.
+		remy: Controlla la mappa di gioco!
+		do Global.tiles_inventory.unlock_3()
+		[signal arg="follower"]
+else:
+	remy: Non vedi che siamo nel bel mezzo della battaglia. Non mi sembra il momento di perdere tempo a fare quattro chiacchere.

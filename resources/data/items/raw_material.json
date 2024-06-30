@@ -1,0 +1,8 @@
+{
+	"id": "all_1",
+	"name": "Strano fossile",
+	"type": null,
+	"effect": null,
+	"description": "Fossile di un animale sconosciuto. Ha la forma di uno zoccolo.",
+	"texture": "res://resources/assets/sprites/main_items/fossil.png"
+}

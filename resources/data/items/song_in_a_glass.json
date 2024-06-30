@@ -1,0 +1,8 @@
+{
+	"id": "t4_2",
+	"name": "Canto in vetro",
+	"type": null,
+	"effect": null,
+	"description": "Un barattolo con una soave melodia.",
+	"texture": "res://resources/assets/sprites/tile4_items/song_in_a_glass.png"
+}

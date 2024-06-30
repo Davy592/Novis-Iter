@@ -1,0 +1,17 @@
+{
+	"name": "Lv 6",
+	"condition_script": null,
+	"scene": "res://scenes/tiles/tile6.tscn",
+	"texture": "res://",
+	"description": "La casa di una strana creatura.",
+	"default_entry_point": [-1300, 2000],
+	"top_entry_point": null,
+	"right_entry_point": [-1500, 2000],
+	"bottom_entry_point": null,
+	"left_entry_point": null,
+	"key_exits": [false, false, false, false],
+	"cam_top_limit": -1400,
+	"cam_right_limit": 3400,
+	"cam_bottom_limit": 2800,
+	"cam_left_limit": -1600
+}

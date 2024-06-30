@@ -1,0 +1,25 @@
+{
+<<<<<<< HEAD
+	"name": "Land",
+=======
+	"name": "Country-\nside",
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
+	"scene": "res://scenes/tiles/tile_3.tscn",
+	"condition_script": null,
+	"texture": "res://",
+	"description": "una tranquilla campagna.",
+	"default_entry_point": [0, 0],
+	"top_entry_point": [815, 1000],
+	"right_entry_point": null,
+	"bottom_entry_point": null,
+	"key_exits": [false, false, false, false],
+<<<<<<< HEAD
+	"left_entry_point": [1900, 594],
+=======
+	"left_entry_point": [1840, 595],
+>>>>>>> 8fafa8c959dbfd367f30246d4a7f6d3cce1613ce
+	"cam_top_limit": 0,
+	"cam_right_limit": 1920,
+	"cam_bottom_limit": 1056,
+	"cam_left_limit": 0
+}

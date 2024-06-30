@@ -1,0 +1,46 @@
+[signal arg_type="dict" arg="{"":"","start":"Fisherman"}"]
+do Global.quest_handler.get_current_stage(0.0)
+if {dialogue.scelta} == false:
+	fisherman: Ciao. Sei nuovo da queste parti?
+	- Si, e tu?
+		fisherman: Non piú, sono qui da un paio d'anni e ormai sono un grande conoscitore di questa zona.
+		jump Get to know
+	- Come lo sai?
+		fisherman: Sono qui da un paio d'anni e ne ho vista passare di gente, e la tua é una faccia decisamente nuova.
+		jump Get to know
+	label Get to know
+	- Che ci fai qui?
+		fisherman: Oggi é davvero una bella giornata per pescare, quindi ho deciso di prendere tutti gli strumenti dalla mia casetta laggiú e iniziare la mia grande sessione di pesca.
+		fisherman: Giá che sei qui, avrei un favore da chiederti\: potresti portarmi 3 pezzi di legno?
+		fisherman: La mia canna da pesca é ormai usurata, e ho bisogno di una canna nuova per poter pescare. Puoi aiutarmi?
+		jump Choice
+	- Chi sei?
+		fisherman: Sono un pescatore. Ho costruito questa casetta
+		fisherman: A proposito di casetta, per realizzarla ho finito tutto il legno a mia disposizione, e ora ho bisogno di 3 pezzi di legno per poter costruire una canna da pesca nuova nuova.
+		fisherman: Puoi aiutarmi?
+		jump Choice
+	label Choice
+	- Si
+		Perfetto, grazie!!!
+		Usa [barra_spaziatrice] per raccogliere gli oggetti!
+		set {dialogue.scelta} = true
+		[signal arg_type="dict" arg="{"accepted":"0"}"]
+		do Global.quest_handler.set_current_stage(0.0, 10.0)
+	- No
+		fisherman: Va bene, nessun problema. Torna quando puoi.
+else:
+	if {dialogue.current_stage} == 100:
+		fisherman: Finalmente potró costruire la canna da pesca che ho sempre sognato!!!
+	else:
+		fisherman: Allora? Hai portato i 3 pezzi di legno che ti ho chiesto?
+		if {dialogue.current_stage} == 90:
+			- Si
+				fisherman: Grazie mille. Ecco una ricompensa per te.
+				fisherman: Non so cosa sia, ma potrebbe tornarti utile.
+				do Global.quest_handler.set_current_stage(0.0, 100.0)
+			- No
+				fisherman: Va bene, nessun problema. Torna quando avrai i pezzi di legno di cui ho bisogno
+		else:
+			- No
+				fisherman: Va bene, nessun problema. Torna quando avrai i pezzi di legno di cui ho bisogno
+[signal arg_type="dict" arg="{"end":"Fisherman"}"]

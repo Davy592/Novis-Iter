@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://crwup6onrgogl"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ultgg"]
+[ext_resource type="PackedScene" uid="uid://i40mlkej224u" path="res://scenes/ui/inventory_ui.tscn" id="1_wffrd"]
+[ext_resource type="PackedScene" uid="uid://by2a56uurptn8" path="res://scenes/ui/in_game_menu.tscn" id="2_b1vkc"]
+[ext_resource type="PackedScene" uid="uid://bs4t37weevlbd" path="res://scenes/ui/interact_ui.tscn" id="3_hd7le"]
+[ext_resource type="PackedScene" uid="uid://fjpantflg84d" path="res://scenes/entities/player.tscn" id="6_0wd60"]
+[ext_resource type="PackedScene" uid="uid://0tqdlya5hcjx" path="res://scenes/ui/quest_updated.tscn" id="6_nt8um"]
+[ext_resource type="PackedScene" uid="uid://kw7dld2v6x0f" path="res://scenes/ui/map_editor.tscn" id="6_py1r7"]
+[ext_resource type="PackedScene" uid="uid://ciikokvaol8s0" path="res://scenes/ui/item_obtained.tscn" id="7_s1vlw"]
+[ext_resource type="PackedScene" uid="uid://br43hu6unncch" path="res://scenes/entities/remy.tscn" id="9_1eug2"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ultgg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("1_wffrd")]
+process_mode = 4
+visible = false
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("2_b1vkc")]
+process_mode = 4
+visible = false
+
+[node name="InteractUI" parent="CanvasLayer" instance=ExtResource("3_hd7le")]
+visible = false
+
+[node name="MapEditor" parent="CanvasLayer" instance=ExtResource("6_py1r7")]
+process_mode = 4
+visible = false
+
+[node name="QuestUpdatedUI" parent="CanvasLayer" instance=ExtResource("6_nt8um")]
+visible = false
+
+[node name="ItemObtainedUI" parent="CanvasLayer" instance=ExtResource("7_s1vlw")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("6_0wd60")]
+
+[node name="remy" parent="." instance=ExtResource("9_1eug2")]
+visible = false
+position = Vector2(1524, 689)
+
+[connection signal="interact_ui_requested" from="Player" to="CanvasLayer/InteractUI" method="_on_player_interact_ui_requested"]
+[connection signal="interact_ui_revoked" from="Player" to="CanvasLayer/InteractUI" method="_on_player_interact_ui_revoked"]
+[connection signal="inventory_requested" from="Player" to="CanvasLayer/InventoryUI" method="_on_player_inventory_requested"]
+[connection signal="map_requested" from="Player" to="CanvasLayer/MapEditor" method="_on_player_map_requested"]
+[connection signal="menu_requested" from="Player" to="CanvasLayer/InGameMenu" method="_on_player_menu_requested"]

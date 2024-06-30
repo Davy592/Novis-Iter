@@ -1,0 +1,16 @@
+Questa è una scena del crimine ragazzo
+- Posso aiutare? [if {!Global.get_clue("shapeshifter")}][else="hide" alt_text="-"]
+	Beh... si.
+	Abbiamo bisogno di sapere chi è stato. Trova un posto con molta gente e chiedi in giro.
+	Un malfattore come questo di solito si nasconde tra la folla.
+	Lo abbiamo visto scappare. Indossava una cappa, e la sua forma non era ben definita.
+	Torna da me se hai novità
+	do Global.set_clue("look_diff", true)
+- Credo di aver finito [if {Global.get_clue("end_case")}][else="hide" alt_text="-"]
+	Hai trovato chi è stato?
+	- Si, uno losco, cambiava forma
+		Staremo attenti, te lo assicuro
+		Grazie davvero per il tuo aiuto. Libereremo il passaggio appena il Re si sveglierà.
+	- No, nessun sospettato
+		Anche noi brancoliamo nel buio.
+		Grazie lo stesso dell'aiuto. Libereremo il passaggio appena il Re si sveglierà.

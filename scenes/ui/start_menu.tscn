@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnnyfilxvkif5"]
+
+[ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_xtun1"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xtun1")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.154876, 0.154876, 0.154876, 1)
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Novis Iter"
+metadata/_edit_lock_ = true
+
+[node name="MenuEntries" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/MenuEntries"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
+theme_override_font_sizes/font_size = 40
+text = "Nuova Partita"
+metadata/_edit_lock_ = true
+
+[node name="LoadGame" type="Button" parent="MarginContainer/VBoxContainer/MenuEntries"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Carica Partita"
+metadata/_edit_lock_ = true
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/MenuEntries"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Opzioni"
+metadata/_edit_lock_ = true
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuEntries"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../NewGame")
+theme_override_font_sizes/font_size = 40
+text = "Esci dal gioco
+"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuEntries/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuEntries/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuEntries/Exit" to="." method="_on_exit_pressed"]

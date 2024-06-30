@@ -1,0 +1,4 @@
+bird_creature: OK BASTA, ADESSO E' TROPPO!
+bird_creature: IMMAGINO CHE SIA TU L'ARTEFICE DI TUTTO CIO', EH OWEN?!?!
+bird_creature: ADESSO VEDIAMO CHI LA FA FRANCA!
+do Global.set_clue("ludo_true", true)

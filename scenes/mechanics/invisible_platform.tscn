@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwtcewbfycia5"]
+
+[ext_resource type="Texture2D" uid="uid://x7yflt2i3tlt" path="res://resources/assets/tilesets/Platform.png" id="1_52285"]
+[ext_resource type="Script" path="res://scripts/mechanics/invisible_platform.gd" id="1_o6blc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhf30"]
+radius = 2.98023e-08
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siny7"]
+size = Vector2(245, 251)
+
+[sub_resource type="Animation" id="Animation_p03xo"]
+resource_name = "FadeIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ivrvo"]
+resource_name = "FadeOut"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qwvf"]
+_data = {
+"FadeIn": SubResource("Animation_p03xo"),
+"FadeOut": SubResource("Animation_ivrvo")
+}
+
+[node name="InvisiblePlatform" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_o6blc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 524288
+visibility_layer = 524288
+position = Vector2(2.98023e-08, 0)
+shape = SubResource("CircleShape2D_jhf30")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-0.499996, 0.5)
+scale = Vector2(3.26563, 3.29688)
+texture = ExtResource("1_52285")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_siny7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8qwvf")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

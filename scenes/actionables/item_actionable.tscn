@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dddt0jl2jc64g"]
+
+[ext_resource type="Script" path="res://scripts/actionables/item_actionable.gd" id="1_ipdr8"]
+
+[node name="ItemActionable" type="Area2D" groups=["Items"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ipdr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

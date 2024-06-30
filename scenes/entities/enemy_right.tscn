@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjt8df78q4ko6"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemy_right.gd" id="1_jxown"]
+[ext_resource type="Texture2D" uid="uid://boybou38ij2r0" path="res://resources/assets/tilesets/tile1/topdownpack.png" id="1_rpyec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_256hm"]
+atlas = ExtResource("1_rpyec")
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ew1eb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_256hm")
+}],
+"loop": true,
+"name": &"enemy_default",
+"speed": 5.0
+}]
+
+[node name="enemy_right" type="Node2D"]
+rotation = 3.14159
+scale = Vector2(3, 3)
+script = ExtResource("1_jxown")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ew1eb")
+animation = &"enemy_default"

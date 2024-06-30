@@ -1,0 +1,92 @@
+bird_creature: E tu chi saresti?!
+bird_creature: Nah, non importa. Quale buon vento ti porta nella mia dimora?
+if {Global.inventory.contains_by_id('2X')} == true and {Global.inventory.contains_by_id('3P')} == true:
+	- Fai vedere il sacchetto di nocciole
+		bird_creature: quindi... quel contandino sa fare anche del bene... D'accordo.
+		do Global.quest_handler.set_current_stage(41.0,92.0)
+		[signal arg="good_ending"]
+	- Fai vedere la piccola bomba
+		bird_creature: Ei ei ei, d'accordo, va bene. Non c'è bisogno di arrivare a questo.
+		\- è visibilmente impaurita. Sei riuscito a scacciarla -
+		do Global.quest_handler.set_current_stage(41.0,92.0)
+		do Global.inventory.create("sale")
+		[signal arg="bad_ending"]
+	- Perchè rovini il campo di nocciole di Owen?
+		bird_creature: Perchè il suo campo di nocciole è un labirinto!
+		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
+		bird_creature: Essendo l'unico percorso, senza attraversare la fitta foresta, non ho altre alternative!
+		bird_creature: Owen non ne vuole sapere di spostare o togliere il suo campo di nocciole e, quindi, io gli faccio qualche dispetto eheh
+		- Hai mai assaggiato una delle sue nocciole?
+			bird_creature: No mai, nè tantomeno accetterò nulla da una persona tanto antipatica quanto lui!!
+			bird_creature: Le accetterò soltanto se come segno di riconciliazione da parte sua!
+		- Non dire nulla
+			bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+	- Devi lasciare questa casa!
+		bird_creature: Cosa?!
+		bird_creature: Eh perchè mai dovrei farlo?!
+		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
+	- Non dire nulla
+		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+elif {Global.inventory.contains_by_id('2X')} == true:
+	- Fai vedere il sacchetto di nocciole
+		bird_creature: quindi... quel contandino sa fare anche del bene... D'accordo.
+		do Global.quest_handler.set_current_stage(41.0,92.0)
+		[signal arg="good_ending"]
+	- Perchè rovini il campo di nocciole di Owen?
+		bird_creature: Perchè il suo campo di nocciole è un labirinto!
+		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
+		bird_creature: Essendo l'unico percorso, senza attraversare la fitta foresta, non ho altre alternative!
+		bird_creature: Owen non ne vuole sapere di spostare o togliere il suo campo di nocciole e, quindi, io gli faccio qualche dispetto eheh
+		- Hai mai assaggiato una delle sue nocciole?
+			bird_creature: No mai, nè tantomeno accetterò nulla da una persona tanto antipatica quanto lui!!
+			bird_creature: Le accetterò soltanto se come segno di riconciliazione da parte sua!
+		- Non dire nulla
+			bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+	- Devi lasciare questa casa!
+		bird_creature: Cosa?!
+		bird_creature: Eh perchè mai dovrei farlo?!
+		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
+	- Non dire nulla
+		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+elif {Global.inventory.contains_by_id('3P')}:
+	- Fai vedere la piccola bomba
+		bird_creature: Ei ei ei, d'accordo, va bene. Non c'è bisogno di arrivare a questo.
+		\- è visibilmente impaurita. Sei riuscito a scacciarla -
+		do Global.inventory.create("sale")
+		do Global.quest_handler.set_current_stage(41.0,92.0)
+		[signal arg="bad_ending"]
+	- Perchè rovini il campo di nocciole di Owen?
+		bird_creature: Perchè il suo campo di nocciole è un labirinto!
+		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
+		bird_creature: Essendo l'unico percorso, senza attraversare la fitta foresta, non ho altre alternative!
+		bird_creature: Owen non ne vuole sapere di spostare o togliere il suo campo di nocciole e, quindi, io gli faccio qualche dispetto eheh
+		- Hai mai assaggiato una delle sue nocciole?
+			bird_creature: No mai, nè tantomeno accetterò nulla da una persona tanto antipatica quanto lui!!
+			bird_creature: Le accetterò soltanto se come segno di riconciliazione da parte sua!
+		- Non dire nulla
+			bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+	- Devi lasciare questa casa!
+		bird_creature: Cosa?!
+		bird_creature: Eh perchè mai dovrei farlo?!
+		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
+	- Non dire nulla
+		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+else:
+	- Perchè rovini il campo di nocciole di Owen?
+		bird_creature: Perchè il suo campo di nocciole è un labirinto!
+		bird_creature: Hai idea di quanto ci metto per oltrepassarlo?!
+		bird_creature: Essendo l'unico percorso, senza attraversare la fitta foresta, non ho altre alternative!
+		bird_creature: Owen non ne vuole sapere di spostare o togliere il suo campo di nocciole e, quindi, io gli faccio qualche dispetto eheh
+		- Hai mai assaggiato una delle sue nocciole?
+			bird_creature: No mai, nè tantomeno accetterò nulla da una persona tanto antipatica quanto lui!!
+			bird_creature: Le accetterò soltanto se come segno di riconciliazione da parte sua!
+		- Non dire nulla
+			bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+	- Devi lasciare questa casa!
+		bird_creature: Cosa?!
+		bird_creature: Eh perchè mai dovrei farlo?!
+		bird_creature: Questa è casa mia nessuno potrà mai cacciarmi di casa!!
+	- Non dire nulla
+		bird_creature: Ok, se non hai nulla da dirmi esci di casa!!
+
+[signal arg="exit"]

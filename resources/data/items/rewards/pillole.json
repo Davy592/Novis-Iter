@@ -1,0 +1,8 @@
+{
+	"id": "7N",
+	"name": "Pillole",
+	"type": null,
+	"effect": null,
+	"description": "Barattolo di strani semi. L'etichetta mostra simboli che non conosci.",
+	"texture": "res://resources/assets/sprites/rewards/pillole.png"
+}
