@@ -10,7 +10,7 @@ var texture: Texture
 
 
 func _init(dict):
-	name = dict['id']
+	id = dict['id']
 	name = dict['name']
 	description = dict['description']
 	quantity = dict['quantity']
