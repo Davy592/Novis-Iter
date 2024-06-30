@@ -67,23 +67,23 @@ elif {dialogue.dialogue_id} >= 1:
 	leeve: Vuoi barattare qualcosa?
 	- Si
 		leeve: ecco cosa offre la casa
-			- Collana [if {Global.inventory.get_item_from_name("Dollaro")}][else="hide" alt_text="-"]
-				leeve: Sembra un ritratto... tascabile. Vi è sopra un numero. Forse è la serie di un artista.
-				leeve: Dalle mie ricerche potrei ipotizzare fosse un tipo di valuta... chissà perchè ne avessero bisogno.
-				leeve: Qui si scannano tra autoctoni e stranieri come me. Stramberie del genere sono proprio il tipo di cose che rende difficile la convivenza, ci scommetto.
-				leeve: Davvero un bel cimelio. Tieni questa allora, è l'unica fornitura che ho al momento, mi dispiace.
-				do Global.inventory.create("collana")
-				leeve: Ma torna da me se hai qualcosa da mostrare!
-			- Mostra il Canto in bottiglia [if {Global.inventory.get_item_from_name("Canto in vetro")}][else="hide" alt_text="-"]
-				leeve: Interessante... sembra provenire da qualcuno di molto triste...
-				leeve: Oppure è una tragedia. Se mi dici che l'hai ricevuto da un venditore scommetto che l'ha usata per scambiare con lui
-				leeve: Avrei accettato anch'io, sembra un oggetto di prima classe! Tu lo stappi e... romantico, davvero romantico.
-				leeve: Non mi sorprende affatto che la gente di qui sappia fare qualcosa di simile. Pensaci, le creature che ci circondano praticano teatro! Questo ci dice molto!
-			- Mostra il pupazzo [if {Global.inventory.get_item_from_name("pupazzo di pezza")}][else="hide" alt_text="-"]
-				leeve: Un pupazzo di pezza... sembra ricordare le sembianze di qualcuno.
-				leeve: Un po' triste o assai inquietante, non saprei decidermi.
-				leeve: Scommetto che è un cimelio! Guarda attentamente, sembra che la mano destra un tempo impugnasse qualcosa.
-				leeve: La gente di qui non usa utensili quindi... chissà, forse era per giocare. Spero niente di violento.
+		- Collana [if {Global.inventory.get_item_from_name("Dollaro")}][else="hide" alt_text="-"]
+			leeve: Sembra un ritratto... tascabile. Vi è sopra un numero. Forse è la serie di un artista.
+			leeve: Dalle mie ricerche potrei ipotizzare fosse un tipo di valuta... chissà perchè ne avessero bisogno.
+			leeve: Qui si scannano tra autoctoni e stranieri come me. Stramberie del genere sono proprio il tipo di cose che rende difficile la convivenza, ci scommetto.
+			leeve: Davvero un bel cimelio. Tieni questa allora, è l'unica fornitura che ho al momento, mi dispiace.
+			do Global.inventory.create("collana")
+			leeve: Ma torna da me se hai qualcosa da mostrare!
+		- Mostra il Canto in bottiglia [if {Global.inventory.get_item_from_name("Canto in vetro")}][else="hide" alt_text="-"]
+			leeve: Interessante... sembra provenire da qualcuno di molto triste...
+			leeve: Oppure è una tragedia. Se mi dici che l'hai ricevuto da un venditore scommetto che l'ha usata per scambiare con lui
+			leeve: Avrei accettato anch'io, sembra un oggetto di prima classe! Tu lo stappi e... romantico, davvero romantico.
+			leeve: Non mi sorprende affatto che la gente di qui sappia fare qualcosa di simile. Pensaci, le creature che ci circondano praticano teatro! Questo ci dice molto!
+		- Mostra il pupazzo [if {Global.inventory.get_item_from_name("pupazzo di pezza")}][else="hide" alt_text="-"]
+			leeve: Un pupazzo di pezza... sembra ricordare le sembianze di qualcuno.
+			leeve: Un po' triste o assai inquietante, non saprei decidermi.
+			leeve: Scommetto che è un cimelio! Guarda attentamente, sembra che la mano destra un tempo impugnasse qualcosa.
+			leeve: La gente di qui non usa utensili quindi... chissà, forse era per giocare. Spero niente di violento.
 	- No
 		leeve: D'accordo d'accordo, torna quando vuoi ascoltare qualche storia allora.
 	- Sta succedendo qualcosa?
