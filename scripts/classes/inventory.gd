@@ -74,6 +74,12 @@ func count_by_id(item_id: String) -> int:
 		if item.get_id() == item_id:
 			cnt+=1
 	return cnt
+	
+func contains_by_id(item_id: String) -> bool:
+	for item in items:
+		if item.get_id() == item_id:
+			return true
+	return false
 
 func count_by_name(item_name: String) -> int:
 	var cnt = 0
