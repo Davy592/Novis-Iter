@@ -1,3 +1,5 @@
-Congratulazioni, sei arrivato all'Hub 2!
-Adesso controlla la mappa!
-do Global.tiles_inventory.unlock()
+if {!Global.get_clue("done")}
+	Congratulazioni, sei arrivato all'Hub 2!
+	Adesso controlla la mappa!
+	do Global.tiles_inventory.unlock()
+	do Global.set_clue("done", true)
