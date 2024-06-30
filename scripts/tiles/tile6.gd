@@ -21,17 +21,17 @@ func _process(delta):
 func check_minigame_quests():
 	var npc_position = path2d.get_position_at_progress(path_follow.progress)
 	if 'res://timelines/tile6/bird_see_no_fish.dtl' not in done_dialogues:
-		if npc_position.distance_to(path2d.idle_points[3]) < 3.0 and not has_node('Fish'): # pesce rosso
+		if npc_position.distance_to(path2d.idle_points[3]) < 30.0 and not has_node('Fish'): # pesce rosso
 			Global.dialogue_manager.start_dialogue('res://timelines/tile6/bird_see_no_fish.dtl')
 			done_dialogues.append('res://timelines/tile6/bird_see_no_fish.dtl')
 			increment_negative_actions()
 	if 'res://timelines/tile6/bird_see_book.dtl' not in done_dialogues:
-		if npc_position.distance_to(path2d.idle_points[5]) < 3.0 and Dialogic.VAR.tile6_book_written:
+		if npc_position.distance_to(path2d.idle_points[5]) < 30.0 and Dialogic.VAR.tile6_book_written:
 			Global.dialogue_manager.start_dialogue('res://timelines/tile6/bird_see_book.dtl')
 			done_dialogues.append('res://timelines/tile6/bird_see_book.dtl')
 			increment_negative_actions()
 	if 'res://timelines/tile6/bird_drink_coffee_with_soap.dtl' not in done_dialogues:
-		if npc_position.distance_to(path2d.idle_points[5]) < 3.0 and Dialogic.VAR.tile6_soap_in_coffee:
+		if npc_position.distance_to(path2d.idle_points[5]) < 30.0 and Dialogic.VAR.tile6_soap_in_coffee:
 			Global.dialogue_manager.start_dialogue('res://timelines/tile6/bird_drink_coffee_with_soap.dtl')
 			done_dialogues.append('res://timelines/tile6/bird_drink_coffee_with_soap.dtl')
 			increment_negative_actions()

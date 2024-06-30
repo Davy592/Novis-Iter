@@ -1,7 +1,6 @@
 [signal arg_type="dict" arg="{"":"","start":"Fisherman"}"]
 do Global.quest_handler.get_current_stage(0.0)
 if {dialogue.scelta} == false:
-	do Global.inventory.create("pupazzo")
 	fisherman: Ciao. Sei nuovo da queste parti?
 	- Si, e tu?
 		fisherman: Non piú, sono qui da un paio d'anni e ormai sono un grande conoscitore di questa zona.
