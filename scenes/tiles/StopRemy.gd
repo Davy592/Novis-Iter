@@ -8,7 +8,7 @@ var is_triggered = false
 
 func _on_body_entered(body):
 	#print("segnale dentro")
-	if body.get_name() == 'Player' and !is_triggered:
+	if body.get_name() == 'Player' and !is_triggered and Global.remy_follow:
 		is_triggered = true
 		Global.remy._on_timer_timeout()
 		Global.dialogue_manager.start_dialogue(dialogue_resource)
