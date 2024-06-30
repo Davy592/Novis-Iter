@@ -90,6 +90,8 @@ else:
 		- Non ce la faccio
 			ludo: Cosa? Dopo tutto quello che ti ho detto?!?
 			ludo: Credevo di potermi fidare di te! Basta, vai via.
+			ludo: Ancora non te ne vai? Vuoi comunque qualche ricompensa?
+			ludo: Mbah, tieni, tanto é robaccia.
 			do Global.quest_handler.set_current_stage(41.0, 96.0)
 	elif {dialogue.current_stage} == 95:
 		- Casa liberata!

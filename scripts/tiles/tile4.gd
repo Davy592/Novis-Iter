@@ -7,7 +7,6 @@ func _process(delta):
 
 func check_ludo_stage():
 	var stage: int = Global.quest_handler.get_current_stage(41.0)
-	
 	if stage == 10 or Global.grotta:
 		Global.grotta = true
 		if mountain_teleport == null:
@@ -17,7 +16,7 @@ func check_ludo_stage():
 			mountain_teleport.destination = Vector2(7790, 2950)
 			
 			get_node('Teleports').add_child(mountain_teleport)
-	elif stage == 90:
+	if stage == 90:
 		var platforms = get_node('Platforms').get_children()
 		
 		for platform in platforms:
