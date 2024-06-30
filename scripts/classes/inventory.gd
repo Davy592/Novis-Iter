@@ -87,6 +87,9 @@ func count_by_name(item_name: String) -> int:
 		if item.get_name() == item_name:
 			cnt+=1
 	return cnt
+	
+func contains(item_name):
+	return count_by_name(item_name) > 0
 
 func get_size():
 	return items.size()
