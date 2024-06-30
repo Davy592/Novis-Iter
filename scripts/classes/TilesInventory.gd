@@ -8,7 +8,6 @@ func _init():
 	tiles = [
 		TileInfo.new("res://resources/data/hub2.json"),
 		TileInfo.new("res://resources/data/tile1.json"),
-		TileInfo.new("res://resources/data/tile6.json"),
 		TileInfo.new("res://resources/data/tile2.json")
 	]
 

@@ -93,21 +93,11 @@ else:
 			ludo: Ancora non te ne vai? Vuoi comunque qualche ricompensa?
 			ludo: Mbah, tieni, tanto é robaccia.
 			do Global.quest_handler.set_current_stage(41.0, 96.0)
-	elif {dialogue.current_stage} == 95:
-		- Casa liberata!
+		- Casa liberata! [if {Global.get_clue("ludo_true")}][else="hide" alt_text="-"]
 			ludo: Wow! Sei stato di grandissimo aiuto!
 			ludo: Senza di te non ce l'avrei mai fatta!
 			ludo: Bene, é tempo di abbandonare questo posto. Se vorrai rivedermi, ti basta fare un salto alla mia nuova casa.
 			ludo: A presto!!
 			do Global.quest_handler.set_current_stage(41.0, 100.0)
-		- Ci sto ancora lavorando
-			ludo: Ottimo! Fammi sapere al piú presto, amico mio!
-			jump End Timeline
-		- Non ce la faccio
-			ludo: Cosa? Dopo tutto quello che ti ho detto?!?
-			ludo: Credevo di potermi fidare di te! Basta, vai via.
-			ludo: Ancora non te ne vai? Vuoi comunque qualche ricompensa?
-			ludo: Mbah, tieni, tanto é robaccia.
-			do Global.quest_handler.set_current_stage(41.0, 96.0)
 	label End Timeline
 	[signal arg_type="dict" arg="{"end":"Ludo"}"]

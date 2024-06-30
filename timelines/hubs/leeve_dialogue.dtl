@@ -92,7 +92,7 @@ elif {dialogue.dialogue_id} >= 1:
 	- Sai dirmi altro?
 		leeve: Sei curioso anche tu eh? Vuoi sapere che hanno tutti scommetto.
 		jump La Meta
-	- Hai sentito dell'assassinio del Re? [if {Global.get_clue("king_blood")} != null][else="hide" alt_text="-"]
+	- Hai sentito dell'assassinio del Re? [if {Global.get_clue("king_blood")}][else="hide" alt_text="-"]
 		leeve: Si... speravo non ci arrivassi.
 		leeve: A quanto pare è tra noi. Ecco perchè c'è la guardia a sinistra dell'idolo.
 		leeve: Credo... che abbia un po' di paura però.
